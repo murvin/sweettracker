@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!DOCTYPE resources SYSTEM "resources.dtd">
+<resources version="1.0">  
+    <set basename="GraphicsResources">							
+        <resource id="1" type="binary" name="IMG_BG_PANEL">	
+            <value file="bgPanel.png"></value>	
+        </resource>
+        <resource id="2" type="binary" name="IMG_SPLASH_BG">	
+            <value file="splash_bg.png"></value>	
+        </resource>
+        <resource id="3" type="binary" name="IMG_SPLASH_GRAPH">	
+            <value file="splash_graph.png"></value>	
+        </resource>
+        <resource id="4" type="binary" name="IMG_MENU_ADD">	
+            <value file="menu_icon_add.png"></value>	
+        </resource>
+        <resource id="5" type="binary" name="IMG_MENU_CAL">	
+            <value file="menu_icon_cal.png"></value>	
+        </resource>
+        <resource id="6" type="binary" name="IMG_MENU_GRAPH">	
+            <value file="menu_icon_graph.png"></value>	
+        </resource>
+        <resource id="7" type="binary" name="IMG_MENU_HELP">	
+            <value file="menu_icon_help.png"></value>	
+        </resource>
+        <resource id="8" type="binary" name="IMG_MENU_INFO">	
+            <value file="menu_icon_info.png"></value>	
+        </resource>
+        <resource id="9" type="binary" name="IMG_MENU_SETTINGS">	
+            <value file="menu_icon_settings.png"></value>	
+        </resource>
+        <resource id="10" type="binary" name="IMG_SPLASH_GRID">	
+            <value file="splash_grid.png"></value>	
+        </resource>
+        <resource id="11" type="string" name="TXT_TITLE_TEXT_COLOR">		
+            <value>535629</value>	
+        </resource>
+        <resource id="12" type="binary" name="FONT_THEME_SMALL">	
+            <value file="droid_r_11.png"></value>	
+        </resource>        
+        <resource id="13" type="binary" name="FONT_THEME_MEDIUM">	
+            <value file="roboto_regular_16.png"></value>	
+        </resource> 
+        <resource id="14" type="binary" name="FONT_THEME_LARGE">	
+            <value file="roboto_regular_18.png"></value>	
+        </resource>   
+        <resource id="16" type="string" name="TXT_TITLE_LIGHT_TEXT_COLOR">		
+            <value>16777215</value>	
+        </resource>
+        <resource id="17" type="binary" name="IMG_BAR_BG">	
+            <value file="bar_tile.png"></value>	
+        </resource>
+        <resource id="18" type="binary" name="IMG_HIGH_BG">	
+            <value file="highlight.png"></value>	
+        </resource>
+        <resource id="19" type="binary" name="IMG_SPLASH_APPNAME">	
+            <value file="splash_app_name.png"></value>	
+        </resource>
+        <resource id="20" type="string" name="TXT_DESC_TEXT_COLOR">		
+            <value>5921370</value>	
+        </resource>
+        <resource id="21" type="string" name="TXT_DESC_LIGHT_TEXT_COLOR">		
+            <value>12632256</value>	
+        </resource>
+        <resource id="22" type="binary" name="IMG_SPLASH_DEVNAME">	
+            <value file="splash_dev_name.png"></value>	
+        </resource>
+        <resource id="23" type="binary" name="IMG_FLAG_EN">	
+            <value file="flagEn.png"></value>	
+        </resource>   
+        <resource id="24" type="binary" name="IMG_FLAG_FR">	
+            <value file="flagFr.png"></value>	
+        </resource>   
+        <resource id="25" type="binary" name="IMG_FLAG_IT">	
+            <value file="flagIt.png"></value>	
+        </resource>   
+        <resource id="26" type="binary" name="IMG_FLAG_DE">	
+            <value file="flagDe.png"></value>	
+        </resource>   
+        <resource id="27" type="binary" name="IMG_FLAG_ES">	
+            <value file="flagEs.png"></value>	
+        </resource>  
+        <resource id="28" type="binary" name="IMG_INDICATOR">	
+            <value file="indicator.png"></value>	
+        </resource>  
+        <resource id="29" type="binary" name="IMG_UNITS_MG">	
+            <value file="units_mg.png"></value>	
+        </resource>  
+        <resource id="30" type="binary" name="IMG_UNITS_MMOL">	
+            <value file="units_mmol.png"></value>	
+        </resource> 
+        <resource id="31" type="binary" name="IMG_MENUBAR_TILE">	
+            <value file="menu_bar_tile.png"></value>	
+        </resource> 
+        <resource id="32" type="string" name="TXT_LIGHTBOX_COLOR">		
+            <value>3388901</value>	
+        </resource>
+        <resource id="33" type="binary" name="IMG_BUTTON_PATCH">	
+            <value file="btn_patch.png"></value>	
+        </resource>
+        <resource id="34" type="binary" name="IMG_BUTTON_PATCH_HIGH">	
+            <value file="btn_patch_high.png"></value>	
+        </resource>
+        <resource id="35" type="binary" name="IMG_ICON_SMALL">	
+            <value file="icon_small.png"></value>	
+        </resource>
+        <resource id="36" type="string" name="TXT_BUTTON_TEXT_COLOR">		
+            <value>0</value>	
+        </resource>
+    </set>
+</resources>
+

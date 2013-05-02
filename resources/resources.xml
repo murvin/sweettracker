@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<!DOCTYPE resources SYSTEM "resources.dtd">
+<resources version="1.0">  
+    <set basename="GlobalResources">
+        <resource id="6" type="string" name="GSM_LANG">		
+            <value locale="en-GB">en</value>	
+            <value locale="es-ES">es</value>	
+            <value locale="de-DE">de</value>	
+            <value locale="fr-FR">fr</value>	
+            <value locale="it-IT">it</value>	
+        </resource>
+        <resource id="7" type="string" name="TXT_APP_NAME">	
+            <value>inBloom</value>						
+        </resource>
+        <resource id="8" type="string" name="TXT_COMMON_BACK">		
+            <value locale="en-GB">Back</value>	
+            <value locale="es-ES">Volver</value>	
+            <value locale="de-DE">Zurück</value>	
+            <value locale="fr-FR">Retour</value>	
+            <value locale="it-IT">Indietro</value>	
+        </resource>
+        <resource id="9" type="string" name="TXT_COMMON_EXIT">		
+            <value locale="en-GB">Exit</value>	
+            <value locale="es-ES">Salir</value>	
+            <value locale="de-DE">Verlassen</value>	
+            <value locale="fr-FR">Quitter</value>	
+            <value locale="it-IT">Uscita</value>	
+        </resource>
+        <resource id="10" type="string" name="TXT_COMMON_OPTIONS">		
+            <value locale="en-GB">Options</value>	
+            <value locale="es-ES">Opciones</value>	
+            <value locale="de-DE">Optionen</value>	
+            <value locale="fr-FR">Options</value>	
+            <value locale="it-IT">Opzioni</value>	
+        </resource>
+        <resource id="11" type="string" name="TXT_COMMON_SELECT">		
+            <value locale="en-GB">Select</value>	
+            <value locale="es-ES">Seleccionar</value>	
+            <value locale="de-DE">Auswählen</value>	
+            <value locale="fr-FR">Sélectionner</value>	
+            <value locale="it-IT">Seleziona</value>	
+        </resource>
+        <resource id="12" type="string" name="TXT_COMMON_SAVE">		
+            <value locale="en-GB">Save</value>	
+            <value locale="es-ES">Guardar</value>	
+            <value locale="de-DE">Speichern</value>	
+            <value locale="fr-FR">Enregistrer</value>	
+            <value locale="it-IT">Salva</value>	
+        </resource>
+        <resource id="13" type="string" name="TXT_COMMON_YES">		
+            <value locale="en-GB">Yes</value>	
+            <value locale="es-ES">Sí</value>	
+            <value locale="de-DE">Ja</value>	
+            <value locale="fr-FR">Oui</value>	
+            <value locale="it-IT">Sì</value>	
+        </resource>
+        <resource id="14" type="string" name="TXT_COMMON_NO">		
+            <value locale="en-GB">No</value>	
+            <value locale="es-ES">No</value>	
+            <value locale="de-DE">Nein</value>	
+            <value locale="fr-FR">Non</value>	
+            <value locale="it-IT">No</value>	
+        </resource>
+        <resource id="15" type="string" name="TXT_COMMON_OK">		
+            <value locale="en-GB">OK</value>	
+            <value locale="es-ES">OK</value>	
+            <value locale="de-DE">OK</value>	
+            <value locale="fr-FR">OK</value>	
+            <value locale="it-IT">OK</value>	
+        </resource>
+        <resource id="16" type="string" name="TXT_COMMON_CANCEL">		
+            <value locale="en-GB">Cancel</value>	
+            <value locale="es-ES">Cancelar</value>	
+            <value locale="de-DE">Löschen</value>	
+            <value locale="fr-FR">Annuler</value>	
+            <value locale="it-IT">Annullare</value>	
+        </resource>
+        <resource id="17" type="string" name="TXT_COMMON_PLEASE_WAIT">		
+            <value locale="en-GB">Please Wait</value>	
+            <value locale="es-ES">Por favor, espere</value>	
+            <value locale="de-DE">Bitte warten</value>	
+            <value locale="fr-FR">Veuillez patienter</value>	
+            <value locale="it-IT">Attendere Prego</value>	
+        </resource>
+        <resource id="18" type="string" name="TXT_COMMON_GATHERING_INFO">		
+            <value locale="en-GB">Gathering information</value>	
+            <value locale="es-ES">Recopilando información</value>	
+            <value locale="de-DE">Informationen werden gesammelt</value>	
+            <value locale="fr-FR">Regrouper les informations</value>	
+            <value locale="it-IT">Ricerca dati in atto</value>	
+        </resource>
+        <resource id="19" type="string" name="TXT_COMMON_CLOSE">		
+            <value locale="en-GB">Close</value>	
+            <value locale="es-ES">Cerrar</value>	
+            <value locale="de-DE">Schließen</value>	
+            <value locale="fr-FR">Fermer</value>	
+            <value locale="it-IT">Chiudi</value>	
+        </resource>
+        <resource id="20" type="string" name="TXT_COMMON_HELP">		
+            <value locale="en-GB">Help</value>	
+            <value locale="es-ES">Ayuda</value>	
+            <value locale="de-DE">Hilfe</value>	
+            <value locale="fr-FR">Assitance</value>	
+            <value locale="it-IT">Aiuto</value>	
+        </resource>
+        <resource id="21" type="string" name="TXT_ENTER_PASSWORD">		
+            <value locale="en-GB">Please enter your password</value>	
+            <value locale="es-ES">Por favor, introduzca su contraseña</value>	
+            <value locale="de-DE">Bitte geben Sie Ihr Passwort ein.</value>	
+            <value locale="fr-FR">Veuillez entrer votre mot de passe</value>	
+            <value locale="it-IT">Inserisci la tua password</value>	
+        </resource>
+        <resource id="22" type="string" name="TXT_ENTER">		
+            <value locale="en-GB">Enter</value>	
+            <value locale="es-ES">Entrar</value>	
+            <value locale="de-DE">Eingeben</value>	
+            <value locale="fr-FR">Entrer</value>	
+            <value locale="it-IT">Entrare</value>	
+        </resource>
+        <resource id="23" type="string" name="TXT_JAN">		
+            <value locale="en-GB">January</value>	
+            <value locale="es-ES">Enero</value>	
+            <value locale="de-DE">Januar</value>	
+            <value locale="fr-FR">Janvier</value>	
+            <value locale="it-IT">Gennaio</value>	
+        </resource>
+        <resource id="24" type="string" name="TXT_FEB">		
+            <value locale="en-GB">February</value>	
+            <value locale="es-ES">Febrero</value>	
+            <value locale="de-DE">Februar</value>	
+            <value locale="fr-FR">Fevrier</value>	
+            <value locale="it-IT">Febbraio</value>	
+        </resource>
+        <resource id="25" type="string" name="TXT_MAR">		
+            <value locale="en-GB">March</value>	
+            <value locale="es-ES">Marzo</value>	
+            <value locale="de-DE">März</value>	
+            <value locale="fr-FR">Mars</value>	
+            <value locale="it-IT">Marzo</value>	
+        </resource>
+        <resource id="26" type="string" name="TXT_APR">		
+            <value locale="en-GB">April</value>	
+            <value locale="es-ES">Abril</value>	
+            <value locale="de-DE">April</value>	
+            <value locale="fr-FR">Avril</value>	
+            <value locale="it-IT">Aprile</value>	
+        </resource>
+        <resource id="27" type="string" name="TXT_MAY">		
+            <value locale="en-GB">May</value>	
+            <value locale="es-ES">Mayo</value>	
+            <value locale="de-DE">Mai</value>	
+            <value locale="fr-FR">Mai</value>	
+            <value locale="it-IT">Maggio</value>	
+        </resource>
+        <resource id="28" type="string" name="TXT_JUN">		
+            <value locale="en-GB">June</value>	
+            <value locale="es-ES">​​Junio</value>	
+            <value locale="de-DE">Juni</value>	
+            <value locale="fr-FR">Juin</value>	
+            <value locale="it-IT">Giugno</value>	
+        </resource>
+        <resource id="29" type="string" name="TXT_JULY">		
+            <value locale="en-GB">July</value>	
+            <value locale="es-ES">​​Julio</value>	
+            <value locale="de-DE">Juli</value>	
+            <value locale="fr-FR">Juillet</value>	
+            <value locale="it-IT">Luglio</value>	
+        </resource>
+        <resource id="30" type="string" name="TXT_AUG">		
+            <value locale="en-GB">August</value>	
+            <value locale="es-ES">Agosto</value>	
+            <value locale="de-DE">August</value>	
+            <value locale="fr-FR">Août</value>	
+            <value locale="it-IT">Agosto</value>	
+        </resource>
+        <resource id="31" type="string" name="TXT_SEP">		
+            <value locale="en-GB">September</value>	
+            <value locale="es-ES">Septiembre</value>	
+            <value locale="de-DE">September</value>	
+            <value locale="fr-FR">Septembre</value>	
+            <value locale="it-IT">Settembre</value>	
+        </resource>
+        <resource id="32" type="string" name="TXT_OCT">		
+            <value locale="en-GB">October</value>	
+            <value locale="es-ES">Octubre</value>	
+            <value locale="de-DE">Oktober</value>	
+            <value locale="fr-FR">Octobre</value>	
+            <value locale="it-IT">Ottobre</value>	
+        </resource>
+        <resource id="33" type="string" name="TXT_NOV">		
+            <value locale="en-GB">November</value>	
+            <value locale="es-ES">De noviembre</value>	
+            <value locale="de-DE">November</value>	
+            <value locale="fr-FR">Novembre</value>	
+            <value locale="it-IT">Novembre</value>	
+        </resource>
+        <resource id="34" type="string" name="TXT_DEC">		
+            <value locale="en-GB">December</value>	
+            <value locale="es-ES">Diciembre</value>	
+            <value locale="de-DE">Dezember</value>	
+            <value locale="fr-FR">Décembre</value>	
+            <value locale="it-IT">Dicembre</value>	
+        </resource>
+        <resource id="35" type="string" name="TXT_MON">		
+            <value locale="en-GB">Mon</value>	
+            <value locale="es-ES">Lun</value>	
+            <value locale="de-DE">Mon</value>	
+            <value locale="fr-FR">Lun</value>	
+            <value locale="it-IT">Lun</value>	
+        </resource>
+        <resource id="36" type="string" name="TXT_TUE">		
+            <value locale="en-GB">Tue</value>	
+            <value locale="es-ES">Mar</value>	
+            <value locale="de-DE">Die</value>	
+            <value locale="fr-FR">Mar</value>	
+            <value locale="it-IT">Mar</value>	
+        </resource>
+        <resource id="37" type="string" name="TXT_WED">		
+            <value locale="en-GB">Wed</value>	
+            <value locale="es-ES">Mié</value>	
+            <value locale="de-DE">Mit</value>	
+            <value locale="fr-FR">Mer</value>	
+            <value locale="it-IT">Mer</value>	
+        </resource>
+        <resource id="38" type="string" name="TXT_THURS">		
+            <value locale="en-GB">Thr</value>	
+            <value locale="es-ES">Jue</value>	
+            <value locale="de-DE">Don</value>	
+            <value locale="fr-FR">Jeu</value>	
+            <value locale="it-IT">Gio</value>	
+        </resource>
+        <resource id="39" type="string" name="TXT_FRI">		
+            <value locale="en-GB">Fri</value>	
+            <value locale="es-ES">Vie</value>	
+            <value locale="de-DE">Fre</value>	
+            <value locale="fr-FR">Ven</value>	
+            <value locale="it-IT">Ven</value>	
+        </resource>
+        <resource id="40" type="string" name="TXT_SAT">		
+            <value locale="en-GB">Sat</value>	
+            <value locale="es-ES">Sáb</value>	
+            <value locale="de-DE">Sam</value>	
+            <value locale="fr-FR">Sam</value>	
+            <value locale="it-IT">Sab</value>	
+        </resource>
+        <resource id="41" type="string" name="TXT_SUN">		
+            <value locale="en-GB">Sun</value>	
+            <value locale="es-ES">Dom</value>	
+            <value locale="de-DE">Son</value>	
+            <value locale="fr-FR">Dim</value>	
+            <value locale="it-IT">Dom</value>	
+        </resource>
+        <resource id="42" type="string" name="TXT_MENU_ADD">		
+            <value locale="en-GB">Add</value>	
+            <value locale="es-ES">Add</value>	
+            <value locale="de-DE">Add</value>	
+            <value locale="fr-FR">Add</value>	
+            <value locale="it-IT">Add</value>	
+        </resource>
+        <resource id="43" type="string" name="TXT_MENU_CAL">		
+            <value locale="en-GB">Calendar</value>	
+            <value locale="es-ES">Calendar</value>	
+            <value locale="de-DE">Calendar</value>	
+            <value locale="fr-FR">Calendar</value>	
+            <value locale="it-IT">Calendar</value>	
+        </resource>
+        <resource id="44" type="string" name="TXT_MENU_SETTINGS">		
+            <value locale="en-GB">Settings</value>	
+            <value locale="es-ES">Settings</value>	
+            <value locale="de-DE">Settings</value>	
+            <value locale="fr-FR">Settings</value>	
+            <value locale="it-IT">Settings</value>	
+        </resource>
+        <resource id="45" type="string" name="TXT_MENU_GRAPH">		
+            <value locale="en-GB">Graph</value>	
+            <value locale="es-ES">Graph</value>	
+            <value locale="de-DE">Graph</value>	
+            <value locale="fr-FR">Graph</value>	
+            <value locale="it-IT">Graph</value>	
+        </resource>
+        <resource id="46" type="string" name="TXT_MENU_INFO">		
+            <value locale="en-GB">Info</value>	
+            <value locale="es-ES">Info</value>	
+            <value locale="de-DE">Info</value>	
+            <value locale="fr-FR">Info</value>	
+            <value locale="it-IT">Info</value>	
+        </resource>
+        <resource id="47" type="string" name="TXT_MENU_HELP">		
+            <value locale="en-GB">Help</value>	
+            <value locale="es-ES">Help</value>	
+            <value locale="de-DE">Help</value>	
+            <value locale="fr-FR">Help</value>	
+            <value locale="it-IT">Help</value>	
+        </resource>
+        <resource id="48" type="string" name="TXT_LABEL_HOME">		
+            <value locale="en-GB">Home</value>	
+            <value locale="es-ES">Home</value>	
+            <value locale="de-DE">Home</value>	
+            <value locale="fr-FR">Home</value>	
+            <value locale="it-IT">Home</value>	
+        </resource>
+        <resource id="49" type="string" name="TXT_SETTINGS_LANGUAGE_TITLE">		
+            <value locale="en-GB">Language</value>	
+            <value locale="es-ES">Language</value>	
+            <value locale="de-DE">Language</value>	
+            <value locale="fr-FR">Language</value>	
+            <value locale="it-IT">Language</value>	
+        </resource>
+        <resource id="50" type="string" name="TXT_SETTINGS_UNITS_TITLE">		
+            <value locale="en-GB">Units</value>	
+            <value locale="es-ES">Units</value>	
+            <value locale="de-DE">Units</value>	
+            <value locale="fr-FR">Units</value>	
+            <value locale="it-IT">Units</value>	
+        </resource>
+        <resource id="51" type="string" name="TXT_SETTINGS_PINCODE_TITLE">		
+            <value locale="en-GB">Pin Code</value>	
+            <value locale="es-ES">Pin Code</value>	
+            <value locale="de-DE">Pin Code</value>	
+            <value locale="fr-FR">Pin Code</value>	
+            <value locale="it-IT">Pin Code</value>	
+        </resource>
+        <resource id="52" type="string" name="TXT_SETTINGS_TARGET_TITLE">		
+            <value locale="en-GB">Target Level</value>	
+            <value locale="es-ES">Target Level</value>	
+            <value locale="de-DE">Target Level</value>	
+            <value locale="fr-FR">Target Level</value>	
+            <value locale="it-IT">Target Level</value>	
+        </resource>
+        <resource id="53" type="string" name="TXT_SETTINGS_LANGUAGE_DESC">		
+            <value locale="en-GB">Used for navigation and display.</value>	
+            <value locale="es-ES">Used for navigation and display.</value>	
+            <value locale="de-DE">Used for navigation and display.</value>	
+            <value locale="fr-FR">Used for navigation and display.</value>	
+            <value locale="it-IT">Used for navigation and display.</value>	
+        </resource>
+        <resource id="54" type="string" name="TXT_SETTINGS_UNITS_DESC">		
+            <value locale="en-GB">For blood sugar levels.</value>	
+            <value locale="es-ES">For blood sugar levels.</value>	
+            <value locale="de-DE">For blood sugar levels.</value>	
+            <value locale="fr-FR">For blood sugar levels.</value>	
+            <value locale="it-IT">For blood sugar levels.</value>	
+        </resource>
+        <resource id="55" type="string" name="TXT_SETTINGS_PINCODE_DESC">		
+            <value locale="en-GB">Pin protected start up.</value>	
+            <value locale="es-ES">Pin protected start up.</value>	
+            <value locale="de-DE">Pin protected start up.</value>	
+            <value locale="fr-FR">Pin protected start up.</value>	
+            <value locale="it-IT">Pin protected start up.</value>	
+        </resource>
+        <resource id="56" type="string" name="TXT_SETTINGS_TARGET_DESC">		
+            <value locale="en-GB">Your personal target.</value>	
+            <value locale="es-ES">Your personal target.</value>	
+            <value locale="de-DE">Your personal target.</value>	
+            <value locale="fr-FR">Your personal target.</value>	
+            <value locale="it-IT">Your personal target.</value>	
+        </resource>
+        <resource id="57" type="string" name="TXT_DIALOG_EXIT_TITLE">		
+            <value locale="en-GB">Exit SweetTracker</value>	
+            <value locale="es-ES">Dejar SweetTracker</value>	
+            <value locale="de-DE">Verlassen SweetTracker</value>	
+            <value locale="fr-FR">Quitter SweetTracker</value>	
+            <value locale="it-IT">Lasciare SweetTracker</value>	
+        </resource>
+        <resource id="58" type="string" name="TXT_DIALOG_EXIT_DESC">		
+            <value locale="en-GB">Would you like to exit SweetTracker</value>	
+            <value locale="es-ES">Quieres salir?</value>	
+            <value locale="de-DE">Möchten Sie SweetTracker beenden?</value>	
+            <value locale="fr-FR">Voulez-vous quitter SweetTracker?</value>	
+            <value locale="it-IT">Volete uscire?</value>	
+        </resource>
+    </set>
+</resources>
+
