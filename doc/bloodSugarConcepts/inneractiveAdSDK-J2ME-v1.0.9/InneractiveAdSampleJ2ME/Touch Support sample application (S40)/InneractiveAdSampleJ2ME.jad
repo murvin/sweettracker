@@ -1,0 +1,9 @@
+MIDlet-1: InneractiveSampleMidlet,,InneractiveSampleMidlet
+MIDlet-Jar-Size: 42449
+MIDlet-Jar-URL: InneractiveAdSampleJ2ME.jar
+MIDlet-Name: InneractiveAdSampleJ2ME Midlet Suite
+MIDlet-Permissions-Opt: javax.microedition.io.Connector.http,javax.microedition.io.Connector.https,javax.microedition.io.Connector.socket
+MIDlet-Vendor: Midlet Suite Vendor
+MIDlet-Version: 1.0.9
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.0

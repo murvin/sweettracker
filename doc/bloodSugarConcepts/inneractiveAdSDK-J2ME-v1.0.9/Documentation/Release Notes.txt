@@ -1,0 +1,10 @@
+Release Notes
+=============
+
+inneractiveJ2MEAdSDK-v1.0.9
+Release date: 03/05/2013
+- API was changed and now the optional parameters can be provided within a hashtable.
+- Additional optional parameters for setting the command labels in interstitial ads to enable localization.
+- javadocs
+- event listener bug fix
+- optional parameters validation
