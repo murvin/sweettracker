@@ -56,4 +56,7 @@ public final class GlobalResources {
     public static final int TXT_SETTINGS_TARGET_DESC = 56;
     public static final int TXT_DIALOG_EXIT_TITLE = 57;
     public static final int TXT_DIALOG_EXIT_DESC = 58;
+    public static final int TXT_DIALOG_TITLE_UNAUTHORISED = 59;
+    public static final int TXT_DIALOG_DESC_UNAUTHORISED = 60;
+    public static final int TXT_DIALOG_PIN_MSG = 61;
 }

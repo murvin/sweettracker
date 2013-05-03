@@ -368,6 +368,27 @@
             <value locale="de-DE">Möchten Sie SweetTracker beenden?</value>	
             <value locale="fr-FR">Voulez-vous quitter SweetTracker?</value>	
             <value locale="it-IT">Volete uscire?</value>	
+        </resource>unauthorised
+        <resource id="59" type="string" name="TXT_DIALOG_TITLE_UNAUTHORISED">		
+            <value locale="en-GB">Unauthorised</value>	
+            <value locale="es-ES">Unauthorised</value>	
+            <value locale="de-DE">Unauthorised</value>	
+            <value locale="fr-FR">Unauthorised</value>	
+            <value locale="it-IT">Unauthorised</value>	
+        </resource>
+        <resource id="60" type="string" name="TXT_DIALOG_DESC_UNAUTHORISED">		
+            <value locale="en-GB">Sorry, this feature is only available in the paid version.</value>	
+            <value locale="es-ES">Sorry, this feature is only available in the paid version.</value>	
+            <value locale="de-DE">Sorry, this feature is only available in the paid version.</value>	
+            <value locale="fr-FR">Sorry, this feature is only available in the paid version.</value>	
+            <value locale="it-IT">Sorry, this feature is only available in the paid version.</value>	
+        </resource>
+        <resource id="61" type="string" name="TXT_DIALOG_PIN_MSG">		
+            <value locale="en-GB">Please enter your PIN.</value>	
+            <value locale="es-ES">Please enter your PIN.</value>	
+            <value locale="de-DE">Please enter your PIN.</value>	
+            <value locale="fr-FR">Please enter your PIN.</value>	
+            <value locale="it-IT">Please enter your PIN.</value>	
         </resource>
     </set>
 </resources>

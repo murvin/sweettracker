@@ -17,10 +17,10 @@
                  classpathref="classrefcpy" />
 
         <builder basename="GlobalResources"
-                 source="/Users/mbhantooa/Projects/J2ME/SweetTracker/src/com/sweettracker/utils/"
-                 descriptor="/Users/mbhantooa/Projects/J2ME/SweetTracker/resources/resources.xml"
-                 destination="/Users/mbhantooa/Projects/J2ME/SweetTracker/res/"
-                 path="/Users/mbhantooa/Projects/J2ME/SweetTracker/resources/" 
+                 source="/Users/mbhantooa/Desktop/SweetTracker/src/com/sweettracker/utils/"
+                 descriptor="/Users/mbhantooa/Desktop/SweetTracker/resources/resources.xml"
+                 destination="/Users/mbhantooa/Desktop/SweetTracker/res/"
+                 path="/Users/mbhantooa/Desktop/SweetTracker/resources/" 
                   >
                    
         <locale name="common"/>
