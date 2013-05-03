@@ -295,7 +295,7 @@ public class SweetTrackerController extends Controller {
 
     public void showPinCodeDialog() {
         //#if FULL
-//#         showInputDialog("title", Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_MSG), INPUT_DIALOG_OK);
+//#         showInputDialog("some title", Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_MSG), INPUT_DIALOG_OK);
         //#else
         showAlertDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TITLE_UNAUTHORISED), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_DESC_UNAUTHORISED));
         //#endif 
