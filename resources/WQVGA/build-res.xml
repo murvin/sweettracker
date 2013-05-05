@@ -17,10 +17,10 @@
                  classpathref="classrefcpy" />
 
         <builder basename="GraphicsResources"
-                 source="/Users/mbhantooa/Projects/J2ME/SweetTracker/src/com/sweettracker/utils/"
-                 descriptor="/Users/mbhantooa/Projects/J2ME/SweetTracker/resources/WQVGA/graphics.xml"
-                 destination="/Users/mbhantooa/Projects/J2ME/SweetTracker/graphics/"
-                 path="/Users/mbhantooa/Projects/J2ME/SweetTracker/resources/WQVGA/"
+                 source="/Users/mbhantooa/Desktop/SweetTracker/src/com/sweettracker/utils/"
+                 descriptor="/Users/mbhantooa/Desktop/SweetTracker/resources/WQVGA/graphics.xml"
+                 destination="/Users/mbhantooa/Desktop/SweetTracker/graphics/"
+                 path="/Users/mbhantooa/Desktop/SweetTracker/resources/WQVGA/"
                   >
                       
                       

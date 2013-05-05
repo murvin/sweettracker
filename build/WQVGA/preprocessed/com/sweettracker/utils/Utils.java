@@ -78,18 +78,19 @@ public class Utils {
         ComponentStyle containerStyle = new ComponentStyle();
         containerStyle.setPadding(20);
         int colour = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_LIGHTBOX_COLOR));
-        Image bg = ImageUtil.generateTransparentImage(60, 60, (byte) 40, colour);
+        Image bg = ImageUtil.generateTransparentImage(60, 60, (byte) 60, colour);
         containerStyle.addRenderer(new BgImagePainter(bg, UikitConstant.REPEAT));
         return containerStyle;
     }
 
-    public static void applyTextStyles(AlertDialog dialog) {
+    public static void applyTextStyles(AlertDialog dialog, int title_color, int desc_color) {
 
         Image imgFont = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_MEDIUM);
-        BitmapFont largeFont = new BitmapFont(imgFont, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_MEDIUM, 0);
+        BitmapFont medFont = new BitmapFont(imgFont, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_MEDIUM, 0);
 
 
-        TextStyle txtStyle = new TextStyle(largeFont);
+        TextStyle txtStyle = new TextStyle(medFont);
+        txtStyle.setFontColour(title_color);
         txtStyle.setAlign(UikitConstant.HCENTER);
 
 
@@ -98,6 +99,7 @@ public class Utils {
 
 
         TextStyle txtStyleDesc = new TextStyle(descFont);
+        txtStyleDesc.setFontColour(desc_color);
         txtStyleDesc.setAlign(UikitConstant.HCENTER);
 
 
@@ -109,7 +111,7 @@ public class Utils {
         ComponentStyle[] buttonStyles;
         ComponentStyle style_onfocus = new ComponentStyle();
 
-        Image imgOnTextInputFocus = Resources.getInstance().getThemeImage(GraphicsResources.IMG_BUTTON_PATCH_HIGH);
+        Image imgOnTextInputFocus = Resources.getInstance().getThemeImage(GraphicsResources.IMG_HIGH_BG);
         int pBorder = 5;
 
         PatchPainter patchRenderer = new PatchPainter(imgOnTextInputFocus, pBorder, pBorder, pBorder, pBorder);
@@ -144,8 +146,8 @@ public class Utils {
 
     public static void applyTextFieldStyles(UikitTextInput bti, UikitFont largeFont) {
 
-        Image imgOnTextInputFocus = Resources.getInstance().getThemeImage(GraphicsResources.IMG_BUTTON_PATCH_HIGH);
-        Image imgTextInputEnabled = Resources.getInstance().getThemeImage(GraphicsResources.IMG_BUTTON_PATCH_HIGH);
+        Image imgOnTextInputFocus = Resources.getInstance().getThemeImage(GraphicsResources.IMG_HIGH_BG);
+        Image imgTextInputEnabled = Resources.getInstance().getThemeImage(GraphicsResources.IMG_BUTTON_PATCH);
 
 
         ComponentStyle[] styles = new ComponentStyle[2];

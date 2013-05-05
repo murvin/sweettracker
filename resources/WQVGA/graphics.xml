@@ -93,7 +93,7 @@
             <value file="menu_bar_tile.png"></value>	
         </resource> 
         <resource id="32" type="string" name="TXT_LIGHTBOX_COLOR">		
-            <value>3388901</value>	
+            <value>0</value>	
         </resource>
         <resource id="33" type="binary" name="IMG_BUTTON_PATCH">	
             <value file="btn_patch.png"></value>	

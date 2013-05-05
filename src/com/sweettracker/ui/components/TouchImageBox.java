@@ -33,7 +33,9 @@ public class TouchImageBox extends Panel implements ITouchEventListener {
         if (isOnFocus) {
             getStyle(true).addRenderer(highLightPainter);
         } else {
-            getStyle().getRenderers().removeElement(highLightPainter);
+            if(getStyle(true).getRenderers() != null){
+                getStyle().getRenderers().removeElement(highLightPainter);
+            }
         }
     }
 

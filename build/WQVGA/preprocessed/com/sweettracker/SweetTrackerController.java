@@ -208,11 +208,12 @@ public class SweetTrackerController extends Controller {
     private void showYesNoDialog(String title, String message) {
         int width = UiKitDisplay.getWidth() * 80 / 100;
         int height = width * 75 / 100;
+        int desc_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_DESC_TEXT_COLOR));
 
         AlertDialog dialog = new AlertDialog((UiKitDisplay.getWidth() - width) / 2, (UiKitDisplay.getHeight() - height) / 2, width, height, title);
         dialog.setTitle(title);
         dialog.setAlertText(message);
-        Utils.applyTextStyles(dialog);
+        Utils.applyTextStyles(dialog, 0, desc_color);
         dialog.setIcon(Resources.getInstance().getThemeImage(GraphicsResources.IMG_ICON_SMALL));
         dialog.setStyle(Utils.getDialogComponentStyle());
 
@@ -233,11 +234,13 @@ public class SweetTrackerController extends Controller {
     public void showAlertDialog(String title, String message) {
         int width = UiKitDisplay.getWidth() * 80 / 100;
         int height = width * 75 / 100;
+        int desc_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_DESC_TEXT_COLOR));
+
 
         AlertDialog dialog = new AlertDialog((UiKitDisplay.getWidth() - width) / 2, (UiKitDisplay.getHeight() - height) / 2, width, height, title);
         dialog.setTitle(title);
         dialog.setAlertText(message);
-        Utils.applyTextStyles(dialog);
+        Utils.applyTextStyles(dialog, 0, desc_color);
         dialog.setIcon(Resources.getInstance().getThemeImage(GraphicsResources.IMG_ICON_SMALL));
 
 
@@ -261,7 +264,8 @@ public class SweetTrackerController extends Controller {
         BitmapFont f = new BitmapFont(imgFont, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_MEDIUM, 0);
 
 
-        InputDialog dialog = new InputDialog((UiKitDisplay.getWidth() - width) / 2, (UiKitDisplay.getHeight() - height) / 2, width, height, false, false, title, TextField.ANY);
+        InputDialog dialog = new InputDialog((UiKitDisplay.getWidth() - width) / 2, (UiKitDisplay.getHeight() - height) / 2, width, height, false, false, message, TextField.ANY);
+        dialog.setTitle(title);
         dialog.setStyle(Utils.getDialogComponentStyle());
         dialog.setId(entryId);
 
@@ -290,10 +294,10 @@ public class SweetTrackerController extends Controller {
     }
 
     public void showPinCodeDialog() {
-        //#if QVGA
-//#         showInputDialog("title", "msg", INPUT_DIALOG_OK);
+        //#if FULL
+        showInputDialog("Some title", Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_MSG), INPUT_DIALOG_OK);
         //#else
-        showAlertDialog("", "Sorry, this feature is only available in the paid version.");
+//#         showAlertDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TITLE_UNAUTHORISED), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_DESC_UNAUTHORISED));
         //#endif 
     }
 }

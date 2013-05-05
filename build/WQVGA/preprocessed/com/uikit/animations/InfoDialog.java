@@ -26,6 +26,7 @@ public class InfoDialog extends Dialog {
         containerPanel.setSize(iWidth, iHeight);
         dialogWidth = iWidth;
 
+        containerPanel.getStyle(true).addRenderer(new BgColorPainter(0xc0c0c0));
         setIcon(ImageUtil.generateTransparentImage(22, 22, (byte) 100, 0x0));
     }
 
@@ -37,7 +38,7 @@ public class InfoDialog extends Dialog {
         title = str;
         if (titleTBox == null) {
             titleTBox = new UikitTextBox(iWidth * 90 / 100, str);
-           line = new Line(containerPanel.getWidth() - 20, 0);
+           line = new Line(containerPanel.getWidth() - 20, 0x082c4d);
             containerPanel.addComponent(titleTBox);
             containerPanel.addComponent(line);
         } else {
