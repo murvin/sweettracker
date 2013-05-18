@@ -17,6 +17,8 @@ import com.uikit.coreElements.TouchEventHandler;
 import com.uikit.coreElements.UiKitDisplay;
 import com.uikit.mvc.patterns.Controller;
 import com.uikit.mvc.patterns.Screen;
+import com.uikit.styles.TextStyle;
+import com.uikit.utils.UikitConstant;
 import java.io.IOException;
 import javax.microedition.lcdui.Font;
 import javax.microedition.lcdui.Image;
@@ -236,13 +238,11 @@ public class SweetTrackerController extends Controller {
         int height = width * 75 / 100;
         int desc_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_DESC_TEXT_COLOR));
 
-
         AlertDialog dialog = new AlertDialog((UiKitDisplay.getWidth() - width) / 2, (UiKitDisplay.getHeight() - height) / 2, width, height, title);
         dialog.setTitle(title);
         dialog.setAlertText(message);
         Utils.applyTextStyles(dialog, 0, desc_color);
         dialog.setIcon(Resources.getInstance().getThemeImage(GraphicsResources.IMG_ICON_SMALL));
-
 
         dialog.setStyle(Utils.getDialogComponentStyle());
         int gap = 10;
@@ -263,6 +263,17 @@ public class SweetTrackerController extends Controller {
         Image imgFont = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_MEDIUM);
         BitmapFont f = new BitmapFont(imgFont, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_MEDIUM, 0);
 
+        int desc_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_DESC_TEXT_COLOR));
+        Image imgFontDesc = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_SMALL);
+        BitmapFont descFont = new BitmapFont(imgFontDesc, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_SMALL, 0);
+
+        TextStyle txtStyleTitle = new TextStyle(f);
+        txtStyleTitle.setFontColour(0);
+        txtStyleTitle.setAlign(UikitConstant.HCENTER);
+
+        TextStyle txtStyleDesc = new TextStyle(descFont);
+        txtStyleDesc.setFontColour(desc_color);
+        txtStyleDesc.setAlign(UikitConstant.LEFT);
 
         InputDialog dialog = new InputDialog((UiKitDisplay.getWidth() - width) / 2, (UiKitDisplay.getHeight() - height) / 2, width, height, false, false, message, TextField.ANY);
         dialog.setTitle(title);
@@ -271,6 +282,9 @@ public class SweetTrackerController extends Controller {
 
         dialog.setIcon(Resources.getInstance().getThemeImage(GraphicsResources.IMG_ICON_SMALL));
         Utils.applyTextFieldStyles(dialog.getTextInput(), f);
+
+        dialog.setTitleTextStyle(txtStyleTitle);
+        dialog.setStyle(InputDialog.COMP_TEXT_LABEL, txtStyleDesc);
 
         UikitButton btnYes = Utils.getButton(Resources.getInstance().getText(GlobalResources.TXT_COMMON_OK), width * 40 / 100);
         btnYes.setId(INPUT_DIALOG_OK);
@@ -294,8 +308,8 @@ public class SweetTrackerController extends Controller {
     }
 
     public void showPinCodeDialog() {
-        //#if FULL
-//#         showInputDialog("A longer title", Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_MSG), INPUT_DIALOG_OK);
+        //#if FULL_VERSION
+//#         showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_MSG), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_MSG), INPUT_DIALOG_OK);
         //#else
         showAlertDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TITLE_UNAUTHORISED), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_DESC_UNAUTHORISED));
         //#endif 
