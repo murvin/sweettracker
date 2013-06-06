@@ -124,7 +124,7 @@ public class SweetTrackerController extends Controller {
             screen.x = 0;
             screen.y = 0;
         } else {
-            screen.y = topBar.getHeight();
+            screen.y = 0;
             if (previous_screen_id == SCREEN_SETTINGS) {
                 screen.x = -canvas.getWidth();
             } else {
@@ -160,10 +160,10 @@ public class SweetTrackerController extends Controller {
                 return new SplashScreen();
             }
             case SCREEN_HOME: {
-                return new HomeScreen(canvas.getWidth(), canvas.getHeight() - topBar.getHeight() - menuBar.getHeight());
+                return new HomeScreen();
             }
             case SCREEN_SETTINGS: {
-                return new SettingsScreen(canvas.getWidth(), canvas.getHeight() - topBar.getHeight() - menuBar.getHeight());
+                return new SettingsScreen();
             }
             default:
                 throw new IllegalStateException();

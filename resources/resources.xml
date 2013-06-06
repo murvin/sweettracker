@@ -390,6 +390,13 @@
             <value locale="fr-FR">Please enter your PIN.</value>	
             <value locale="it-IT">Please enter your PIN.</value>	
         </resource>
+        <resource id="62" type="string" name="TXT_DIALOG_PIN_TITLE">		
+            <value locale="en-GB">Authentication</value>	
+            <value locale="es-ES">Authentication</value>	
+            <value locale="de-DE">Authentication</value>	
+            <value locale="fr-FR">Authentication</value>	
+            <value locale="it-IT">Authentication</value>	
+        </resource>
     </set>
 </resources>
 

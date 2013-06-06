@@ -66,9 +66,11 @@ public class MenuItem extends Panel implements ITouchEventListener {
 
     private void focus(boolean isOnFocus) {
         if (isOnFocus) {
-            getStyle().addRenderer(highLightPainter);
+            getStyle(true).addRenderer(highLightPainter);
         } else {
-            getStyle().getRenderers().removeElement(highLightPainter);
+            if(getStyle(true).getRenderers() != null){
+                getStyle(true).getRenderers().removeElement(highLightPainter);
+            }
         }
     }
 

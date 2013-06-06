@@ -24,10 +24,9 @@ public class SettingsScreen extends SweetTrackerScreen {
     private BitmapFont font_title, font_desc;
     private int font_title_color, font_desc_color;
     private Settings settings;
-    private int vgap, padding;
+    private int vgap;
 
-    public SettingsScreen(int width, int height) {
-        super(width, height);
+    public SettingsScreen() {
         init();
     }
 
@@ -96,6 +95,10 @@ public class SettingsScreen extends SweetTrackerScreen {
         TargetLevelSettingsItem targetLevelSettingsItem = new TargetLevelSettingsItem(w, item_titles[3], item_desc[3], font_title, font_desc, font_title_color, font_desc_color, new Float(settings.getTargetLevel()), this);
         targetLevelSettingsItem.setEventListener(this);
         addComponent(targetLevelSettingsItem);
+        
+        updateOffsets();
+
+        getStyle(true).setPadding(topPadding + vgap, 0, bottomPadding + vgap, 0);
     }
 
     public void onComponentEvent(Component c, int e, Object o, int p) {

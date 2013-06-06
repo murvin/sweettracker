@@ -5,6 +5,7 @@ import com.sweettracker.utils.GlobalResources;
 import com.sweettracker.utils.GraphicsResources;
 import com.sweettracker.utils.Resources;
 import com.uikit.coreElements.Component;
+import com.uikit.coreElements.UiKitDisplay;
 import com.uikit.layout.GridLayout;
 import com.uikit.utils.UikitConstant;
 import javax.microedition.lcdui.Image;
@@ -15,6 +16,7 @@ public class HomeScreen extends SweetTrackerScreen {
     private String[] menu_labels;
     private int layout_vgap, layout_hgap;
     public static final int MENU_CLICK = 0xff01;
+    private int vgap;
 
     public HomeScreen(int w, int h) {
         super(w, h);
@@ -51,10 +53,12 @@ public class HomeScreen extends SweetTrackerScreen {
 
         layout_hgap = 0;
         layout_vgap = 0;
+        vgap = 2 * UiKitDisplay.getHeight() / 100;
     }
 
     private void initComponents() {
-        GridLayout l = new GridLayout(3, 2, iWidth / 2, iHeight / 3, layout_hgap, layout_vgap, UikitConstant.HCENTER | UikitConstant.VCENTER);
+        int viewPort = iHeight - (Resources.getInstance().getThemeImage(GraphicsResources.IMG_BAR_BG).getHeight() * 2);
+        GridLayout l = new GridLayout(3, 2, iWidth / 2, viewPort / 3, layout_hgap, layout_vgap, UikitConstant.HCENTER | UikitConstant.VCENTER);
         setLayout(l);
 
         for (int i = 0; i < menu_icons.length; i++) {
@@ -62,6 +66,9 @@ public class HomeScreen extends SweetTrackerScreen {
             item.setEventListener(this);
             addComponent(item);
         }
+        
+        updateOffsets();
+        getStyle(true).setPadding(topPadding + vgap, 0, bottomPadding + vgap, 0);
     }
 
     public void onComponentEvent(Component c, int e, Object o, int p) {

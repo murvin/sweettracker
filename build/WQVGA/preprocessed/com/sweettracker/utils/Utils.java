@@ -88,15 +88,12 @@ public class Utils {
         Image imgFont = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_MEDIUM);
         BitmapFont medFont = new BitmapFont(imgFont, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_MEDIUM, 0);
 
-
         TextStyle txtStyle = new TextStyle(medFont);
         txtStyle.setFontColour(title_color);
         txtStyle.setAlign(UikitConstant.HCENTER);
 
-
         Image imgFontDesc = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_SMALL);
         BitmapFont descFont = new BitmapFont(imgFontDesc, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_SMALL, 0);
-
 
         TextStyle txtStyleDesc = new TextStyle(descFont);
         txtStyleDesc.setFontColour(desc_color);
@@ -144,11 +141,10 @@ public class Utils {
         return button;
     }
 
-    public static void applyTextFieldStyles(UikitTextInput bti, UikitFont largeFont) {
+    public static void applyTextFieldStyles(UikitTextInput bti, UikitFont titleFont) {
 
         Image imgOnTextInputFocus = Resources.getInstance().getThemeImage(GraphicsResources.IMG_HIGH_BG);
         Image imgTextInputEnabled = Resources.getInstance().getThemeImage(GraphicsResources.IMG_BUTTON_PATCH);
-
 
         ComponentStyle[] styles = new ComponentStyle[2];
         ComponentStyle style_enabled = new ComponentStyle();
@@ -169,7 +165,7 @@ public class Utils {
 
         bti.setStyle(UikitTextInput.COMP_SELF, UikitTextInput.STATE_ENABLED, styles[0]);
         bti.setStyle(UikitTextInput.COMP_SELF, UikitTextInput.STATE_FOCUSED, styles[1]);
-        bti.setStyle(UikitTextInput.COMP_TEXTBOXTEXT, UikitTextInput.STATE_ENABLED, new TextStyle(largeFont));
+        bti.setStyle(UikitTextInput.COMP_TEXTBOXTEXT, UikitTextInput.STATE_ENABLED, new TextStyle(titleFont));
 
     }
 }
