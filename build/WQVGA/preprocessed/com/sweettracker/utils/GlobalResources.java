@@ -59,4 +59,9 @@ public final class GlobalResources {
     public static final int TXT_DIALOG_TITLE_UNAUTHORISED = 59;
     public static final int TXT_DIALOG_DESC_UNAUTHORISED = 60;
     public static final int TXT_DIALOG_PIN_MSG = 61;
+    public static final int TXT_DIALOG_PIN_TITLE = 62;
+    public static final int TXT_MAPKEY_TODAY = 63;
+    public static final int TXT_MAPKEY_CRITICAL = 64;
+    public static final int TXT_MAPKEY_NORMAL = 65;
+    public static final int TXT_MAPKEY_HIGH = 66;
 }

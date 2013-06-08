@@ -168,4 +168,65 @@ public class Utils {
         bti.setStyle(UikitTextInput.COMP_TEXTBOXTEXT, UikitTextInput.STATE_ENABLED, new TextStyle(titleFont));
 
     }
+    
+    public static String[] getMonthsText() {
+        return new String[]{
+                    Resources.getInstance().getText(GlobalResources.TXT_JAN), Resources.getInstance().getText(GlobalResources.TXT_FEB),
+                    Resources.getInstance().getText(GlobalResources.TXT_MAR), Resources.getInstance().getText(GlobalResources.TXT_APR),
+                    Resources.getInstance().getText(GlobalResources.TXT_MAY), Resources.getInstance().getText(GlobalResources.TXT_JUN),
+                    Resources.getInstance().getText(GlobalResources.TXT_JULY), Resources.getInstance().getText(GlobalResources.TXT_AUG),
+                    Resources.getInstance().getText(GlobalResources.TXT_SEP), Resources.getInstance().getText(GlobalResources.TXT_OCT),
+                    Resources.getInstance().getText(GlobalResources.TXT_NOV), Resources.getInstance().getText(GlobalResources.TXT_DEC)
+                };
+
+    }
+
+    public static String[] getDaysText() {
+        return new String[]{
+                    Resources.getInstance().getText(GlobalResources.TXT_MON), Resources.getInstance().getText(GlobalResources.TXT_TUE),
+                    Resources.getInstance().getText(GlobalResources.TXT_WED), Resources.getInstance().getText(GlobalResources.TXT_THURS),
+                    Resources.getInstance().getText(GlobalResources.TXT_FRI),
+                    Resources.getInstance().getText(GlobalResources.TXT_SAT),
+                    Resources.getInstance().getText(GlobalResources.TXT_SUN)
+                };
+    }
+
+    public static int getMonthLength(int year, int month) {
+        switch (month) {
+            case 0:
+                return 31;
+            case 1:
+                if (year % 400 == 0) {
+                    return 29;
+                } else if (year % 100 == 0) {
+                    return 28;
+                } else if (year % 4 == 0) {
+                    return 29;
+                } else {
+                    return 28;
+                }
+            case 2:
+                return 31;
+            case 3:
+                return 30;
+            case 4:
+                return 31;
+            case 5:
+                return 30;
+            case 6:
+                return 31;
+            case 7:
+                return 31;
+            case 8:
+                return 30;
+            case 9:
+                return 31;
+            case 10:
+                return 30;
+            case 11:
+                return 31;
+            default:
+                return 31;
+        }
+    }
 }

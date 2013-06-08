@@ -397,6 +397,34 @@
             <value locale="fr-FR">Authentication</value>	
             <value locale="it-IT">Authentication</value>	
         </resource>
+        <resource id="63" type="string" name="TXT_MAPKEY_TODAY">		
+            <value locale="en-GB">Today</value>	
+            <value locale="es-ES">Hoy</value>	
+            <value locale="de-DE">Heute</value>	
+            <value locale="fr-FR">Aujourd'hui</value>	
+            <value locale="it-IT">Oggi</value>	
+        </resource>
+        <resource id="64" type="string" name="TXT_MAPKEY_CRITICAL">		
+            <value locale="en-GB">Critical</value>	
+            <value locale="es-ES">Critical</value>	
+            <value locale="de-DE">Critical</value>	
+            <value locale="fr-FR">Critical</value>	
+            <value locale="it-IT">Critical</value>	
+        </resource>
+        <resource id="65" type="string" name="TXT_MAPKEY_NORMAL">		
+            <value locale="en-GB">Normal</value>	
+            <value locale="es-ES">Normal</value>	
+            <value locale="de-DE">Normal</value>	
+            <value locale="fr-FR">Normal</value>	
+            <value locale="it-IT">Normal</value>	
+        </resource>
+        <resource id="66" type="string" name="TXT_MAPKEY_HIGH">		
+            <value locale="en-GB">High</value>	
+            <value locale="es-ES">High</value>	
+            <value locale="de-DE">High</value>	
+            <value locale="fr-FR">High</value>	
+            <value locale="it-IT">High</value>	
+        </resource>
     </set>
 </resources>
 

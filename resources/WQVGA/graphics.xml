@@ -107,6 +107,33 @@
         <resource id="36" type="string" name="TXT_BUTTON_TEXT_COLOR">		
             <value>0</value>	
         </resource>
+        <resource id="37" type="binary" name="LEFT_ARROW">	
+            <value file="leftArrow.png"></value>	
+        </resource>
+        <resource id="37" type="binary" name="RIGHT_ARROW">	
+            <value file="rightArrow.png"></value>
+        </resource>    
+        <resource id="39" type="string" name="TXT_CAL_HEADER_TEXT_COLOR">		
+            <value>0</value>	
+        </resource>
+        <resource id="40" type="string" name="TXT_CAL_BORDER_COLOR">		
+            <value>11184810</value>	
+        </resource>
+        <resource id="41" type="string" name="TXT_MAPKEY_NORMAL_COLOR">		
+            <value>10079232</value>	
+        </resource>
+        <resource id="42" type="string" name="TXT_MAPKEY_TODAY_COLOR">		
+            <value>10601215</value>	
+        </resource>
+        <resource id="43" type="string" name="TXT_MAPKEY_CRITICAL_COLOR">		
+            <value>16729156</value>	
+        </resource>
+        <resource id="44" type="string" name="TXT_MAPKEY_HIGH_COLOR">		
+            <value>16759603</value>	
+        </resource>
+        <resource id="45" type="string" name="TXT_MAPKEY_TEXT_COLOR">		
+            <value>0</value>	
+        </resource>
     </set>
 </resources>
 

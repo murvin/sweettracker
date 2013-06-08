@@ -38,4 +38,13 @@ public final class GraphicsResources {
     public static final int IMG_BUTTON_PATCH_HIGH = 34;
     public static final int IMG_ICON_SMALL = 35;
     public static final int TXT_BUTTON_TEXT_COLOR = 36;
+    public static final int LEFT_ARROW = 37;
+    public static final int RIGHT_ARROW = 37;
+    public static final int TXT_CAL_HEADER_TEXT_COLOR = 39;
+    public static final int TXT_CAL_BORDER_COLOR = 40;
+    public static final int TXT_MAPKEY_NORMAL_COLOR = 41;
+    public static final int TXT_MAPKEY_TODAY_COLOR = 42;
+    public static final int TXT_MAPKEY_CRITICAL_COLOR = 43;
+    public static final int TXT_MAPKEY_HIGH_COLOR = 44;
+    public static final int TXT_MAPKEY_TEXT_COLOR = 45;
 }
