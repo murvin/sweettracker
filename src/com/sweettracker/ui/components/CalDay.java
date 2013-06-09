@@ -1,13 +1,15 @@
 package com.sweettracker.ui.components;
- 
+
+import com.sweettracker.utils.Utils;
+import com.uikit.coreElements.BitmapFont;
 import com.uikit.painters.BorderPainter;
 import com.uikit.painters.PatchPainter;
 import com.uikit.coreElements.Component;
 import com.uikit.coreElements.IFocusable;
 import com.uikit.coreElements.ITouchEventListener;
-import com.uikit.coreElements.UikitFont;
 
 import javax.microedition.lcdui.Graphics;
+import javax.microedition.lcdui.Image;
 
 public class CalDay extends Component implements IFocusable, ITouchEventListener {
 
@@ -15,16 +17,27 @@ public class CalDay extends Component implements IFocusable, ITouchEventListener
     private int fillColour;
     private boolean hasTopBorder;
     private boolean hasLeftBorder;
-    /** Bottom drawn if true */
+    /**
+     * Bottom drawn if true
+     */
     private boolean hasBotBorder;
-    /** Right border drawn if true */
+    /**
+     * Right border drawn if true
+     */
     private boolean hasRightBorder;
-    /** Day has background fill colour */
+    /**
+     * Day has background fill colour
+     */
     private boolean hasFillColour;
-    /** Calendar day */
+    /**
+     * Calendar day
+     */
     private String day;
     int d;
-    private UikitFont font;
+    private BitmapFont font;
+    private Image imgDay;
+    private int dayStrColour;
+    private boolean useBitmapFont;
     private final int BORDER_SIZE = 1;
     private final int FILL_GAP = 1;
     private PatchPainter patchPainter;
@@ -86,8 +99,14 @@ public class CalDay extends Component implements IFocusable, ITouchEventListener
         this.hasFillColour = hasFillColour;
     }
 
-    public void setFont(UikitFont font) {
+    public void setFont(BitmapFont font, int dayStrColour) {
         this.font = font;
+        this.dayStrColour = dayStrColour;
+        if (this.d != -1) {
+            this.imgDay = this.font.drawStringToImage(this.day);
+            this.imgDay = Utils.replaceColor(this.imgDay, dayStrColour);
+        }
+        this.useBitmapFont = true;
     }
 
     protected void drawCurrentFrame(Graphics g) {
@@ -98,9 +117,13 @@ public class CalDay extends Component implements IFocusable, ITouchEventListener
                     iHeight - ((hasBotBorder ? BORDER_SIZE * 2 : BORDER_SIZE) + (FILL_GAP * 2)));
         }
 
-        g.setColor(0x000000);
-        if (d != -1) {
-            font.drawString(g, day, (iWidth - font.stringWidth(day)) / 2, (iHeight - font.getHeight()) / 2, 20);
+        if (useBitmapFont && imgDay != null) {
+            g.drawImage(imgDay, (iWidth - imgDay.getWidth()) / 2, (iHeight - imgDay.getHeight()) / 2, 20);
+        } else {
+            g.setColor(dayStrColour);
+            if (d != -1) {
+                font.drawString(g, day, (iWidth - font.stringWidth(day)) / 2, (iHeight - font.getHeight()) / 2, 20);
+            }
         }
 
         if (isOnFocus) {

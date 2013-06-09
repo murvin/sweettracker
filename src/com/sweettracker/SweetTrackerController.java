@@ -2,6 +2,7 @@ package com.sweettracker;
 
 import com.sweettracker.model.Settings;
 import com.sweettracker.model.User;
+import com.sweettracker.ui.CalScreen;
 import com.sweettracker.ui.HomeScreen;
 import com.sweettracker.ui.SettingsScreen;
 import com.sweettracker.ui.SplashScreen;
@@ -35,6 +36,7 @@ public class SweetTrackerController extends Controller {
     public static final int SCREEN_SPLASH = 0x010;
     public static final int SCREEN_HOME = 0x011;
     public static final int SCREEN_SETTINGS = 0x012;
+    public static final int SCREEN_CAL = 0x013;
     // MENU CONSTANTS 
     public static final int MENU_EXIT = 0x101;
     public static final int MENU_BACK = 0x102;
@@ -114,6 +116,9 @@ public class SweetTrackerController extends Controller {
         } else if (screen instanceof SettingsScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_MENU_SETTINGS));
             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+        } else if (screen instanceof CalScreen){
+            topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_MENU_CAL));
+            menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
         }
 
         screen.enter();
@@ -125,7 +130,7 @@ public class SweetTrackerController extends Controller {
             screen.y = 0;
         } else {
             screen.y = 0;
-            if (previous_screen_id == SCREEN_SETTINGS) {
+            if (previous_screen_id == SCREEN_SETTINGS || previous_screen_id == SCREEN_CAL) {
                 screen.x = -canvas.getWidth();
             } else {
                 screen.x = canvas.getWidth();
@@ -165,6 +170,9 @@ public class SweetTrackerController extends Controller {
             case SCREEN_SETTINGS: {
                 return new SettingsScreen();
             }
+            case SCREEN_CAL:{
+                return new CalScreen();
+            }
             default:
                 throw new IllegalStateException();
         }
@@ -182,6 +190,8 @@ public class SweetTrackerController extends Controller {
             if (eventId == HomeScreen.MENU_CLICK) {
                 if (param == 3) {
                     navigateScreen(SCREEN_SETTINGS, false, null);
+                }else if(param == 1){
+                    navigateScreen(SCREEN_CAL, false, null);
                 }
             }
         } else if (c instanceof MenuBar) {

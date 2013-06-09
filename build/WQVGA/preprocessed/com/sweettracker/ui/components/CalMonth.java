@@ -14,7 +14,6 @@ import com.uikit.coreElements.ITouchEventListener;
 import com.uikit.coreElements.Panel;
 import com.uikit.coreElements.BitmapFont;
 
-import com.uikit.coreElements.UikitFont;
 import com.uikit.layout.GridLayout;
 
 import javax.microedition.lcdui.Font;
@@ -23,7 +22,7 @@ import javax.microedition.lcdui.Image;
 public class CalMonth extends Panel implements IMotionListener, ITouchEventListener {
 
     private int calBorderColour;
-    private UikitFont font;
+    private BitmapFont font;
     private int padding;
     private int cellDimension;
     /** The calendar day represented by this component */
@@ -36,6 +35,7 @@ public class CalMonth extends Panel implements IMotionListener, ITouchEventListe
     private int patchBorder;
     private PatchPainter patchPainter;
     private Image imgHighlight;
+    private int dayStrColour;
     private MotionEaseOutExpo mfx_slide;
     public static final int EXIT_FINISHED = 0x1101;
     public static final int ENTER_FINISHED = 0x1102;
@@ -43,15 +43,15 @@ public class CalMonth extends Panel implements IMotionListener, ITouchEventListe
     private int monthLength;
 
     public CalMonth(int width, int height, int day, int monthLength,
-            int[] fertileDays,
-            int[] periodDays,
-            int[] ovulationDay, IComponentEventListener cel, Image imgHighLight, int starOffset) {
+            int[] normalDays,
+            int[] criticalDays,
+            int[] highDays, IComponentEventListener cel, Image imgHighLight, int starOffset) {
         super(width, height);
         this.cel = cel;
         this.day = day;
-        this.normalDays = fertileDays;
-        this.criticalDays = periodDays;
-        this.highDays = ovulationDay;
+        this.normalDays = normalDays;
+        this.criticalDays = criticalDays;
+        this.highDays = highDays;
         this.imgHighlight = imgHighLight;
         this.startOffset = starOffset;
         this.monthLength = monthLength;
@@ -71,7 +71,8 @@ public class CalMonth extends Panel implements IMotionListener, ITouchEventListe
 
     private void initResources() {
         this.calBorderColour = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_CAL_BORDER_COLOR));
-       
+        this.dayStrColour = 0;
+        
         Image imgFont = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_SMALL);
         font = new BitmapFont(imgFont, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_SMALL, 0);
 
@@ -91,7 +92,7 @@ public class CalMonth extends Panel implements IMotionListener, ITouchEventListe
             calDay.setHasRightBorder((i % 7 == 0) ? true : i == count);
             calDay.setHasBotBorder(i > 21);
             calDay.setBorderColour(calBorderColour);
-            calDay.setFont(font);
+            calDay.setFont(font, this.dayStrColour);
 
             if (normalDays != null && i > startOffset && (i - startOffset) <= monthLength) {
                 for (int j = 0; j < normalDays.length; j++) {

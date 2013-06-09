@@ -47,4 +47,5 @@ public final class GraphicsResources {
     public static final int TXT_MAPKEY_CRITICAL_COLOR = 43;
     public static final int TXT_MAPKEY_HIGH_COLOR = 44;
     public static final int TXT_MAPKEY_TEXT_COLOR = 45;
+    public static final int IMG_HIGHLIGHT_PATCH = 46;
 }

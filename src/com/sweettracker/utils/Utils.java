@@ -229,4 +229,20 @@ public class Utils {
                 return 31;
         }
     }
+    
+     public static int getZellerDay(int year, int month, int day) {
+        month += 1;
+        if (month < 3) {
+            month += 12;
+            year -= 1;
+        }
+
+
+        int k = year % 100;
+        int j = year / 100;
+        int d = ((day + (((month + 1) * 26) / 10) + k + (k / 4) + (j / 4))
+                + (5 * j)) % 7;
+        return d;
+    }
+
 }

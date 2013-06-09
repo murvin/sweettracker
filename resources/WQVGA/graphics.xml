@@ -132,8 +132,11 @@
             <value>16759603</value>	
         </resource>
         <resource id="45" type="string" name="TXT_MAPKEY_TEXT_COLOR">		
-            <value>0</value>	
+            <value>5921370</value>	
         </resource>
+        <resource id="46" type="binary" name="IMG_HIGHLIGHT_PATCH">	
+            <value file="highlightPatch.png"></value>	
+        </resource> 
     </set>
 </resources>
 
