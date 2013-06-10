@@ -9,7 +9,7 @@ public class Settings implements ISerializable {
     private int glucose_unit;
     private float targetLevel;
     private Profile profile;
-    private String currentLocale;
+    private int currentLocale;
     private int currentTheme;
     private boolean hasShownTOSOnStartUp;
 
@@ -18,9 +18,10 @@ public class Settings implements ISerializable {
         profile.setName("Your name");
         profile.setPassword(1234);
 
-        currentLocale = "en-GB";
+        currentLocale = 3;
         currentTheme = 0;
         targetLevel = 5.5f;
+        glucose_unit =  Constants.UNIT_MMOL;
     }
 
     public void serialize(DataOutputStream dis) throws IOException {
@@ -33,7 +34,7 @@ public class Settings implements ISerializable {
             profile.serialize(dis);
         }
 
-        dis.writeUTF(currentLocale);
+        dis.writeInt(currentLocale);
         dis.writeInt(currentTheme);
         dis.writeBoolean(hasShownTOSOnStartUp);
     }
@@ -47,7 +48,7 @@ public class Settings implements ISerializable {
             profile.deserialize(dos);
         }
 
-        currentLocale = dos.readUTF();
+        currentLocale = dos.readInt();
         currentTheme = dos.readInt();
         hasShownTOSOnStartUp = dos.readBoolean();
     }
@@ -80,11 +81,11 @@ public class Settings implements ISerializable {
         this.profile = profile;
     }
 
-    public void setCurrentLocale(String currentLocale) {
+    public void setCurrentLocale(int currentLocale) {
         this.currentLocale = currentLocale;
     }
 
-    public String getCurrentLocale() {
+    public int getCurrentLocale() {
         return this.currentLocale;
     }
 

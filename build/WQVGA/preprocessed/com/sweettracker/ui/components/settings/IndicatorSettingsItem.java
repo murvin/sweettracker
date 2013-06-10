@@ -12,6 +12,7 @@ import javax.microedition.lcdui.Image;
 public abstract class IndicatorSettingsItem extends SettingsItem implements IComponentEventListener {
 
     private UikitImageBox imgBoxIndicator;
+    protected int currentSelIdx;
 
     public IndicatorSettingsItem(int w, String title, String desc, BitmapFont title_font, BitmapFont desc_font, int title_color, int desc_color, Object param, IComponentEventListener cel) {
         super(w, title, desc, title_font, desc_font, title_color, desc_color, param, cel);
@@ -36,5 +37,9 @@ public abstract class IndicatorSettingsItem extends SettingsItem implements ICom
 
     public void onComponentEvent(Component c, int e, Object o, int index) {
         moveIndicator(c.x + (c.getWidth() / 2));
+    }
+    
+    public int getCurrentSelIdx(){
+        return currentSelIdx;
     }
 }

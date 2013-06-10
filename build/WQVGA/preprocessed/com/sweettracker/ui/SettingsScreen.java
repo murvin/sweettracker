@@ -25,6 +25,9 @@ public class SettingsScreen extends SweetTrackerScreen {
     private int font_title_color, font_desc_color;
     private Settings settings;
     private int vgap;
+    
+    LanguageSettingsItem language_item;
+    UnitsSettingsItem units_item;
 
     public SettingsScreen() {
         init();
@@ -82,10 +85,10 @@ public class SettingsScreen extends SweetTrackerScreen {
         setLayout(new BoxLayout(UikitConstant.VERTICAL, vgap * 2));
         int w = iWidth - (padding * 2);
 
-        LanguageSettingsItem language_item = new LanguageSettingsItem(w, item_titles[0], item_desc[0], font_title, font_desc, font_title_color, font_desc_color, flags, this);
+        language_item = new LanguageSettingsItem(w, item_titles[0], item_desc[0], font_title, font_desc, font_title_color, font_desc_color, flags, this);
         addComponent(language_item);
 
-        UnitsSettingsItem units_item = new UnitsSettingsItem(w, item_titles[1], item_desc[1], font_title, font_desc, font_title_color, font_desc_color, null, this);
+        units_item = new UnitsSettingsItem(w, item_titles[1], item_desc[1], font_title, font_desc, font_title_color, font_desc_color, null, this);
         addComponent(units_item);
 
         PinCodeSettingsItem pincode_item = new PinCodeSettingsItem(w, item_titles[2], item_desc[2], font_title, font_desc, font_title_color, font_desc_color, null, this);
@@ -100,6 +103,11 @@ public class SettingsScreen extends SweetTrackerScreen {
 
         getStyle(true).setPadding(topPadding + vgap, 0, bottomPadding + vgap, 0);
     }
+    
+    private void updateSettings(){
+        language_item.moveIndicatorToIndx(settings.getCurrentLocale());
+        units_item.moveIndicatorToIndx(settings.getGlucoseUnit());
+    }
 
     public void onComponentEvent(Component c, int e, Object o, int p) {
         super.onComponentEvent(c, e, o, p);
@@ -111,5 +119,22 @@ public class SettingsScreen extends SweetTrackerScreen {
                 }
             }
         }
+    }
+
+    public void onEnter() {
+        updateSettings();
+    }
+    
+    public void saveSettings(){
+        settings.setCurrentLocale(language_item.getCurrentSelIdx());
+        settings.setGlucoseUnit(units_item.getCurrentSelIdx());
+        
+        try {
+            Database.getInstance().saveISerializable(settings, Database.SETTINGS);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        controller.navigateScreen(SweetTrackerController.SCREEN_HOME, false, null);
     }
 }

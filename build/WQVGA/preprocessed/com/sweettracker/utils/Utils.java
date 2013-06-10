@@ -28,15 +28,15 @@ public class Utils {
         switch (entryId) {
             case ENTRY_LOCALES: {
                 if (entryIndex == 0) {
-                    text.append("en-GB");
+                    text.append("it-IT");
                 } else if (entryIndex == 1) {
                     text.append("fr-FR");
                 } else if (entryIndex == 2) {
-                    text.append("it-IT");
-                } else if (entryIndex == 3) {
-                    text.append("de-DE");
-                } else if (entryIndex == 4) {
                     text.append("es-ES");
+                } else if (entryIndex == 3) {
+                    text.append("en-GB");
+                } else if (entryIndex == 4) {
+                    text.append("de-DE");
                 }
                 break;
             }

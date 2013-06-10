@@ -90,7 +90,7 @@ public class SweetTrackerController extends Controller {
         }
 
         try {
-            Resources.getInstance().initResources("GlobalResources", settings.getCurrentLocale());
+            Resources.getInstance().initResources("GlobalResources", Utils.getEntryText(Utils.ENTRY_LOCALES, settings.getCurrentLocale()));
             Resources.getInstance().initTheme("GraphicsResources", Utils.getEntryText(Utils.ENTRY_THEMES, settings.getCurrentTheme()));
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -113,12 +113,15 @@ public class SweetTrackerController extends Controller {
         if (screen instanceof HomeScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_LABEL_HOME));
             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_EXIT), MENU_EXIT);
+            menuBar.removeSoftKey(true);
         } else if (screen instanceof SettingsScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_MENU_SETTINGS));
             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            menuBar.setLsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_SAVE), MENU_SAVE);
         } else if (screen instanceof CalScreen){
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_MENU_CAL));
             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            menuBar.removeSoftKey(true);
         }
 
         screen.enter();
@@ -199,6 +202,8 @@ public class SweetTrackerController extends Controller {
                 navigateScreen(SCREEN_HOME, false, null);
             } else if (eventId == MENU_EXIT) {
                 confirmExit();
+            } else if (eventId == MENU_SAVE){
+                ((SettingsScreen)current_screen).saveSettings();
             }
         } else if (c instanceof UikitButton) {
             if (eventId == UikitButton.EVENT_RELEASED) {
