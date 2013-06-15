@@ -137,6 +137,18 @@
         <resource id="46" type="binary" name="IMG_HIGHLIGHT_PATCH">	
             <value file="highlightPatch.png"></value>	
         </resource> 
+        <resource id="47" type="binary" name="IMG_CAL_ICON">	
+            <value file="calendar_icon.png"></value>	
+        </resource>
+        <resource id="48" type="binary" name="IMG_TIME_ICON">	
+            <value file="time_icon.png"></value>	
+        </resource>
+        <resource id="49" type="binary" name="IMG_PEN_ICON">	
+            <value file="pen_icon.png"></value>	
+        </resource>
+        <resource id="50" type="string" name="TXT_LINE_SEPERATOR_COLOR">		
+            <value>4737096</value>	
+        </resource>
     </set>
 </resources>
 

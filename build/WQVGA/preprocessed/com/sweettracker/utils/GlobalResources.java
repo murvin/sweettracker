@@ -64,4 +64,5 @@ public final class GlobalResources {
     public static final int TXT_MAPKEY_CRITICAL = 64;
     public static final int TXT_MAPKEY_NORMAL = 65;
     public static final int TXT_MAPKEY_HIGH = 66;
+    public static final int TXT_MENU_ENTRY = 67;
 }

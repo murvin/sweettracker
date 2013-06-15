@@ -11,6 +11,8 @@ import com.uikit.styles.ComponentStyle;
 import com.uikit.styles.TextStyle;
 import com.uikit.utils.ImageUtil;
 import com.uikit.utils.UikitConstant;
+import java.util.Calendar;
+import java.util.Date;
 import javax.microedition.lcdui.Font;
 import javax.microedition.lcdui.Image;
 
@@ -168,27 +170,27 @@ public class Utils {
         bti.setStyle(UikitTextInput.COMP_TEXTBOXTEXT, UikitTextInput.STATE_ENABLED, new TextStyle(titleFont));
 
     }
-    
+
     public static String[] getMonthsText() {
         return new String[]{
-                    Resources.getInstance().getText(GlobalResources.TXT_JAN), Resources.getInstance().getText(GlobalResources.TXT_FEB),
-                    Resources.getInstance().getText(GlobalResources.TXT_MAR), Resources.getInstance().getText(GlobalResources.TXT_APR),
-                    Resources.getInstance().getText(GlobalResources.TXT_MAY), Resources.getInstance().getText(GlobalResources.TXT_JUN),
-                    Resources.getInstance().getText(GlobalResources.TXT_JULY), Resources.getInstance().getText(GlobalResources.TXT_AUG),
-                    Resources.getInstance().getText(GlobalResources.TXT_SEP), Resources.getInstance().getText(GlobalResources.TXT_OCT),
-                    Resources.getInstance().getText(GlobalResources.TXT_NOV), Resources.getInstance().getText(GlobalResources.TXT_DEC)
-                };
+            Resources.getInstance().getText(GlobalResources.TXT_JAN), Resources.getInstance().getText(GlobalResources.TXT_FEB),
+            Resources.getInstance().getText(GlobalResources.TXT_MAR), Resources.getInstance().getText(GlobalResources.TXT_APR),
+            Resources.getInstance().getText(GlobalResources.TXT_MAY), Resources.getInstance().getText(GlobalResources.TXT_JUN),
+            Resources.getInstance().getText(GlobalResources.TXT_JULY), Resources.getInstance().getText(GlobalResources.TXT_AUG),
+            Resources.getInstance().getText(GlobalResources.TXT_SEP), Resources.getInstance().getText(GlobalResources.TXT_OCT),
+            Resources.getInstance().getText(GlobalResources.TXT_NOV), Resources.getInstance().getText(GlobalResources.TXT_DEC)
+        };
 
     }
 
     public static String[] getDaysText() {
         return new String[]{
-                    Resources.getInstance().getText(GlobalResources.TXT_MON), Resources.getInstance().getText(GlobalResources.TXT_TUE),
-                    Resources.getInstance().getText(GlobalResources.TXT_WED), Resources.getInstance().getText(GlobalResources.TXT_THURS),
-                    Resources.getInstance().getText(GlobalResources.TXT_FRI),
-                    Resources.getInstance().getText(GlobalResources.TXT_SAT),
-                    Resources.getInstance().getText(GlobalResources.TXT_SUN)
-                };
+            Resources.getInstance().getText(GlobalResources.TXT_MON), Resources.getInstance().getText(GlobalResources.TXT_TUE),
+            Resources.getInstance().getText(GlobalResources.TXT_WED), Resources.getInstance().getText(GlobalResources.TXT_THURS),
+            Resources.getInstance().getText(GlobalResources.TXT_FRI),
+            Resources.getInstance().getText(GlobalResources.TXT_SAT),
+            Resources.getInstance().getText(GlobalResources.TXT_SUN)
+        };
     }
 
     public static int getMonthLength(int year, int month) {
@@ -229,8 +231,8 @@ public class Utils {
                 return 31;
         }
     }
-    
-     public static int getZellerDay(int year, int month, int day) {
+
+    public static int getZellerDay(int year, int month, int day) {
         month += 1;
         if (month < 3) {
             month += 12;
@@ -245,4 +247,12 @@ public class Utils {
         return d;
     }
 
+    public static com.sweettracker.model.Date getCurrentDate() {
+        Calendar c = Calendar.getInstance();
+        c.setTime(new Date());
+        int mnth = c.get(Calendar.MONTH);
+        int year = c.get(Calendar.YEAR);
+        int day = c.get(Calendar.DAY_OF_MONTH);
+        return new com.sweettracker.model.Date(day, mnth, year);
+    }
 }

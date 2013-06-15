@@ -11,6 +11,12 @@ public class Entry implements ISerializable {
     private int units;
     private float glucoseLevel;
     private String note;
+    private int levelRange; // normal, critical, high, none
+    
+    public static final int LEVEL_NONE = 0x000;
+    public static final int LEVEL_NORMAL = 0x001;
+    public static final int LEVEL_HIGH = 0x002;
+    public static final int LEVEL_CRITICAL = 0x003;
 
     public Entry(Date date, int timeInterval, int units, float glocuseLevel, String note) {
         setDate(date);
@@ -26,6 +32,7 @@ public class Entry implements ISerializable {
                 && (((Entry) obj).getTimeInterval() == this.timeInterval)
                 && (((Entry) obj).getUnits() == this.units)
                 && (((Entry) obj).getGlucoseLevel() == this.glucoseLevel)
+                && (((Entry) obj).getLevelRange() == this.levelRange)
                 && (((Entry) obj).getNote().equals(this.note)));
     }
 
@@ -61,7 +68,7 @@ public class Entry implements ISerializable {
         dos.writeInt(units);
         dos.writeFloat(glucoseLevel);
         dos.writeUTF(note == null ? "" : note);
-
+        dos.writeInt(this.levelRange);
     }
 
     public void deserialize(DataInputStream dis) throws IOException {
@@ -71,6 +78,7 @@ public class Entry implements ISerializable {
         this.units = dis.readInt();
         this.glucoseLevel = dis.readFloat();
         this.note = dis.readUTF();
+        this.levelRange = dis.readInt();
     }
 
     /**
@@ -136,5 +144,20 @@ public class Entry implements ISerializable {
      */
     public final void setNote(String note) {
         this.note = note;
+    }
+    
+    public void setLevelRange (int levelRange){
+        if (levelRange != LEVEL_NONE
+            && levelRange != LEVEL_NORMAL
+             && levelRange != LEVEL_HIGH
+                && levelRange != LEVEL_CRITICAL){
+              throw new IllegalArgumentException();
+        }
+        
+        this.levelRange = levelRange;
+    }
+    
+    public int getLevelRange(){
+        return this.levelRange;
     }
 }

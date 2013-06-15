@@ -8,11 +8,11 @@ public class User implements ISerializable {
 
     private Entries entries;
 
-    public Entries getCycle() {
+    public Entries getEntries() {
         return this.entries;
     }
 
-    public void setCycle(Entries cycle) {
+    public void setEntries(Entries cycle) {
         this.entries = cycle;
     }
 

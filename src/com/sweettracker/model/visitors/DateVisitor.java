@@ -1,7 +1,7 @@
 package com.sweettracker.model.visitors;
 
 import com.sweettracker.model.Entry;
-import java.util.Date;
+import com.sweettracker.model.Date;
 
 public class DateVisitor implements IVisitor {
 
@@ -18,7 +18,7 @@ public class DateVisitor implements IVisitor {
         }
     }
 
-    public Entry getEntries() {
+    public Entry getEntry() {
         return this.entry;
     }
 }

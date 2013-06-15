@@ -425,6 +425,13 @@
             <value locale="fr-FR">High</value>	
             <value locale="it-IT">High</value>	
         </resource>
+        <resource id="67" type="string" name="TXT_MENU_ENTRY">		
+            <value locale="en-GB">Entry</value>	
+            <value locale="es-ES">Entry</value>	
+            <value locale="de-DE">Entry</value>	
+            <value locale="fr-FR">Entry</value>	
+            <value locale="it-IT">Entry</value>	
+        </resource>
     </set>
 </resources>
 

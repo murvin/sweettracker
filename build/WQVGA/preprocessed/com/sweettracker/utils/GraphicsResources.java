@@ -48,4 +48,8 @@ public final class GraphicsResources {
     public static final int TXT_MAPKEY_HIGH_COLOR = 44;
     public static final int TXT_MAPKEY_TEXT_COLOR = 45;
     public static final int IMG_HIGHLIGHT_PATCH = 46;
+    public static final int IMG_CAL_ICON = 47;
+    public static final int IMG_TIME_ICON = 48;
+    public static final int IMG_PEN_ICON = 49;
+    public static final int TXT_LINE_SEPERATOR_COLOR = 50;
 }
