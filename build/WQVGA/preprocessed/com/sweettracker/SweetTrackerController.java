@@ -39,7 +39,7 @@ public class SweetTrackerController extends Controller {
     public static final int SCREEN_HOME = 0x011;
     public static final int SCREEN_SETTINGS = 0x012;
     public static final int SCREEN_CAL = 0x013;
-    private static final int SCREEN_ENTRY = 0x014;
+    public static final int SCREEN_ENTRY = 0x014;
     // MENU CONSTANTS 
     public static final int MENU_EXIT = 0x101;
     public static final int MENU_BACK = 0x102;

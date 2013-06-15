@@ -1,12 +1,16 @@
 package com.sweettracker.ui;
 
+import com.sweettracker.model.Constants;
 import com.sweettracker.model.Settings;
 import com.sweettracker.model.User;
 import com.sweettracker.model.Date;
 import com.sweettracker.model.Entries;
+import com.sweettracker.model.Entry;
 import com.sweettracker.model.visitors.DateVisitor;
 import com.sweettracker.ui.components.EntryItem;
+import com.sweettracker.ui.components.LevelEntryItem;
 import com.sweettracker.utils.Database;
+import com.sweettracker.utils.GlobalResources;
 import com.sweettracker.utils.GraphicsResources;
 import com.sweettracker.utils.Resources;
 import com.sweettracker.utils.Utils;
@@ -14,9 +18,10 @@ import com.uikit.coreElements.BitmapFont;
 import com.uikit.coreElements.Panel;
 import com.uikit.coreElements.UiKitDisplay;
 import com.uikit.layout.BoxLayout;
+import com.uikit.painters.BgColorPainter;
+import com.uikit.painters.BorderPainter;
 import com.uikit.painters.PatchPainter;
 import com.uikit.utils.UikitConstant;
-import java.io.IOException;
 import javax.microedition.lcdui.Font;
 import javax.microedition.lcdui.Image;
 
@@ -26,11 +31,14 @@ public class EntryScreen extends SweetTrackerScreen {
     private Date date;
     private Image[] icons;
     private Image imgNewEntryBg;
-    private BitmapFont font_title, font_desc;
-    private int font_title_color, font_desc_color, line_seperator_color;
+    private BitmapFont font_descript, font_guide;
+    private int font_guide_color, font_desc_color, line_seperator_color;
+    private int normal_bg_color, high_bg_color, critical_bg_color;
     private Settings settings;
     private User user;
+    private Entry entry;
     private Panel container;
+    private LevelEntryItem entryLevel;
     private EntryItem entryCal, entryTime, entryNote;
 
     public EntryScreen(Date date) {
@@ -51,16 +59,19 @@ public class EntryScreen extends SweetTrackerScreen {
         };
 
         imgNewEntryBg = Resources.getInstance().getThemeImage(GraphicsResources.IMG_HIGH_BG);
+        normal_bg_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_NORMAL_COLOR));
+        high_bg_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_HIGH_COLOR));
+        critical_bg_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_CRITICAL_COLOR));
 
         line_seperator_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_LINE_SEPERATOR_COLOR));
 
-        font_title_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_TITLE_TEXT_COLOR));
-        Image imgFontTitle = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_MEDIUM);
-        font_title = new BitmapFont(imgFontTitle, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_MEDIUM, 0);
+        font_desc_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_TITLE_TEXT_COLOR));
+        Image imgFontDesc = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_MEDIUM);
+        font_descript = new BitmapFont(imgFontDesc, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_MEDIUM, 0);
 
-        font_desc_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_DESC_TEXT_COLOR));
-        Image imgFontDesc = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_SMALL);
-        font_desc = new BitmapFont(imgFontDesc, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_SMALL, 0);
+        font_guide_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_DESC_TEXT_COLOR));
+        Image imgFontGuide = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_SMALL);
+        font_guide = new BitmapFont(imgFontGuide, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_SMALL, 0);
         padding = 4 * UiKitDisplay.getWidth() / 100;
 
         vgap = 2 * UiKitDisplay.getHeight() / 100;
@@ -73,37 +84,111 @@ public class EntryScreen extends SweetTrackerScreen {
 
         try {
             user = (User) Database.getInstance().retrieveISerializable(Database.USER);
+            Entries entries = user.getEntries();
+            if (entries != null) {
+                DateVisitor d = new DateVisitor(this.date);
+                entries.accept(d);
+
+                entry = d.getEntry();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void setContainerBg(Entries entries) {
-        if (entries == null) {
+    private void setContainerBg() {
+        if (entry == null) {
             container.getStyle(true).addRenderer(new PatchPainter(imgNewEntryBg, 2, 2, 2, 2));
         } else {
-            DateVisitor d = new DateVisitor(this.date);
-            try {
-                entries.accept(d);
-            } catch (IOException ex) {
-                ex.printStackTrace();
+            int levelRange = entry.getLevelRange();
+            switch (levelRange) {
+                case Entry.LEVEL_NORMAL: {
+                    container.getStyle(true).addRenderer(new BgColorPainter(normal_bg_color));
+                    break;
+                }
+                case Entry.LEVEL_HIGH: {
+                    container.getStyle(true).addRenderer(new BgColorPainter(high_bg_color));
+                    break;
+                }
+                case Entry.LEVEL_CRITICAL: {
+                    container.getStyle(true).addRenderer(new BgColorPainter(critical_bg_color));
+                    break;
+                }
             }
+            BorderPainter borderP = new BorderPainter();
+            borderP.setBorderColor(line_seperator_color);
+            borderP.setBorderSize(1);
+            container.getStyle().addRenderer(borderP);
         }
     }
 
+    private String getEntryTimeLevelDesc() {
+        if (entry == null) {
+            return Resources.getInstance().getText(GlobalResources.TXT_LEVEL_LESS_2_HOURS);
+        } else {
+            String entryTimeDesc = null;
+            switch (entry.getTimeInterval()) {
+                case Entry.TIME_LESS_2_HOURS: {
+                    entryTimeDesc = Resources.getInstance().getText(GlobalResources.TXT_LEVEL_LESS_2_HOURS);
+                    break;
+                }
+                case Entry.TIME_BETWEEEN_2_AND_8_HOURS: {
+                    entryTimeDesc = Resources.getInstance().getText(GlobalResources.TXT_LEVEL_LESS_8_HOURS);
+                    break;
+                }
+                case Entry.TIME_GREATER_8_HOURS: {
+                    entryTimeDesc = Resources.getInstance().getText(GlobalResources.TXT_LEVEL_MORE_8_HOURS);
+                    break;
+                }
+            }
+            return entryTimeDesc;
+        }
+    }
+
+    private String getEntryNote() {
+        if (entry == null) {
+            return Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_ADD_NOTE);
+        } else {
+            return entry.getNote();
+        }
+    }
+
+    private String getEntryDate() {
+        if (entry == null) {
+            return Utils.getFormattedDate(date);
+        } else {
+            return Utils.getFormattedDate(entry.getDate());
+        }
+    }
+    
+    private float getEntryLevel(){
+        return entry == null ? 0.0f : entry.getGlucoseLevel();
+    }
+    
+    private String getUnit(){
+        return settings.getGlucoseUnit() == Constants.UNIT_MG ? "(mg/dL)" : "(mmol/L)";
+    }
+
     private void initComponents() {
-        container = new Panel(iWidth - (2 * vgap), iHeight - bottomPadding - topPadding - (vgap * 2));
-        
-        setContainerBg(user.getEntries());
+        int topOffset = Resources.getInstance().getThemeImage(GraphicsResources.IMG_BAR_BG).getHeight();
+        container = new Panel(iWidth - (2 * vgap), iHeight - topOffset - topOffset - (vgap * 2));
+
+        setContainerBg();
         addComponent(container);
         container.setLayout(new BoxLayout(UikitConstant.VERTICAL, vgap));
+
+        entryLevel = new LevelEntryItem(container.getWidth(), (int) (iHeight/3.0), getEntryLevel(), getUnit(), Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color);
+        container.addComponent(entryLevel);
         
-        entryCal = new EntryItem(container.getWidth(), icons[0], "Cal", "Swipe item to edit", font_title, font_desc, line_seperator_color, this);
+        entryCal = new EntryItem(container.getWidth(), icons[0], getEntryDate(), Resources.getInstance().getText(GlobalResources.TXT_SWIPE_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, line_seperator_color, this);
         container.addComponent(entryCal);
-        
-        entryTime = new EntryItem(container.getWidth(), icons[1], "time", "Swipe item to edit", font_title, font_desc, line_seperator_color, this);
+
+        entryTime = new EntryItem(container.getWidth(), icons[1], getEntryTimeLevelDesc(), Resources.getInstance().getText(GlobalResources.TXT_SWIPE_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, line_seperator_color, this);
         container.addComponent(entryTime);
-        
+
+        entryNote = new EntryItem(container.getWidth(), icons[2], getEntryNote(), Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, line_seperator_color, this);
+        container.addComponent(entryNote);
+
         updateOffsets();
         getStyle(true).setPadding(topPadding + vgap, 0, bottomPadding + vgap, 0);
     }

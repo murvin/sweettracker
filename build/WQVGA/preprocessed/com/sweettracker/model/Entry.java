@@ -17,6 +17,11 @@ public class Entry implements ISerializable {
     public static final int LEVEL_NORMAL = 0x001;
     public static final int LEVEL_HIGH = 0x002;
     public static final int LEVEL_CRITICAL = 0x003;
+    
+    
+    public static final int TIME_LESS_2_HOURS = 0x013;
+    public static final int TIME_BETWEEEN_2_AND_8_HOURS = 0x014;
+    public static final int TIME_GREATER_8_HOURS = 0x015;
 
     public Entry(Date date, int timeInterval, int units, float glocuseLevel, String note) {
         setDate(date);
@@ -92,7 +97,7 @@ public class Entry implements ISerializable {
      * @param timeInterval the timeInterval to set
      */
     public final void setTimeInterval(int timeInterval) {
-        if (timeInterval != Constants.TIME_LESS_2_HOURS && timeInterval != Constants.TIME_BETWEEEN_2_AND_8_HOURS && timeInterval != Constants.TIME_GREATER_8_HOURS) {
+        if (timeInterval != TIME_LESS_2_HOURS && timeInterval != TIME_BETWEEEN_2_AND_8_HOURS && timeInterval != TIME_GREATER_8_HOURS) {
             throw new IllegalArgumentException();
         }
         this.timeInterval = timeInterval;

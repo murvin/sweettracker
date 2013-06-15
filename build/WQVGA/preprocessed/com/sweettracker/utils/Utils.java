@@ -253,6 +253,18 @@ public class Utils {
         int mnth = c.get(Calendar.MONTH);
         int year = c.get(Calendar.YEAR);
         int day = c.get(Calendar.DAY_OF_MONTH);
-        return new com.sweettracker.model.Date(day, mnth, year);
+        int hour = c.get(Calendar.HOUR);
+        int mins = c.get(Calendar.MINUTE);
+        int am_pm = c.get(Calendar.AM_PM);
+        return new com.sweettracker.model.Date(day, mnth, year, hour, mins, am_pm);
+    }
+    
+    public static String getFormattedDate(com.sweettracker.model.Date date){
+        StringBuffer s = new StringBuffer();
+        s.append(getMonthsText()[date.getMonth()]);
+        s.append(" ").append(date.getDay()).append(", ").append(date.getYear());
+        s.append(", ").append(date.getHour()).append(":").append(date.getMins());
+        s.append(" ").append(date.getAmPm() == Calendar.AM ? "AM" : "PM");
+        return s.toString();
     }
 }

@@ -65,4 +65,10 @@ public final class GlobalResources {
     public static final int TXT_MAPKEY_NORMAL = 65;
     public static final int TXT_MAPKEY_HIGH = 66;
     public static final int TXT_MENU_ENTRY = 67;
+    public static final int TXT_LEVEL_LESS_2_HOURS = 68;
+    public static final int TXT_LEVEL_LESS_8_HOURS = 69;
+    public static final int TXT_LEVEL_MORE_8_HOURS = 70;
+    public static final int TXT_TAP_TO_EDIT = 71;
+    public static final int TXT_SWIPE_TO_EDIT = 72;
+    public static final int TXT_TAP_TO_ADD_NOTE = 73;
 }

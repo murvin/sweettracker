@@ -9,6 +9,7 @@ public class Line extends Component {
 
     public Line(int w, int color) {
         super(w, 1);
+        this.color = color;
     }
 
     protected void drawCurrentFrame(Graphics g) {

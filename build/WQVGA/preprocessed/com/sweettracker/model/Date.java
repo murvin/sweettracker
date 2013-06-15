@@ -10,6 +10,10 @@ public class Date implements ISerializable, IComparable {
     private int day;
     private int month;
     private int year;
+    
+    private int hour;
+    private int mins;
+    private int am_pm;
 
     /**
      * Creates a new date with the given parameters.
@@ -18,10 +22,13 @@ public class Date implements ISerializable, IComparable {
      * @param month         the month (1-12)
      * @param year          the year (####)
      */
-    public Date(int day, int month, int year) {
+    public Date(int day, int month, int year, int hour, int mins, int am_pm) {
         this.day = day;
         this.month = month;
         this.year = year;
+        this.hour = hour;
+        this.mins = mins;
+        this.am_pm = am_pm;
     }
 
     public Date() {
@@ -75,6 +82,18 @@ public class Date implements ISerializable, IComparable {
     public int getYear() {
         return this.year;
     }
+    
+    public int getHour(){
+        return this.hour;
+    }
+    
+    public int getMins(){
+        return this.mins;
+    }
+    
+    public int getAmPm(){
+        return this.am_pm;
+    }
 
     public boolean equals(Object obj) {
         return ((obj instanceof Date)
@@ -99,12 +118,18 @@ public class Date implements ISerializable, IComparable {
         dos.writeInt(day);
         dos.writeInt(month);
         dos.writeInt(year);
+        dos.writeInt(hour);
+        dos.writeInt(mins);
+        dos.writeInt(am_pm);
     }
 
     public void deserialize(DataInputStream dis) throws IOException {
         day = dis.readInt();
         month = dis.readInt();
         year = dis.readInt();
+        hour = dis.readInt();
+        mins = dis.readInt();
+        am_pm = dis.readInt();
     }
 
     public int compareTo(Object comparable) {

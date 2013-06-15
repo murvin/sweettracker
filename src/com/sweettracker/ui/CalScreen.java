@@ -162,7 +162,7 @@ public class CalScreen extends SweetTrackerScreen {
         } else if (c instanceof CalDay) {
             int d = Integer.parseInt((String) o);
             if (d != -1) {
-                com.sweettracker.model.Date date = new com.sweettracker.model.Date(d, mnth, year);
+//                com.sweettracker.model.Date date = new com.sweettracker.model.Date(d, mnth, year);
 //                controller.navigateScreen(InBloomController.SCREEN_ENTRY, true,
 //                        new Object[]{Utils.getEntriesForDate(date), date, new Boolean(isPeriodToday)});
             }
