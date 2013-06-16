@@ -12,16 +12,6 @@ public class Entry implements ISerializable {
     private float glucoseLevel;
     private String note;
     private int levelRange; // normal, critical, high, none
-    
-    public static final int LEVEL_NONE = 0x000;
-    public static final int LEVEL_NORMAL = 0x001;
-    public static final int LEVEL_HIGH = 0x002;
-    public static final int LEVEL_CRITICAL = 0x003;
-    
-    
-    public static final int TIME_LESS_2_HOURS = 0x013;
-    public static final int TIME_BETWEEEN_2_AND_8_HOURS = 0x014;
-    public static final int TIME_GREATER_8_HOURS = 0x015;
 
     public Entry(Date date, int timeInterval, int units, float glocuseLevel, String note) {
         setDate(date);
@@ -29,6 +19,14 @@ public class Entry implements ISerializable {
         setUnits(units);
         setGlucoseLevel(glucoseLevel);
         setNote(note);
+    }
+
+    public Entry(Date date, int units) {    // Default entry settings
+        setDate(date);
+        setTimeInterval(Constants.TIME_LESS_2_HOURS);
+        setUnits(units);
+        setGlucoseLevel(0.0f);
+        setNote(null);
     }
 
     public boolean equals(Object obj) {
@@ -39,6 +37,22 @@ public class Entry implements ISerializable {
                 && (((Entry) obj).getGlucoseLevel() == this.glucoseLevel)
                 && (((Entry) obj).getLevelRange() == this.levelRange)
                 && (((Entry) obj).getNote().equals(this.note)));
+    }
+
+    public int getNextTimeInterval() {
+        if (timeInterval + 1 <= Constants.TIME_BEFORE_MEAL) {
+            return timeInterval + 1;
+        } else {
+            return timeInterval;
+        }
+    }
+
+    public int getPreviousTimeInterval() {
+        if (timeInterval - 1 >= Constants.TIME_LESS_2_HOURS) {
+            return timeInterval - 1;
+        } else {
+            return timeInterval;
+        }
     }
 
     public int hashCode() {
@@ -97,7 +111,7 @@ public class Entry implements ISerializable {
      * @param timeInterval the timeInterval to set
      */
     public final void setTimeInterval(int timeInterval) {
-        if (timeInterval != TIME_LESS_2_HOURS && timeInterval != TIME_BETWEEEN_2_AND_8_HOURS && timeInterval != TIME_GREATER_8_HOURS) {
+        if (timeInterval != Constants.TIME_LESS_2_HOURS && timeInterval != Constants.TIME_BEFORE_MEAL) {
             throw new IllegalArgumentException();
         }
         this.timeInterval = timeInterval;
@@ -150,19 +164,19 @@ public class Entry implements ISerializable {
     public final void setNote(String note) {
         this.note = note;
     }
-    
-    public void setLevelRange (int levelRange){
-        if (levelRange != LEVEL_NONE
-            && levelRange != LEVEL_NORMAL
-             && levelRange != LEVEL_HIGH
-                && levelRange != LEVEL_CRITICAL){
-              throw new IllegalArgumentException();
+
+    public void setLevelRange(int levelRange) {
+        if (levelRange != Constants.LEVEL_NONE
+                && levelRange != Constants.LEVEL_NORMAL
+                && levelRange != Constants.LEVEL_HIGH
+                && levelRange != Constants.LEVEL_CRITICAL) {
+            throw new IllegalArgumentException();
         }
-        
+
         this.levelRange = levelRange;
     }
-    
-    public int getLevelRange(){
+
+    public int getLevelRange() {
         return this.levelRange;
     }
 }

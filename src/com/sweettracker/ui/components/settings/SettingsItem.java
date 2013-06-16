@@ -14,8 +14,8 @@ public abstract class SettingsItem extends Panel {
 
     protected String title;
     protected String desc;
-    private BitmapFont title_font, desc_font;
-    private int title_color, desc_color;
+    protected BitmapFont title_font, desc_font;
+    protected int title_color, desc_color;
     private int vgap;
     protected Object param;
 

@@ -439,19 +439,12 @@
             <value locale="fr-FR">&lt; 2 hrs after meal</value>	
             <value locale="it-IT">&lt; 2 hrs after meal</value>	
         </resource>
-        <resource id="69" type="string" name="TXT_LEVEL_LESS_8_HOURS">		
-            <value locale="en-GB">2 - 8 hrs after meal</value>	
-            <value locale="es-ES">2 - 8 hrs after meal</value>	
-            <value locale="de-DE">2 - 8 hrs after meal</value>	
-            <value locale="fr-FR">2 - 8 hrs after meal</value>	
-            <value locale="it-IT">2 - 8 hrs after meal</value>	
-        </resource>
-        <resource id="70" type="string" name="TXT_LEVEL_MORE_8_HOURS">		
-            <value locale="en-GB">&gt; 8 hrs after meal</value>	
-            <value locale="es-ES">&gt; 8 hrs after meal</value>	
-            <value locale="de-DE">&gt; 8 hrs after meal</value>	
-            <value locale="fr-FR">&gt; 8 hrs after meal</value>	
-            <value locale="it-IT">&gt; 8 hrs after meal</value>	
+        <resource id="69" type="string" name="TXT_LEVEL_BEFORE_MEAL">		
+            <value locale="en-GB">Before meal</value>	
+            <value locale="es-ES">Before meal</value>	
+            <value locale="de-DE">Before meal</value>	
+            <value locale="fr-FR">Before meal</value>	
+            <value locale="it-IT">Before meal</value>	
         </resource>
         <resource id="71" type="string" name="TXT_TAP_TO_EDIT">		
             <value locale="en-GB">Tap item to edit.</value>	
@@ -461,11 +454,11 @@
             <value locale="it-IT">Tap item to edit.</value>	
         </resource>
         <resource id="72" type="string" name="TXT_SWIPE_TO_EDIT">		
-            <value locale="en-GB">Swipe letf-right to edit.</value>	
-            <value locale="es-ES">Swipe letf-right to edit.</value>	
-            <value locale="de-DE">Swipe letf-right to edit.</value>	
-            <value locale="fr-FR">Swipe letf-right to edit.</value>	
-            <value locale="it-IT">Swipe letf-right to edit.</value>	
+            <value locale="en-GB">Swipe letf-right to change.</value>	
+            <value locale="es-ES">Swipe letf-right to change.</value>	
+            <value locale="de-DE">Swipe letf-right to change.</value>	
+            <value locale="fr-FR">Swipe letf-right to change.</value>	
+            <value locale="it-IT">Swipe letf-right to change.</value>	
         </resource>
         <resource id="73" type="string" name="TXT_TAP_TO_ADD_NOTE">		
             <value locale="en-GB">Additional note</value>	
@@ -473,6 +466,41 @@
             <value locale="de-DE">Additional note</value>	
             <value locale="fr-FR">Additional note</value>	
             <value locale="it-IT">Additional note</value>	
+        </resource>
+        <resource id="74" type="string" name="TXT_SETTINGS_DIABETES_TYPE_TITLE">		
+            <value locale="en-GB">Diabetes Type</value>	
+            <value locale="es-ES">Diabetes Type</value>	
+            <value locale="de-DE">Diabetes Type</value>	
+            <value locale="fr-FR">Diabetes Type</value>	
+            <value locale="it-IT">Diabetes Type</value>	
+        </resource>
+        <resource id="75" type="string" name="TXT_SETTINGS_DIABETES_TYPE_DESC">		
+            <value locale="en-GB">Indicates if your diabetic.</value>	
+            <value locale="es-ES">Indicates if your diabetic.</value>	
+            <value locale="de-DE">Indicates if your diabetic.</value>	
+            <value locale="fr-FR">Indicates if your diabetic.</value>	
+            <value locale="it-IT">Indicates if your diabetic.</value>	
+        </resource>
+         <resource id="76" type="string" name="TXT_SETTINGS_DIABETES_TYPE_NONE">		
+            <value locale="en-GB">None</value>	
+            <value locale="es-ES">None</value>	
+            <value locale="de-DE">None</value>	
+            <value locale="fr-FR">None</value>	
+            <value locale="it-IT">None</value>	
+        </resource>
+         <resource id="77" type="string" name="TXT_SETTINGS_DIABETES_TYPE_ONE">		
+            <value locale="en-GB">Type 1</value>	
+            <value locale="es-ES">Type 1</value>	
+            <value locale="de-DE">Type 1</value>	
+            <value locale="fr-FR">Type 1</value>	
+            <value locale="it-IT">Type 1</value>	
+        </resource>
+         <resource id="78" type="string" name="TXT_SETTINGS_DIABETES_TYPE_TWO">		
+            <value locale="en-GB">Type 2</value>	
+            <value locale="es-ES">Type 2</value>	
+            <value locale="de-DE">Type 2</value>	
+            <value locale="fr-FR">Type 2</value>	
+            <value locale="it-IT">Type 2</value>	
         </resource>
     </set>
 </resources>

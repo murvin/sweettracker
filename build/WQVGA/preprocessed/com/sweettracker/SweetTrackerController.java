@@ -217,7 +217,11 @@ public class SweetTrackerController extends Controller {
             } else if (eventId == MENU_EXIT) {
                 confirmExit();
             } else if (eventId == MENU_SAVE){
-                ((SettingsScreen)current_screen).saveSettings();
+                if (current_screen instanceof SettingsScreen) {
+                    ((SettingsScreen)current_screen).saveSettings();    
+                }else if (current_screen instanceof EntryScreen){
+                    ((EntryScreen)current_screen).saveEntry();
+                }
             }
         } else if (c instanceof UikitButton) {
             if (eventId == UikitButton.EVENT_RELEASED) {

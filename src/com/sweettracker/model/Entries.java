@@ -19,7 +19,7 @@ public class Entries implements ISerializable {
         return this.entriesList;
     }
 
-    public void addEntries(Entry entry) {
+    public void addEntry(Entry entry) {
         if (this.entriesList == null) {
             this.entriesList = new Vector();
             this.entriesList.addElement(entry);

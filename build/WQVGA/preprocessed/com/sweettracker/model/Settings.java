@@ -8,6 +8,7 @@ public class Settings implements ISerializable {
 
     private int glucose_unit;
     private float targetLevel;
+    private int diabetes_type;
     private Profile profile;
     private int currentLocale;
     private int currentTheme;
@@ -21,11 +22,12 @@ public class Settings implements ISerializable {
         currentLocale = 3;
         currentTheme = 0;
         targetLevel = 5.5f;
-        glucose_unit =  Constants.UNIT_MMOL;
+        diabetes_type = Constants.DIABETES_TYPE_NONE;
+        glucose_unit = Constants.UNIT_MMOL;
     }
 
     public void serialize(DataOutputStream dis) throws IOException {
-
+        dis.writeInt(diabetes_type);
         dis.writeInt(this.glucose_unit);
         dis.writeFloat(this.targetLevel);
 
@@ -40,6 +42,7 @@ public class Settings implements ISerializable {
     }
 
     public void deserialize(DataInputStream dos) throws IOException {
+        diabetes_type = dos.readInt();
         glucose_unit = dos.readInt();
         targetLevel = dos.readFloat();
 
@@ -75,6 +78,14 @@ public class Settings implements ISerializable {
         }
 
         this.glucose_unit = glucoseUnit;
+    }
+
+    public void setDiabetesType(int diabetes_type) {
+        this.diabetes_type = diabetes_type;
+    }
+
+    public int getDiabetesTypeItem() {
+        return this.diabetes_type;
     }
 
     public void setProfile(Profile profile) {

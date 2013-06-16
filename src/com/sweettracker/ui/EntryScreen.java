@@ -15,6 +15,8 @@ import com.sweettracker.utils.GraphicsResources;
 import com.sweettracker.utils.Resources;
 import com.sweettracker.utils.Utils;
 import com.uikit.coreElements.BitmapFont;
+import com.uikit.coreElements.Component;
+import com.uikit.coreElements.ITouchEventListener;
 import com.uikit.coreElements.Panel;
 import com.uikit.coreElements.UiKitDisplay;
 import com.uikit.layout.BoxLayout;
@@ -102,15 +104,15 @@ public class EntryScreen extends SweetTrackerScreen {
         } else {
             int levelRange = entry.getLevelRange();
             switch (levelRange) {
-                case Entry.LEVEL_NORMAL: {
+                case Constants.LEVEL_NORMAL: {
                     container.getStyle(true).addRenderer(new BgColorPainter(normal_bg_color));
                     break;
                 }
-                case Entry.LEVEL_HIGH: {
+                case Constants.LEVEL_HIGH: {
                     container.getStyle(true).addRenderer(new BgColorPainter(high_bg_color));
                     break;
                 }
-                case Entry.LEVEL_CRITICAL: {
+                case Constants.LEVEL_CRITICAL: {
                     container.getStyle(true).addRenderer(new BgColorPainter(critical_bg_color));
                     break;
                 }
@@ -128,16 +130,12 @@ public class EntryScreen extends SweetTrackerScreen {
         } else {
             String entryTimeDesc = null;
             switch (entry.getTimeInterval()) {
-                case Entry.TIME_LESS_2_HOURS: {
+                case Constants.TIME_LESS_2_HOURS: {
                     entryTimeDesc = Resources.getInstance().getText(GlobalResources.TXT_LEVEL_LESS_2_HOURS);
                     break;
                 }
-                case Entry.TIME_BETWEEEN_2_AND_8_HOURS: {
-                    entryTimeDesc = Resources.getInstance().getText(GlobalResources.TXT_LEVEL_LESS_8_HOURS);
-                    break;
-                }
-                case Entry.TIME_GREATER_8_HOURS: {
-                    entryTimeDesc = Resources.getInstance().getText(GlobalResources.TXT_LEVEL_MORE_8_HOURS);
+                case Constants.TIME_BEFORE_MEAL: {
+                    entryTimeDesc = Resources.getInstance().getText(GlobalResources.TXT_LEVEL_BEFORE_MEAL);
                     break;
                 }
             }
@@ -160,12 +158,18 @@ public class EntryScreen extends SweetTrackerScreen {
             return Utils.getFormattedDate(entry.getDate());
         }
     }
-    
-    private float getEntryLevel(){
-        return entry == null ? 0.0f : entry.getGlucoseLevel();
+
+    private float getEntryLevel() {
+        float level = entry == null ? 0.0f : entry.getGlucoseLevel();
+        if (entry != null && level != 0.0f) {
+            if (entry.getUnits() != settings.getGlucoseUnit()) {
+                level = Utils.convertLevel(entry.getUnits(), settings.getGlucoseUnit(), level);
+            }
+        }
+        return level;
     }
-    
-    private String getUnit(){
+
+    private String getUnit() {
         return settings.getGlucoseUnit() == Constants.UNIT_MG ? "(mg/dL)" : "(mmol/L)";
     }
 
@@ -177,9 +181,9 @@ public class EntryScreen extends SweetTrackerScreen {
         addComponent(container);
         container.setLayout(new BoxLayout(UikitConstant.VERTICAL, vgap));
 
-        entryLevel = new LevelEntryItem(container.getWidth(), (int) (iHeight/3.0), getEntryLevel(), getUnit(), Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color);
+        entryLevel = new LevelEntryItem(container.getWidth(), (int) (iHeight / 3.0), getEntryLevel(), getUnit(), Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, this);
         container.addComponent(entryLevel);
-        
+
         entryCal = new EntryItem(container.getWidth(), icons[0], getEntryDate(), Resources.getInstance().getText(GlobalResources.TXT_SWIPE_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, line_seperator_color, this);
         container.addComponent(entryCal);
 
@@ -191,5 +195,65 @@ public class EntryScreen extends SweetTrackerScreen {
 
         updateOffsets();
         getStyle(true).setPadding(topPadding + vgap, 0, bottomPadding + vgap, 0);
+
+        if (entry == null) {
+            entry = new Entry(date, settings.getGlucoseUnit());
+            user.addEntry(entry);
+        }
+    }
+
+    public void onEnter() {
+        entryLevel.shakeIconImage();
+    }
+
+    public void onComponentEvent(Component c, int e, Object o, int p) {
+        if (c == entryLevel) {
+            if (e == ITouchEventListener.SINGLE_PRESS) {
+                float newLevel = 10.2f;
+                if (entry.getGlucoseLevel() != newLevel) {
+                    entry.setGlucoseLevel(newLevel);
+                    entryLevel.setLevel(newLevel);
+                    entryLevel.shakeIconImage();
+                    setContainerBg();
+                }
+            }
+        } else if (c == entryTime) {
+            if (e == ITouchEventListener.DRAG_RELEASE) {
+                int newTimeInterval;
+                if (p == EntryItem.NEXT_SWIPE) {
+                    newTimeInterval = entry.getNextTimeInterval();
+                } else {
+                    newTimeInterval = entry.getPreviousTimeInterval();
+                }
+                if (entry.getTimeInterval() != newTimeInterval) {
+                    entry.setTimeInterval(newTimeInterval);
+                    entryTime.setDescription(getEntryTimeLevelDesc());
+                    entryTime.shakeIconImage();
+                }
+            }
+        } else if (c == entryCal) {
+            if (e == ITouchEventListener.DRAG_RELEASE) {
+                Date newDate;
+                if (p == EntryItem.NEXT_SWIPE) {
+                    newDate = Utils.getNextDate(entry.getDate());
+                } else {
+                    newDate = Utils.getPreviousDate(entry.getDate());
+                }
+                entry.setDate(newDate);
+                entryCal.setDescription(Utils.getFormattedDate(newDate));
+                entryCal.shakeIconImage();
+            }
+        } else if (c == entryNote) {
+            if (e == ITouchEventListener.SINGLE_PRESS) {
+            }
+        }
+    }
+
+    public void saveEntry() {
+        try {
+            Database.getInstance().saveISerializable(user, Database.USER);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 }

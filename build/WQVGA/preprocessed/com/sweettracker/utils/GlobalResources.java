@@ -66,9 +66,13 @@ public final class GlobalResources {
     public static final int TXT_MAPKEY_HIGH = 66;
     public static final int TXT_MENU_ENTRY = 67;
     public static final int TXT_LEVEL_LESS_2_HOURS = 68;
-    public static final int TXT_LEVEL_LESS_8_HOURS = 69;
-    public static final int TXT_LEVEL_MORE_8_HOURS = 70;
+    public static final int TXT_LEVEL_BEFORE_MEAL = 69;
     public static final int TXT_TAP_TO_EDIT = 71;
     public static final int TXT_SWIPE_TO_EDIT = 72;
     public static final int TXT_TAP_TO_ADD_NOTE = 73;
+    public static final int TXT_SETTINGS_DIABETES_TYPE_TITLE = 74;
+    public static final int TXT_SETTINGS_DIABETES_TYPE_DESC = 75;
+    public static final int TXT_SETTINGS_DIABETES_TYPE_NONE = 76;
+    public static final int TXT_SETTINGS_DIABETES_TYPE_ONE = 77;
+    public static final int TXT_SETTINGS_DIABETES_TYPE_TWO = 78;
 }

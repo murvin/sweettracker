@@ -1,5 +1,7 @@
 package com.sweettracker.utils;
 
+import com.sweettracker.model.Constants;
+import com.sweettracker.model.DiabetesTypeItem;
 import com.uikit.animations.AlertDialog;
 import com.uikit.animations.UikitButton;
 import com.uikit.animations.UikitTextInput;
@@ -258,13 +260,109 @@ public class Utils {
         int am_pm = c.get(Calendar.AM_PM);
         return new com.sweettracker.model.Date(day, mnth, year, hour, mins, am_pm);
     }
-    
-    public static String getFormattedDate(com.sweettracker.model.Date date){
+
+    public static String getFormattedDate(com.sweettracker.model.Date date) {
         StringBuffer s = new StringBuffer();
         s.append(getMonthsText()[date.getMonth()]);
         s.append(" ").append(date.getDay()).append(", ").append(date.getYear());
         s.append(", ").append(date.getHour()).append(":").append(date.getMins());
         s.append(" ").append(date.getAmPm() == Calendar.AM ? "AM" : "PM");
         return s.toString();
+    }
+
+    public static float convertLevel(int currentUnit, int targetUnit, float level) {
+        if (currentUnit == Constants.UNIT_MG) {
+            level *= 0.0555f;
+        } else if (currentUnit == Constants.UNIT_MMOL) {
+            level *= 18.0182;
+        }
+        return level;
+    }
+
+    public static com.sweettracker.model.Date getNextDate(com.sweettracker.model.Date currDate) {
+        int day = currDate.getDay();
+        int month = currDate.getMonth();
+        int year = currDate.getYear();
+
+        int monthLength = getMonthLength(year, month);
+        if (++day > monthLength) {
+            month++;
+            day = 1;
+            if (month > 11) {
+                month = 0;
+                year++;
+            }
+        }
+        return new com.sweettracker.model.Date(day, month, year, currDate.getHour(), currDate.getMins(), currDate.getAmPm());
+    }
+
+    public static com.sweettracker.model.Date getPreviousDate(com.sweettracker.model.Date currDate) {
+        int day = currDate.getDay();
+        int month = currDate.getMonth();
+        int year = currDate.getYear();
+        if (--day < 1) {
+            month--;
+            day = getMonthLength(year, month);
+            if (month < 0) {
+                month = 12;
+                year--;
+            }
+        }
+        return new com.sweettracker.model.Date(day, month, year, currDate.getHour(), currDate.getMins(), currDate.getAmPm());
+    }
+
+    public static String[] getFormattedDiabetesType(DiabetesTypeItem item) {
+        int type = item.getType();
+        String title = null;
+        String beforeMealRange;
+        String afterMealRange;
+        switch (type) {
+            case Constants.DIABETES_TYPE_NONE: {
+                title = Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_DIABETES_TYPE_NONE);
+                break;
+            }
+            case Constants.DIABETES_TYPE_ONE: {
+                title = Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_DIABETES_TYPE_ONE);
+                break;
+            }
+            case Constants.DIABETES_TYPE_TWO: {
+                title = Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_DIABETES_TYPE_TWO);
+                break;
+            }
+        }
+
+        beforeMealRange = "(" + item.getBeforeMealMin() + " - " + item.getBeforeMealMax() + ")";
+        afterMealRange = "(" + item.getAfterMealMin() + " - " + item.getAfterMealMax() + ")";
+
+        return new String[]{title, beforeMealRange, afterMealRange};
+    }
+
+    public static int getLevelRange(int timeInterval, float glucoseLevel, int units) {
+        if (timeInterval == Constants.TIME_BEFORE_MEAL) {
+            if (units == Constants.UNIT_MG) {
+                return Constants.LEVEL_NORMAL;
+            } else if (units == Constants.UNIT_MMOL) {
+                if (glucoseLevel < 5.9) {
+                    return Constants.LEVEL_NORMAL;
+                } else if (glucoseLevel >= 5.9 && glucoseLevel <= 6.0) {
+                    return Constants.LEVEL_HIGH;
+                } else if (glucoseLevel > 6.0) {
+                    return Constants.LEVEL_CRITICAL;
+                }
+            }
+        } else if (timeInterval == Constants.TIME_LESS_2_HOURS) {
+            if (units == Constants.UNIT_MG) {
+                return Constants.LEVEL_NORMAL;
+            } else if (units == Constants.UNIT_MMOL) {
+                if (glucoseLevel < 7.8) {
+                    return Constants.LEVEL_NORMAL;
+                } else if (glucoseLevel >= 7.8 && glucoseLevel <= 7.9) {
+                    return Constants.LEVEL_HIGH;
+                } else if (glucoseLevel > 7.9) {
+                    return Constants.LEVEL_CRITICAL;
+                }
+            }
+        }
+        return 0;
     }
 }

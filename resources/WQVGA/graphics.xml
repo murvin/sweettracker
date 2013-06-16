@@ -149,6 +149,9 @@
         <resource id="50" type="string" name="TXT_LINE_SEPERATOR_COLOR">		
             <value>4737096</value>	
         </resource>
+        <resource id="51" type="binary" name="IMG_DROP_ICON">	
+            <value file="drop.png"></value>	
+        </resource>
     </set>
 </resources>
 

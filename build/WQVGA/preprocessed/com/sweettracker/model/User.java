@@ -12,8 +12,15 @@ public class User implements ISerializable {
         return this.entries;
     }
 
-    public void setEntries(Entries cycle) {
-        this.entries = cycle;
+    public void setEntries(Entries entries) {
+        this.entries = entries;
+    }
+    
+    public void addEntry(Entry entry){
+        if (entries == null) {
+            entries = new Entries();
+        }
+        entries.addEntry(entry);
     }
 
     public void serialize(DataOutputStream dos) throws IOException {
