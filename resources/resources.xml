@@ -384,11 +384,11 @@
             <value locale="it-IT">Sorry, this feature is only available in the paid version.</value>	
         </resource>
         <resource id="61" type="string" name="TXT_DIALOG_PIN_MSG">		
-            <value locale="en-GB">Please enter your PIN.</value>	
-            <value locale="es-ES">Please enter your PIN.</value>	
-            <value locale="de-DE">Please enter your PIN.</value>	
-            <value locale="fr-FR">Please enter your PIN.</value>	
-            <value locale="it-IT">Please enter your PIN.</value>	
+            <value locale="en-GB">Enter a memorable PIN.</value>	
+            <value locale="es-ES">Enter a memorable PIN.</value>	
+            <value locale="de-DE">Enter a memorable PIN.</value>	
+            <value locale="fr-FR">Enter a memorable PIN.</value>	
+            <value locale="it-IT">Enter a memorable PIN.</value>	
         </resource>
         <resource id="62" type="string" name="TXT_DIALOG_PIN_TITLE">		
             <value locale="en-GB">Authentication</value>	
@@ -475,11 +475,11 @@
             <value locale="it-IT">Diabetes Type</value>	
         </resource>
         <resource id="75" type="string" name="TXT_SETTINGS_DIABETES_TYPE_DESC">		
-            <value locale="en-GB">Indicates if your diabetic.</value>	
-            <value locale="es-ES">Indicates if your diabetic.</value>	
-            <value locale="de-DE">Indicates if your diabetic.</value>	
-            <value locale="fr-FR">Indicates if your diabetic.</value>	
-            <value locale="it-IT">Indicates if your diabetic.</value>	
+            <value locale="en-GB">Before / After meal ranges.</value>	
+            <value locale="es-ES">Before / After meal ranges.</value>	
+            <value locale="de-DE">Before / After meal ranges.</value>	
+            <value locale="fr-FR">Before / After meal ranges.</value>	
+            <value locale="it-IT">Before / After meal ranges.</value>	
         </resource>
          <resource id="76" type="string" name="TXT_SETTINGS_DIABETES_TYPE_NONE">		
             <value locale="en-GB">None</value>	
@@ -501,6 +501,20 @@
             <value locale="de-DE">Type 2</value>	
             <value locale="fr-FR">Type 2</value>	
             <value locale="it-IT">Type 2</value>	
+        </resource>
+        <resource id="79" type="string" name="TXT_DIALOG_TARGET_LEVEL_MSG">		
+            <value locale="en-GB">Enter your target sugar level.</value>	
+            <value locale="es-ES">Enter your target sugar level.</value>	
+            <value locale="de-DE">Enter your target sugar level.</value>	
+            <value locale="fr-FR">Enter your target sugar level.</value>	
+            <value locale="it-IT">Enter your target sugar level.</value>	
+        </resource>
+        <resource id="80" type="string" name="TXT_DIALOG_TARGET_LEVEL_TITLE">		
+            <value locale="en-GB">Target level</value>	
+            <value locale="es-ES">Target level</value>	
+            <value locale="de-DE">Target level</value>	
+            <value locale="fr-FR">Target level</value>	
+            <value locale="it-IT">Target level</value>	
         </resource>
     </set>
 </resources>

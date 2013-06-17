@@ -8,15 +8,20 @@ import com.uikit.coreElements.Panel;
 import com.uikit.utils.UikitConstant;
 
 public class TargetLevelSettingsItem extends SettingsItem {
+
     public static final int BUTTON_ID = 0x1122;
+    private UikitButton btnPinCode;
 
     public TargetLevelSettingsItem(int w, String title, String desc, BitmapFont title_font, BitmapFont desc_font, int title_color, int desc_color, Object param, IComponentEventListener cel) {
         super(w, title, desc, title_font, desc_font, title_color, desc_color, param, cel);
     }
 
-    public void addContent() {
+    public void setTarget(String target) {
+        btnPinCode.setLabel(target);
+    }
 
-        UikitButton btnPinCode = Utils.getButton(((Float) param).toString(), iWidth / 2);
+    public void addContent() {
+        btnPinCode = Utils.getButton(((Float) param).toString(), iWidth / 2);
         btnPinCode.setId(BUTTON_ID);
         btnPinCode.setEventListener(this.cel);
 

@@ -37,9 +37,10 @@ public abstract class IndicatorSettingsItem extends SettingsItem implements ICom
 
     public void onComponentEvent(Component c, int e, Object o, int index) {
         moveIndicator(c.x + (c.getWidth() / 2));
+        currentSelIdx = c.getContainingPanel().indexOfComponent(c);
     }
-    
-    public int getCurrentSelIdx(){
+
+    public int getCurrentSelIdx() {
         return currentSelIdx;
     }
 }
