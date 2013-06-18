@@ -13,6 +13,9 @@ public class Entry implements ISerializable {
     private String note;
     private int levelRange; // normal, critical, high, none
 
+    public Entry() {
+    }
+    
     public Entry(Date date, int timeInterval, int units, float glocuseLevel, String note) {
         setDate(date);
         setTimeInterval(timeInterval);

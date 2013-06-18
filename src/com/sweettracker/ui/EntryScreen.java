@@ -1,5 +1,6 @@
 package com.sweettracker.ui;
 
+import com.sweettracker.SweetTrackerController;
 import com.sweettracker.model.Constants;
 import com.sweettracker.model.Settings;
 import com.sweettracker.model.User;
@@ -22,7 +23,6 @@ import com.uikit.coreElements.UiKitDisplay;
 import com.uikit.layout.BoxLayout;
 import com.uikit.painters.BgColorPainter;
 import com.uikit.painters.BorderPainter;
-import com.uikit.painters.PatchPainter;
 import com.uikit.utils.UikitConstant;
 import javax.microedition.lcdui.Font;
 import javax.microedition.lcdui.Image;
@@ -32,7 +32,6 @@ public class EntryScreen extends SweetTrackerScreen {
     private int vgap;
     private Date date;
     private Image[] icons;
-    private Image imgNewEntryBg;
     private BitmapFont font_descript, font_guide;
     private int font_guide_color, font_desc_color, line_seperator_color;
     private int normal_bg_color, high_bg_color, critical_bg_color;
@@ -42,6 +41,7 @@ public class EntryScreen extends SweetTrackerScreen {
     private Panel container;
     private LevelEntryItem entryLevel;
     private EntryItem entryCal, entryTime, entryNote;
+    public static final int INPUT_GLUCOSE_LEVEL = 0x030;
 
     public EntryScreen(Date date) {
         this.date = date;
@@ -60,7 +60,6 @@ public class EntryScreen extends SweetTrackerScreen {
             Resources.getInstance().getThemeImage(GraphicsResources.IMG_PEN_ICON)
         };
 
-        imgNewEntryBg = Resources.getInstance().getThemeImage(GraphicsResources.IMG_HIGH_BG);
         normal_bg_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_NORMAL_COLOR));
         high_bg_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_HIGH_COLOR));
         critical_bg_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_CRITICAL_COLOR));
@@ -90,61 +89,60 @@ public class EntryScreen extends SweetTrackerScreen {
             if (entries != null) {
                 DateVisitor d = new DateVisitor(this.date);
                 entries.accept(d);
-
                 entry = d.getEntry();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        if (entry == null) {
+            entry = new Entry(date, settings.getGlucoseUnit());
+            entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), entry.getGlucoseLevel(), entry.getUnits()));
+            user.addEntry(entry);
+        }
     }
 
     private void setContainerBg() {
-        if (entry == null) {
-            container.getStyle(true).addRenderer(new PatchPainter(imgNewEntryBg, 2, 2, 2, 2));
-        } else {
-            int levelRange = entry.getLevelRange();
-            switch (levelRange) {
-                case Constants.LEVEL_NORMAL: {
-                    container.getStyle(true).addRenderer(new BgColorPainter(normal_bg_color));
-                    break;
-                }
-                case Constants.LEVEL_HIGH: {
-                    container.getStyle(true).addRenderer(new BgColorPainter(high_bg_color));
-                    break;
-                }
-                case Constants.LEVEL_CRITICAL: {
-                    container.getStyle(true).addRenderer(new BgColorPainter(critical_bg_color));
-                    break;
-                }
+        int levelRange = entry.getLevelRange();
+        switch (levelRange) {
+            case Constants.LEVEL_NORMAL: {
+                container.getStyle(true).addRenderer(new BgColorPainter(normal_bg_color));
+                break;
             }
-            BorderPainter borderP = new BorderPainter();
-            borderP.setBorderColor(line_seperator_color);
-            borderP.setBorderSize(1);
-            container.getStyle().addRenderer(borderP);
+            case Constants.LEVEL_HIGH: {
+                container.getStyle(true).addRenderer(new BgColorPainter(high_bg_color));
+                break;
+            }
+            case Constants.LEVEL_CRITICAL: {
+                container.getStyle(true).addRenderer(new BgColorPainter(critical_bg_color));
+                break;
+            }
         }
+        BorderPainter borderP = new BorderPainter();
+        borderP.setBorderColor(line_seperator_color);
+        borderP.setBorderSize(1);
+        container.getStyle(true).addRenderer(borderP);
+
     }
 
     private String getEntryTimeLevelDesc() {
-        if (entry == null) {
-            return Resources.getInstance().getText(GlobalResources.TXT_LEVEL_LESS_2_HOURS);
-        } else {
-            String entryTimeDesc = null;
-            switch (entry.getTimeInterval()) {
-                case Constants.TIME_LESS_2_HOURS: {
-                    entryTimeDesc = Resources.getInstance().getText(GlobalResources.TXT_LEVEL_LESS_2_HOURS);
-                    break;
-                }
-                case Constants.TIME_BEFORE_MEAL: {
-                    entryTimeDesc = Resources.getInstance().getText(GlobalResources.TXT_LEVEL_BEFORE_MEAL);
-                    break;
-                }
+        String entryTimeDesc = null;
+        switch (entry.getTimeInterval()) {
+            case Constants.TIME_LESS_2_HOURS: {
+                entryTimeDesc = Resources.getInstance().getText(GlobalResources.TXT_LEVEL_LESS_2_HOURS);
+                break;
             }
-            return entryTimeDesc;
+            case Constants.TIME_BEFORE_MEAL: {
+                entryTimeDesc = Resources.getInstance().getText(GlobalResources.TXT_LEVEL_BEFORE_MEAL);
+                break;
+            }
         }
+        return entryTimeDesc;
+
     }
 
     private String getEntryNote() {
-        if (entry == null) {
+        if (entry.getNote() == null) {
             return Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_ADD_NOTE);
         } else {
             return entry.getNote();
@@ -152,16 +150,12 @@ public class EntryScreen extends SweetTrackerScreen {
     }
 
     private String getEntryDate() {
-        if (entry == null) {
-            return Utils.getFormattedDate(date);
-        } else {
-            return Utils.getFormattedDate(entry.getDate());
-        }
+        return Utils.getFormattedDate(entry.getDate());
     }
 
     private float getEntryLevel() {
-        float level = entry == null ? 0.0f : entry.getGlucoseLevel();
-        if (entry != null && level != 0.0f) {
+        float level = entry.getGlucoseLevel();
+        if (level != 0.0f) {
             if (entry.getUnits() != settings.getGlucoseUnit()) {
                 level = Utils.convertLevel(entry.getUnits(), settings.getGlucoseUnit(), level);
             }
@@ -196,26 +190,28 @@ public class EntryScreen extends SweetTrackerScreen {
         updateOffsets();
         getStyle(true).setPadding(topPadding + vgap, 0, bottomPadding + vgap, 0);
 
-        if (entry == null) {
-            entry = new Entry(date, settings.getGlucoseUnit());
-            user.addEntry(entry);
-        }
     }
 
     public void onEnter() {
         entryLevel.shakeIconImage();
     }
 
+    public void setGlucoseLevel(float newLevel) {
+        if (entry.getGlucoseLevel() != newLevel) {
+            entry.setGlucoseLevel(newLevel);
+            entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), newLevel, entry.getUnits()));
+
+            // Visual update
+            entryLevel.setLevel(newLevel);
+            entryLevel.shakeIconImage();
+            setContainerBg();
+        }
+    }
+
     public void onComponentEvent(Component c, int e, Object o, int p) {
         if (c == entryLevel) {
             if (e == ITouchEventListener.SINGLE_PRESS) {
-                float newLevel = 10.2f;
-                if (entry.getGlucoseLevel() != newLevel) {
-                    entry.setGlucoseLevel(newLevel);
-                    entryLevel.setLevel(newLevel);
-                    entryLevel.shakeIconImage();
-                    setContainerBg();
-                }
+                ((SweetTrackerController) controller).showGlucoseLevelDialog();
             }
         } else if (c == entryTime) {
             if (e == ITouchEventListener.DRAG_RELEASE) {
@@ -227,6 +223,8 @@ public class EntryScreen extends SweetTrackerScreen {
                 }
                 if (entry.getTimeInterval() != newTimeInterval) {
                     entry.setTimeInterval(newTimeInterval);
+                    entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), entry.getGlucoseLevel(), entry.getUnits()));
+
                     entryTime.setDescription(getEntryTimeLevelDesc());
                     entryTime.shakeIconImage();
                 }

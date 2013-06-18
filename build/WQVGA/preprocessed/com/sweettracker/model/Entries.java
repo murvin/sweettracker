@@ -66,7 +66,7 @@ public class Entries implements ISerializable {
             entriesList = new Vector();
             int size = dis.read();
             for (int i = 0; i < size; i++) {
-                entriesList.addElement(new Entries());
+                entriesList.addElement(new Entry());
             }
 
             accept(new DeserializationVisitor(dis));

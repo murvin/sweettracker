@@ -6,25 +6,25 @@ import com.sweettracker.model.Entry;
 public class EntryPrevDateVisitor implements IVisitor {
 
     private Date date;
-    private Entry tempEntries;
+    private Entry tempEntry;
 
     public EntryPrevDateVisitor(Date date) {
         this.date = date;
     }
 
-    public void visit(Entry entries) {
-        if (entries.getDate().compareTo(date) == -1) {
-            if (tempEntries == null) {
-                tempEntries = entries;
+    public void visit(Entry entry) {
+        if (entry.getDate().compareTo(date) == -1) {
+            if (tempEntry == null) {
+                tempEntry = entry;
             } else {
-                if (entries.getDate().compareTo(tempEntries.getDate()) == 1) {
-                    tempEntries = entries;
+                if (entry.getDate().compareTo(tempEntry.getDate()) == 1) {
+                    tempEntry = entry;
                 }
             }
         }
     }
 
     public Entry getPrevDateEntries() {
-        return tempEntries;
+        return tempEntry;
     }
 }

@@ -77,4 +77,8 @@ public final class GlobalResources {
     public static final int TXT_SETTINGS_DIABETES_TYPE_TWO = 78;
     public static final int TXT_DIALOG_TARGET_LEVEL_MSG = 79;
     public static final int TXT_DIALOG_TARGET_LEVEL_TITLE = 80;
+    public static final int TXT_DIALOG_GLUCOSE_LEVEL_MSG = 81;
+    public static final int TXT_DIALOG_GLUCOSE_LEVEL_TITLE = 82;
+    public static final int TXT_DIALOG_ENTRY_SAVED_TITLE = 83;
+    public static final int TXT_DIALOG_ENTRY_SAVED_MSG = 84;
 }

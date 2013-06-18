@@ -516,6 +516,34 @@
             <value locale="fr-FR">Target level</value>	
             <value locale="it-IT">Target level</value>	
         </resource>
+        <resource id="81" type="string" name="TXT_DIALOG_GLUCOSE_LEVEL_MSG">		
+            <value locale="en-GB">Enter your current sugar level.</value>	
+            <value locale="es-ES">Enter your current sugar level.</value>	
+            <value locale="de-DE">Enter your current sugar level.</value>	
+            <value locale="fr-FR">Enter your current sugar level.</value>	
+            <value locale="it-IT">Enter your current sugar level.</value>	
+        </resource>
+        <resource id="82" type="string" name="TXT_DIALOG_GLUCOSE_LEVEL_TITLE">		
+            <value locale="en-GB">Glucose level</value>	
+            <value locale="es-ES">Glucose level</value>	
+            <value locale="de-DE">Glucose level</value>	
+            <value locale="fr-FR">Glucose level</value>	
+            <value locale="it-IT">Glucose level</value>	
+        </resource>
+        <resource id="83" type="string" name="TXT_DIALOG_ENTRY_SAVED_TITLE">		
+            <value locale="en-GB">Entry Saved</value>	
+            <value locale="es-ES">Entry Saved</value>	
+            <value locale="de-DE">Entry Saved</value>	
+            <value locale="fr-FR">Entry Saved</value>	
+            <value locale="it-IT">Entry Saved</value>	
+        </resource>
+        <resource id="84" type="string" name="TXT_DIALOG_ENTRY_SAVED_MSG">		
+            <value locale="en-GB">Entry successfully saved to your calendar.</value>	
+            <value locale="es-ES">Entry successfully saved to your calendar.</value>	
+            <value locale="de-DE">Entry successfully saved to your calendar.</value>	
+            <value locale="fr-FR">Entry successfully saved to your calendar.</value>	
+            <value locale="it-IT">Entry successfully saved to your calendar.</value>	
+        </resource>
     </set>
 </resources>
 
