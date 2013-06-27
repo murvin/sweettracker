@@ -4,7 +4,6 @@ public final class GlobalResources {
     private GlobalResources() { }
 
     public static final int GSM_LANG = 6;
-    public static final int TXT_APP_NAME = 7;
     public static final int TXT_COMMON_BACK = 8;
     public static final int TXT_COMMON_EXIT = 9;
     public static final int TXT_COMMON_OPTIONS = 10;
@@ -81,4 +80,8 @@ public final class GlobalResources {
     public static final int TXT_DIALOG_GLUCOSE_LEVEL_TITLE = 82;
     public static final int TXT_DIALOG_ENTRY_SAVED_TITLE = 83;
     public static final int TXT_DIALOG_ENTRY_SAVED_MSG = 84;
+    public static final int TXT_APP_NAME = 85;
+    public static final int TXT_ABOUT_VERSION = 87;
+    public static final int TXT_ABOUT_DEVELOPER = 88;
+    public static final int TXT_COMMON_ABOUT = 89;
 }

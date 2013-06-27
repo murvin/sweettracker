@@ -152,6 +152,9 @@
         <resource id="51" type="binary" name="IMG_DROP_ICON">	
             <value file="drop.png"></value>	
         </resource>
+        <resource id="52" type="binary" name="IMG_ABOUT_ICON">	
+            <value file="about_logo.png"></value>	
+        </resource>
     </set>
 </resources>
 

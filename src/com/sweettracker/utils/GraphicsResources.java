@@ -53,4 +53,5 @@ public final class GraphicsResources {
     public static final int IMG_PEN_ICON = 49;
     public static final int TXT_LINE_SEPERATOR_COLOR = 50;
     public static final int IMG_DROP_ICON = 51;
+    public static final int IMG_ABOUT_ICON = 52;
 }

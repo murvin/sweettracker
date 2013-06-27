@@ -9,9 +9,6 @@
             <value locale="fr-FR">fr</value>	
             <value locale="it-IT">it</value>	
         </resource>
-        <resource id="7" type="string" name="TXT_APP_NAME">	
-            <value>inBloom</value>						
-        </resource>
         <resource id="8" type="string" name="TXT_COMMON_BACK">		
             <value locale="en-GB">Back</value>	
             <value locale="es-ES">Volver</value>	
@@ -543,6 +540,34 @@
             <value locale="de-DE">Entry successfully saved to your calendar.</value>	
             <value locale="fr-FR">Entry successfully saved to your calendar.</value>	
             <value locale="it-IT">Entry successfully saved to your calendar.</value>	
+        </resource>
+        <resource id="85" type="string" name="TXT_APP_NAME">	
+            <value locale="en-GB">App name</value>	
+            <value locale="es-ES">App name</value>	
+            <value locale="de-DE">App name</value>	
+            <value locale="fr-FR">App name</value>	
+            <value locale="it-IT">App name</value>						
+        </resource>
+        <resource id="87" type="string" name="TXT_ABOUT_VERSION">		
+            <value locale="en-GB">Version</value>	
+            <value locale="es-ES">Versión</value>	
+            <value locale="de-DE">Version</value>	
+            <value locale="fr-FR">Version</value>	
+            <value locale="it-IT">Versione</value>	
+        </resource>
+        <resource id="88" type="string" name="TXT_ABOUT_DEVELOPER">		
+            <value locale="en-GB">Developer</value>	
+            <value locale="es-ES">Promotor</value>	
+            <value locale="de-DE">Entwickler</value>	
+            <value locale="fr-FR">Développeur</value>	
+            <value locale="it-IT">Sviluppatore</value>	
+        </resource>
+        <resource id="89" type="string" name="TXT_COMMON_ABOUT">		
+            <value locale="en-GB">About</value>	
+            <value locale="es-ES">Sobre</value>	
+            <value locale="de-DE">über</value>	
+            <value locale="fr-FR">À propos</value>	
+            <value locale="it-IT">À propos</value>	
         </resource>
     </set>
 </resources>

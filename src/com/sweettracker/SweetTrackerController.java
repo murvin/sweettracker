@@ -3,6 +3,7 @@ package com.sweettracker;
 import com.sweettracker.model.Date;
 import com.sweettracker.model.Settings;
 import com.sweettracker.model.User;
+import com.sweettracker.ui.AboutScreen;
 import com.sweettracker.ui.CalScreen;
 import com.sweettracker.ui.EntryScreen;
 import com.sweettracker.ui.HomeScreen;
@@ -40,6 +41,7 @@ public class SweetTrackerController extends Controller {
     public static final int SCREEN_SETTINGS = 0x012;
     public static final int SCREEN_CAL = 0x013;
     public static final int SCREEN_ENTRY = 0x014;
+    public static final int SCREEN_ABOUT = 0x015;
     // MENU CONSTANTS 
     public static final int MENU_EXIT = 0x101;
     public static final int MENU_BACK = 0x102;
@@ -129,6 +131,10 @@ public class SweetTrackerController extends Controller {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_MENU_ENTRY));
             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
             menuBar.setLsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_SAVE), MENU_SAVE);
+        } else if (screen instanceof AboutScreen){
+            topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_COMMON_ABOUT));
+            menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            menuBar.removeSoftKey(true);
         }
 
         screen.enter();
@@ -142,6 +148,7 @@ public class SweetTrackerController extends Controller {
             screen.y = 0;
             if (previous_screen_id == SCREEN_SETTINGS
                     || previous_screen_id == SCREEN_CAL
+                    || previous_screen_id == SCREEN_ABOUT
                     || previous_screen_id == SCREEN_ENTRY) {
                 screen.x = -canvas.getWidth();
             } else {
@@ -188,6 +195,9 @@ public class SweetTrackerController extends Controller {
             case SCREEN_ENTRY: {
                 return new EntryScreen((Date) param);
             }
+            case SCREEN_ABOUT:{
+                return new AboutScreen();
+            }
             default:
                 throw new IllegalStateException();
         }
@@ -209,6 +219,8 @@ public class SweetTrackerController extends Controller {
                     navigateScreen(SCREEN_CAL, false, null);
                 } else if (param == 0) {
                     navigateScreen(SCREEN_ENTRY, false, Utils.getCurrentDate());
+                } else if (param == 4){
+                    navigateScreen(SCREEN_ABOUT, false, null);
                 }
             }
         } else if (c instanceof MenuBar) {
