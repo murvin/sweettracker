@@ -32,7 +32,7 @@ public class SweetTrackerController extends Controller {
 
     // LAYER CONSTANTS //
     private final int LAYER_SCREEN = 0x011;
-    private final int LAYER_DIALOG = 0x019;
+    private final int LAYER_DIALOG = 0x021;
     private final int LAYER_NAVIGATION = 0x020;
     // SCREEN CONSTANTS //
     public static final int SCREEN_SPLASH = 0x010;
@@ -328,7 +328,7 @@ public class SweetTrackerController extends Controller {
         txtStyleDesc.setFontColour(desc_color);
         txtStyleDesc.setAlign(UikitConstant.LEFT);
 
-        InputDialog dialog = new InputDialog((UiKitDisplay.getWidth() - width) / 2, (UiKitDisplay.getHeight() - height) / 2, width, height, false, false, message, TextField.ANY);
+        InputDialog dialog = new InputDialog((UiKitDisplay.getWidth() - width) / 2, (UiKitDisplay.getHeight() - height) / 2, width, height, false, false, message, TextField.DECIMAL);
         dialog.setTitle(title);
         dialog.setStyle(Utils.getDialogComponentStyle());
         dialog.setId(entryId);
@@ -339,10 +339,10 @@ public class SweetTrackerController extends Controller {
         dialog.setTitleTextStyle(txtStyleTitle);
         dialog.setStyle(InputDialog.COMP_TEXT_LABEL, txtStyleDesc);
 
-        UikitButton btnYes = Utils.getButton(Resources.getInstance().getText(GlobalResources.TXT_COMMON_OK), width * 40 / 100);
+        UikitButton btnYes = Utils.getButton(Resources.getInstance().getText(GlobalResources.TXT_COMMON_OK), width * 43 / 100);
         btnYes.setId(INPUT_DIALOG_OK);
         dialog.addButton(btnYes);
-        UikitButton btnNo = Utils.getButton(Resources.getInstance().getText(GlobalResources.TXT_COMMON_CANCEL), width * 40 / 100);
+        UikitButton btnNo = Utils.getButton(Resources.getInstance().getText(GlobalResources.TXT_COMMON_CANCEL), width * 43 / 100);
         btnNo.setId(INPUT_DIALG_CANCEL);
         dialog.addButton(btnNo);
 

@@ -5,6 +5,7 @@ import com.sweettracker.model.Constants;
 import com.sweettracker.model.Settings;
 import com.sweettracker.model.User;
 import com.sweettracker.model.Date;
+import com.sweettracker.model.DiabetesTypeItem;
 import com.sweettracker.model.Entries;
 import com.sweettracker.model.Entry;
 import com.sweettracker.model.visitors.DateVisitor;
@@ -97,7 +98,7 @@ public class EntryScreen extends SweetTrackerScreen {
 
         if (entry == null) {
             entry = new Entry(date, settings.getGlucoseUnit());
-            entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), entry.getGlucoseLevel(), entry.getUnits()));
+            entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), entry.getGlucoseLevel(), entry.getUnits(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem())));
             user.addEntry(entry);
         }
     }
@@ -138,11 +139,10 @@ public class EntryScreen extends SweetTrackerScreen {
             }
         }
         return entryTimeDesc;
-
     }
 
     private String getEntryNote() {
-        if (entry.getNote() == null) {
+        if (entry.getNote() == null || entry.getNote().trim().equals("")) {
             return Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_ADD_NOTE);
         } else {
             return entry.getNote();
@@ -199,7 +199,7 @@ public class EntryScreen extends SweetTrackerScreen {
     public void setGlucoseLevel(float newLevel) {
         if (entry.getGlucoseLevel() != newLevel) {
             entry.setGlucoseLevel(newLevel);
-            entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), newLevel, entry.getUnits()));
+            entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), newLevel, entry.getUnits(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem())));
 
             // Visual update
             entryLevel.setLevel(newLevel);
@@ -223,7 +223,7 @@ public class EntryScreen extends SweetTrackerScreen {
                 }
                 if (entry.getTimeInterval() != newTimeInterval) {
                     entry.setTimeInterval(newTimeInterval);
-                    entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), entry.getGlucoseLevel(), entry.getUnits()));
+                    entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), entry.getGlucoseLevel(), entry.getUnits(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem())));
 
                     entryTime.setDescription(getEntryTimeLevelDesc());
                     entryTime.shakeIconImage();

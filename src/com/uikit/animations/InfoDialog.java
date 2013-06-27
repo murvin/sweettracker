@@ -48,7 +48,7 @@ public class InfoDialog extends Dialog {
         titleTBox.x = (containerPanel.getWidth() - titleTBox.getWidth()) / 2;
         titleTBox.y = iconImage.y;
         line.x = (containerPanel.getWidth() - line.getWidth()) / 2;
-        line.y = titleTBox.y + titleTBox.getHeight() + 10;
+        line.y = titleTBox.y + titleTBox.getHeight() + 5;
 
     }
 

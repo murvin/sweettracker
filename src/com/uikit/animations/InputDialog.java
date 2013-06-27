@@ -26,7 +26,7 @@ public class InputDialog extends InfoDialog {
 
         /* Create the input control. It is placed below the label  */
         textInput = new UikitTextInput(9 * containerPanel.getWidth() / 10,
-                labelTextBox.getHeight() + 5,
+                labelTextBox.getHeight() - 5,
                 new NativeTextInputHandler(title, 1024, field),
                 bMultiline,
                 bPassword);
@@ -112,8 +112,8 @@ public class InputDialog extends InfoDialog {
     private void repositionContent() {
         int containerHeight = containerPanel.getHeight();
 
-        labelTextBox.y = containerHeight / 4;
-        textInput.y = labelTextBox.y + labelTextBox.getHeight() + 3;
+        labelTextBox.y = (containerHeight / 4) + 5;
+        textInput.y = labelTextBox.y + labelTextBox.getHeight() + 5;
     }
 
     public UikitTextInput getTextInput() {

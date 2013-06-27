@@ -82,7 +82,7 @@ public class Utils {
         ComponentStyle containerStyle = new ComponentStyle();
         containerStyle.setPadding(20);
         int colour = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_LIGHTBOX_COLOR));
-        Image bg = ImageUtil.generateTransparentImage(60, 60, (byte) 60, colour);
+        Image bg = ImageUtil.generateTransparentImage(60, 60, (byte) 70, colour);
         containerStyle.addRenderer(new BgImagePainter(bg, UikitConstant.REPEAT));
         return containerStyle;
     }
@@ -337,30 +337,26 @@ public class Utils {
         return new String[]{title, beforeMealRange, afterMealRange};
     }
 
-    public static int getLevelRange(int timeInterval, float glucoseLevel, int units) {
+    public static int getLevelRange(int timeInterval, float glucoseLevel, int units, DiabetesTypeItem item) {
+        if (units != Constants.UNIT_MMOL) {
+            glucoseLevel = Utils.convertLevel(units, Constants.UNIT_MMOL, glucoseLevel);
+        }
+        
         if (timeInterval == Constants.TIME_BEFORE_MEAL) {
-            if (units == Constants.UNIT_MG) {
+            if (glucoseLevel < item.getBeforeMealMax()) {
                 return Constants.LEVEL_NORMAL;
-            } else if (units == Constants.UNIT_MMOL) {
-                if (glucoseLevel < 5.9) {
-                    return Constants.LEVEL_NORMAL;
-                } else if (glucoseLevel >= 5.9 && glucoseLevel <= 6.0) {
-                    return Constants.LEVEL_HIGH;
-                } else if (glucoseLevel > 6.0) {
-                    return Constants.LEVEL_CRITICAL;
-                }
+            } else if (glucoseLevel >= item.getBeforeMealMax() && glucoseLevel <= item.getBeforeMealMax() + 1) {
+                return Constants.LEVEL_HIGH;
+            } else if (glucoseLevel > item.getBeforeMealMax()) {
+                return Constants.LEVEL_CRITICAL;
             }
         } else if (timeInterval == Constants.TIME_LESS_2_HOURS) {
-            if (units == Constants.UNIT_MG) {
+            if (glucoseLevel < item.getAfterMealMax()) {
                 return Constants.LEVEL_NORMAL;
-            } else if (units == Constants.UNIT_MMOL) {
-                if (glucoseLevel < 7.8) {
-                    return Constants.LEVEL_NORMAL;
-                } else if (glucoseLevel >= 7.8 && glucoseLevel <= 7.9) {
-                    return Constants.LEVEL_HIGH;
-                } else if (glucoseLevel > 7.9) {
-                    return Constants.LEVEL_CRITICAL;
-                }
+            } else if (glucoseLevel >= item.getAfterMealMax() && glucoseLevel <= item.getAfterMealMax() + 1) {
+                return Constants.LEVEL_HIGH;
+            } else if (glucoseLevel > item.getAfterMealMax()) {
+                return Constants.LEVEL_CRITICAL;
             }
         }
         return 0;
