@@ -84,4 +84,17 @@ public final class GlobalResources {
     public static final int TXT_ABOUT_VERSION = 87;
     public static final int TXT_ABOUT_DEVELOPER = 88;
     public static final int TXT_COMMON_ABOUT = 89;
+    public static final int TXT_MENU_ACCEPT = 90;
+    public static final int TXT_MENU_DECLINE = 91;
+    public static final int TXT_TERMS = 92;
+    public static final int TXT_TERMS_HEADER_1 = 93;
+    public static final int TXT_TERMS_HEADER_2 = 94;
+    public static final int TXT_TERMS_HEADER_3 = 95;
+    public static final int TXT_TERMS_HEADER_4 = 96;
+    public static final int TXT_TERMS_DESC_1 = 97;
+    public static final int TXT_TERMS_DESC_2 = 98;
+    public static final int TXT_TERMS_DESC_3 = 99;
+    public static final int TXT_TERMS_DESC_4 = 100;
+    public static final int TXT_DIALOG_TITLE_UNSUCCESSFUL = 101;
+    public static final int TXT_DIALOG_TEXT_INVALID_INPUT = 102;
 }

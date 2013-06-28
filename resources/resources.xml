@@ -569,6 +569,97 @@
             <value locale="fr-FR">À propos</value>	
             <value locale="it-IT">À propos</value>	
         </resource>
+        <resource id="90" type="string" name="TXT_MENU_ACCEPT">		
+            <value locale="en-GB">Accept</value>	
+            <value locale="es-ES">Aceptar</value>	
+            <value locale="de-DE">Akzeptieren</value>	
+            <value locale="fr-FR">Accepter</value>	
+            <value locale="it-IT">Accettare</value>	
+        </resource>
+        <resource id="91" type="string" name="TXT_MENU_DECLINE">		
+            <value locale="en-GB">Decline</value>	
+            <value locale="es-ES">Descenso</value>	
+            <value locale="de-DE">Ablehnen</value>	
+            <value locale="fr-FR">Refuser</value>	
+            <value locale="it-IT">Declino</value>	
+        </resource>
+         <resource id="92" type="string" name="TXT_TERMS">		
+            <value locale="en-GB">Terms</value>	
+            <value locale="es-ES">Condiciones</value>	
+            <value locale="de-DE">Bedingungen</value>	
+            <value locale="fr-FR">Conditions</value>	
+            <value locale="it-IT">Condizioni</value>	
+        </resource>
+        <resource id="93" type="string" name="TXT_TERMS_HEADER_1">		
+            <value locale="en-GB">Introduction</value>	
+            <value locale="es-ES">Introducción</value>	
+            <value locale="de-DE">Einführung</value>	
+            <value locale="fr-FR">Introduction</value>	
+            <value locale="it-IT">Introduzione</value>	
+        </resource>
+        <resource id="94" type="string" name="TXT_TERMS_HEADER_2">		
+            <value locale="en-GB">Liability</value>	
+            <value locale="es-ES">Responsabilidad</value>	
+            <value locale="de-DE">Haftung</value>	
+            <value locale="fr-FR">Responsabilité</value>	
+            <value locale="it-IT">Responsabilità</value>	
+        </resource>
+        <resource id="95" type="string" name="TXT_TERMS_HEADER_3">		
+            <value locale="en-GB">Limited warranties</value>	
+            <value locale="es-ES">Garantías limitadas</value>	
+            <value locale="de-DE">Eingeschränkte Garantien</value>	
+            <value locale="fr-FR">Les garanties limitées</value>	
+            <value locale="it-IT">Garanzie limitate</value>	
+        </resource>
+        <resource id="96" type="string" name="TXT_TERMS_HEADER_4">		
+            <value locale="en-GB">Indemnity</value>	
+            <value locale="es-ES">Indemnidad</value>	
+            <value locale="de-DE">Entschädigung</value>	
+            <value locale="fr-FR">Indemnité</value>	
+            <value locale="it-IT">Indennità</value>	
+        </resource>
+         <resource id="97" type="string" name="TXT_TERMS_DESC_1">		
+            <value locale="en-GB">These terms and conditions govern your use of the mobile application SweetTracker. By using this application, you accept these terms and conditions in full. If you disagree with these terms and conditions or any part of these terms and conditions, you must not use SweetTracker.</value>	
+            <value locale="es-ES">Estos términos y condiciones rigen el uso de la SweetTracker. de aplicaciones móviles. Al utilizar esta aplicación, usted acepta estos términos y condiciones en su totalidad. Si no está de acuerdo con estos términos y condiciones o cualquier parte de estos términos y condiciones, usted no debe utilizar InBloom.</value>	
+            <value locale="de-DE">Diese Bedingungen regeln die Nutzung der mobilen Anwendung SweetTracker. Durch die Nutzung dieser Anwendung, akzeptieren Sie diese Bedingungen in vollem Umfang. Wenn Sie mit diesen Bedingungen oder einem Teil dieser Bedingungen und Konditionen nicht einverstanden sind, dürfen Sie nicht verwenden Inbloom.</value>	
+            <value locale="fr-FR">Ces termes et conditions régissent votre utilisation de SweetTracker. application mobile. En utilisant cette application, vous acceptez ces termes et conditions dans leur intégralité. Si vous êtes en désaccord avec ces termes et conditions ou toute partie de ces termes et conditions, vous ne devez pas utiliser Inbloom.</value>	
+            <value locale="it-IT">Questi termini e condizioni regolano l'utilizzo del SweetTracker. applicazione mobile. Utilizzando questa applicazione, l'utente accetta i termini e le condizioni in pieno. Se siete d'accordo con questi termini e condizioni o una parte di questi termini e condizioni, non si deve usare inBloom.</value>	
+        </resource>
+        <resource id="98" type="string" name="TXT_TERMS_DESC_2">		
+            <value locale="en-GB">We will not be liable to you in respect of any losses arising out of any event or events beyond our reasonable control. We will not be liable to you in case you are wrongly diagnosed due to lack of precision in the software logic. We will not be liable to you in respect of any loss or corruption of any data, database or software.</value>	
+            <value locale="es-ES">No seremos responsables ante usted con respecto a cualquier pérdida que se derive de cualquier evento o eventos fuera de nuestro control. No seremos responsables ante usted en caso de que está embarazada, debido a la falta de precisión en la lógica de software. No seremos responsables ante usted con respecto a cualquier pérdida o corrupción de datos, base de datos o software.</value>	
+            <value locale="de-DE">Wir sind nicht haftbar zu machen für Schäden, die aus einer oder mehreren Ereignissen außerhalb unserer Kontrolle liegen. Wir sind nicht haftbar zu machen, falls Sie schwanger sind aufgrund mangelnder Präzision in der Software-Logik sind. Wir sind nicht haftbar zu machen in Bezug auf einen Verlust oder die Beschädigung von Daten, Datenbanken oder Software.</value>	
+            <value locale="fr-FR">Nous ne serons pas responsables envers vous pour toute perte découlant d'un événement ou d'événements indépendants de notre contrôle raisonnable. Nous ne serons pas responsables envers vous au cas où vous êtes enceinte à cause du manque de précision dans la logique du logiciel. Nous ne serons pas responsables envers vous pour toute perte ou corruption des données, des bases de données ou de logiciels.</value>	
+            <value locale="it-IT">Noi non saremo responsabili nei Vostri confronti di eventuali perdite derivanti da qualsiasi evento o eventi al di fuori del nostro ragionevole controllo. Non saremo responsabili nei vostri confronti in caso di gravidanza a causa della mancanza di precisione nella logica del software. Non saremo responsabili nei vostri confronti per qualsiasi perdita o corruzione di, database di dati o software.</value>	
+        </resource>
+        <resource id="99" type="string" name="TXT_TERMS_DESC_3">		
+            <value locale="en-GB">We do not warrant the completeness or accuracy of the information produced by this application; nor do we commit to ensuring that the application remains logical and reliable. To the maximum extent permitted by applicable law we exclude all representations, warranties and conditions relating to the use of this application (including, without limitation, any warranties implied by law of satisfactory quality, fitness for purpose and/or the use of reasonable care and skill).</value>	
+            <value locale="es-ES">Nosotros no garantizamos la integridad y exactitud de la información generada por este software, ni tampoco nos comprometemos a garantizar que el software sigue siendo lógico y confiable. En la medida máxima permitida por la ley, excluimos todas las representaciones, garantías y condiciones relacionadas con el uso de esta aplicación (incluyendo, sin limitación, cualquier garantía implícita por la ley de calidad satisfactoria, aptitud para el uso y / o la utilización de un cuidado razonable y habilidad).</value>	
+            <value locale="de-DE">Wir übernehmen keine Gewähr für die Vollständigkeit oder Genauigkeit der Informationen, die von dieser Software erzeugt werden; und  übernehmen  keine Gewähr dafür, dass die Software logisch und zuverlässig bleibt. In größtmöglichem Umfang, durch anwendbares Recht  erlaubt, schliessen wir alle Darstellungen, Garantien und Bedingungen in Bezug auf die Nutzung dieser Anwendung (einschließlich, ohne Einschränkung, sämtliche gesetzliche Gewährleistungen von zufriedenstellender Qualität impliziert, Zweckmäßigkeit und / oder die sorgflätige and angemessene Anwendung) aus.</value>	
+            <value locale="fr-FR">Nous ne garantissons pas l'exhaustivité ou l'exactitude de l'information produite par ce logiciel, ni ne nous engageons à assurer que le logiciel reste logique et fiable. Dans la mesure maximale permise par la loi applicable l'on exclut toutes les représentations, garanties et conditions relatives à l'utilisation de cette application (y compris, sans limitation, toute garantie implicite par la loi de qualité satisfaisante, aptitude à l'usage et / ou l'utilisation d'un soin raisonnable et compétences).</value>	
+            <value locale="it-IT">Noi non garantiamo la completezza o accuratezza delle informazioni prodotte da questo software, né ci impegniamo a garantire che il software rimanga logica e affidabile. Nella misura massima consentita dalla legge applicabile escludiamo tutti, garanzie e condizioni riguardanti l'uso di questa applicazione (inclusi, senza limitazione, qualsiasi garanzia implicita per legge di qualità soddisfacente, idoneità allo scopo e / o l'uso di ragionevole cura e abilità).</value>	
+        </resource>
+        <resource id="100" type="string" name="TXT_TERMS_DESC_4">		
+            <value locale="en-GB">You hereby indemnify us and undertake to keep us indemnified against any losses, damages, costs, liabilities and expenses (including without limitation legal expenses and any amounts paid by us to a third party in settlement of a claim or dispute on the advice of our legal advisers) incurred or suffered by us arising out of any breach by you of any provision of these terms and conditions[, or arising out of any claim that you have breached any provision of these terms and conditions].</value>	
+            <value locale="es-ES">Por la presente, nos indemnizará y nos comprometemos a mantenernos indemnizados por cualquier pérdida, daños, costos, responsabilidades y gastos (incluyendo, sin limitación de los gastos jurídicos y los importes pagados por nosotros los que una tercera parte en la solución de una demanda o disputa en el consejo de nuestro ordenamiento jurídico asesores) incurridos o sufridos por nosotros que surja de cualquier incumplimiento por su parte de cualquier disposición de estos términos y condiciones [o como resultado de cualquier reclamo que usted ha violado cualquier disposición de estos términos y condiciones].</value>	
+            <value locale="de-DE">Sie erklären sich hiermit verpflichtet, und verpflichten sich weiterhin, uns gegen jegliche Verluste, Schäden, Kosten, Haftungen und Ausgaben die entstanden sind (einschließlich und ohne Einschränkung der legalen Kosten und aller Beträge, die, nach Beratung unseres Anwalts, durch Dritte in Erfüllung einer Forderung oder eines Streits entstehen), die sich aus einer Verletzung dieser Bedingungen und Konditionen Ihrerseits ergeben [oder die sich aus Ansprüchen ergeben, dass Sie eine Bestimmung dieser Bedingungen und Konditionen verletzt haben].</value>	
+            <value locale="fr-FR">Par la présente vous nous indemniser et nous tenir s'engagent à indemniser toutes les pertes, dommages, coûts, responsabilités et dépenses (y compris, sans limitation les frais juridiques et tous les montants payés par nous à un tiers en règlement d'une réclamation ou litige sur les conseils de notre système juridique conseillers) engagés ou subis par nous découlant de toute violation par vous de toute disposition de ces termes et conditions [, ou découlant de toute réclamation que vous avez violé une disposition de ces termes et conditions].</value>	
+            <value locale="it-IT">Con la presente ci risarcire e si impegnano a tenerci indenne da ogni perdita, danni, costi, oneri e spese (incluse senza limitazione le spese legali e gli importi pagati da noi a terzi in liquidazione di un sinistro o di controversia su consiglio dei nostri legali consulenti) sostenute o subite da noi derivanti da qualsiasi violazione da parte di qualsiasi disposizione di questi termini e condizioni [, o derivanti da qualsiasi pretesa che lei ha violato qualsiasi clausola di questi termini e condizioni].</value>	
+        </resource>
+        <resource id="101" type="string" name="TXT_DIALOG_TITLE_UNSUCCESSFUL">		
+            <value locale="en-GB">Unsuccessful</value>	
+            <value locale="es-ES">Unsuccessful</value>	
+            <value locale="de-DE">Unsuccessful</value>	
+            <value locale="fr-FR">Unsuccessful</value>	
+            <value locale="it-IT">Unsuccessful</value>	
+        </resource>
+        <resource id="102" type="string" name="TXT_DIALOG_TEXT_INVALID_INPUT">		
+            <value locale="en-GB">Please try again with a valid input.</value>	
+            <value locale="es-ES">Please try again with a valid input.</value>	
+            <value locale="de-DE">Please try again with a valid input.</value>	
+            <value locale="fr-FR">Please try again with a valid input.</value>	
+            <value locale="it-IT">Please try again with a valid input.</value>	
+        </resource>
     </set>
 </resources>
 

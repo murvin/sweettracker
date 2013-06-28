@@ -11,7 +11,7 @@ public class Settings implements ISerializable {
     private int diabetes_type;
     private int currentLocale;
     private int currentTheme;
-    private boolean hasShownTOSOnStartUp;
+    private boolean hasAcceptedTerms;
     private String code;
 
     public void initDefault() {
@@ -29,7 +29,7 @@ public class Settings implements ISerializable {
         dis.writeFloat(this.targetLevel);
         dis.writeInt(currentLocale);
         dis.writeInt(currentTheme);
-        dis.writeBoolean(hasShownTOSOnStartUp);
+        dis.writeBoolean(hasAcceptedTerms);
         dis.writeUTF(code);
     }
 
@@ -39,7 +39,7 @@ public class Settings implements ISerializable {
         targetLevel = dos.readFloat();
         currentLocale = dos.readInt();
         currentTheme = dos.readInt();
-        hasShownTOSOnStartUp = dos.readBoolean();
+        hasAcceptedTerms = dos.readBoolean();
         code = dos.readUTF();
     }
 
@@ -87,12 +87,12 @@ public class Settings implements ISerializable {
         return this.currentTheme;
     }
 
-    public boolean isHasShownTOSOnStartUp() {
-        return hasShownTOSOnStartUp;
+    public boolean hasAcceptedTerms() {
+        return hasAcceptedTerms;
     }
 
-    public void setHasShownTOSOnStartUp(boolean hasShownTOSOnStartUp) {
-        this.hasShownTOSOnStartUp = hasShownTOSOnStartUp;
+    public void setHasAcceptedTerms(boolean hasAcceptedTerms) {
+        this.hasAcceptedTerms = hasAcceptedTerms;
     }
     
     public void setCode(String code){
