@@ -13,12 +13,13 @@ public class Settings implements ISerializable {
     private int currentTheme;
     private boolean hasAcceptedTerms;
     private String code;
+    private final String defaultCode = "0000";
 
     public void initDefault() {
         currentLocale = 3;
         currentTheme = 0;
         targetLevel = 5.5f;
-        code = "****";
+        code = defaultCode;
         diabetes_type = Constants.DIABETES_TYPE_NONE;
         glucose_unit = Constants.UNIT_MMOL;
     }
@@ -101,5 +102,9 @@ public class Settings implements ISerializable {
     
     public String getCode(){
         return this.code;
+    }
+    
+    public boolean hasDefaultCode(){
+        return this.code.equals(defaultCode);
     }
 }

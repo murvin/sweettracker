@@ -28,6 +28,12 @@ public class NavigationBar extends Panel {
         initResources();
         initComponents();
     }
+    
+    public void updateTheme(){
+        initResources();
+        getStyle(true).clearAllRenderers();
+        initComponents();
+    }
 
     private void initResources() {
         Image imgFont = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_LARGE);

@@ -1,6 +1,5 @@
 package com.sweettracker.ui.components.settings;
 
-import com.sweettracker.utils.Utils;
 import com.uikit.animations.Line;
 import com.uikit.animations.UikitImageBox;
 import com.uikit.animations.UikitTextBox;
@@ -52,7 +51,6 @@ public abstract class SettingsItem extends Panel {
 
     private void addTitle() {
         Image imgText = title_font.drawStringToImage(title);
-        imgText = Utils.replaceColor(imgText, title_color);
         addComponent(new UikitImageBox(imgText));
     }
 
@@ -63,7 +61,7 @@ public abstract class SettingsItem extends Panel {
     }
 
     private void addLine() {
-        Line line = new Line(iWidth, title_color);
+        Line line = new Line(iWidth, desc_color);
         addComponent(line);
     }
 }

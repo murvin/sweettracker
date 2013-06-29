@@ -6,7 +6,8 @@
             <value file="bgPanel.png"></value>	
         </resource>
         <resource id="2" type="binary" name="IMG_SPLASH_BG">	
-            <value file="splash_bg.png"></value>	
+            <value file="splash_bg.png"></value>
+            <value locale="themeFemale" file="/FEMALE/splash_bg.png"></value>	
         </resource>
         <resource id="3" type="binary" name="IMG_SPLASH_GRAPH">	
             <value file="splash_graph.png"></value>	
@@ -34,6 +35,7 @@
         </resource>
         <resource id="11" type="string" name="TXT_TITLE_TEXT_COLOR">		
             <value>535629</value>	
+            <value locale="themeFemale">9964142</value>
         </resource>
         <resource id="12" type="binary" name="FONT_THEME_SMALL">	
             <value file="droid_r_11.png"></value>	
@@ -49,6 +51,7 @@
         </resource>
         <resource id="17" type="binary" name="IMG_BAR_BG">	
             <value file="bar_tile.png"></value>	
+            <value locale="themeFemale" file="/FEMALE/bar_tile.png"></value>
         </resource>
         <resource id="18" type="binary" name="IMG_HIGH_BG">	
             <value file="highlight.png"></value>	
@@ -91,6 +94,7 @@
         </resource> 
         <resource id="31" type="binary" name="IMG_MENUBAR_TILE">	
             <value file="menu_bar_tile.png"></value>	
+            <value locale="themeFemale" file="/FEMALE/menu_bar_tile.png"></value>
         </resource> 
         <resource id="32" type="string" name="TXT_LIGHTBOX_COLOR">		
             <value>0</value>	
@@ -161,6 +165,18 @@
         <resource id="54" type="binary" name="IMG_CHECKBOX_OFF">	
             <value file="chkboxOff.png"></value>	
         </resource>  
+        <resource id="55" type="binary" name="IMG_LOCK_ON">	
+            <value file="lock_on.png"></value>	
+        </resource>
+        <resource id="56" type="binary" name="IMG_LOCK_OFF">	
+            <value file="lock_off.png"></value>	
+        </resource>
+        <resource id="57" type="binary" name="IMG_MALE">	
+            <value file="male.png"></value>	
+        </resource>
+        <resource id="58" type="binary" name="IMG_FEMALE">	
+            <value file="female.png"></value>	
+        </resource>
     </set>
 </resources>
 

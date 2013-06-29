@@ -104,4 +104,9 @@ public final class GlobalResources {
     public static final int TXT_MENU_SETTINGS = 103;
     public static final int TXT_SETTINGS_SAVED = 104;
     public static final int TXT_DIALOG_TITLE_SUCCESSFUL = 105;
+    public static final int TXT_DIALOG_PIN_MSG_CONFIRM = 106;
+    public static final int TXT_LOCK_ON = 107;
+    public static final int TXT_LOCK_OFF = 108;
+    public static final int TXT_THEME_TITLE = 109;
+    public static final int TXT_THEME_DESC = 110;
 }

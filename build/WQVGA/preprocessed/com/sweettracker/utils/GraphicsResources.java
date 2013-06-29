@@ -56,4 +56,8 @@ public final class GraphicsResources {
     public static final int IMG_ABOUT_ICON = 52;
     public static final int IMG_CHECKBOX_ON = 53;
     public static final int IMG_CHECKBOX_OFF = 54;
+    public static final int IMG_LOCK_ON = 55;
+    public static final int IMG_LOCK_OFF = 56;
+    public static final int IMG_MALE = 57;
+    public static final int IMG_FEMALE = 58;
 }

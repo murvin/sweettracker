@@ -346,11 +346,11 @@
             <value locale="it-IT">Select your blood sugar level unit for entering values.</value>	
         </resource>
         <resource id="55" type="string" name="TXT_SETTINGS_PINCODE_DESC">		
-            <value locale="en-GB">If you select a PIN you will be prompted to enter it back on start up. Set it back to **** to deactivate authentication.</value>	
-            <value locale="es-ES">If you select a PIN you will be prompted to enter it back on start up. Set it back to **** to deactivate authentication.</value>	
-            <value locale="de-DE">If you select a PIN you will be prompted to enter it back on start up. Set it back to **** to deactivate authentication.</value>	
-            <value locale="fr-FR">If you select a PIN you will be prompted to enter it back on start up. Set it back to **** to deactivate authentication.</value>	
-            <value locale="it-IT">If you select a PIN you will be prompted to enter it back on start up. Set it back to **** to deactivate authentication.</value>	
+            <value locale="en-GB">If you select a PIN you will be prompted to enter it back on start up. Set it back to 0000 to deactivate authentication.</value>	
+            <value locale="es-ES">If you select a PIN you will be prompted to enter it back on start up. Set it back to 0000 to deactivate authentication.</value>	
+            <value locale="de-DE">If you select a PIN you will be prompted to enter it back on start up. Set it back to 0000 to deactivate authentication.</value>	
+            <value locale="fr-FR">If you select a PIN you will be prompted to enter it back on start up. Set it back to 0000 to deactivate authentication.</value>	
+            <value locale="it-IT">If you select a PIN you will be prompted to enter it back on start up. Set it back to 0000 to deactivate authentication.</value>	
         </resource>
         <resource id="56" type="string" name="TXT_SETTINGS_TARGET_DESC">		
             <value locale="en-GB">Set a personal target level you want to acheive to measure your inputs against.</value>	
@@ -687,6 +687,41 @@
             <value locale="de-DE">Successful</value>	
             <value locale="fr-FR">Successful</value>	
             <value locale="it-IT">Successful</value>	
+        </resource>
+        <resource id="106" type="string" name="TXT_DIALOG_PIN_MSG_CONFIRM">		
+            <value locale="en-GB">Confirm your memorable PIN.</value>	
+            <value locale="es-ES">Confirm your memorable PIN.</value>	
+            <value locale="de-DE">Confirm your memorable PIN.</value>	
+            <value locale="fr-FR">Confirm your memorable PIN.</value>	
+            <value locale="it-IT">Confirm your memorable PIN.</value>	
+        </resource>
+        <resource id="107" type="string" name="TXT_LOCK_ON">		
+            <value locale="en-GB">PIN locked mode</value>	
+            <value locale="es-ES">PIN locked mode</value>	
+            <value locale="de-DE">PIN locked mode</value>	
+            <value locale="fr-FR">PIN locked mode</value>	
+            <value locale="it-IT">PIN locked mode</value>	
+        </resource>
+        <resource id="108" type="string" name="TXT_LOCK_OFF">		
+            <value locale="en-GB">No PIN specified</value>	
+            <value locale="es-ES">No PIN specified</value>	
+            <value locale="de-DE">No PIN specified</value>	
+            <value locale="fr-FR">No PIN specified</value>	
+            <value locale="it-IT">No PIN specified</value>	
+        </resource>
+        <resource id="109" type="string" name="TXT_THEME_TITLE">		
+            <value locale="en-GB">Theme</value>	
+            <value locale="es-ES">Theme</value>	
+            <value locale="de-DE">Theme</value>	
+            <value locale="fr-FR">Theme</value>	
+            <value locale="it-IT">Theme</value>	
+        </resource>
+        <resource id="110" type="string" name="TXT_THEME_DESC">		
+            <value locale="en-GB">Select your favourite theme to skin the application.</value>	
+            <value locale="es-ES">Select your favourite theme to skin the application.</value>	
+            <value locale="de-DE">Select your favourite theme to skin the application.</value>	
+            <value locale="fr-FR">Select your favourite theme to skin the application.</value>	
+            <value locale="it-IT">Select your favourite theme to skin the application.</value>	
         </resource>
     </set>
 </resources>

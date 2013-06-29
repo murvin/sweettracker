@@ -48,10 +48,8 @@ public class Utils {
                 if (entryIndex == 0) {
                     text.append("themeDefault");
                 } else if (entryIndex == 1) {
-                    text.append("themeAutumn");
-                } else if (entryIndex == 2) {
-                    text.append("themeWinter");
-                }
+                    text.append("themeFemale");
+                } 
                 break;
             }
         }

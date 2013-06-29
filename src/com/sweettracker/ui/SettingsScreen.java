@@ -8,6 +8,7 @@ import com.sweettracker.ui.components.settings.DiabetesTypeSettingsItem;
 import com.sweettracker.ui.components.settings.LanguageSettingsItem;
 import com.sweettracker.ui.components.settings.PinCodeSettingsItem;
 import com.sweettracker.ui.components.settings.TargetLevelSettingsItem;
+import com.sweettracker.ui.components.settings.ThemeSettingsItem;
 import com.sweettracker.ui.components.settings.UnitsSettingsItem;
 import com.sweettracker.utils.*;
 import com.uikit.animations.UikitButton;
@@ -33,7 +34,9 @@ public class SettingsScreen extends SweetTrackerScreen {
     private UnitsSettingsItem units_item;
     private PinCodeSettingsItem pincode_item;
     private TargetLevelSettingsItem targetLevelSettingsItem;
+    private ThemeSettingsItem themeSettingsItem;
     public static final int INPUT_PIN = 0x010;
+    public static final int INPUT_CONFIRM_PIN = 0x030;
     public static final int INPUT_TARGET = 0x020;
     
     public SettingsScreen() {
@@ -80,6 +83,7 @@ public class SettingsScreen extends SweetTrackerScreen {
             Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_TARGET_DESC)
         };
         
+        
         font_title_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_TITLE_TEXT_COLOR));
         Image imgFontTitle = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_MEDIUM);
         font_title = new BitmapFont(imgFontTitle, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_MEDIUM, 0);
@@ -125,6 +129,10 @@ public class SettingsScreen extends SweetTrackerScreen {
         targetLevelSettingsItem.setEventListener(this);
         addComponent(targetLevelSettingsItem);
         
+        themeSettingsItem = new ThemeSettingsItem(w, Resources.getInstance().getText(GlobalResources.TXT_THEME_TITLE), Resources.getInstance().getText(GlobalResources.TXT_THEME_DESC), font_title, font_desc, font_title_color, font_desc_color, new Integer(settings.getCurrentTheme()), this);
+        themeSettingsItem.setEventListener(this);
+        addComponent(themeSettingsItem);
+        
         updateOffsets();
         
         getStyle(true).setPadding(topPadding + vgap, 0, bottomPadding + vgap, 0);
@@ -136,6 +144,7 @@ public class SettingsScreen extends SweetTrackerScreen {
         int type = settings.getDiabetesTypeItem();
         int idx = type == Constants.DIABETES_TYPE_NONE ? 0 : (type == Constants.DIABETES_TYPE_ONE ? 1 : 2);
         diabetic_type_item.moveIndicatorToIndx(idx);
+        themeSettingsItem.moveIndicatorToIndx(settings.getCurrentTheme());
     }
     
     public void onComponentEvent(Component c, int e, Object o, int p) {
@@ -155,14 +164,15 @@ public class SettingsScreen extends SweetTrackerScreen {
         updateSettings();
     }
     
-    public boolean hasLocaleChanged(){
+    public boolean hasLocaleChanged() {
         return settings.getCurrentLocale() != language_item.getCurrentSelIdx();
     }
     
-    public boolean hasThemeChanged(){
-        return false;
+    public boolean hasThemeChanged() {
+        return settings.getCurrentTheme() != themeSettingsItem.getCurrentSelIdx();
     }
-    public Settings getCurrentSettings(){
+    
+    public Settings getCurrentSettings() {
         return this.settings;
     }
     
@@ -171,7 +181,7 @@ public class SettingsScreen extends SweetTrackerScreen {
         settings.setGlucoseUnit(units_item.getCurrentSelIdx() == 0 ? Constants.UNIT_MG : Constants.UNIT_MMOL);
         int diabetes_idx = diabetic_type_item.getCurrentSelIdx();
         settings.setDiabetesType(diabetes_idx == 0 ? Constants.DIABETES_TYPE_NONE : (diabetes_idx == 1 ? Constants.DIABETES_TYPE_ONE : Constants.DIABETES_TYPE_TWO));
-        
+        settings.setCurrentTheme(themeSettingsItem.getCurrentSelIdx());
         try {
             Database.getInstance().saveISerializable(settings, Database.SETTINGS);
         } catch (Exception e) {

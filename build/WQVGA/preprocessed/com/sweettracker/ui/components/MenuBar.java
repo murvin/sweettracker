@@ -23,6 +23,12 @@ public class MenuBar extends Panel {
 
         setSize(iWidth, bg.getHeight());
     }
+    
+    public void updateTheme(){
+        initResources();
+        getStyle(true).clearAllRenderers();
+        initComponents();
+    }
 
     public void removeSoftKey(boolean isLSK) {
         if (isLSK) {

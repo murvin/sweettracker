@@ -26,8 +26,7 @@
                       
         <locale name="common" />     
         <locale name= "themeDefault" />
-        <locale name="themeAutumn" />
-        <locale name= "themeWinter" />
+        <locale name="themeFemale" />
         
         </builder>
     </target>

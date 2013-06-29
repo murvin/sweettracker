@@ -229,7 +229,15 @@ public class SweetTrackerController extends Controller {
         try {
             settings = (Settings) Database.getInstance().retrieveISerializable(Database.SETTINGS);
             if (settings.hasAcceptedTerms()) {
-                navigateScreen(SweetTrackerController.SCREEN_HOME, true, null);
+                //#if FULL_VERSION
+                if (settings.hasDefaultCode()) {
+                    navigateScreen(SweetTrackerController.SCREEN_HOME, true, null);
+                } else {
+                    showConfirmPinCodeDialog();
+                }
+                //#else
+//#                     navigateScreen(SweetTrackerController.SCREEN_HOME, true, null);
+                //#endif
             } else {
                 navigateScreen(SweetTrackerController.SCREEN_LOCALE, false, null);
             }
@@ -276,6 +284,8 @@ public class SweetTrackerController extends Controller {
                     if (hasThemeChanged) {
                         try {
                             Resources.getInstance().initTheme(THEME_BUNDLE_NAME, Utils.getEntryText(Utils.ENTRY_THEMES, settings.getCurrentTheme()));
+                            topBar.updateTheme();
+                            menuBar.updateTheme();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -310,11 +320,15 @@ public class SweetTrackerController extends Controller {
                     InputDialog d = (InputDialog) c.getContainingPanel().getContainingPanel().getContainingPanel();
                     String input = d.getInput();
                     if (input == null || input.trim().equals("")) {
-                        // dismiss dialog
-                        view.getLayer(LAYER_DIALOG).removeAllComponents();
-                        canvas.setTouchEventHandler(currentTouchHandler);
-                        showAlertDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TITLE_UNSUCCESSFUL),
-                                Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TEXT_INVALID_INPUT));
+                        if (d.getId() == SettingsScreen.INPUT_CONFIRM_PIN) {
+                            midlet.notifyDestroyed();
+                        } else {
+                            // dismiss dialog
+                            view.getLayer(LAYER_DIALOG).removeAllComponents();
+                            canvas.setTouchEventHandler(currentTouchHandler);
+                            showAlertDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TITLE_UNSUCCESSFUL),
+                                    Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TEXT_INVALID_INPUT));
+                        }
                         return;
                     } else {
                         if (current_screen instanceof SettingsScreen) {
@@ -327,7 +341,16 @@ public class SweetTrackerController extends Controller {
                             if (d.getId() == EntryScreen.INPUT_GLUCOSE_LEVEL) {
                                 ((EntryScreen) current_screen).setGlucoseLevel(Float.parseFloat(input));
                             }
+                        } else{
+                            if (d.getId() == SettingsScreen.INPUT_CONFIRM_PIN) {
+                                confirmPIN(input);
+                            }
                         }
+                    }
+                } else if (((UikitButton) c).getId() == INPUT_DIALG_CANCEL) {
+                    InputDialog d = (InputDialog) c.getContainingPanel().getContainingPanel().getContainingPanel();
+                    if (d.getId() == SettingsScreen.INPUT_CONFIRM_PIN) {
+                        midlet.notifyDestroyed();
                     }
                 }
                 // dismiss dialog
@@ -449,6 +472,25 @@ public class SweetTrackerController extends Controller {
             Database.getInstance().saveISerializable(settings, Database.SETTINGS);
         } catch (Exception ex) {
             ex.printStackTrace();
+        }
+    }
+
+    private void showConfirmPinCodeDialog() {
+        showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_TITLE), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_MSG_CONFIRM), SettingsScreen.INPUT_CONFIRM_PIN);
+    }
+    
+    private void confirmPIN(String code){
+        Settings settings = null;
+        try {
+            settings = (Settings) Database.getInstance().retrieveISerializable(Database.SETTINGS);
+            
+            if (settings.getCode().equals(code)) {
+                navigateScreen(SCREEN_HOME, true, null);
+            }else{
+                midlet.notifyDestroyed();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

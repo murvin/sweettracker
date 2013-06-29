@@ -19,7 +19,7 @@ public class MenuItem extends Panel implements ITouchEventListener {
     private int layout_gap, layout_padding;
     private BitmapFont font;
     private Image imgText, imgHighlight;
-    private int theme_label_a_color;
+    private int  desc_text_colour;
     private int id;
     private PatchPainter highLightPainter;
     public static final int EVENT_CLICK = 0xf001;
@@ -34,7 +34,7 @@ public class MenuItem extends Panel implements ITouchEventListener {
         layout_gap = 5;
         layout_padding = 3;
 
-        theme_label_a_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_TITLE_TEXT_COLOR));
+        desc_text_colour = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_DESC_TEXT_COLOR));
         imgHighlight = Resources.getInstance().getThemeImage(GraphicsResources.IMG_HIGH_BG);
 
         Image imgFont = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_MEDIUM);
@@ -51,11 +51,10 @@ public class MenuItem extends Panel implements ITouchEventListener {
         addComponent(new UikitImageBox(image));
         expandToFitContent();
 
-        addComponent(new Line(iWidth, theme_label_a_color));
+        addComponent(new Line(iWidth, desc_text_colour));
 
 
         imgText = font.drawStringToImage(label);
-        imgText = Utils.replaceColor(imgText, theme_label_a_color);
         addComponent(new UikitImageBox(imgText));
 
 
