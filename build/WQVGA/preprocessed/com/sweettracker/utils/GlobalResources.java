@@ -84,7 +84,7 @@ public final class GlobalResources {
     public static final int TXT_DIALOG_GLUCOSE_LEVEL_TITLE = 82;
     public static final int TXT_DIALOG_ENTRY_SAVED_TITLE = 83;
     public static final int TXT_DIALOG_ENTRY_SAVED_MSG = 84;
-    public static final int TXT_APP_NAME = 85;
+    public static final int TXT_APP_DESC = 85;
     public static final int TXT_ABOUT_VERSION = 87;
     public static final int TXT_ABOUT_DEVELOPER = 88;
     public static final int TXT_COMMON_ABOUT = 89;

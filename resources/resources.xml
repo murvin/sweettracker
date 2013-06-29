@@ -548,12 +548,12 @@
             <value locale="fr-FR">Entry successfully saved to your calendar.</value>	
             <value locale="it-IT">Entry successfully saved to your calendar.</value>	
         </resource>
-        <resource id="85" type="string" name="TXT_APP_NAME">	
-            <value locale="en-GB">App name</value>	
-            <value locale="es-ES">App name</value>	
-            <value locale="de-DE">App name</value>	
-            <value locale="fr-FR">App name</value>	
-            <value locale="it-IT">App name</value>						
+        <resource id="85" type="string" name="TXT_APP_DESC">	
+            <value locale="en-GB">is designed to help you efficiently record and monitor your blood sugar levels. After entering your values you can use the calendar or graphs for data visualisation. It also evaluates your level and assigns it a critical level colour code. Tracking your blood sugar is now easy and effective.</value>	
+            <value locale="es-ES">is designed to help you efficiently record and monitor your blood sugar levels. After entering your values you can use the calendar or graphs for data visualisation. It also evaluates your level and assigns it a critical level colour code. Tracking your blood sugar is now easy and effective.</value>	
+            <value locale="de-DE">is designed to help you efficiently record and monitor your blood sugar levels. After entering your values you can use the calendar or graphs for data visualisation. It also evaluates your level and assigns it a critical level colour code. Tracking your blood sugar is now easy and effective.</value>	
+            <value locale="fr-FR">is designed to help you efficiently record and monitor your blood sugar levels. After entering your values you can use the calendar or graphs for data visualisation. It also evaluates your level and assigns it a critical level colour code. Tracking your blood sugar is now easy and effective.</value>	
+            <value locale="it-IT">is designed to help you efficiently record and monitor your blood sugar levels. After entering your values you can use the calendar or graphs for data visualisation. It also evaluates your level and assigns it a critical level colour code. Tracking your blood sugar is now easy and effective.</value>						
         </resource>
         <resource id="87" type="string" name="TXT_ABOUT_VERSION">		
             <value locale="en-GB">Version</value>	
