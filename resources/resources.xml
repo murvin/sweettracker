@@ -2,6 +2,21 @@
 <!DOCTYPE resources SYSTEM "resources.dtd">
 <resources version="1.0">  
     <set basename="GlobalResources">
+        <resource id="1" type="string" name="LOCALE_ENGLISH">	
+            <value>English</value>						
+        </resource>
+        <resource id="2" type="string" name="LOCALE_SPANISH">	
+            <value>Español</value>						
+        </resource>
+        <resource id="3" type="string" name="LOCALE_GERMAN">	
+            <value>Deutsch</value>						
+        </resource>
+        <resource id="4" type="string" name="LOCALE_FRENCH">	
+            <value>Français</value>						
+        </resource>
+        <resource id="5" type="string" name="LOCALE_ITALIAN">	
+            <value>Italiano</value>						
+        </resource>
         <resource id="6" type="string" name="GSM_LANG">		
             <value locale="en-GB">en</value>	
             <value locale="es-ES">es</value>	
@@ -256,17 +271,10 @@
         </resource>
         <resource id="43" type="string" name="TXT_MENU_CAL">		
             <value locale="en-GB">Calendar</value>	
-            <value locale="es-ES">Calendar</value>	
-            <value locale="de-DE">Calendar</value>	
-            <value locale="fr-FR">Calendar</value>	
-            <value locale="it-IT">Calendar</value>	
-        </resource>
-        <resource id="44" type="string" name="TXT_MENU_SETTINGS">		
-            <value locale="en-GB">Settings</value>	
-            <value locale="es-ES">Settings</value>	
-            <value locale="de-DE">Settings</value>	
-            <value locale="fr-FR">Settings</value>	
-            <value locale="it-IT">Settings</value>	
+            <value locale="es-ES">Calendario</value>	
+            <value locale="de-DE">Kalender</value>	
+            <value locale="fr-FR">Calendrier</value>	
+            <value locale="it-IT">Calendario</value>	
         </resource>
         <resource id="45" type="string" name="TXT_MENU_GRAPH">		
             <value locale="en-GB">Graph</value>	
@@ -325,32 +333,31 @@
             <value locale="it-IT">Target Level</value>	
         </resource>
         <resource id="53" type="string" name="TXT_SETTINGS_LANGUAGE_DESC">		
-            <value locale="en-GB">Used for navigation and display.</value>	
-            <value locale="es-ES">Used for navigation and display.</value>	
-            <value locale="de-DE">Used for navigation and display.</value>	
-            <value locale="fr-FR">Used for navigation and display.</value>	
-            <value locale="it-IT">Used for navigation and display.</value>	
+            <value locale="en-GB">Select your preferred language.</value>	
+            <value locale="de-DE">Select your preferred language.</value>	
+            <value locale="fr-FR">Select your preferred language.</value>	
+            <value locale="it-IT">Select your preferred language.</value>	
         </resource>
         <resource id="54" type="string" name="TXT_SETTINGS_UNITS_DESC">		
-            <value locale="en-GB">For blood sugar levels.</value>	
-            <value locale="es-ES">For blood sugar levels.</value>	
-            <value locale="de-DE">For blood sugar levels.</value>	
-            <value locale="fr-FR">For blood sugar levels.</value>	
-            <value locale="it-IT">For blood sugar levels.</value>	
+            <value locale="en-GB">Select your blood sugar level unit for entering values.</value>	
+            <value locale="es-ES">Select your blood sugar level unit for entering values.</value>	
+            <value locale="de-DE">Select your blood sugar level unit for entering values.</value>	
+            <value locale="fr-FR">Select your blood sugar level unit for entering values.</value>	
+            <value locale="it-IT">Select your blood sugar level unit for entering values.</value>	
         </resource>
         <resource id="55" type="string" name="TXT_SETTINGS_PINCODE_DESC">		
-            <value locale="en-GB">Pin protected start up.</value>	
-            <value locale="es-ES">Pin protected start up.</value>	
-            <value locale="de-DE">Pin protected start up.</value>	
-            <value locale="fr-FR">Pin protected start up.</value>	
-            <value locale="it-IT">Pin protected start up.</value>	
+            <value locale="en-GB">If you select a PIN you will be prompted to enter it back on start up. Set it back to **** to deactivate authentication.</value>	
+            <value locale="es-ES">If you select a PIN you will be prompted to enter it back on start up. Set it back to **** to deactivate authentication.</value>	
+            <value locale="de-DE">If you select a PIN you will be prompted to enter it back on start up. Set it back to **** to deactivate authentication.</value>	
+            <value locale="fr-FR">If you select a PIN you will be prompted to enter it back on start up. Set it back to **** to deactivate authentication.</value>	
+            <value locale="it-IT">If you select a PIN you will be prompted to enter it back on start up. Set it back to **** to deactivate authentication.</value>	
         </resource>
         <resource id="56" type="string" name="TXT_SETTINGS_TARGET_DESC">		
-            <value locale="en-GB">Your personal target.</value>	
-            <value locale="es-ES">Your personal target.</value>	
-            <value locale="de-DE">Your personal target.</value>	
-            <value locale="fr-FR">Your personal target.</value>	
-            <value locale="it-IT">Your personal target.</value>	
+            <value locale="en-GB">Set a personal target level you want to acheive to measure your inputs against.</value>	
+            <value locale="es-ES">Set a personal target level you want to acheive to measure your inputs against.</value>	
+            <value locale="de-DE">Set a personal target level you want to acheive to measure your inputs against.</value>	
+            <value locale="fr-FR">Set a personal target level you want to acheive to measure your inputs against.</value>	
+            <value locale="it-IT">Set a personal target level you want to acheive to measure your inputs against.</value>	
         </resource>
         <resource id="57" type="string" name="TXT_DIALOG_EXIT_TITLE">		
             <value locale="en-GB">Exit SweetTracker</value>	
@@ -472,11 +479,11 @@
             <value locale="it-IT">Diabetes Type</value>	
         </resource>
         <resource id="75" type="string" name="TXT_SETTINGS_DIABETES_TYPE_DESC">		
-            <value locale="en-GB">Before / After meal ranges.</value>	
-            <value locale="es-ES">Before / After meal ranges.</value>	
-            <value locale="de-DE">Before / After meal ranges.</value>	
-            <value locale="fr-FR">Before / After meal ranges.</value>	
-            <value locale="it-IT">Before / After meal ranges.</value>	
+            <value locale="en-GB">Select one column to indicate if your diabetic or not. The first range in each column is the normal 'Before meals' values. The range below is the 'After meals' values.</value>	
+            <value locale="es-ES">Select one column to indicate if your diabetic or not. The first range in each column is the normal 'Before meals' values. The range below is the 'After meals' values.</value>	
+            <value locale="de-DE">Select one column to indicate if your diabetic or not. The first range in each column is the normal 'Before meals' values. The range below is the 'After meals' values.</value>	
+            <value locale="fr-FR">Select one column to indicate if your diabetic or not. The first range in each column is the normal 'Before meals' values. The range below is the 'After meals' values.</value>	
+            <value locale="it-IT">Select one column to indicate if your diabetic or not. The first range in each column is the normal 'Before meals' values. The range below is the 'After meals' values.</value>	
         </resource>
          <resource id="76" type="string" name="TXT_SETTINGS_DIABETES_TYPE_NONE">		
             <value locale="en-GB">None</value>	
@@ -659,6 +666,27 @@
             <value locale="de-DE">Please try again with a valid input.</value>	
             <value locale="fr-FR">Please try again with a valid input.</value>	
             <value locale="it-IT">Please try again with a valid input.</value>	
+        </resource>
+        <resource id="103" type="string" name="TXT_MENU_SETTINGS">		
+            <value locale="en-GB">Settings</value>	
+            <value locale="es-ES">Ajustes</value>	
+            <value locale="de-DE">Einstellungen</value>	
+            <value locale="fr-FR">Paramètres</value>	
+            <value locale="it-IT">Impostazioni</value>	
+        </resource>
+        <resource id="104" type="string" name="TXT_SETTINGS_SAVED">		
+            <value locale="en-GB">Your settings have been updated.</value>	
+            <value locale="es-ES">Su configuración ha sido actualizada.</value>	
+            <value locale="de-DE">Ihre Einstellungen wurden aktualisiert.</value>	
+            <value locale="fr-FR">Vos paramètres ont été mis à jour.</value>	
+            <value locale="it-IT">Le impostazioni sono state aggiornate.</value>	
+        </resource>
+        <resource id="105" type="string" name="TXT_DIALOG_TITLE_SUCCESSFUL">		
+            <value locale="en-GB">Successful</value>	
+            <value locale="es-ES">Successful</value>	
+            <value locale="de-DE">Successful</value>	
+            <value locale="fr-FR">Successful</value>	
+            <value locale="it-IT">Successful</value>	
         </resource>
     </set>
 </resources>

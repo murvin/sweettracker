@@ -155,6 +155,12 @@
         <resource id="52" type="binary" name="IMG_ABOUT_ICON">	
             <value file="about_logo.png"></value>	
         </resource>
+        <resource id="53" type="binary" name="IMG_CHECKBOX_ON">	
+            <value file="chkboxOn.png"></value>	
+        </resource>   
+        <resource id="54" type="binary" name="IMG_CHECKBOX_OFF">	
+            <value file="chkboxOff.png"></value>	
+        </resource>  
     </set>
 </resources>
 

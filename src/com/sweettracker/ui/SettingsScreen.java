@@ -155,6 +155,17 @@ public class SettingsScreen extends SweetTrackerScreen {
         updateSettings();
     }
     
+    public boolean hasLocaleChanged(){
+        return settings.getCurrentLocale() != language_item.getCurrentSelIdx();
+    }
+    
+    public boolean hasThemeChanged(){
+        return false;
+    }
+    public Settings getCurrentSettings(){
+        return this.settings;
+    }
+    
     public void saveSettings() {
         settings.setCurrentLocale(language_item.getCurrentSelIdx());
         settings.setGlucoseUnit(units_item.getCurrentSelIdx() == 0 ? Constants.UNIT_MG : Constants.UNIT_MMOL);
@@ -166,7 +177,5 @@ public class SettingsScreen extends SweetTrackerScreen {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
-        controller.navigateScreen(SweetTrackerController.SCREEN_HOME, false, null);
     }
 }

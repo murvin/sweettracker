@@ -3,10 +3,12 @@ package com.sweettracker.ui.components.settings;
 import com.sweettracker.utils.Utils;
 import com.uikit.animations.Line;
 import com.uikit.animations.UikitImageBox;
+import com.uikit.animations.UikitTextBox;
 import com.uikit.coreElements.BitmapFont;
 import com.uikit.coreElements.IComponentEventListener;
 import com.uikit.coreElements.Panel;
 import com.uikit.layout.BoxLayout;
+import com.uikit.styles.TextStyle;
 import com.uikit.utils.UikitConstant;
 import javax.microedition.lcdui.Image;
 
@@ -18,6 +20,7 @@ public abstract class SettingsItem extends Panel {
     protected int title_color, desc_color;
     private int vgap;
     protected Object param;
+    private TextStyle txtDescStyle;
 
     public SettingsItem(int w, String title, String desc, BitmapFont title_font, BitmapFont desc_font, int title_color, int desc_color, Object param, IComponentEventListener _cel) {
         super(w, 0);
@@ -54,9 +57,9 @@ public abstract class SettingsItem extends Panel {
     }
 
     private void addDesc() {
-        Image imgText = desc_font.drawStringToImage(desc);
-        imgText = Utils.replaceColor(imgText, desc_color);
-        addComponent(new UikitImageBox(imgText));
+        txtDescStyle = new TextStyle(desc_font);
+        txtDescStyle.setFontColour(desc_color);
+        addComponent(new UikitTextBox(iWidth, desc, txtDescStyle));
     }
 
     private void addLine() {

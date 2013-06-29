@@ -3,6 +3,11 @@ package com.sweettracker.utils;
 public final class GlobalResources {
     private GlobalResources() { }
 
+    public static final int LOCALE_ENGLISH = 1;
+    public static final int LOCALE_SPANISH = 2;
+    public static final int LOCALE_GERMAN = 3;
+    public static final int LOCALE_FRENCH = 4;
+    public static final int LOCALE_ITALIAN = 5;
     public static final int GSM_LANG = 6;
     public static final int TXT_COMMON_BACK = 8;
     public static final int TXT_COMMON_EXIT = 9;
@@ -40,7 +45,6 @@ public final class GlobalResources {
     public static final int TXT_SUN = 41;
     public static final int TXT_MENU_ADD = 42;
     public static final int TXT_MENU_CAL = 43;
-    public static final int TXT_MENU_SETTINGS = 44;
     public static final int TXT_MENU_GRAPH = 45;
     public static final int TXT_MENU_INFO = 46;
     public static final int TXT_MENU_HELP = 47;
@@ -97,4 +101,7 @@ public final class GlobalResources {
     public static final int TXT_TERMS_DESC_4 = 100;
     public static final int TXT_DIALOG_TITLE_UNSUCCESSFUL = 101;
     public static final int TXT_DIALOG_TEXT_INVALID_INPUT = 102;
+    public static final int TXT_MENU_SETTINGS = 103;
+    public static final int TXT_SETTINGS_SAVED = 104;
+    public static final int TXT_DIALOG_TITLE_SUCCESSFUL = 105;
 }

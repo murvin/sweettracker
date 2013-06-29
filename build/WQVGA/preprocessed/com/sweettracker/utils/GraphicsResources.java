@@ -54,4 +54,6 @@ public final class GraphicsResources {
     public static final int TXT_LINE_SEPERATOR_COLOR = 50;
     public static final int IMG_DROP_ICON = 51;
     public static final int IMG_ABOUT_ICON = 52;
+    public static final int IMG_CHECKBOX_ON = 53;
+    public static final int IMG_CHECKBOX_OFF = 54;
 }

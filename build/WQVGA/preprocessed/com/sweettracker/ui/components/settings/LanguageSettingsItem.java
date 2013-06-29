@@ -10,7 +10,7 @@ import com.uikit.utils.UikitConstant;
 import javax.microedition.lcdui.Image;
 
 public class LanguageSettingsItem extends IndicatorSettingsItem {
-    
+
     private Panel flagsPanel;
 
     public LanguageSettingsItem(int w, String title, String desc, BitmapFont title_font, BitmapFont desc_font, int title_color, int desc_color, Image[] flags, IComponentEventListener cel) {
@@ -35,10 +35,10 @@ public class LanguageSettingsItem extends IndicatorSettingsItem {
         flagsPanel.expandToFitContent();
         addComponent(flagsPanel);
     }
-    
-    public void moveIndicatorToIndx (int compIndex){
+
+    public void moveIndicatorToIndx(int compIndex) {
         Component c = this.flagsPanel.componentAt(compIndex);
         super.moveIndicator(c.x + (c.getWidth() / 2));
         super.currentSelIdx = compIndex;
-    }     
+    }
 }
