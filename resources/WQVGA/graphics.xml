@@ -34,8 +34,7 @@
             <value file="splash_grid.png"></value>	
         </resource>
         <resource id="11" type="string" name="TXT_TITLE_TEXT_COLOR">		
-            <value>535629</value>	
-            <value locale="themeFemale">9964142</value>
+            <value>2500134</value>	
         </resource>
         <resource id="12" type="binary" name="FONT_THEME_SMALL">	
             <value file="droid_r_11.png"></value>	
@@ -54,7 +53,8 @@
             <value locale="themeFemale" file="/FEMALE/bar_tile.png"></value>
         </resource>
         <resource id="18" type="binary" name="IMG_HIGH_BG">	
-            <value file="highlight.png"></value>	
+            <value file="highlight.png"></value>
+            <value locale="themeFemale" file="/FEMALE/highlight.png"></value>	
         </resource>
         <resource id="19" type="binary" name="IMG_SPLASH_APPNAME">	
             <value file="splash_app_name.png"></value>	

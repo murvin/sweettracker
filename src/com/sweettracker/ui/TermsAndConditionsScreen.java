@@ -22,7 +22,7 @@ public class TermsAndConditionsScreen extends SweetTrackerScreen {
     private int lineColour;
     private TextStyle txtBoxStyle;
     private int vgap;
-    private int fontColour;
+    private int descColour, titleColour;
 
     public TermsAndConditionsScreen() {
         initResources();
@@ -50,12 +50,15 @@ public class TermsAndConditionsScreen extends SweetTrackerScreen {
         smallFont = new BitmapFont(imgFontSmall, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_SMALL, 0);
 
         lineColour = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_LINE_SEPERATOR_COLOR));
+        descColour = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_DESC_TEXT_COLOR));
+        titleColour = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_TITLE_TEXT_COLOR));
+        
         padding = 4 * UiKitDisplay.getWidth() / 100;
 
         vgap = 1 * UiKitDisplay.getHeight() / 100;
 
         txtBoxStyle = new TextStyle(smallFont);
-        txtBoxStyle.setFontColour(fontColour);
+        txtBoxStyle.setFontColour(descColour);
 
     }
 
@@ -64,11 +67,11 @@ public class TermsAndConditionsScreen extends SweetTrackerScreen {
         int w = iWidth - (padding * 2);
 
         for (int i = 0; i < titles.length; i++) {
-            addComponent(new TermsDelimiter(titles[i], w, largeFont.getHeight(), lineColour, largeFont));
+            addComponent(new TermsDelimiter(titles[i], w, largeFont.getHeight(), lineColour, largeFont, titleColour));
             addComponent(new UikitTextBox(w, description[i], txtBoxStyle));
         }
 
         updateOffsets();
-        getStyle(true).setPadding(topPadding + vgap, 0, bottomPadding + vgap, 0);
+        getStyle(true).setPadding(topPadding + vgap, 0, bottomPadding + (vgap * 3), 0);
     }
 }

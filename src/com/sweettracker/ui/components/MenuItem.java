@@ -10,6 +10,7 @@ import com.uikit.coreElements.ITouchEventListener;
 import com.uikit.coreElements.Panel;
 import com.uikit.layout.BoxLayout;
 import com.uikit.painters.PatchPainter;
+import com.uikit.utils.ImageUtil;
 import com.uikit.utils.UikitConstant;
 import javax.microedition.lcdui.Font;
 import javax.microedition.lcdui.Image;
@@ -19,7 +20,7 @@ public class MenuItem extends Panel implements ITouchEventListener {
     private int layout_gap, layout_padding;
     private BitmapFont font;
     private Image imgText, imgHighlight;
-    private int  desc_text_colour;
+    private int title_text_colour, desc_text_colour;
     private int id;
     private PatchPainter highLightPainter;
     public static final int EVENT_CLICK = 0xf001;
@@ -34,6 +35,7 @@ public class MenuItem extends Panel implements ITouchEventListener {
         layout_gap = 5;
         layout_padding = 3;
 
+        title_text_colour = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_TITLE_TEXT_COLOR));
         desc_text_colour = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_DESC_TEXT_COLOR));
         imgHighlight = Resources.getInstance().getThemeImage(GraphicsResources.IMG_HIGH_BG);
 
@@ -55,6 +57,7 @@ public class MenuItem extends Panel implements ITouchEventListener {
 
 
         imgText = font.drawStringToImage(label);
+        imgText = ImageUtil.replaceColor(imgText, title_text_colour);
         addComponent(new UikitImageBox(imgText));
 
 
@@ -67,7 +70,7 @@ public class MenuItem extends Panel implements ITouchEventListener {
         if (isOnFocus) {
             getStyle(true).addRenderer(highLightPainter);
         } else {
-            if(getStyle(true).getRenderers() != null){
+            if (getStyle(true).getRenderers() != null) {
                 getStyle(true).getRenderers().removeElement(highLightPainter);
             }
         }

@@ -343,17 +343,17 @@ public class Utils {
         if (timeInterval == Constants.TIME_BEFORE_MEAL) {
             if (glucoseLevel < item.getBeforeMealMax()) {
                 return Constants.LEVEL_NORMAL;
-            } else if (glucoseLevel >= item.getBeforeMealMax() && glucoseLevel <= item.getBeforeMealMax() + 1) {
+            } else if (glucoseLevel >= item.getBeforeMealMax() && glucoseLevel <= item.getBeforeMealMax() + 0.1) {
                 return Constants.LEVEL_HIGH;
-            } else if (glucoseLevel > item.getBeforeMealMax()) {
+            } else if (glucoseLevel > item.getBeforeMealMax() + 0.1) {
                 return Constants.LEVEL_CRITICAL;
             }
         } else if (timeInterval == Constants.TIME_LESS_2_HOURS) {
             if (glucoseLevel < item.getAfterMealMax()) {
                 return Constants.LEVEL_NORMAL;
-            } else if (glucoseLevel >= item.getAfterMealMax() && glucoseLevel <= item.getAfterMealMax() + 1) {
+            } else if (glucoseLevel >= item.getAfterMealMax() && glucoseLevel <= item.getAfterMealMax() + 0.1) {
                 return Constants.LEVEL_HIGH;
-            } else if (glucoseLevel > item.getAfterMealMax()) {
+            } else if (glucoseLevel > item.getAfterMealMax() + 0.1) {
                 return Constants.LEVEL_CRITICAL;
             }
         }

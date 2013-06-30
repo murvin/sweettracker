@@ -12,7 +12,7 @@ import com.uikit.utils.UikitConstant;
 import javax.microedition.lcdui.Image;
 
 public class UnitsSettingsItem extends IndicatorSettingsItem {
-    
+
     private Panel container;
 
     public UnitsSettingsItem(int w, String title, String desc, BitmapFont title_font, BitmapFont desc_font, int title_color, int desc_color, Object param, IComponentEventListener cel) {
@@ -24,22 +24,21 @@ public class UnitsSettingsItem extends IndicatorSettingsItem {
         Image imgUnitMmol = Resources.getInstance().getThemeImage(GraphicsResources.IMG_UNITS_MMOL);
 
         container = new Panel(iWidth, 0);
-        int delta = 3;
-        TouchImageBox imgBoxMg = new TouchImageBox(imgUnitMg, delta);
+        int delta = 5;
+        TouchImageBox imgBoxMg = new TouchImageBox(imgUnitMg, ((iWidth / 2) - imgUnitMg.getWidth()) / 2, delta);
         imgBoxMg.setEventListener(this);
         container.addComponent(imgBoxMg);
-        TouchImageBox imgBoxMmol = new TouchImageBox(imgUnitMmol, delta);
+        TouchImageBox imgBoxMmol = new TouchImageBox(imgUnitMmol, ((iWidth / 2) - imgUnitMmol.getWidth()) / 2, delta);
         imgBoxMmol.setEventListener(this);
         container.addComponent(imgBoxMmol);
 
-        int layout_gap = (iWidth - (imgUnitMg.getWidth() + imgUnitMmol.getWidth())) / 3;
-        BoxLayout flagsPanelLayout = new BoxLayout(UikitConstant.HORIZONTAL, layout_gap);
+        BoxLayout flagsPanelLayout = new BoxLayout(UikitConstant.HORIZONTAL, 0);
         container.setLayout(flagsPanelLayout);
         container.expandToFitContent();
         addComponent(container);
     }
-    
-     public void moveIndicatorToIndx (int compIndex){
+
+    public void moveIndicatorToIndx(int compIndex) {
         Component c = this.container.componentAt(compIndex);
         super.moveIndicator(c.x + (c.getWidth() / 2));
         super.currentSelIdx = compIndex;

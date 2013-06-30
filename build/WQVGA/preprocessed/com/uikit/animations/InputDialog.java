@@ -119,4 +119,8 @@ public class InputDialog extends InfoDialog {
     public UikitTextInput getTextInput() {
         return this.textInput;
     }
+    
+    public void setContentText(String text){
+        this.textInput.setText(text);
+    }
 }

@@ -1,6 +1,5 @@
 package com.sweettracker.ui.components.settings;
 
-import com.sweettracker.utils.Utils;
 import com.uikit.animations.Line;
 import com.uikit.animations.UikitImageBox;
 import com.uikit.animations.UikitTextBox;
@@ -9,6 +8,7 @@ import com.uikit.coreElements.IComponentEventListener;
 import com.uikit.coreElements.Panel;
 import com.uikit.layout.BoxLayout;
 import com.uikit.styles.TextStyle;
+import com.uikit.utils.ImageUtil;
 import com.uikit.utils.UikitConstant;
 import javax.microedition.lcdui.Image;
 
@@ -52,6 +52,7 @@ public abstract class SettingsItem extends Panel {
 
     private void addTitle() {
         Image imgText = title_font.drawStringToImage(title);
+        imgText = ImageUtil.replaceColor(imgText, title_color);
         addComponent(new UikitImageBox(imgText));
     }
 

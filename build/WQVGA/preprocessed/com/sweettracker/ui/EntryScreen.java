@@ -19,11 +19,9 @@ import com.sweettracker.utils.Utils;
 import com.uikit.coreElements.BitmapFont;
 import com.uikit.coreElements.Component;
 import com.uikit.coreElements.ITouchEventListener;
-import com.uikit.coreElements.Panel;
 import com.uikit.coreElements.UiKitDisplay;
 import com.uikit.layout.BoxLayout;
 import com.uikit.painters.BgColorPainter;
-import com.uikit.painters.BorderPainter;
 import com.uikit.utils.UikitConstant;
 import javax.microedition.lcdui.Font;
 import javax.microedition.lcdui.Image;
@@ -39,10 +37,10 @@ public class EntryScreen extends SweetTrackerScreen {
     private Settings settings;
     private User user;
     private Entry entry;
-    private Panel container;
     private LevelEntryItem entryLevel;
     private EntryItem entryCal, entryTime, entryNote;
-    public static final int INPUT_GLUCOSE_LEVEL = 0x030;
+    public static final int INPUT_GLUCOSE_LEVEL = 0x330;
+    public static final int INPUT_GLUCOSE_NOTE = 0x331;
 
     public EntryScreen(Date date) {
         this.date = date;
@@ -103,27 +101,22 @@ public class EntryScreen extends SweetTrackerScreen {
         }
     }
 
-    private void setContainerBg() {
+    private void setBg() {
         int levelRange = entry.getLevelRange();
         switch (levelRange) {
             case Constants.LEVEL_NORMAL: {
-                container.getStyle(true).addRenderer(new BgColorPainter(normal_bg_color));
+                getStyle(true).addRenderer(new BgColorPainter(normal_bg_color));
                 break;
             }
             case Constants.LEVEL_HIGH: {
-                container.getStyle(true).addRenderer(new BgColorPainter(high_bg_color));
+                getStyle(true).addRenderer(new BgColorPainter(high_bg_color));
                 break;
             }
             case Constants.LEVEL_CRITICAL: {
-                container.getStyle(true).addRenderer(new BgColorPainter(critical_bg_color));
+                getStyle(true).addRenderer(new BgColorPainter(critical_bg_color));
                 break;
             }
         }
-        BorderPainter borderP = new BorderPainter();
-        borderP.setBorderColor(line_seperator_color);
-        borderP.setBorderSize(1);
-        container.getStyle(true).addRenderer(borderP);
-
     }
 
     private String getEntryTimeLevelDesc() {
@@ -168,24 +161,20 @@ public class EntryScreen extends SweetTrackerScreen {
     }
 
     private void initComponents() {
-        int topOffset = Resources.getInstance().getThemeImage(GraphicsResources.IMG_BAR_BG).getHeight();
-        container = new Panel(iWidth - (2 * vgap), iHeight - topOffset - topOffset - (vgap * 2));
+        setBg();
+        setLayout(new BoxLayout(UikitConstant.VERTICAL, vgap));
 
-        setContainerBg();
-        addComponent(container);
-        container.setLayout(new BoxLayout(UikitConstant.VERTICAL, vgap));
+        entryLevel = new LevelEntryItem(getWidth(), (int) (iHeight / 3.0), getEntryLevel(), getUnit(), Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, this);
+        addComponent(entryLevel);
 
-        entryLevel = new LevelEntryItem(container.getWidth(), (int) (iHeight / 3.0), getEntryLevel(), getUnit(), Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, this);
-        container.addComponent(entryLevel);
+        entryCal = new EntryItem(getWidth(), icons[0], getEntryDate(), null, font_descript, font_guide, font_desc_color, font_guide_color, line_seperator_color, this);
+        addComponent(entryCal);
 
-        entryCal = new EntryItem(container.getWidth(), icons[0], getEntryDate(), Resources.getInstance().getText(GlobalResources.TXT_SWIPE_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, line_seperator_color, this);
-        container.addComponent(entryCal);
+        entryTime = new EntryItem(getWidth(), icons[1], getEntryTimeLevelDesc(), Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, line_seperator_color, this);
+        addComponent(entryTime);
 
-        entryTime = new EntryItem(container.getWidth(), icons[1], getEntryTimeLevelDesc(), Resources.getInstance().getText(GlobalResources.TXT_SWIPE_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, line_seperator_color, this);
-        container.addComponent(entryTime);
-
-        entryNote = new EntryItem(container.getWidth(), icons[2], getEntryNote(), Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, line_seperator_color, this);
-        container.addComponent(entryNote);
+        entryNote = new EntryItem(getWidth(), icons[2], getEntryNote(), Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, line_seperator_color, this);
+        addComponent(entryNote);
 
         updateOffsets();
         getStyle(true).setPadding(topPadding + vgap, 0, bottomPadding + vgap, 0);
@@ -204,7 +193,20 @@ public class EntryScreen extends SweetTrackerScreen {
             // Visual update
             entryLevel.setLevel(newLevel);
             entryLevel.shakeIconImage();
-            setContainerBg();
+            setBg();
+        }
+    }
+
+    public void setNote(String note) {
+        if (!note.equals(entry.getNote())) {
+            entry.setNote(note);
+            removeComponent(entryNote);
+            entryNote = new EntryItem(getWidth(), icons[2], getEntryNote(), Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, line_seperator_color, this);
+            addComponent(entryNote);
+            entryNote.shakeIconImage();
+            setIsScrollable(true);
+            updateOffsets();
+            getStyle(true).setPadding(topPadding + vgap, 0, bottomPadding + vgap, 0);
         }
     }
 
@@ -214,35 +216,20 @@ public class EntryScreen extends SweetTrackerScreen {
                 ((SweetTrackerController) controller).showGlucoseLevelDialog();
             }
         } else if (c == entryTime) {
-            if (e == ITouchEventListener.DRAG_RELEASE) {
-                int newTimeInterval;
-                if (p == EntryItem.NEXT_SWIPE) {
-                    newTimeInterval = entry.getNextTimeInterval();
-                } else {
-                    newTimeInterval = entry.getPreviousTimeInterval();
-                }
+            if (e == ITouchEventListener.SINGLE_PRESS) {
+                int newTimeInterval = entry.getNextTimeInterval();
                 if (entry.getTimeInterval() != newTimeInterval) {
                     entry.setTimeInterval(newTimeInterval);
                     entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), entry.getGlucoseLevel(), entry.getUnits(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem())));
 
                     entryTime.setDescription(getEntryTimeLevelDesc());
                     entryTime.shakeIconImage();
+                    setBg();
                 }
-            }
-        } else if (c == entryCal) {
-            if (e == ITouchEventListener.DRAG_RELEASE) {
-                Date newDate;
-                if (p == EntryItem.NEXT_SWIPE) {
-                    newDate = Utils.getNextDate(entry.getDate());
-                } else {
-                    newDate = Utils.getPreviousDate(entry.getDate());
-                }
-                entry.setDate(newDate);
-                entryCal.setDescription(Utils.getFormattedDate(newDate));
-                entryCal.shakeIconImage();
             }
         } else if (c == entryNote) {
             if (e == ITouchEventListener.SINGLE_PRESS) {
+                ((SweetTrackerController) controller).showGlucoseLevelNoteDialog(entry.getNote());
             }
         }
     }

@@ -24,6 +24,17 @@ public class TouchImageBox extends Panel implements ITouchEventListener {
         int patchMargin = 3;
         highLightPainter = new PatchPainter(imgHighlight, patchMargin, patchMargin, patchMargin, patchMargin);
     }
+    
+    public TouchImageBox(Image image, int deltaW, int deltaH) {
+        super(image.getWidth() + (deltaW * 2), image.getHeight() + (deltaH * 2));
+        UikitImageBox imgBox = new UikitImageBox(image);
+        imgBox.x = deltaW;
+        imgBox.y = deltaH;
+        addComponent(imgBox);
+        Image imgHighlight = Resources.getInstance().getThemeImage(GraphicsResources.IMG_HIGH_BG);
+        int patchMargin = 3;
+        highLightPainter = new PatchPainter(imgHighlight, patchMargin, patchMargin, patchMargin, patchMargin);
+    }
 
     public void setId(int id) {
         this.id = id;

@@ -21,7 +21,7 @@ import javax.microedition.lcdui.Font;
 import javax.microedition.lcdui.Image;
 
 public class SettingsScreen extends SweetTrackerScreen {
-    
+
     private Image[] flags;
     private String[] item_titles;
     private String[] item_desc;
@@ -38,26 +38,26 @@ public class SettingsScreen extends SweetTrackerScreen {
     public static final int INPUT_PIN = 0x010;
     public static final int INPUT_CONFIRM_PIN = 0x030;
     public static final int INPUT_TARGET = 0x020;
-    
+
     public SettingsScreen() {
         init();
     }
-    
+
     public void setSettingsPinCode(String code) {
         settings.setCode(code);
         pincode_item.setPinCode(code);
     }
-    
-    public void setTargetLevel(String targetLevel) {
-        settings.setTargetLevel(Integer.parseInt(targetLevel));
-        targetLevelSettingsItem.setTarget(targetLevel);
+
+    public void setTargetLevel(float targetLevel) {
+        settings.setTargetLevel(targetLevel);
+        targetLevelSettingsItem.setTarget("" + targetLevel);
     }
-    
+
     private void init() {
         initResources();
         initComponents();
     }
-    
+
     private void initResources() {
         flags = new Image[]{
             Resources.getInstance().getThemeImage(GraphicsResources.IMG_FLAG_IT),
@@ -66,7 +66,7 @@ public class SettingsScreen extends SweetTrackerScreen {
             Resources.getInstance().getThemeImage(GraphicsResources.IMG_FLAG_EN),
             Resources.getInstance().getThemeImage(GraphicsResources.IMG_FLAG_DE)
         };
-        
+
         item_titles = new String[]{
             Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_LANGUAGE_TITLE),
             Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_DIABETES_TYPE_TITLE),
@@ -74,7 +74,7 @@ public class SettingsScreen extends SweetTrackerScreen {
             Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_PINCODE_TITLE),
             Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_TARGET_TITLE)
         };
-        
+
         item_desc = new String[]{
             Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_LANGUAGE_DESC),
             Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_DIABETES_TYPE_DESC),
@@ -82,62 +82,62 @@ public class SettingsScreen extends SweetTrackerScreen {
             Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_PINCODE_DESC),
             Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_TARGET_DESC)
         };
-        
-        
+
+
         font_title_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_TITLE_TEXT_COLOR));
         Image imgFontTitle = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_MEDIUM);
         font_title = new BitmapFont(imgFontTitle, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_MEDIUM, 0);
-        
+
         font_desc_color = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_DESC_TEXT_COLOR));
         Image imgFontDesc = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_SMALL);
         font_desc = new BitmapFont(imgFontDesc, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_SMALL, 0);
-        
+
         padding = 4 * UiKitDisplay.getWidth() / 100;
-        
+
         vgap = 2 * UiKitDisplay.getHeight() / 100;
-        
+
         try {
             settings = (Settings) Database.getInstance().retrieveISerializable(Database.SETTINGS);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
-    
+
     private void initComponents() {
         getStyle(true).setPadding(padding * 2, padding, padding, padding);
         setLayout(new BoxLayout(UikitConstant.VERTICAL, vgap * 2));
         int w = iWidth - (padding * 2);
-        
+
         language_item = new LanguageSettingsItem(w, item_titles[0], item_desc[0], font_title, font_desc, font_title_color, font_desc_color, flags, this);
         addComponent(language_item);
-        
+
         DiabetesTypeItem[] items = new DiabetesTypeItem[]{
             DiabetesTypeItem.getDefault(Constants.DIABETES_TYPE_NONE),
             DiabetesTypeItem.getDefault(Constants.DIABETES_TYPE_ONE),
             DiabetesTypeItem.getDefault(Constants.DIABETES_TYPE_TWO)};
         diabetic_type_item = new DiabetesTypeSettingsItem(w, item_titles[1], item_desc[1], font_title, font_desc, font_title_color, font_desc_color, items, cel);
         addComponent(diabetic_type_item);
-        
+
         units_item = new UnitsSettingsItem(w, item_titles[2], item_desc[2], font_title, font_desc, font_title_color, font_desc_color, null, this);
         addComponent(units_item);
-        
+
         pincode_item = new PinCodeSettingsItem(w, item_titles[3], item_desc[3], font_title, font_desc, font_title_color, font_desc_color, settings.getCode(), this);
         pincode_item.setEventListener(this);
         addComponent(pincode_item);
-        
+
         targetLevelSettingsItem = new TargetLevelSettingsItem(w, item_titles[4], item_desc[4], font_title, font_desc, font_title_color, font_desc_color, new Float(settings.getTargetLevel()), this);
         targetLevelSettingsItem.setEventListener(this);
         addComponent(targetLevelSettingsItem);
-        
+
         themeSettingsItem = new ThemeSettingsItem(w, Resources.getInstance().getText(GlobalResources.TXT_THEME_TITLE), Resources.getInstance().getText(GlobalResources.TXT_THEME_DESC), font_title, font_desc, font_title_color, font_desc_color, new Integer(settings.getCurrentTheme()), this);
         themeSettingsItem.setEventListener(this);
         addComponent(themeSettingsItem);
-        
+
         updateOffsets();
-        
-        getStyle(true).setPadding(topPadding + vgap, 0, bottomPadding + vgap, 0);
+
+        getStyle(true).setPadding(topPadding + vgap, 0, bottomPadding + (vgap * 3), 0);
     }
-    
+
     private void updateSettings() {
         language_item.moveIndicatorToIndx(settings.getCurrentLocale());
         units_item.moveIndicatorToIndx(settings.getGlucoseUnit() == Constants.UNIT_MG ? 0 : 1);
@@ -146,7 +146,7 @@ public class SettingsScreen extends SweetTrackerScreen {
         diabetic_type_item.moveIndicatorToIndx(idx);
         themeSettingsItem.moveIndicatorToIndx(settings.getCurrentTheme());
     }
-    
+
     public void onComponentEvent(Component c, int e, Object o, int p) {
         super.onComponentEvent(c, e, o, p);
         if (c instanceof UikitButton) {
@@ -159,23 +159,23 @@ public class SettingsScreen extends SweetTrackerScreen {
             }
         }
     }
-    
+
     public void onEnter() {
         updateSettings();
     }
-    
+
     public boolean hasLocaleChanged() {
         return settings.getCurrentLocale() != language_item.getCurrentSelIdx();
     }
-    
+
     public boolean hasThemeChanged() {
         return settings.getCurrentTheme() != themeSettingsItem.getCurrentSelIdx();
     }
-    
+
     public Settings getCurrentSettings() {
         return this.settings;
     }
-    
+
     public void saveSettings() {
         settings.setCurrentLocale(language_item.getCurrentSelIdx());
         settings.setGlucoseUnit(units_item.getCurrentSelIdx() == 0 ? Constants.UNIT_MG : Constants.UNIT_MMOL);

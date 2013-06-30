@@ -25,15 +25,15 @@ public class ThemeSettingsItem extends IndicatorSettingsItem {
         imgFemale = Resources.getInstance().getThemeImage(GraphicsResources.IMG_FEMALE);
         container = new Panel(iWidth, 0);
 
-        TouchImageBox imgBoxMale = new TouchImageBox(imgMale, 5);
+        TouchImageBox imgBoxMale = new TouchImageBox(imgMale, ((iWidth / 2) - imgMale.getWidth()) / 2, 5);
         imgBoxMale.setEventListener(this);
         container.addComponent(imgBoxMale);
 
-        TouchImageBox imgBoxFemale = new TouchImageBox(imgFemale, 5);
+        TouchImageBox imgBoxFemale = new TouchImageBox(imgFemale, ((iWidth / 2) - imgFemale.getWidth()) / 2, 5);
         imgBoxFemale.setEventListener(this);
         container.addComponent(imgBoxFemale);
 
-        container.setLayout(new BoxLayout(UikitConstant.HORIZONTAL, (iWidth - (imgBoxFemale.getWidth() * 2)) / 2));
+        container.setLayout(new BoxLayout(UikitConstant.HORIZONTAL, 0));
         container.expandToFitContent();
         addComponent(container);
     }

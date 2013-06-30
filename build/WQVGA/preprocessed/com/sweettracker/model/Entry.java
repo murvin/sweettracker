@@ -26,7 +26,7 @@ public class Entry implements ISerializable {
 
     public Entry(Date date, int units) {    // Default entry settings
         setDate(date);
-        setTimeInterval(Constants.TIME_LESS_2_HOURS);
+        setTimeInterval(Constants.TIME_BEFORE_MEAL);
         setUnits(units);
         setGlucoseLevel(0.0f);
         setNote(null);
@@ -43,18 +43,10 @@ public class Entry implements ISerializable {
     }
 
     public int getNextTimeInterval() {
-        if (timeInterval + 1 <= Constants.TIME_BEFORE_MEAL) {
-            return timeInterval + 1;
+        if (timeInterval == Constants.TIME_BEFORE_MEAL) {
+            return Constants.TIME_LESS_2_HOURS;
         } else {
-            return timeInterval;
-        }
-    }
-
-    public int getPreviousTimeInterval() {
-        if (timeInterval - 1 >= Constants.TIME_LESS_2_HOURS) {
-            return timeInterval - 1;
-        } else {
-            return timeInterval;
+            return Constants.TIME_BEFORE_MEAL;
         }
     }
 

@@ -144,8 +144,8 @@ public class SweetTrackerController extends Controller {
             menuBar.removeSoftKey(true);
         } else if (screen instanceof TermsAndConditionsScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_TERMS));
-            menuBar.setLsk(Resources.getInstance().getText(GlobalResources.TXT_MENU_ACCEPT), MENU_ACCEPT);
-            menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_MENU_DECLINE), MENU_DECLINE);
+            menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_MENU_ACCEPT), MENU_ACCEPT);
+            menuBar.setLsk(Resources.getInstance().getText(GlobalResources.TXT_MENU_DECLINE), MENU_DECLINE);
         } else if (screen instanceof LocaleScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_LANGUAGE_TITLE));
             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_SAVE), MENU_SAVE);
@@ -335,13 +335,15 @@ public class SweetTrackerController extends Controller {
                             if (d.getId() == SettingsScreen.INPUT_PIN) {
                                 ((SettingsScreen) current_screen).setSettingsPinCode(input);
                             } else if (d.getId() == SettingsScreen.INPUT_TARGET) {
-                                ((SettingsScreen) current_screen).setTargetLevel(input);
+                                ((SettingsScreen) current_screen).setTargetLevel(Float.parseFloat(input));
                             }
                         } else if (current_screen instanceof EntryScreen) {
                             if (d.getId() == EntryScreen.INPUT_GLUCOSE_LEVEL) {
                                 ((EntryScreen) current_screen).setGlucoseLevel(Float.parseFloat(input));
+                            } else if (d.getId() == EntryScreen.INPUT_GLUCOSE_NOTE) {
+                                ((EntryScreen) current_screen).setNote(input);
                             }
-                        } else{
+                        } else {
                             if (d.getId() == SettingsScreen.INPUT_CONFIRM_PIN) {
                                 confirmPIN(input);
                             }
@@ -409,7 +411,7 @@ public class SweetTrackerController extends Controller {
         canvas.setTouchEventHandler(new TouchEventHandler(dialog.getContainerPanel()));
     }
 
-    public void showInputDialog(String title, String message, int entryId) {
+    public void showInputDialog(String title, String message, int entryId, int fieldType, String content) {
         int width = UiKitDisplay.getWidth() * 80 / 100;
         int height = width * 75 / 100;
 
@@ -428,10 +430,13 @@ public class SweetTrackerController extends Controller {
         txtStyleDesc.setFontColour(desc_color);
         txtStyleDesc.setAlign(UikitConstant.LEFT);
 
-        InputDialog dialog = new InputDialog((UiKitDisplay.getWidth() - width) / 2, (UiKitDisplay.getHeight() - height) / 2, width, height, false, false, message, TextField.DECIMAL);
+        InputDialog dialog = new InputDialog((UiKitDisplay.getWidth() - width) / 2, (UiKitDisplay.getHeight() - height) / 2, width, height, false, false, message, fieldType);
         dialog.setTitle(title);
         dialog.setStyle(Utils.getDialogComponentStyle());
         dialog.setId(entryId);
+        if (content != null) {
+            dialog.setContentText(content);
+        }
 
         dialog.setIcon(Resources.getInstance().getThemeImage(GraphicsResources.IMG_ICON_SMALL));
         Utils.applyTextFieldStyles(dialog.getTextInput(), f);
@@ -476,17 +481,17 @@ public class SweetTrackerController extends Controller {
     }
 
     private void showConfirmPinCodeDialog() {
-        showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_TITLE), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_MSG_CONFIRM), SettingsScreen.INPUT_CONFIRM_PIN);
+        showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_TITLE), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_MSG_CONFIRM), SettingsScreen.INPUT_CONFIRM_PIN, TextField.DECIMAL, null);
     }
-    
-    private void confirmPIN(String code){
+
+    private void confirmPIN(String code) {
         Settings settings = null;
         try {
             settings = (Settings) Database.getInstance().retrieveISerializable(Database.SETTINGS);
-            
+
             if (settings.getCode().equals(code)) {
                 navigateScreen(SCREEN_HOME, true, null);
-            }else{
+            } else {
                 midlet.notifyDestroyed();
             }
         } catch (Exception e) {
@@ -496,7 +501,7 @@ public class SweetTrackerController extends Controller {
 
     public void showPinCodeDialog() {
         //#if FULL_VERSION
-        showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_TITLE), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_MSG), SettingsScreen.INPUT_PIN);
+        showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_TITLE), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_MSG), SettingsScreen.INPUT_PIN, TextField.DECIMAL, null);
         //#else
 //#         showAlertDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TITLE_UNAUTHORISED), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_DESC_UNAUTHORISED));
         //#endif 
@@ -504,13 +509,17 @@ public class SweetTrackerController extends Controller {
 
     public void showTargetLevelDialog() {
         //#if FULL_VERSION
-        showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TARGET_LEVEL_TITLE), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TARGET_LEVEL_MSG), SettingsScreen.INPUT_TARGET);
+        showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TARGET_LEVEL_TITLE), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TARGET_LEVEL_MSG), SettingsScreen.INPUT_TARGET, TextField.DECIMAL, null);
         //#else
 //#         showAlertDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TITLE_UNAUTHORISED), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_DESC_UNAUTHORISED));
         //#endif 
     }
 
     public void showGlucoseLevelDialog() {
-        showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_GLUCOSE_LEVEL_TITLE), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_GLUCOSE_LEVEL_MSG), EntryScreen.INPUT_GLUCOSE_LEVEL);
+        showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_GLUCOSE_LEVEL_TITLE), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_GLUCOSE_LEVEL_MSG), EntryScreen.INPUT_GLUCOSE_LEVEL, TextField.DECIMAL, null);
+    }
+
+    public void showGlucoseLevelNoteDialog(String note) {
+        showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_MENU_ENTRY), Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_ADD_NOTE), EntryScreen.INPUT_GLUCOSE_NOTE, TextField.ANY, note);
     }
 }
