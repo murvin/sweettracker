@@ -119,9 +119,10 @@ public class CalScreen extends SweetTrackerScreen {
                 iWidth, 10,
                 year == currentYear ? (mnth == currentMonth ? day : -1) : -1,
                 Utils.getMonthLength(year, mnth),
-                new int[]{2,3,4},
-                new int[]{8,15,28},
-                new int[]{10, 11, 12}, this, this.imgHighLight, startOffset);
+                new int[]{2,3,4}, // Normal
+                new int[]{8,15,28}, // Critical
+                new int[]{10, 11, 12} // High
+                , this, this.imgHighLight, startOffset);
 
     }
 
@@ -162,7 +163,7 @@ public class CalScreen extends SweetTrackerScreen {
         } else if (c instanceof CalDay) {
             int d = Integer.parseInt((String) o);
             if (d != -1) {
-//                com.sweettracker.model.Date date = new com.sweettracker.model.Date(d, mnth, year);
+//                Date date = new Date(d, mnth, year);
 //                controller.navigateScreen(InBloomController.SCREEN_ENTRY, true,
 //                        new Object[]{Utils.getEntriesForDate(date), date, new Boolean(isPeriodToday)});
             }

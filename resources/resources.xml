@@ -465,11 +465,11 @@
             <value locale="it-IT">Swipe letf-right to change.</value>	
         </resource>
         <resource id="73" type="string" name="TXT_TAP_TO_ADD_NOTE">		
-            <value locale="en-GB">Additional note</value>	
-            <value locale="es-ES">Additional note</value>	
-            <value locale="de-DE">Additional note</value>	
-            <value locale="fr-FR">Additional note</value>	
-            <value locale="it-IT">Additional note</value>	
+            <value locale="en-GB">Enter an additional note.</value>	
+            <value locale="es-ES">Enter an additional note.</value>	
+            <value locale="de-DE">Enter an additional note.</value>	
+            <value locale="fr-FR">Enter an additional note.</value>	
+            <value locale="it-IT">Enter an additional note.</value>	
         </resource>
         <resource id="74" type="string" name="TXT_SETTINGS_DIABETES_TYPE_TITLE">		
             <value locale="en-GB">Diabetes Type</value>	
