@@ -3,8 +3,11 @@ package com.sweettracker.ui;
 //#if ADS
 //# import com.inbloom.ui.components.AdvertComponent;
 //#endif
-
-import com.sweettracker.model.Settings;
+import com.sweettracker.SweetTrackerController;
+import com.sweettracker.model.Constants;
+import com.sweettracker.model.Entries;
+import com.sweettracker.model.User;
+import com.sweettracker.model.visitors.EntryLevelVisitor;
 import com.sweettracker.ui.components.CalDay;
 import com.sweettracker.ui.components.CalMonth;
 import com.sweettracker.ui.components.MapKeys;
@@ -17,6 +20,7 @@ import com.uikit.coreElements.UiKitDisplay;
 import com.uikit.coreElements.Component;
 import com.uikit.coreElements.ITouchEventListener;
 import com.uikit.coreElements.Panel;
+import java.io.IOException;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -27,19 +31,24 @@ public class CalScreen extends SweetTrackerScreen {
     private MonthSelector monthSelector;
     private CalMonth month;
     private MapKeys mapKeys;
-    /** Actual month and current Month */
+    /**
+     * Actual month and current Month
+     */
     private int mnth, currentMonth;
-    /** Actual year and current year*/
+    /**
+     * Actual year and current year
+     */
     private int year, currentYear;
-    /** Current day */
+    /**
+     * Current day
+     */
     private int day;
     private Image imgHighLight;
-    
-     //#if ADS
+
+    //#if ADS
 //#     private final int ADVERT_H = 40;
 //#     private AdvertComponent ad;
     //#endif 
-
     public CalScreen() {
         initResources();
         initComponents();
@@ -64,9 +73,9 @@ public class CalScreen extends SweetTrackerScreen {
 //#         ad.downloadAd();
 //#         addComponent(ad);
         //#endif
-        
+
         int monthSelectorH = 9 * UiKitDisplay.getHeight() / 100;
-        
+
         this.monthSelector = new MonthSelector(iWidth, monthSelectorH, true);
         this.monthSelector.setCurrent(mnth, year);
         this.monthSelector.setEventListener(this);
@@ -77,10 +86,10 @@ public class CalScreen extends SweetTrackerScreen {
         addComponent(this.month);
         this.month.x = UiKitDisplay.getWidth();
         int topOffset = Resources.getInstance().getThemeImage(GraphicsResources.IMG_BAR_BG).getHeight();
-        this.month.y += topOffset ;
+        this.month.y += topOffset;
         this.month.enter();
 
-        this.mapKeys = new MapKeys(iWidth, 40); 
+        this.mapKeys = new MapKeys(iWidth, 40);
 
         addComponent(this.mapKeys);
         updateOffsets();
@@ -88,11 +97,11 @@ public class CalScreen extends SweetTrackerScreen {
     }
 
     /**
-     * Gets the Zeller calculated day of the week for the
-     * corresponding year, month and day
-     * 
-     * @return          A calibrated offset to match calendar's starting 
-     *                  day being Monday instead of Saturday (Zeller value = 0)
+     * Gets the Zeller calculated day of the week for the corresponding year,
+     * month and day
+     *
+     * @return A calibrated offset to match calendar's starting day being Monday
+     * instead of Saturday (Zeller value = 0)
      */
     private int getCalibratedStartOffset() {
         int startOffset = Utils.getZellerDay(year, mnth, 1);
@@ -107,11 +116,34 @@ public class CalScreen extends SweetTrackerScreen {
     }
 
     private void initCalMonth() {
-        Settings settings = null;
+        Entries entries = null;
         try {
-            settings = (Settings) Database.getInstance().retrieveISerializable(Database.SETTINGS);
-        } catch (Exception e) {
-            e.printStackTrace();
+            User user = (User) Database.getInstance().retrieveISerializable(Database.USER);
+            entries = user.getEntries();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        int[] normal = null;
+        int[] critical = null;
+        int[] high = null;
+        if (entries != null) {
+            EntryLevelVisitor v = new EntryLevelVisitor(year, mnth, Constants.LEVEL_NORMAL);
+            try {
+                entries.accept(v);
+                normal = v.getEntryDates();
+
+                v.setLevelRange(Constants.LEVEL_HIGH);
+                entries.accept(v);
+                high = v.getEntryDates();
+
+                v.setLevelRange(Constants.LEVEL_CRITICAL);
+                entries.accept(v);
+                critical = v.getEntryDates();
+
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
 
         int startOffset = getCalibratedStartOffset();
@@ -119,9 +151,10 @@ public class CalScreen extends SweetTrackerScreen {
                 iWidth, 10,
                 year == currentYear ? (mnth == currentMonth ? day : -1) : -1,
                 Utils.getMonthLength(year, mnth),
-                new int[]{2,3,4},
-                new int[]{8,15,28},
-                new int[]{10, 11, 12}, this, this.imgHighLight, startOffset);
+                normal, // Normal
+                critical, // Critical
+                high // High
+                , this, this.imgHighLight, startOffset);
 
     }
 
@@ -162,9 +195,9 @@ public class CalScreen extends SweetTrackerScreen {
         } else if (c instanceof CalDay) {
             int d = Integer.parseInt((String) o);
             if (d != -1) {
-//                com.sweettracker.model.Date date = new com.sweettracker.model.Date(d, mnth, year);
-//                controller.navigateScreen(InBloomController.SCREEN_ENTRY, true,
-//                        new Object[]{Utils.getEntriesForDate(date), date, new Boolean(isPeriodToday)});
+                com.sweettracker.model.Date currentDate = Utils.getCurrentDate();
+                com.sweettracker.model.Date date = new com.sweettracker.model.Date(d, mnth, year, currentDate.getHour(), currentDate.getMins(), currentDate.getAmPm());
+                ((SweetTrackerController) controller).navigateScreen(SweetTrackerController.SCREEN_ENTRY, false, date);
             }
         }
     }

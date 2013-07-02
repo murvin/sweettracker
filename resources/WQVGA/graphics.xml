@@ -112,10 +112,12 @@
             <value>0</value>	
         </resource>
         <resource id="37" type="binary" name="LEFT_ARROW">	
-            <value file="leftArrow.png"></value>	
+            <value file="leftArrow.png"></value>
+             <value locale="themeFemale" file="/FEMALE/leftArrow.png"></value>	
         </resource>
-        <resource id="37" type="binary" name="RIGHT_ARROW">	
+        <resource id="38" type="binary" name="RIGHT_ARROW">	
             <value file="rightArrow.png"></value>
+            <value locale="themeFemale" file="/FEMALE/rightArrow.png"></value>	
         </resource>    
         <resource id="39" type="string" name="TXT_CAL_HEADER_TEXT_COLOR">		
             <value>0</value>	

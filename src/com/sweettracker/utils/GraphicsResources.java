@@ -39,7 +39,7 @@ public final class GraphicsResources {
     public static final int IMG_ICON_SMALL = 35;
     public static final int TXT_BUTTON_TEXT_COLOR = 36;
     public static final int LEFT_ARROW = 37;
-    public static final int RIGHT_ARROW = 37;
+    public static final int RIGHT_ARROW = 38;
     public static final int TXT_CAL_HEADER_TEXT_COLOR = 39;
     public static final int TXT_CAL_BORDER_COLOR = 40;
     public static final int TXT_MAPKEY_NORMAL_COLOR = 41;

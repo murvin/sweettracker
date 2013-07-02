@@ -264,7 +264,11 @@ public class SweetTrackerController extends Controller {
             }
         } else if (c instanceof MenuBar) {
             if (eventId == MENU_BACK) {
-                navigateScreen(SCREEN_HOME, false, null);
+                if (previous_screen_id == SCREEN_CAL) {
+                    navigateScreen(SCREEN_CAL, false, null);
+                } else {
+                    navigateScreen(SCREEN_HOME, false, null);
+                }
             } else if (eventId == MENU_EXIT) {
                 confirmExit();
             } else if (eventId == MENU_SAVE) {
@@ -294,7 +298,7 @@ public class SweetTrackerController extends Controller {
                     showAlertDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TITLE_SUCCESSFUL), Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_SAVED));
                 } else if (current_screen instanceof EntryScreen) {
                     ((EntryScreen) current_screen).saveEntry();
-                    navigateScreen(SCREEN_HOME, false, null);
+                    navigateScreen(previous_screen_id, false, null);
                     showAlertDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_ENTRY_SAVED_TITLE), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_ENTRY_SAVED_MSG));
                 } else if (current_screen instanceof LocaleScreen) {
                     ((LocaleScreen) current_screen).saveLocale();
