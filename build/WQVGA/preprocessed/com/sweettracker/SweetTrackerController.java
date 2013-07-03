@@ -5,6 +5,7 @@ import com.sweettracker.model.Settings;
 import com.sweettracker.model.User;
 import com.sweettracker.ui.AboutScreen;
 import com.sweettracker.ui.CalScreen;
+import com.sweettracker.ui.ChartScreen;
 import com.sweettracker.ui.EntryScreen;
 import com.sweettracker.ui.HomeScreen;
 import com.sweettracker.ui.LocaleScreen;
@@ -46,6 +47,7 @@ public class SweetTrackerController extends Controller {
     public static final int SCREEN_ABOUT = 0x015;
     public static final int SCREEN_TERMS = 0x016;
     public static final int SCREEN_LOCALE = 0x017;
+    public static final int SCREEN_CHART = 0x018;
     // MENU CONSTANTS 
     public static final int MENU_EXIT = 0x101;
     public static final int MENU_BACK = 0x102;
@@ -150,6 +152,10 @@ public class SweetTrackerController extends Controller {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_LANGUAGE_TITLE));
             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_SAVE), MENU_SAVE);
             menuBar.removeSoftKey(true);
+        } else if (screen instanceof ChartScreen) {
+            topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_MENU_GRAPH));
+            menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            menuBar.removeSoftKey(true);
         }
         screen.enter();
     }
@@ -165,6 +171,7 @@ public class SweetTrackerController extends Controller {
                     || previous_screen_id == SCREEN_ABOUT
                     || previous_screen_id == SCREEN_TERMS
                     || previous_screen_id == SCREEN_LOCALE
+                    || previous_screen_id == SCREEN_CHART
                     || previous_screen_id == SCREEN_ENTRY) {
                 screen.x = -canvas.getWidth();
             } else {
@@ -219,6 +226,9 @@ public class SweetTrackerController extends Controller {
             case SCREEN_LOCALE: {
                 return new LocaleScreen();
             }
+            case SCREEN_CHART: {
+                return new ChartScreen();
+            }
             default:
                 throw new IllegalStateException();
         }
@@ -260,6 +270,8 @@ public class SweetTrackerController extends Controller {
                     navigateScreen(SCREEN_ENTRY, false, Utils.getCurrentDate());
                 } else if (param == 4) {
                     navigateScreen(SCREEN_ABOUT, false, null);
+                } else if (param == 2) {
+                    navigateScreen(SCREEN_CHART, false, null);
                 }
             }
         } else if (c instanceof MenuBar) {

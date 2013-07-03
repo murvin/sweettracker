@@ -27,6 +27,10 @@ public class EntryLevelVisitor implements IVisitor {
             this.entries.addElement(entry);
         }
     }
+    
+    public Vector getEntries(){
+        return this.entries;
+    }
 
     public int[] getEntryDates() {
         int[] entryDays = new int[entries.size()];
