@@ -1,11 +1,12 @@
 package com.sweettracker.ui;
 
 import com.sweettracker.model.Constants;
+import com.sweettracker.model.DiabetesTypeItem;
 import com.sweettracker.model.Entries;
 import com.sweettracker.model.Entry;
 import com.sweettracker.model.Settings;
 import com.sweettracker.model.User;
-import com.sweettracker.model.visitors.EntryLevelVisitor;
+import com.sweettracker.model.visitors.MonthEntryVisitor;
 import com.sweettracker.ui.components.Chart;
 import com.sweettracker.ui.components.MonthSelector;
 import com.sweettracker.utils.Database;
@@ -30,7 +31,8 @@ public class ChartScreen extends SweetTrackerScreen {
     private MonthSelector monthSelector;
     private int mnth;
     private int year;
-    private int axisColour, targetColour;
+    private int axisColour;
+    private int[] colours;
     private String yAxisLabel, xAxisLabel;
     private BitmapFont valueFont;
     private Chart chart;
@@ -51,7 +53,12 @@ public class ChartScreen extends SweetTrackerScreen {
         year = c.get(Calendar.YEAR);
 
         axisColour = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_CAL_BORDER_COLOR));
-        targetColour = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_TEXT_COLOR));
+        this.colours = new int[]{
+            Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_NORMAL_COLOR)),
+            Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_HIGH_COLOR)),
+            Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_CRITICAL_COLOR)),
+            Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_TEXT_COLOR))
+        };
 
         Image imgFontSmall = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_SMALL);
         valueFont = new BitmapFont(imgFontSmall, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_SMALL, 0);
@@ -82,51 +89,44 @@ public class ChartScreen extends SweetTrackerScreen {
         int monthLength = Utils.getMonthLength(year, mnth);
         float targetLevel = settings.getTargetLevel();
 
-        float[] normal = null;
-        float[] critical = null;
-        float[] high = null;
+        float[] levels = null;
+        int[] colourCodes = null;
+        int[] days = null;
+        float maxLevel = 0.0f;
+        float minLevel = 0.0f;
+
         if (entries != null) {
-            EntryLevelVisitor v = new EntryLevelVisitor(year, mnth, Constants.LEVEL_NORMAL);
             try {
+                MonthEntryVisitor v = new MonthEntryVisitor(mnth, year);
                 entries.accept(v);
-                Vector normalEntries = v.getEntries();
-                if (normalEntries != null) {
-                    normal = new float[normalEntries.size()];
-                    for (int i = 0; i < normalEntries.size(); i++) {
-                        Entry e = (Entry) normalEntries.elementAt(i);
-                        normal[i] = e.getGlucoseLevel();
+                Vector monthEntries = v.getEntries();
+                int monthEntriesSize = monthEntries.size();
+                if (!monthEntries.isEmpty()) {
+                    levels = new float[monthEntriesSize];
+                    colourCodes = new int[monthEntriesSize];
+                    days = new int[monthEntriesSize];
+                    for (int i = 0; i < monthEntriesSize; i++) {
+                        Entry e = (Entry) monthEntries.elementAt(i);
+                        if (i == 0) {
+                            minLevel = e.getGlucoseLevel();
+                            maxLevel = e.getGlucoseLevel();
+                        } else {
+                            minLevel = Math.min(minLevel, e.getGlucoseLevel());
+                            maxLevel = Math.max(maxLevel, e.getGlucoseLevel());
+                        }
+
+                        levels[i] = e.getGlucoseLevel();
+                        int levelRange = Utils.getLevelRange(e.getTimeInterval(), e.getGlucoseLevel(), e.getUnits(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem()));
+                        colourCodes[i] = (levelRange == Constants.LEVEL_NORMAL
+                                ? this.colours[0] : (levelRange == Constants.LEVEL_HIGH ? this.colours[1] : this.colours[2]));
+                        days[i] = e.getDate().getDay();
                     }
                 }
-
-                v.setLevelRange(Constants.LEVEL_HIGH);
-                entries.accept(v);
-                Vector highEntries = v.getEntries();
-                if (highEntries != null) {
-                    high = new float[highEntries.size()];
-                    for (int i = 0; i < highEntries.size(); i++) {
-                        Entry e = (Entry) highEntries.elementAt(i);
-                        high[i] = e.getGlucoseLevel();
-                    }
-                }
-
-                v.setLevelRange(Constants.LEVEL_CRITICAL);
-                entries.accept(v);
-                Vector criticalEntries = v.getEntries();
-                if (criticalEntries != null) {
-                    critical = new float[criticalEntries.size()];
-                    for (int i = 0; i < criticalEntries.size(); i++) {
-                        Entry e = (Entry) criticalEntries.elementAt(i);
-                        critical[i] = e.getGlucoseLevel();
-                    }
-                }
-
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
         }
-
-
-        chart = new Chart(chartWidth, chartHeight, normal, high, critical, targetLevel, monthLength, axisColour, targetColour, valueFont, this);
+        chart = new Chart(chartWidth, chartHeight, levels, colourCodes, days, targetLevel, monthLength, axisColour, valueFont, xAxisLabel, yAxisLabel, maxLevel, minLevel, Utils.getMonthLength(year, mnth), this);
     }
 
     private void initComponents() {
