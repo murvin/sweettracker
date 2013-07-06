@@ -723,6 +723,13 @@
             <value locale="fr-FR">Select your favourite theme to skin the application.</value>	
             <value locale="it-IT">Select your favourite theme to skin the application.</value>	
         </resource>
+        <resource id="111" type="string" name="TXT_DAYS">		
+            <value locale="en-GB">Days</value>	
+            <value locale="es-ES">Days</value>	
+            <value locale="de-DE">Days</value>	
+            <value locale="fr-FR">Days</value>	
+            <value locale="it-IT">Days</value>	
+        </resource>
     </set>
 </resources>
 

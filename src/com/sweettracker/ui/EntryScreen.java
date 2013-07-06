@@ -16,13 +16,16 @@ import com.sweettracker.utils.GlobalResources;
 import com.sweettracker.utils.GraphicsResources;
 import com.sweettracker.utils.Resources;
 import com.sweettracker.utils.Utils;
+
 import com.uikit.coreElements.BitmapFont;
 import com.uikit.coreElements.Component;
 import com.uikit.coreElements.ITouchEventListener;
 import com.uikit.coreElements.UiKitDisplay;
 import com.uikit.layout.BoxLayout;
 import com.uikit.painters.BgColorPainter;
+import com.uikit.painters.BorderPainter;
 import com.uikit.utils.UikitConstant;
+
 import javax.microedition.lcdui.Font;
 import javax.microedition.lcdui.Image;
 
@@ -41,6 +44,7 @@ public class EntryScreen extends SweetTrackerScreen {
     private EntryItem entryCal, entryTime, entryNote;
     public static final int INPUT_GLUCOSE_LEVEL = 0x330;
     public static final int INPUT_GLUCOSE_NOTE = 0x331;
+    private BgColorPainter levelBgPainter;
 
     public EntryScreen(Date date) {
         this.date = date;
@@ -105,15 +109,15 @@ public class EntryScreen extends SweetTrackerScreen {
         int levelRange = entry.getLevelRange();
         switch (levelRange) {
             case Constants.LEVEL_NORMAL: {
-                getStyle(true).addRenderer(new BgColorPainter(normal_bg_color));
+                levelBgPainter.setBgColor(normal_bg_color);
                 break;
             }
             case Constants.LEVEL_HIGH: {
-                getStyle(true).addRenderer(new BgColorPainter(high_bg_color));
+                levelBgPainter.setBgColor(high_bg_color);
                 break;
             }
             case Constants.LEVEL_CRITICAL: {
-                getStyle(true).addRenderer(new BgColorPainter(critical_bg_color));
+                levelBgPainter.setBgColor(critical_bg_color);
                 break;
             }
         }
@@ -151,20 +155,26 @@ public class EntryScreen extends SweetTrackerScreen {
         if (level != 0.0f) {
             if (entry.getUnits() != settings.getGlucoseUnit()) {
                 level = Utils.convertLevel(entry.getUnits(), settings.getGlucoseUnit(), level);
+                level = Utils.get1DecimalPlace(level);
             }
         }
         return level;
     }
 
     private String getUnit() {
-        return settings.getGlucoseUnit() == Constants.UNIT_MG ? "(mg/dL)" : "(mmol/L)";
+        return settings.getGlucoseUnit() == Constants.UNIT_MG ? ("(" + Constants.UNIT_MG_STR + ")") : ("(" + Constants.UNIT_MMOL_STR + ")");
     }
 
     private void initComponents() {
-        setBg();
         setLayout(new BoxLayout(UikitConstant.VERTICAL, vgap));
 
-        entryLevel = new LevelEntryItem(getWidth(), (int) (iHeight / 3.0), getEntryLevel(), getUnit(), Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, this);
+        entryLevel = new LevelEntryItem(getWidth() - (vgap * 2), (int) (iHeight / 3.0), getEntryLevel(), getUnit(), Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, this);
+        entryLevel.getStyle(true).setPadding(padding);
+        BorderPainter borderPainter = new BorderPainter();
+        borderPainter.setBorderColor(font_desc_color);
+        borderPainter.setBorderSize(1);
+        entryLevel.getStyle().addRenderer(levelBgPainter = new BgColorPainter(normal_bg_color));
+        entryLevel.getStyle().addRenderer(borderPainter);
         addComponent(entryLevel);
 
         entryCal = new EntryItem(getWidth(), icons[0], getEntryDate(), null, font_descript, font_guide, font_desc_color, font_guide_color, line_seperator_color, this);
@@ -176,6 +186,7 @@ public class EntryScreen extends SweetTrackerScreen {
         entryNote = new EntryItem(getWidth(), icons[2], getEntryNote(), Resources.getInstance().getText(GlobalResources.TXT_TAP_TO_EDIT), font_descript, font_guide, font_desc_color, font_guide_color, line_seperator_color, this);
         addComponent(entryNote);
 
+        setBg();
         updateOffsets();
         getStyle(true).setPadding(topPadding + vgap, 0, bottomPadding + vgap, 0);
 

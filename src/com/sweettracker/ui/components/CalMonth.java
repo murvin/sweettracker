@@ -178,6 +178,6 @@ public class CalMonth extends Panel implements IMotionListener, ITouchEventListe
     }
 
     public boolean onDrag(int type, int iStartX, int iStartY, int iDeltaX, int iDeltaY) {
-        return false;
+        return true;
     }
 }

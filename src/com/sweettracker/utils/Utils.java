@@ -49,7 +49,7 @@ public class Utils {
                     text.append("themeDefault");
                 } else if (entryIndex == 1) {
                     text.append("themeFemale");
-                } 
+                }
                 break;
             }
         }
@@ -277,6 +277,17 @@ public class Utils {
         return level;
     }
 
+    public static float get1DecimalPlace(float value) {
+        String val = String.valueOf(value);
+        int pointIndex = val.indexOf(".");
+        if (pointIndex != -1) {
+            if (pointIndex + 2 < val.length()) {
+                val = val.substring(0, pointIndex + 2);
+            }
+        }
+        return Float.valueOf(val).floatValue();
+    }
+
     public static com.sweettracker.model.Date getNextDate(com.sweettracker.model.Date currDate) {
         int day = currDate.getDay();
         int month = currDate.getMonth();
@@ -339,7 +350,7 @@ public class Utils {
         if (units != Constants.UNIT_MMOL) {
             glucoseLevel = Utils.convertLevel(units, Constants.UNIT_MMOL, glucoseLevel);
         }
-        
+
         if (timeInterval == Constants.TIME_BEFORE_MEAL) {
             if (glucoseLevel < item.getBeforeMealMax()) {
                 return Constants.LEVEL_NORMAL;

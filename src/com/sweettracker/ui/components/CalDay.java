@@ -140,6 +140,6 @@ public class CalDay extends Component implements IFocusable, ITouchEventListener
     }
 
     public boolean onDrag(int type, int iStartX, int iStartY, int iDeltaX, int iDeltaY) {
-        return false;
+        return true;
     }
 }

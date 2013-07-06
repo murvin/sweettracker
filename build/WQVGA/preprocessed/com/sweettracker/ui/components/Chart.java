@@ -26,7 +26,7 @@ public class Chart extends Panel implements IMotionListener, ITouchEventListener
     private Image imgXaxisLabel, imgYaxisLabel;
     private int startingOffset;
     private float maxLevel, minLevel;
-    private Image maxLevelImg, minLevelImg, midMonthImg;
+    private Image maxLevelImg, minLevelImg, midMonthImg, targetIndicator;
     private int maxDays;
     public static final int EXIT_FINISHED = 0x1201;
     public static final int ENTER_FINISHED = 0x1202;
@@ -63,6 +63,18 @@ public class Chart extends Panel implements IMotionListener, ITouchEventListener
         imgYaxisLabel = font.drawStringToImage(yAxisLabel);
         imgYaxisLabel = ImageUtil.replaceColor(imgYaxisLabel, this.textColour);
 
+        if (target > maxLevel) {
+            maxLevel = target + 0.5f;
+        }
+
+        if (target < minLevel) {
+            minLevel = target - 0.5f;
+        }
+
+        if (minLevel != maxLevel) {
+            target = (iHeight - (startingOffset * 2)) * (maxLevel - target) / (maxLevel - minLevel);
+        }
+
         if (levels != null) {
             String maxLevelStr = String.valueOf(maxLevel);
             maxLevelImg = font.drawStringToImage(maxLevelStr);
@@ -74,6 +86,9 @@ public class Chart extends Panel implements IMotionListener, ITouchEventListener
 
             midMonthImg = font.drawStringToImage("" + maxDays / 2);
             midMonthImg = ImageUtil.replaceColor(midMonthImg, this.textColour);
+
+            targetIndicator = font.drawStringToImage("*");
+            targetIndicator = ImageUtil.replaceColor(targetIndicator, this.textColour);
         }
     }
 
@@ -86,7 +101,8 @@ public class Chart extends Panel implements IMotionListener, ITouchEventListener
                 int day = days[i];
 
                 int height = (int) (level * (iHeight - (startingOffset * 2)) / maxLevel);
-                int xCoor = (int) (iWidth * day / maxDays) + startingOffset;
+                int xCoor = (int) (day * (iWidth - (startingOffset * 2)) / maxDays) + (startingOffset / 2);
+                xCoor += (BAR_WIDTH + 1) / 2;
                 ChartBar bar = new ChartBar(BAR_WIDTH, height, axisColour, colour, STEPS);
                 bar.x = xCoor;
                 bar.y = iHeight - height - startingOffset;
@@ -98,7 +114,6 @@ public class Chart extends Panel implements IMotionListener, ITouchEventListener
     }
 
     protected void drawCurrentFrame(Graphics g) {
-        super.drawCurrentFrame(g);
         // Axes
         g.setColor(axisColour);
         g.drawLine(startingOffset, startingOffset, startingOffset, iHeight - (startingOffset / 2));
@@ -113,8 +128,16 @@ public class Chart extends Panel implements IMotionListener, ITouchEventListener
             g.drawImage(minLevelImg, startingOffset - minLevelImg.getWidth() - 1, iHeight - startingOffset - minLevelImg.getHeight(), 20);
             g.drawImage(maxLevelImg, startingOffset - maxLevelImg.getWidth() - 1, startingOffset, 20);
 
+            // draw X axis label
             g.drawImage(midMonthImg, iWidth / 2, iHeight - midMonthImg.getHeight(), 20);
+
+            // draw target line
+            g.setColor(textColour);
+            g.drawLine(startingOffset / 2, (int) target, iWidth - startingOffset, (int) target);
+            g.drawImage(targetIndicator, startingOffset - (targetIndicator.getWidth() + 1), (int) (target - targetIndicator.getHeight()), 20);
         }
+
+        super.drawCurrentFrame(g);
     }
 
     public void exit() {

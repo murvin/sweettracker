@@ -4,7 +4,7 @@ public class Constants {
 
     public static final int UNIT_MMOL = 0x001;
     public static final int UNIT_MG = 0x000;
-    public static final String UNIT_MMOL_STR = "mmol";
+    public static final String UNIT_MMOL_STR = "mmol/L";
     public static final String UNIT_MG_STR = "mg/dL";
     public static final int LEVEL_NONE = 0x000;
     public static final int LEVEL_NORMAL = 0x001;
