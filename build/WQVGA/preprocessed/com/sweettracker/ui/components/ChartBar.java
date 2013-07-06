@@ -7,15 +7,22 @@ public class ChartBar extends Component {
 
     private int borderColour, fillColour;
     private int currentLevel;
+    private int step;
 
-    public ChartBar(int iWidth, int iHeight, int borderColour, int fillColour) {
+    public ChartBar(int iWidth, int iHeight, int borderColour, int fillColour, int totalSteps) {
         super(iWidth, iHeight);
         this.borderColour = borderColour;
         this.fillColour = fillColour;
-        this.currentLevel = 0;
+        this.currentLevel = iHeight;
+        step = iHeight / totalSteps;
     }
 
     public void step() {
+        if (currentLevel > 0 && (currentLevel - step) > 0) {
+            currentLevel -= step;
+        } else {
+            currentLevel = 0;
+        }
     }
 
     protected void drawCurrentFrame(Graphics g) {
@@ -29,6 +36,6 @@ public class ChartBar extends Component {
 
         // fill
         g.setColor(this.fillColour);
-        g.fillRect(0, currentLevel, iWidth, iHeight);
+        g.fillRect(1, currentLevel + 1, iWidth - 1, iHeight - (currentLevel + 1));
     }
 }

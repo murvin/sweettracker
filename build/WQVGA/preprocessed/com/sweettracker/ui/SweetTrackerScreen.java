@@ -46,12 +46,11 @@ public abstract class SweetTrackerScreen extends Screen {
     }
 
     public void onExit() {
-        
     }
-    
+
     protected void updateOffsets() {
         topPadding = Resources.getInstance().getThemeImage(GraphicsResources.IMG_BAR_BG).getHeight();
-        bottomPadding = (UiKitDisplay.getHeight() - (topPadding * 2) ) - iHeight;
+        bottomPadding = (UiKitDisplay.getHeight() - (topPadding * 2)) - iHeight;
         if (bottomPadding < 0) {
             bottomPadding = 0;
             setBottomOffset(topPadding);

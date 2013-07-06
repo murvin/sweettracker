@@ -68,7 +68,7 @@ public class SweetTrackerController extends Controller {
     private TouchEventHandler currentTouchHandler;
     private final String LOCALE_BUNDLE_NAME = "GlobalResources";
     private final String THEME_BUNDLE_NAME = "GraphicsResources";
-
+    
     public SweetTrackerController() {
         Settings settings = null;
         try {

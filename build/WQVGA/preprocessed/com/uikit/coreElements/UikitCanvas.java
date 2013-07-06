@@ -532,8 +532,8 @@ public class UikitCanvas implements IContainer, IUikitInputHandler, IUiKitPointe
             this.isTouch = bInTouchMode;
             if (currentFocusManager != null) {
                 currentFocusManager.touchModeChanged(bInTouchMode);
-            }
         }
+    }
     }
 
     public IFocusManager getCurrentFocusManager() {

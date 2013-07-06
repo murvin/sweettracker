@@ -109,4 +109,5 @@ public final class GlobalResources {
     public static final int TXT_LOCK_OFF = 108;
     public static final int TXT_THEME_TITLE = 109;
     public static final int TXT_THEME_DESC = 110;
+    public static final int TXT_DAYS = 111;
 }

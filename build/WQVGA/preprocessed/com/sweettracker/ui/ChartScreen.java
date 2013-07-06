@@ -10,6 +10,7 @@ import com.sweettracker.model.visitors.MonthEntryVisitor;
 import com.sweettracker.ui.components.Chart;
 import com.sweettracker.ui.components.MonthSelector;
 import com.sweettracker.utils.Database;
+import com.sweettracker.utils.GlobalResources;
 import com.sweettracker.utils.GraphicsResources;
 import com.sweettracker.utils.Resources;
 import com.sweettracker.utils.Utils;
@@ -31,7 +32,7 @@ public class ChartScreen extends SweetTrackerScreen {
     private MonthSelector monthSelector;
     private int mnth;
     private int year;
-    private int axisColour;
+    private int axisColour, textColour;
     private int[] colours;
     private String yAxisLabel, xAxisLabel;
     private BitmapFont valueFont;
@@ -53,6 +54,7 @@ public class ChartScreen extends SweetTrackerScreen {
         year = c.get(Calendar.YEAR);
 
         axisColour = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_CAL_BORDER_COLOR));
+        textColour = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_DESC_TEXT_COLOR));
         this.colours = new int[]{
             Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_NORMAL_COLOR)),
             Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_HIGH_COLOR)),
@@ -62,9 +64,6 @@ public class ChartScreen extends SweetTrackerScreen {
 
         Image imgFontSmall = Resources.getInstance().getThemeImage(GraphicsResources.FONT_THEME_SMALL);
         valueFont = new BitmapFont(imgFontSmall, Utils.FONT_CHARS, Font.STYLE_PLAIN, Font.SIZE_SMALL, 0);
-
-        yAxisLabel = "mmol";
-        xAxisLabel = "days";
 
         padding = 4 * UiKitDisplay.getWidth() / 100;
 
@@ -80,6 +79,9 @@ public class ChartScreen extends SweetTrackerScreen {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        yAxisLabel = "(" + (settings.getGlucoseUnit() == Constants.UNIT_MMOL ? Constants.UNIT_MMOL_STR : Constants.UNIT_MG_STR) + ")";
+        xAxisLabel = "(" + Resources.getInstance().getText(GlobalResources.TXT_DAYS) + ")";
     }
 
     private void initChart() {
@@ -126,7 +128,7 @@ public class ChartScreen extends SweetTrackerScreen {
                 ex.printStackTrace();
             }
         }
-        chart = new Chart(chartWidth, chartHeight, levels, colourCodes, days, targetLevel, monthLength, axisColour, valueFont, xAxisLabel, yAxisLabel, maxLevel, minLevel, Utils.getMonthLength(year, mnth), this);
+        chart = new Chart(chartWidth, chartHeight, levels, colourCodes, days, targetLevel, monthLength, axisColour, textColour, valueFont, xAxisLabel, yAxisLabel, maxLevel, minLevel, Utils.getMonthLength(year, mnth), this);
     }
 
     private void initComponents() {
