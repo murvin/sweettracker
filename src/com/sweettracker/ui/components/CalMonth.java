@@ -60,9 +60,6 @@ public class CalMonth extends Panel implements IMotionListener, ITouchEventListe
         setLayout(new GridLayout(6, 7, cellDimension, cellDimension, UikitConstant.HCENTER | UikitConstant.VCENTER));
 
         int topPadding = 0;
-        //#if ADS
-//#         topPadding += padding;
-        //#endif
         getStyle(true).setPadding(topPadding, padding, 0, padding);
 
         initComponents(42);
@@ -97,7 +94,7 @@ public class CalMonth extends Panel implements IMotionListener, ITouchEventListe
             if (normalDays != null && i > startOffset && (i - startOffset) <= monthLength) {
                 for (int j = 0; j < normalDays.length; j++) {
                     int k = normalDays[j];
-                    if (i == k) {
+                    if (i - startOffset == k) {
                         calDay.setHasFillColour(true);
                         calDay.setFillColour(Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_NORMAL_COLOR)));
                     }
@@ -107,7 +104,7 @@ public class CalMonth extends Panel implements IMotionListener, ITouchEventListe
             if (criticalDays != null && i > startOffset && (i - startOffset) <= monthLength) {
                 for (int j = 0; j < criticalDays.length; j++) {
                     int k = criticalDays[j];
-                    if (i == k) {
+                    if (i - startOffset == k) {
                         calDay.setHasFillColour(true);
                         calDay.setFillColour(Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_CRITICAL_COLOR)));
                     }
@@ -123,7 +120,7 @@ public class CalMonth extends Panel implements IMotionListener, ITouchEventListe
             if (highDays != null && i > startOffset && (i - startOffset) <= monthLength) {
                 for (int j = 0; j < highDays.length; j++) {
                     int k = highDays[j];
-                    if (i == k) {
+                    if (i - startOffset == k) {
                         calDay.setHasFillColour(true);
                         calDay.setFillColour(Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_MAPKEY_HIGH_COLOR)));
                     }
@@ -178,6 +175,6 @@ public class CalMonth extends Panel implements IMotionListener, ITouchEventListe
     }
 
     public boolean onDrag(int type, int iStartX, int iStartY, int iDeltaX, int iDeltaY) {
-        return true;
+        return false;
     }
 }

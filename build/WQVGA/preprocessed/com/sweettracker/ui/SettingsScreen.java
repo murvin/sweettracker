@@ -58,6 +58,17 @@ public class SettingsScreen extends SweetTrackerScreen {
         initComponents();
     }
 
+    private float getConvertedTargetLevel() {
+        float level = settings.getTargetLevel();
+        if (level != 0.0f) {
+            if (settings.getTargetGlucoseUnit() != settings.getGlucoseUnit()) {
+                level = Utils.convertLevel(settings.getTargetGlucoseUnit(), settings.getGlucoseUnit(), level);
+                level = Utils.get1DecimalPlace(level);
+            }
+        }
+        return level;
+    }
+
     private void initResources() {
         flags = new Image[]{
             Resources.getInstance().getThemeImage(GraphicsResources.IMG_FLAG_IT),
@@ -125,7 +136,7 @@ public class SettingsScreen extends SweetTrackerScreen {
         pincode_item.setEventListener(this);
         addComponent(pincode_item);
 
-        targetLevelSettingsItem = new TargetLevelSettingsItem(w, item_titles[4], item_desc[4], font_title, font_desc, font_title_color, font_desc_color, new Float(settings.getTargetLevel()), this);
+        targetLevelSettingsItem = new TargetLevelSettingsItem(w, item_titles[4], item_desc[4], font_title, font_desc, font_title_color, font_desc_color, new Float(getConvertedTargetLevel()), this);
         targetLevelSettingsItem.setEventListener(this);
         addComponent(targetLevelSettingsItem);
 
@@ -156,6 +167,11 @@ public class SettingsScreen extends SweetTrackerScreen {
                 } else if (p == TargetLevelSettingsItem.BUTTON_ID) {
                     ((SweetTrackerController) controller).showTargetLevelDialog();
                 }
+            }
+        } else if (c == units_item) {
+            if (e == UnitsSettingsItem.INDICATOR_CHANGED) {
+                settings.setGlucoseUnit(units_item.getCurrentSelIdx() == 0 ? Constants.UNIT_MG : Constants.UNIT_MMOL);
+                targetLevelSettingsItem.setTarget("" + getConvertedTargetLevel());
             }
         }
     }

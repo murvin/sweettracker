@@ -272,9 +272,9 @@ public class Utils {
         if (currentUnit == Constants.UNIT_MG) {
             level *= 0.0555f;
         } else if (currentUnit == Constants.UNIT_MMOL) {
-            level *= 18.0182;
+            level *= 18.0182f;
         }
-        return level;
+        return (float) Math.ceil(level);
     }
 
     public static float get1DecimalPlace(float value) {
@@ -347,24 +347,26 @@ public class Utils {
     }
 
     public static int getLevelRange(int timeInterval, float glucoseLevel, int units, DiabetesTypeItem item) {
+        float offset = 0.1f;
         if (units != Constants.UNIT_MMOL) {
             glucoseLevel = Utils.convertLevel(units, Constants.UNIT_MMOL, glucoseLevel);
+            offset = Utils.convertLevel(units, Constants.UNIT_MMOL, offset);
         }
 
         if (timeInterval == Constants.TIME_BEFORE_MEAL) {
             if (glucoseLevel < item.getBeforeMealMax()) {
                 return Constants.LEVEL_NORMAL;
-            } else if (glucoseLevel >= item.getBeforeMealMax() && glucoseLevel <= item.getBeforeMealMax() + 0.1) {
+            } else if (glucoseLevel >= item.getBeforeMealMax() && glucoseLevel <= item.getBeforeMealMax() + offset) {
                 return Constants.LEVEL_HIGH;
-            } else if (glucoseLevel > item.getBeforeMealMax() + 0.1) {
+            } else if (glucoseLevel > item.getBeforeMealMax() + offset) {
                 return Constants.LEVEL_CRITICAL;
             }
         } else if (timeInterval == Constants.TIME_LESS_2_HOURS) {
             if (glucoseLevel < item.getAfterMealMax()) {
                 return Constants.LEVEL_NORMAL;
-            } else if (glucoseLevel >= item.getAfterMealMax() && glucoseLevel <= item.getAfterMealMax() + 0.1) {
+            } else if (glucoseLevel >= item.getAfterMealMax() && glucoseLevel <= item.getAfterMealMax() + offset) {
                 return Constants.LEVEL_HIGH;
-            } else if (glucoseLevel > item.getAfterMealMax() + 0.1) {
+            } else if (glucoseLevel > item.getAfterMealMax() + offset) {
                 return Constants.LEVEL_CRITICAL;
             }
         }

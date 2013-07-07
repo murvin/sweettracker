@@ -22,6 +22,9 @@ public abstract class IndicatorSettingsItem extends SettingsItem implements ICom
         super.initComponents();
         addIndicator();
     }
+    
+    protected void onIndicatorChanged(){
+    }
 
     protected void addIndicator() {
         Image imageIndicator = Resources.getInstance().getThemeImage(GraphicsResources.IMG_INDICATOR);
@@ -38,6 +41,7 @@ public abstract class IndicatorSettingsItem extends SettingsItem implements ICom
     public void onComponentEvent(Component c, int e, Object o, int index) {
         moveIndicator(c.x + (c.getWidth() / 2));
         currentSelIdx = c.getContainingPanel().indexOfComponent(c);
+        this.onIndicatorChanged();
     }
 
     public int getCurrentSelIdx() {

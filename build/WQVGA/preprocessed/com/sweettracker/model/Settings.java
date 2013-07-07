@@ -8,6 +8,7 @@ public class Settings implements ISerializable {
 
     private int glucose_unit;
     private float targetLevel;
+    private int target_glucose_unit;
     private int diabetes_type;
     private int currentLocale;
     private int currentTheme;
@@ -22,6 +23,7 @@ public class Settings implements ISerializable {
         code = defaultCode;
         diabetes_type = Constants.DIABETES_TYPE_NONE;
         glucose_unit = Constants.UNIT_MMOL;
+        target_glucose_unit = Constants.UNIT_MMOL;
     }
 
     public void serialize(DataOutputStream dis) throws IOException {
@@ -32,6 +34,7 @@ public class Settings implements ISerializable {
         dis.writeInt(currentTheme);
         dis.writeBoolean(hasAcceptedTerms);
         dis.writeUTF(code);
+        dis.writeInt(target_glucose_unit);
     }
 
     public void deserialize(DataInputStream dos) throws IOException {
@@ -42,6 +45,7 @@ public class Settings implements ISerializable {
         currentTheme = dos.readInt();
         hasAcceptedTerms = dos.readBoolean();
         code = dos.readUTF();
+        target_glucose_unit = dos.readInt();
     }
 
     public int getGlucoseUnit() {
@@ -50,6 +54,18 @@ public class Settings implements ISerializable {
 
     public float getTargetLevel() {
         return this.targetLevel;
+    }
+    
+    public int getTargetGlucoseUnit(){
+        return this.target_glucose_unit;
+    }
+    
+    public void setTargetGlucoseUnit(int targetGlucoseUnit){
+        if (targetGlucoseUnit != Constants.UNIT_MG && targetGlucoseUnit != Constants.UNIT_MMOL) {
+            throw new IllegalArgumentException();
+        }
+        
+        this.target_glucose_unit = targetGlucoseUnit;
     }
 
     public void setTargetLevel(float targetLevel) {

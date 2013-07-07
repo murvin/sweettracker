@@ -14,6 +14,7 @@ import javax.microedition.lcdui.Image;
 public class UnitsSettingsItem extends IndicatorSettingsItem {
 
     private Panel container;
+    public static final int INDICATOR_CHANGED = 0x134;
 
     public UnitsSettingsItem(int w, String title, String desc, BitmapFont title_font, BitmapFont desc_font, int title_color, int desc_color, Object param, IComponentEventListener cel) {
         super(w, title, desc, title_font, desc_font, title_color, desc_color, param, cel);
@@ -42,5 +43,9 @@ public class UnitsSettingsItem extends IndicatorSettingsItem {
         Component c = this.container.componentAt(compIndex);
         super.moveIndicator(c.x + (c.getWidth() / 2));
         super.currentSelIdx = compIndex;
+    }
+
+    protected void onIndicatorChanged() {
+        cel.onComponentEvent(this, INDICATOR_CHANGED, null, super.currentSelIdx);
     }
 }
