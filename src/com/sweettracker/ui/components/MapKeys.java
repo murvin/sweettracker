@@ -103,6 +103,8 @@ public class MapKeys extends Panel {
         }
 
         protected void drawCurrentFrame(Graphics g) {
+            g.setColor(textColour);
+            g.fillRect(gap - 1 , gap - 1, (iHeight - (gap * 2)) + 2, (iHeight - (gap * 2)) + 2);
             g.setColor(colour);
             g.fillRect(gap, gap, iHeight - (gap * 2), iHeight - (gap * 2));
             if (useBitmapImage) {

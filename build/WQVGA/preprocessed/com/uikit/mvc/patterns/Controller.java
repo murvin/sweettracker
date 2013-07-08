@@ -16,7 +16,7 @@ public abstract class Controller implements IComponentEventListener {
     protected UikitCanvas canvas;
     protected Screen current_screen;
     protected MIDlet midlet;
-    protected boolean hasTransitionFx;
+    protected boolean isInTransition;
     protected int previous_screen_id, current_screen_id;
 
     protected Controller() {
@@ -65,35 +65,41 @@ public abstract class Controller implements IComponentEventListener {
             if (eventId == Screen.EVENT_EXIT_FINISHED) {
                 ((Screen) c).freeResources();
                 removeScreen((Screen) c);
+            } else if (eventId == Screen.EVENT_ENTER_FINISHED) {
+                isInTransition = false;
+                canvas.setEnabledMode(true);
             }
         }
     }
 
     public void navigateScreen(int screen_id, boolean addToBackStack, Object param) {
-        if (current_screen != null) {
-            previous_screen_id = current_screen_id;
-            exit(current_screen);
-        }
+        if (!isInTransition) {
+            canvas.setEnabledMode(false);
+            isInTransition = true;
+            if (current_screen != null) {
+                previous_screen_id = current_screen_id;
+                exit(current_screen);
+            }
 
-        current_screen = loadScreen(screen_id, param);
-        current_screen_id = screen_id;
-        current_screen.setEventListener(this);
-        current_screen.setController(this);
+            current_screen = loadScreen(screen_id, param);
+            current_screen_id = screen_id;
+            current_screen.setEventListener(this);
+            current_screen.setController(this);
 
-        if (addToBackStack) {
-            if (screens.isEmpty()) {
-                screens.push(new Integer(screen_id));
-            } else {
-                if (((Integer) screens.peek()).intValue() != screen_id) {
+            if (addToBackStack) {
+                if (screens.isEmpty()) {
                     screens.push(new Integer(screen_id));
+                } else {
+                    if (((Integer) screens.peek()).intValue() != screen_id) {
+                        screens.push(new Integer(screen_id));
+                    }
                 }
             }
+
+            current_screen.y = 0;
+            addScreen(current_screen);
+            enter(current_screen);
         }
-
-        current_screen.y = 0;
-        addScreen(current_screen);
-        enter(current_screen);
-
     }
 
     public void back() {
@@ -102,18 +108,6 @@ public abstract class Controller implements IComponentEventListener {
             if (!screens.isEmpty()) {
                 navigateScreen(((Integer) screens.peek()).intValue(), false, new Boolean(false));
             }
-        }
-    }
-
-    public void startAnimation() {
-        if (canvas.isAnimationStopped()) {
-            canvas.startStopAnimation();
-        }
-    }
-
-    public void stopAnimation() {
-        if (!canvas.isAnimationStopped()) {
-            canvas.startStopAnimation();
         }
     }
 
