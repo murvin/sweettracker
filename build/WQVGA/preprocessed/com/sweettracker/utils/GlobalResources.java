@@ -110,4 +110,6 @@ public final class GlobalResources {
     public static final int TXT_THEME_TITLE = 109;
     public static final int TXT_THEME_DESC = 110;
     public static final int TXT_DAYS = 111;
+    public static final int TXT_DELETE = 112;
+    public static final int TXT_ENTRY_DELETED = 113;
 }

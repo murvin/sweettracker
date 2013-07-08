@@ -59,6 +59,7 @@ public class SweetTrackerController extends Controller {
     public static final int MENU_CANCEL = 0x105;
     public static final int MENU_ACCEPT = 0x106;
     public static final int MENU_DECLINE = 0x107;
+    public static final int MENU_DELETE = 0x108;
     //DIALOG CONSTANTS
     final int ALERT_DIALOG = 0x401;
     final int ALERT_DIALOG_YES = 0x402;
@@ -140,8 +141,12 @@ public class SweetTrackerController extends Controller {
             menuBar.removeSoftKey(true);
         } else if (screen instanceof EntryScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_MENU_ENTRY));
-            menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
-            menuBar.setLsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_SAVE), MENU_SAVE);
+            if(((EntryScreen) current_screen).isExistingEntry()){
+                menuBar.setLsk(Resources.getInstance().getText(GlobalResources.TXT_DELETE), MENU_DELETE);
+            }else{
+                menuBar.setLsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            }
+            menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_SAVE), MENU_SAVE);
         } else if (screen instanceof AboutScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_COMMON_ABOUT));
             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
@@ -338,6 +343,10 @@ public class SweetTrackerController extends Controller {
             } else if (eventId == MENU_ACCEPT) {
                 navigateScreen(SCREEN_HOME, true, null);
                 saveTermsAccepted();
+            } else if (eventId == MENU_DELETE){
+                ((EntryScreen)current_screen).deleteEntry();
+                this.showAlertDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TITLE_SUCCESSFUL), Resources.getInstance().getText(GlobalResources.TXT_ENTRY_DELETED));
+                navigateScreen(previous_screen_id, previous_screen_id == SCREEN_HOME, null);
             }
         } else if (c instanceof UikitButton) {
             if (eventId == UikitButton.EVENT_RELEASED) {

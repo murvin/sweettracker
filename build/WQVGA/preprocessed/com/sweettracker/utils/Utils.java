@@ -274,7 +274,7 @@ public class Utils {
         } else if (currentUnit == Constants.UNIT_MMOL) {
             level *= 18.0182f;
         }
-        return (float) Math.ceil(level);
+        return level;
     }
 
     public static float get1DecimalPlace(float value) {

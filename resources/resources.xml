@@ -485,21 +485,21 @@
             <value locale="fr-FR">Select one column to indicate if your diabetic or not. The first range in each column is the normal 'Before meals' values. The range below is the 'After meals' values.</value>	
             <value locale="it-IT">Select one column to indicate if your diabetic or not. The first range in each column is the normal 'Before meals' values. The range below is the 'After meals' values.</value>	
         </resource>
-         <resource id="76" type="string" name="TXT_SETTINGS_DIABETES_TYPE_NONE">		
+        <resource id="76" type="string" name="TXT_SETTINGS_DIABETES_TYPE_NONE">		
             <value locale="en-GB">None</value>	
             <value locale="es-ES">None</value>	
             <value locale="de-DE">None</value>	
             <value locale="fr-FR">None</value>	
             <value locale="it-IT">None</value>	
         </resource>
-         <resource id="77" type="string" name="TXT_SETTINGS_DIABETES_TYPE_ONE">		
+        <resource id="77" type="string" name="TXT_SETTINGS_DIABETES_TYPE_ONE">		
             <value locale="en-GB">Type 1</value>	
             <value locale="es-ES">Type 1</value>	
             <value locale="de-DE">Type 1</value>	
             <value locale="fr-FR">Type 1</value>	
             <value locale="it-IT">Type 1</value>	
         </resource>
-         <resource id="78" type="string" name="TXT_SETTINGS_DIABETES_TYPE_TWO">		
+        <resource id="78" type="string" name="TXT_SETTINGS_DIABETES_TYPE_TWO">		
             <value locale="en-GB">Type 2</value>	
             <value locale="es-ES">Type 2</value>	
             <value locale="de-DE">Type 2</value>	
@@ -590,7 +590,7 @@
             <value locale="fr-FR">Refuser</value>	
             <value locale="it-IT">Declino</value>	
         </resource>
-         <resource id="92" type="string" name="TXT_TERMS">		
+        <resource id="92" type="string" name="TXT_TERMS">		
             <value locale="en-GB">Terms</value>	
             <value locale="es-ES">Condiciones</value>	
             <value locale="de-DE">Bedingungen</value>	
@@ -625,7 +625,7 @@
             <value locale="fr-FR">Indemnité</value>	
             <value locale="it-IT">Indennità</value>	
         </resource>
-         <resource id="97" type="string" name="TXT_TERMS_DESC_1">		
+        <resource id="97" type="string" name="TXT_TERMS_DESC_1">		
             <value locale="en-GB">These terms and conditions govern your use of the mobile application SweetTracker. By using this application, you accept these terms and conditions in full. If you disagree with these terms and conditions or any part of these terms and conditions, you must not use SweetTracker.</value>	
             <value locale="es-ES">Estos términos y condiciones rigen el uso de la SweetTracker. de aplicaciones móviles. Al utilizar esta aplicación, usted acepta estos términos y condiciones en su totalidad. Si no está de acuerdo con estos términos y condiciones o cualquier parte de estos términos y condiciones, usted no debe utilizar InBloom.</value>	
             <value locale="de-DE">Diese Bedingungen regeln die Nutzung der mobilen Anwendung SweetTracker. Durch die Nutzung dieser Anwendung, akzeptieren Sie diese Bedingungen in vollem Umfang. Wenn Sie mit diesen Bedingungen oder einem Teil dieser Bedingungen und Konditionen nicht einverstanden sind, dürfen Sie nicht verwenden Inbloom.</value>	
@@ -729,6 +729,20 @@
             <value locale="de-DE">Days</value>	
             <value locale="fr-FR">Days</value>	
             <value locale="it-IT">Days</value>	
+        </resource>
+        <resource id="112" type="string" name="TXT_DELETE">		
+            <value locale="en-GB">Delete</value>	
+            <value locale="es-ES">Delete</value>	
+            <value locale="de-DE">Delete</value>	
+            <value locale="fr-FR">Delete</value>	
+            <value locale="it-IT">Delete</value>	
+        </resource>
+        <resource id="113" type="string" name="TXT_ENTRY_DELETED">		
+            <value locale="en-GB">Entry was deleted.</value>	
+            <value locale="es-ES">Entry was deleted.</value>	
+            <value locale="de-DE">Entry was deleted.</value>	
+            <value locale="fr-FR">Entry was deleted.</value>	
+            <value locale="it-IT">Entry was deleted.</value>	
         </resource>
     </set>
 </resources>
