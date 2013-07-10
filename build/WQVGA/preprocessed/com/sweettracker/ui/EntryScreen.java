@@ -101,7 +101,7 @@ public class EntryScreen extends SweetTrackerScreen {
 
         if (entry == null) {
             entry = new Entry(date, settings.getGlucoseUnit());
-            entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), entry.getGlucoseLevel(), settings.getGlucoseUnit(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem())));
+            entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), entry.getGlucoseLevel(), settings.getGlucoseUnit(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem(), settings.getGlucoseUnit())));
             user.addEntry(entry);
         } else {
             isExistingEntry = true;
@@ -211,7 +211,7 @@ public class EntryScreen extends SweetTrackerScreen {
     public void setGlucoseLevel(float newLevel) {
         if (entry.getGlucoseLevel() != newLevel) {
             entry.setGlucoseLevel(newLevel);
-            entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), newLevel, settings.getGlucoseUnit(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem())));
+            entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), newLevel, settings.getGlucoseUnit(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem(), settings.getGlucoseUnit())));
             entry.setUnits(settings.getGlucoseUnit());
 
             // Visual update
@@ -244,7 +244,7 @@ public class EntryScreen extends SweetTrackerScreen {
                 int newTimeInterval = entry.getNextTimeInterval();
                 if (entry.getTimeInterval() != newTimeInterval) {
                     entry.setTimeInterval(newTimeInterval);
-                    entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), getEntryLevel(), settings.getGlucoseUnit(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem())));
+                    entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), getEntryLevel(), settings.getGlucoseUnit(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem(), settings.getGlucoseUnit())));
 
                     entryTime.setDescription(getEntryTimeLevelDesc());
                     entryTime.shakeIconImage();

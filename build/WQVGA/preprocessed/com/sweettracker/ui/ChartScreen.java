@@ -118,7 +118,7 @@ public class ChartScreen extends SweetTrackerScreen {
                         }
 
                         levels[i] = e.getGlucoseLevel();
-                        int levelRange = Utils.getLevelRange(e.getTimeInterval(), e.getGlucoseLevel(), e.getUnits(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem()));
+                        int levelRange = Utils.getLevelRange(e.getTimeInterval(), e.getGlucoseLevel(), e.getUnits(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem(), settings.getGlucoseUnit()));
                         colourCodes[i] = (levelRange == Constants.LEVEL_NORMAL
                                 ? this.colours[0] : (levelRange == Constants.LEVEL_HIGH ? this.colours[1] : this.colours[2]));
                         days[i] = e.getDate().getDay();

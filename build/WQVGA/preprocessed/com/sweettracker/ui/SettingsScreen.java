@@ -114,6 +114,14 @@ public class SettingsScreen extends SweetTrackerScreen {
         }
     }
 
+    private DiabetesTypeItem[] items(int unit) {
+        DiabetesTypeItem[] items = new DiabetesTypeItem[]{
+            DiabetesTypeItem.getDefault(Constants.DIABETES_TYPE_NONE, unit),
+            DiabetesTypeItem.getDefault(Constants.DIABETES_TYPE_ONE, unit),
+            DiabetesTypeItem.getDefault(Constants.DIABETES_TYPE_TWO, unit)};
+        return items;
+    }
+
     private void initComponents() {
         getStyle(true).setPadding(padding * 2, padding, padding, padding);
         setLayout(new BoxLayout(UikitConstant.VERTICAL, vgap * 2));
@@ -122,15 +130,12 @@ public class SettingsScreen extends SweetTrackerScreen {
         language_item = new LanguageSettingsItem(w, item_titles[0], item_desc[0], font_title, font_desc, font_title_color, font_desc_color, flags, this);
         addComponent(language_item);
 
-        DiabetesTypeItem[] items = new DiabetesTypeItem[]{
-            DiabetesTypeItem.getDefault(Constants.DIABETES_TYPE_NONE),
-            DiabetesTypeItem.getDefault(Constants.DIABETES_TYPE_ONE),
-            DiabetesTypeItem.getDefault(Constants.DIABETES_TYPE_TWO)};
-        diabetic_type_item = new DiabetesTypeSettingsItem(w, item_titles[1], item_desc[1], font_title, font_desc, font_title_color, font_desc_color, items, cel);
-        addComponent(diabetic_type_item);
-
         units_item = new UnitsSettingsItem(w, item_titles[2], item_desc[2], font_title, font_desc, font_title_color, font_desc_color, null, this);
         addComponent(units_item);
+
+        DiabetesTypeItem[] items = items(settings.getGlucoseUnit());
+        diabetic_type_item = new DiabetesTypeSettingsItem(w, item_titles[1], item_desc[1], font_title, font_desc, font_title_color, font_desc_color, items, cel);
+        addComponent(diabetic_type_item);
 
         pincode_item = new PinCodeSettingsItem(w, item_titles[3], item_desc[3], font_title, font_desc, font_title_color, font_desc_color, settings.getCode(), this);
         pincode_item.setEventListener(this);
@@ -171,6 +176,7 @@ public class SettingsScreen extends SweetTrackerScreen {
         } else if (c == units_item) {
             if (e == UnitsSettingsItem.INDICATOR_CHANGED) {
                 settings.setGlucoseUnit(units_item.getCurrentSelIdx() == 0 ? Constants.UNIT_MG : Constants.UNIT_MMOL);
+                diabetic_type_item.updateItemLevels(items(settings.getGlucoseUnit()));
                 targetLevelSettingsItem.setTarget("" + getConvertedTargetLevel());
             }
         }

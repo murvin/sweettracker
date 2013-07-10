@@ -40,6 +40,18 @@ public class DiabetesTypeSettingsItem extends IndicatorSettingsItem {
         addComponent(container);
     }
 
+    public void updateItemLevels( DiabetesTypeItem[] items) {
+        container.removeAllComponents();
+        for (int i = 0; i < items.length; i++) {
+            DiabetesTypeItem d = items[i];
+            String[] details = Utils.getFormattedDiabetesType(d);
+            DiabetesItem item = new DiabetesItem((iWidth / 3) - 4, details[0], details[1], details[2], i < items.length - 1);
+            item.setEventListener(this);
+            container.addComponent(item);
+        }
+        container.expandToFitContent();
+    }
+
     public void moveIndicatorToIndx(int compIndex) {
         Component c = this.container.componentAt(compIndex);
         super.moveIndicator(c.x + (c.getWidth() / 2));

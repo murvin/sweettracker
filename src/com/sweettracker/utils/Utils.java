@@ -340,17 +340,16 @@ public class Utils {
             }
         }
 
-        beforeMealRange = "(" + item.getBeforeMealMin() + " - " + item.getBeforeMealMax() + ")";
-        afterMealRange = "(" + item.getAfterMealMin() + " - " + item.getAfterMealMax() + ")";
+        beforeMealRange = "[" + item.getBeforeMealMin() + "-" + item.getBeforeMealMax() + "]";
+        afterMealRange = "[" + item.getAfterMealMin() + "-" + item.getAfterMealMax() + "]";
 
         return new String[]{title, beforeMealRange, afterMealRange};
     }
 
     public static int getLevelRange(int timeInterval, float glucoseLevel, int units, DiabetesTypeItem item) {
         float offset = 0.1f;
-        if (units != Constants.UNIT_MMOL) {
-            glucoseLevel = Utils.convertLevel(units, Constants.UNIT_MMOL, glucoseLevel);
-            offset = Utils.convertLevel(units, Constants.UNIT_MMOL, offset);
+        if (units == Constants.UNIT_MG) {
+            offset = Utils.convertLevel(Constants.UNIT_MMOL, Constants.UNIT_MG, offset);
         }
 
         if (timeInterval == Constants.TIME_BEFORE_MEAL) {

@@ -1,55 +1,64 @@
 package com.sweettracker.model;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+public class DiabetesTypeItem  {
 
-public class DiabetesTypeItem implements ISerializable {
-    
     private int type;
     private float beforeMealMin, beforeMealMax;
     private float afterMealMin, afterMealMax;
-    
-    public static DiabetesTypeItem getDefault(int type) {
+
+    public static DiabetesTypeItem getDefault(int type, int unit) {
         DiabetesTypeItem item = new DiabetesTypeItem();
         switch (type) {
             case Constants.DIABETES_TYPE_NONE: {
-                item.setBeforeMealMin(4.0f);
-                item.setBeforeMealMax(5.9f);
-                item.setAfterMealMin(4.0f);
-                item.setAfterMealMax(7.8f);
+                if (unit == Constants.UNIT_MMOL) {
+                    item.setBeforeMealMin(4.0f);
+                    item.setBeforeMealMax(5.9f);
+                    item.setAfterMealMin(4.0f);
+                    item.setAfterMealMax(7.8f);
+                } else {
+                    item.setBeforeMealMin(72.07f);
+                    item.setBeforeMealMax(106.31f);
+                    item.setAfterMealMin(72.07f);
+                    item.setAfterMealMax(140.54f);
+                }
                 break;
             }
             case Constants.DIABETES_TYPE_ONE: {
-                item.setBeforeMealMin(4.0f);
-                item.setBeforeMealMax(7.0f);
-                item.setAfterMealMin(4.0f);
-                item.setAfterMealMax(8.5f);
+                if (unit == Constants.UNIT_MMOL) {
+                    item.setBeforeMealMin(4.0f);
+                    item.setBeforeMealMax(7.0f);
+                    item.setAfterMealMin(4.0f);
+                    item.setAfterMealMax(8.5f);
+                } else {
+                    item.setBeforeMealMin(72.07f);
+                    item.setBeforeMealMax(126.12f);
+                    item.setAfterMealMin(72.07f);
+                    item.setAfterMealMax(153.15f);
+                }
                 break;
             }
             case Constants.DIABETES_TYPE_TWO: {
-                item.setBeforeMealMin(4.0f);
-                item.setBeforeMealMax(7.0f);
-                item.setAfterMealMin(4.0f);
-                item.setAfterMealMax(9.0f);
+                if (unit == Constants.UNIT_MMOL) {
+                    item.setBeforeMealMin(4.0f);
+                    item.setBeforeMealMax(7.0f);
+                    item.setAfterMealMin(4.0f);
+                    item.setAfterMealMax(9.0f);
+                } else {
+                    item.setBeforeMealMin(72.07f);
+                    item.setBeforeMealMax(126.12f);
+                    item.setAfterMealMin(72.07f);
+                    item.setAfterMealMax(162.16f);
+                }
                 break;
             }
         }
         item.setType(type);
         return item;
     }
-    
+
     public DiabetesTypeItem() {
     }
-    
-    public DiabetesTypeItem(int type, float beforeMealMin, float beforeMealMax, float afterMealMin, float afterMealMax) {
-        this.type = type;
-        this.beforeMealMin = beforeMealMin;
-        this.beforeMealMax = beforeMealMax;
-        this.afterMealMin = afterMealMin;
-        this.afterMealMax = afterMealMax;
-    }
-    
+
     public void setType(int type) {
         this.type = type;
     }
@@ -60,13 +69,13 @@ public class DiabetesTypeItem implements ISerializable {
     public int getType() {
         return type;
     }
-    
+
     public void setDiabetesType(int diabetes_type) {
         if (diabetes_type != Constants.DIABETES_TYPE_NONE && diabetes_type != Constants.DIABETES_TYPE_ONE
                 && diabetes_type != Constants.DIABETES_TYPE_TWO) {
             throw new IllegalArgumentException();
         }
-        
+
         this.type = diabetes_type;
     }
 
@@ -124,21 +133,5 @@ public class DiabetesTypeItem implements ISerializable {
      */
     public void setAfterMealMax(float afterMealMax) {
         this.afterMealMax = afterMealMax;
-    }
-    
-    public void serialize(DataOutputStream dis) throws IOException {
-        dis.writeInt(type);
-        dis.writeFloat(afterMealMin);
-        dis.writeFloat(afterMealMax);
-        dis.writeFloat(beforeMealMin);
-        dis.writeFloat(beforeMealMax);
-    }
-    
-    public void deserialize(DataInputStream dos) throws IOException {
-        type = dos.readInt();
-        afterMealMin = dos.readFloat();
-        afterMealMax = dos.readFloat();
-        beforeMealMin = dos.readFloat();
-        beforeMealMax = dos.readFloat();
     }
 }
