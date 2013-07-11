@@ -8,6 +8,7 @@ import com.sweettracker.model.Settings;
 import com.sweettracker.model.User;
 import com.sweettracker.model.visitors.MonthEntryVisitor;
 import com.sweettracker.ui.components.Chart;
+import com.sweettracker.ui.components.ChartKey;
 import com.sweettracker.ui.components.MonthSelector;
 import com.sweettracker.utils.Database;
 import com.sweettracker.utils.GlobalResources;
@@ -73,7 +74,7 @@ public class ChartScreen extends SweetTrackerScreen {
             e.printStackTrace();
         }
 
-        try {
+        try { 
             user = (User) Database.getInstance().retrieveISerializable(Database.USER);
             entries = user.getEntries();
         } catch (Exception e) {
@@ -83,13 +84,24 @@ public class ChartScreen extends SweetTrackerScreen {
         yAxisLabel = "(" + (settings.getGlucoseUnit() == Constants.UNIT_MMOL ? Constants.UNIT_MMOL_STR : Constants.UNIT_MG_STR) + ")";
         xAxisLabel = "(" + Resources.getInstance().getText(GlobalResources.TXT_DAYS) + ")";
     }
+    
+    private float getConvertedTargetLevel() {
+        float level = settings.getTargetLevel();
+        if (level != 0.0f) {
+            if (settings.getTargetGlucoseUnit() != settings.getGlucoseUnit()) {
+                level = Utils.convertLevel(settings.getTargetGlucoseUnit(), settings.getGlucoseUnit(), level);
+                level = Utils.get1DecimalPlace(level);
+            }
+        }
+        return level;
+    }
 
     private void initChart() {
         int chartWidth = iWidth;
         int chartHeight = 225;
 
         int monthLength = Utils.getMonthLength(year, mnth);
-        float targetLevel = settings.getTargetLevel();
+        float targetLevel = getConvertedTargetLevel();
 
         float[] levels = null;
         int[] colourCodes = null;
@@ -104,20 +116,24 @@ public class ChartScreen extends SweetTrackerScreen {
                 Vector monthEntries = v.getEntries();
                 int monthEntriesSize = monthEntries.size();
                 if (!monthEntries.isEmpty()) {
+                    // Initialize array sizes
                     levels = new float[monthEntriesSize];
                     colourCodes = new int[monthEntriesSize];
                     days = new int[monthEntriesSize];
+                    
                     for (int i = 0; i < monthEntriesSize; i++) {
                         Entry e = (Entry) monthEntries.elementAt(i);
+                        int glucoseUnit = e.getUnits();
+                        
                         if (i == 0) {
-                            minLevel = e.getGlucoseLevel();
-                            maxLevel = e.getGlucoseLevel();
+                            minLevel = Utils.convertLevel(glucoseUnit, settings.getGlucoseUnit(), e.getGlucoseLevel());
+                            maxLevel = Utils.convertLevel(glucoseUnit, settings.getGlucoseUnit(), e.getGlucoseLevel());
                         } else {
-                            minLevel = Math.min(minLevel, e.getGlucoseLevel());
-                            maxLevel = Math.max(maxLevel, e.getGlucoseLevel());
+                            minLevel = Math.min(minLevel, Utils.convertLevel(glucoseUnit, settings.getGlucoseUnit(), e.getGlucoseLevel()));
+                            maxLevel = Math.max(maxLevel, Utils.convertLevel(glucoseUnit, settings.getGlucoseUnit(), e.getGlucoseLevel()));
                         }
 
-                        levels[i] = e.getGlucoseLevel();
+                        levels[i] = Utils.convertLevel(glucoseUnit, settings.getGlucoseUnit(), e.getGlucoseLevel());
                         int levelRange = Utils.getLevelRange(e.getTimeInterval(), e.getGlucoseLevel(), e.getUnits(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem(), settings.getGlucoseUnit()));
                         colourCodes[i] = (levelRange == Constants.LEVEL_NORMAL
                                 ? this.colours[0] : (levelRange == Constants.LEVEL_HIGH ? this.colours[1] : this.colours[2]));
@@ -144,6 +160,9 @@ public class ChartScreen extends SweetTrackerScreen {
         int topOffset = Resources.getInstance().getThemeImage(GraphicsResources.IMG_BAR_BG).getHeight();
         this.chart.y += topOffset;
         this.chart.enter();
+        
+        ChartKey chartKey = new ChartKey(iWidth, 20, "* : " + Resources.getInstance().getText(GlobalResources.TXT_SETTINGS_TARGET_TITLE), textColour, valueFont);
+        addComponent(chartKey);
 
         updateOffsets();
         getStyle(true).setPadding(topPadding, 0, bottomPadding, 0);

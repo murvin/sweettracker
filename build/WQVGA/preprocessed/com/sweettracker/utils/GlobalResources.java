@@ -43,7 +43,6 @@ public final class GlobalResources {
     public static final int TXT_FRI = 39;
     public static final int TXT_SAT = 40;
     public static final int TXT_SUN = 41;
-    public static final int TXT_MENU_ADD = 42;
     public static final int TXT_MENU_CAL = 43;
     public static final int TXT_MENU_GRAPH = 45;
     public static final int TXT_MENU_INFO = 46;

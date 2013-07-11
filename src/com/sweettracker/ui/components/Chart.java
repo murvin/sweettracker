@@ -1,5 +1,6 @@
 package com.sweettracker.ui.components;
 
+import com.sweettracker.utils.Utils;
 import com.uikit.coreElements.BitmapFont;
 import com.uikit.coreElements.IComponentEventListener;
 import com.uikit.coreElements.ITouchEventListener;
@@ -56,7 +57,7 @@ public class Chart extends Panel implements IMotionListener, ITouchEventListener
     }
 
     private void initResources() {
-        startingOffset = 15;
+        startingOffset = 20;
         imgXaxisLabel = font.drawStringToImage(xAxisLabel);
         imgXaxisLabel = ImageUtil.replaceColor(imgXaxisLabel, this.textColour);
 
@@ -76,11 +77,11 @@ public class Chart extends Panel implements IMotionListener, ITouchEventListener
         }
 
         if (levels != null) {
-            String maxLevelStr = String.valueOf(maxLevel);
+            String maxLevelStr = String.valueOf(Utils.get1DecimalPlace(maxLevel));
             maxLevelImg = font.drawStringToImage(maxLevelStr);
             maxLevelImg = ImageUtil.replaceColor(maxLevelImg, this.textColour);
 
-            String minLevelStr = String.valueOf(minLevel);
+            String minLevelStr = String.valueOf(Utils.get1DecimalPlace(minLevel));
             minLevelImg = font.drawStringToImage(minLevelStr);
             minLevelImg = ImageUtil.replaceColor(minLevelImg, this.textColour);
 

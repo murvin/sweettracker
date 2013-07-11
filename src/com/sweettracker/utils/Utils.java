@@ -269,12 +269,16 @@ public class Utils {
     }
 
     public static float convertLevel(int currentUnit, int targetUnit, float level) {
-        if (currentUnit == Constants.UNIT_MG) {
-            level *= 0.0555f;
-        } else if (currentUnit == Constants.UNIT_MMOL) {
-            level *= 18.0182f;
+        if (currentUnit == targetUnit) {
+            return level;
+        } else {
+            if (currentUnit == Constants.UNIT_MG) {
+                level *= 0.0555f;
+            } else if (currentUnit == Constants.UNIT_MMOL) {
+                level *= 18.0182f;
+            }
+            return level;
         }
-        return level;
     }
 
     public static float get1DecimalPlace(float value) {
