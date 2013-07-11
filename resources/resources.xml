@@ -262,13 +262,6 @@
             <value locale="fr-FR">Dim</value>	
             <value locale="it-IT">Dom</value>	
         </resource>
-        <resource id="42" type="string" name="TXT_MENU_ADD">		
-            <value locale="en-GB">Add</value>	
-            <value locale="es-ES">Add</value>	
-            <value locale="de-DE">Add</value>	
-            <value locale="fr-FR">Add</value>	
-            <value locale="it-IT">Add</value>	
-        </resource>
         <resource id="43" type="string" name="TXT_MENU_CAL">		
             <value locale="en-GB">Calendar</value>	
             <value locale="es-ES">Calendario</value>	

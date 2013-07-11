@@ -12,9 +12,6 @@
         <resource id="3" type="binary" name="IMG_SPLASH_GRAPH">	
             <value file="splash_graph.png"></value>	
         </resource>
-        <resource id="4" type="binary" name="IMG_MENU_ADD">	
-            <value file="menu_icon_add.png"></value>	
-        </resource>
         <resource id="5" type="binary" name="IMG_MENU_CAL">	
             <value file="menu_icon_cal.png"></value>	
         </resource>

@@ -6,7 +6,6 @@ public final class GraphicsResources {
     public static final int IMG_BG_PANEL = 1;
     public static final int IMG_SPLASH_BG = 2;
     public static final int IMG_SPLASH_GRAPH = 3;
-    public static final int IMG_MENU_ADD = 4;
     public static final int IMG_MENU_CAL = 5;
     public static final int IMG_MENU_GRAPH = 6;
     public static final int IMG_MENU_HELP = 7;

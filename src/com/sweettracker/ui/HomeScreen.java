@@ -47,7 +47,6 @@ public class HomeScreen extends SweetTrackerScreen {
 
     private void initResources() {
         menu_icons = new Image[]{
-            Resources.getInstance().getThemeImage(GraphicsResources.IMG_MENU_ADD),
             Resources.getInstance().getThemeImage(GraphicsResources.IMG_MENU_CAL),
             Resources.getInstance().getThemeImage(GraphicsResources.IMG_MENU_GRAPH),
             Resources.getInstance().getThemeImage(GraphicsResources.IMG_MENU_SETTINGS),
@@ -56,7 +55,6 @@ public class HomeScreen extends SweetTrackerScreen {
         };
 
         menu_labels = new String[]{
-            Resources.getInstance().getText(GlobalResources.TXT_MENU_ADD),
             Resources.getInstance().getText(GlobalResources.TXT_MENU_CAL),
             Resources.getInstance().getText(GlobalResources.TXT_MENU_GRAPH),
             Resources.getInstance().getText(GlobalResources.TXT_MENU_SETTINGS),

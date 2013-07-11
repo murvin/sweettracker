@@ -277,17 +277,15 @@ public class SweetTrackerController extends Controller {
         super.onComponentEvent(c, eventId, o, param);
         if (c instanceof HomeScreen) {
             if (eventId == HomeScreen.MENU_CLICK) {
-                if (param == 3) {
+                if (param == 2) {
                     navigateScreen(SCREEN_SETTINGS, false, null);
-                } else if (param == 1) {
-                    navigateScreen(SCREEN_CAL, false, null);
                 } else if (param == 0) {
-                    navigateScreen(SCREEN_ENTRY, false, Utils.getCurrentDate());
-                } else if (param == 4) {
+                    navigateScreen(SCREEN_CAL, false, null);
+                } else if (param == 3) {
                     navigateScreen(SCREEN_ABOUT, false, null);
-                } else if (param == 2) {
+                } else if (param == 1) {
                     navigateScreen(SCREEN_CHART, false, null);
-                } else if (param == 5) {
+                } else if (param == 4) {
                     navigateScreen(SCREEN_HELP, false, null);
                 }
             }
