@@ -59,4 +59,9 @@ public final class GraphicsResources {
     public static final int IMG_LOCK_OFF = 56;
     public static final int IMG_MALE = 57;
     public static final int IMG_FEMALE = 58;
+    public static final int IMG_HELP_ITEM_0 = 60;
+    public static final int IMG_HELP_ITEM_1 = 61;
+    public static final int IMG_HELP_ITEM_2 = 62;
+    public static final int IMG_HELP_ITEM_4 = 64;
+    public static final int IMG_HELP_ITEM_5 = 65;
 }

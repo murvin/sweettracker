@@ -111,4 +111,16 @@ public final class GlobalResources {
     public static final int TXT_DAYS = 111;
     public static final int TXT_DELETE = 112;
     public static final int TXT_ENTRY_DELETED = 113;
+    public static final int TXT_ENTRY_HELP_TITLE_0 = 114;
+    public static final int TXT_ENTRY_HELP_TITLE_1 = 115;
+    public static final int TXT_ENTRY_HELP_TITLE_2 = 116;
+    public static final int TXT_ENTRY_HELP_TITLE_3 = 117;
+    public static final int TXT_ENTRY_HELP_TITLE_4 = 118;
+    public static final int TXT_ENTRY_HELP_TITLE_5 = 119;
+    public static final int TXT_ENTRY_HELP_DESC_0 = 120;
+    public static final int TXT_ENTRY_HELP_DESC_1 = 121;
+    public static final int TXT_ENTRY_HELP_DESC_2 = 122;
+    public static final int TXT_ENTRY_HELP_DESC_3 = 123;
+    public static final int TXT_ENTRY_HELP_DESC_4 = 124;
+    public static final int TXT_ENTRY_HELP_DESC_5 = 125;
 }

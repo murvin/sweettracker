@@ -737,6 +737,90 @@
             <value locale="fr-FR">Entry was deleted.</value>	
             <value locale="it-IT">Entry was deleted.</value>	
         </resource>
+        <resource id="114" type="string" name="TXT_ENTRY_HELP_TITLE_0">		
+            <value locale="en-GB">Setting diabetes type</value>	
+            <value locale="es-ES">Setting diabetes type</value>	
+            <value locale="de-DE">Setting diabetes type</value>	
+            <value locale="fr-FR">Setting diabetes type</value>	
+            <value locale="it-IT">Setting diabetes type</value>	
+        </resource>
+        <resource id="115" type="string" name="TXT_ENTRY_HELP_TITLE_1">		
+            <value locale="en-GB">Adding a calendar entry</value>	
+            <value locale="es-ES">Adding a calendar entry</value>	
+            <value locale="de-DE">Adding a calendar entry</value>	
+            <value locale="fr-FR">Adding a calendar entry</value>	
+            <value locale="it-IT">Adding a calendar entry</value>	
+        </resource>
+        <resource id="116" type="string" name="TXT_ENTRY_HELP_TITLE_2">		
+            <value locale="en-GB">Glucose level charts</value>	
+            <value locale="es-ES">Glucose level charts</value>	
+            <value locale="de-DE">Glucose level charts</value>	
+            <value locale="fr-FR">Glucose level charts</value>	
+            <value locale="it-IT">Glucose level charts</value>	
+        </resource>
+        <resource id="117" type="string" name="TXT_ENTRY_HELP_TITLE_3">		
+            <value locale="en-GB">Colour coding</value>	
+            <value locale="es-ES">Colour coding</value>	
+            <value locale="de-DE">Colour coding</value>	
+            <value locale="fr-FR">Colour coding</value>	
+            <value locale="it-IT">Colour coding</value>	
+        </resource>
+        <resource id="118" type="string" name="TXT_ENTRY_HELP_TITLE_4">		
+            <value locale="en-GB">Change theme</value>	
+            <value locale="es-ES">Change theme</value>	
+            <value locale="de-DE">Change theme</value>	
+            <value locale="fr-FR">Change theme</value>	
+            <value locale="it-IT">Change theme</value>	
+        </resource>
+        <resource id="119" type="string" name="TXT_ENTRY_HELP_TITLE_5">		
+            <value locale="en-GB">Setting a PIN lock</value>	
+            <value locale="es-ES">Setting a PIN lock</value>	
+            <value locale="de-DE">Setting a PIN lock</value>	
+            <value locale="fr-FR">Setting a PIN lock</value>	
+            <value locale="it-IT">Setting a PIN lock</value>	
+        </resource>
+        <resource id="120" type="string" name="TXT_ENTRY_HELP_DESC_0">		
+            <value locale="en-GB">Before you start entering values please update your diabetes type appropriately. In the settings screen you can specify if you are a non-diabetic, diabetes type 1 or diabetes type 2. You will notice that before meal and after meal values vary depending on your selected type. Those values are later used to determine your colour code and if you are exceeding expected levels.</value>	
+            <value locale="es-ES">Before you start entering values please update your diabetes type appropriately. In the settings screen you can specify if you are a non-diabetic, diabetes type 1 or diabetes type 2. You will notice that before meal and after meal values vary depending on your selected type. Those values are later used to determine your colour code and if you are exceeding expected levels.</value>	
+            <value locale="de-DE">Before you start entering values please update your diabetes type appropriately. In the settings screen you can specify if you are a non-diabetic, diabetes type 1 or diabetes type 2. You will notice that before meal and after meal values vary depending on your selected type. Those values are later used to determine your colour code and if you are exceeding expected levels.</value>	
+            <value locale="fr-FR">Before you start entering values please update your diabetes type appropriately. In the settings screen you can specify if you are a non-diabetic, diabetes type 1 or diabetes type 2. You will notice that before meal and after meal values vary depending on your selected type. Those values are later used to determine your colour code and if you are exceeding expected levels.</value>	
+            <value locale="it-IT">Before you start entering values please update your diabetes type appropriately. In the settings screen you can specify if you are a non-diabetic, diabetes type 1 or diabetes type 2. You will notice that before meal and after meal values vary depending on your selected type. Those values are later used to determine your colour code and if you are exceeding expected levels.</value>	
+        </resource>
+        <resource id="121" type="string" name="TXT_ENTRY_HELP_DESC_1">		
+            <value locale="en-GB">To make an entry in your calendar select the  calendar menu from the menu screen. The calendar opens in a monthly view with the current day shown as blue. All previous entries for the month are also shown. Tapping on a calendar's day takes you to the entry screen where you can set the glucose value and any additional note.</value>	
+            <value locale="es-ES">To make an entry in your calendar select the  calendar menu from the menu screen. The calendar opens in a monthly view with the current day shown as blue. All previous entries for the month are also shown. Tapping on a calendar's day takes you to the entry screen where you can set the glucose value and any additional note.</value>	
+            <value locale="de-DE">To make an entry in your calendar select the  calendar menu from the menu screen. The calendar opens in a monthly view with the current day shown as blue. All previous entries for the month are also shown. Tapping on a calendar's day takes you to the entry screen where you can set the glucose value and any additional note.</value>	
+            <value locale="fr-FR">To make an entry in your calendar select the  calendar menu from the menu screen. The calendar opens in a monthly view with the current day shown as blue. All previous entries for the month are also shown. Tapping on a calendar's day takes you to the entry screen where you can set the glucose value and any additional note.</value>	
+            <value locale="it-IT">To make an entry in your calendar select the  calendar menu from the menu screen. The calendar opens in a monthly view with the current day shown as blue. All previous entries for the month are also shown. Tapping on a calendar's day takes you to the entry screen where you can set the glucose value and any additional note.</value>	
+        </resource>
+        <resource id="122" type="string" name="TXT_ENTRY_HELP_DESC_2">		
+            <value locale="en-GB">After you have made any entry you can select the charts menu from the menu screen to visualise your monthly entries on a bar chart. The chart for a month contains all entries made and your specified target is shown as a grey horizontal line. This is so that you can measure your levels against it.</value>	
+            <value locale="es-ES">After you have made any entry you can select the charts menu from the menu screen to visualise your monthly entries on a bar chart. The chart for a month contains all entries made and your specified target is shown as a grey horizontal line. This is so that you can measure your levels against it.</value>	
+            <value locale="de-DE">After you have made any entry you can select the charts menu from the menu screen to visualise your monthly entries on a bar chart. The chart for a month contains all entries made and your specified target is shown as a grey horizontal line. This is so that you can measure your levels against it.</value>	
+            <value locale="fr-FR">After you have made any entry you can select the charts menu from the menu screen to visualise your monthly entries on a bar chart. The chart for a month contains all entries made and your specified target is shown as a grey horizontal line. This is so that you can measure your levels against it.</value>	
+            <value locale="it-IT">After you have made any entry you can select the charts menu from the menu screen to visualise your monthly entries on a bar chart. The chart for a month contains all entries made and your specified target is shown as a grey horizontal line. This is so that you can measure your levels against it.</value>	
+        </resource>
+        <resource id="123" type="string" name="TXT_ENTRY_HELP_DESC_3">		
+            <value locale="en-GB">3 distinct colour codes are used to denote your glucose level category. When an entered level is within the expected range it is green. If the level borders the higher upper limit of the range it is then set to high with an orange colour. A critical red colour is assigned when the value exceeds the diabetes type expected range. Those ranges are define in the settings screen when you specifi what type of diabetic you are. </value>	
+            <value locale="es-ES">3 distinct colour codes are used to denote your glucose level category. When an entered level is within the expected range it is green. If the level borders the higher upper limit of the range it is then set to high with an orange colour. A critical red colour is assigned when the value exceeds the diabetes type expected range. Those ranges are define in the settings screen when you specifi what type of diabetic you are.</value>	
+            <value locale="de-DE">3 distinct colour codes are used to denote your glucose level category. When an entered level is within the expected range it is green. If the level borders the higher upper limit of the range it is then set to high with an orange colour. A critical red colour is assigned when the value exceeds the diabetes type expected range. Those ranges are define in the settings screen when you specifi what type of diabetic you are.</value>	
+            <value locale="fr-FR">3 distinct colour codes are used to denote your glucose level category. When an entered level is within the expected range it is green. If the level borders the higher upper limit of the range it is then set to high with an orange colour. A critical red colour is assigned when the value exceeds the diabetes type expected range. Those ranges are define in the settings screen when you specifi what type of diabetic you are.</value>	
+            <value locale="it-IT">3 distinct colour codes are used to denote your glucose level category. When an entered level is within the expected range it is green. If the level borders the higher upper limit of the range it is then set to high with an orange colour. A critical red colour is assigned when the value exceeds the diabetes type expected range. Those ranges are define in the settings screen when you specifi what type of diabetic you are.</value>	
+        </resource>
+        <resource id="124" type="string" name="TXT_ENTRY_HELP_DESC_4">		
+            <value locale="en-GB">The application support 2 seperate themes namely blue and pink. You can set your theme in the settings screen by simply tapping on the appropriate icon. Note that this feature is only available in the full version of this application.</value>	
+            <value locale="es-ES">The application support 2 seperate themes namely blue and pink. You can set your theme in the settings screen by simply tapping on the appropriate icon. Note that this feature is only available in the full version of this application.</value>	
+            <value locale="de-DE">The application support 2 seperate themes namely blue and pink. You can set your theme in the settings screen by simply tapping on the appropriate icon. Note that this feature is only available in the full version of this application.</value>	
+            <value locale="fr-FR">The application support 2 seperate themes namely blue and pink. You can set your theme in the settings screen by simply tapping on the appropriate icon. Note that this feature is only available in the full version of this application.</value>	
+            <value locale="it-IT">The application support 2 seperate themes namely blue and pink. You can set your theme in the settings screen by simply tapping on the appropriate icon. Note that this feature is only available in the full version of this application.</value>	
+        </resource>
+        <resource id="125" type="string" name="TXT_ENTRY_HELP_DESC_5">		
+            <value locale="en-GB">You can preserve the privacy of your entries by locking the application with a PIN code. Setting a PIN in the settings screen will ensure that you get prompted to re enter it everytime the application starts. To cancel just set the PIN to 0000. Note that this feature is only available in the full version of this application.</value>	
+            <value locale="es-ES">You can preserve the privacy of your entries by locking the application with a PIN code. Setting a PIN in the settings screen will ensure that you get prompted to re enter it everytime the application starts. To cancel just set the PIN to 0000. Note that this feature is only available in the full version of this application.</value>	
+            <value locale="de-DE">You can preserve the privacy of your entries by locking the application with a PIN code. Setting a PIN in the settings screen will ensure that you get prompted to re enter it everytime the application starts. To cancel just set the PIN to 0000. Note that this feature is only available in the full version of this application.</value>	
+            <value locale="fr-FR">You can preserve the privacy of your entries by locking the application with a PIN code. Setting a PIN in the settings screen will ensure that you get prompted to re enter it everytime the application starts. To cancel just set the PIN to 0000. Note that this feature is only available in the full version of this application.</value>	
+            <value locale="it-IT">You can preserve the privacy of your entries by locking the application with a PIN code. Setting a PIN in the settings screen will ensure that you get prompted to re enter it everytime the application starts. To cancel just set the PIN to 0000. Note that this feature is only available in the full version of this application.</value>	
+        </resource>
     </set>
 </resources>
 

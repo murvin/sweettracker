@@ -1,6 +1,7 @@
 package com.sweettracker.ui;
 
 import com.sweettracker.ui.components.HelpItem;
+import com.sweettracker.utils.GlobalResources;
 import com.sweettracker.utils.GraphicsResources;
 import com.sweettracker.utils.Resources;
 import com.sweettracker.utils.Utils;
@@ -40,6 +41,33 @@ public class HelpScreen extends SweetTrackerScreen {
 
         txtDescStyle = new TextStyle(descFont);
         txtDescStyle.setFontColour(descColour);
+        
+        titles = new String[]{
+            Resources.getInstance().getText(GlobalResources.TXT_ENTRY_HELP_TITLE_0),
+            Resources.getInstance().getText(GlobalResources.TXT_ENTRY_HELP_TITLE_1),
+            Resources.getInstance().getText(GlobalResources.TXT_ENTRY_HELP_TITLE_2),
+            Resources.getInstance().getText(GlobalResources.TXT_ENTRY_HELP_TITLE_3),
+            Resources.getInstance().getText(GlobalResources.TXT_ENTRY_HELP_TITLE_4),
+            Resources.getInstance().getText(GlobalResources.TXT_ENTRY_HELP_TITLE_5)
+        };
+        
+        descs = new String[]{
+            Resources.getInstance().getText(GlobalResources.TXT_ENTRY_HELP_DESC_0),
+            Resources.getInstance().getText(GlobalResources.TXT_ENTRY_HELP_DESC_1),
+            Resources.getInstance().getText(GlobalResources.TXT_ENTRY_HELP_DESC_2),
+            Resources.getInstance().getText(GlobalResources.TXT_ENTRY_HELP_DESC_3),
+            Resources.getInstance().getText(GlobalResources.TXT_ENTRY_HELP_DESC_4),
+            Resources.getInstance().getText(GlobalResources.TXT_ENTRY_HELP_DESC_5)
+        };
+        
+        images = new Image[]{
+            Resources.getInstance().getThemeImage(GraphicsResources.IMG_HELP_ITEM_0),
+            Resources.getInstance().getThemeImage(GraphicsResources.IMG_HELP_ITEM_1),
+            Resources.getInstance().getThemeImage(GraphicsResources.IMG_HELP_ITEM_2),
+            null,
+            Resources.getInstance().getThemeImage(GraphicsResources.IMG_HELP_ITEM_4),
+            Resources.getInstance().getThemeImage(GraphicsResources.IMG_HELP_ITEM_5),
+        };
     }
 
     private void initComponents() {
@@ -54,6 +82,6 @@ public class HelpScreen extends SweetTrackerScreen {
         }
 
         updateOffsets();
-        getStyle(true).setPadding(topPadding, 0, bottomPadding, 0);
+        getStyle(true).setPadding(topPadding + padding, 0, bottomPadding + padding, 0);
     }
 }

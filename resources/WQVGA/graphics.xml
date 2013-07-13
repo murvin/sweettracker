@@ -176,6 +176,21 @@
         <resource id="58" type="binary" name="IMG_FEMALE">	
             <value file="female.png"></value>	
         </resource>
+        <resource id="60" type="binary" name="IMG_HELP_ITEM_0">	
+            <value file="help_shot_0.png"></value>	
+        </resource>
+        <resource id="61" type="binary" name="IMG_HELP_ITEM_1">	
+            <value file="help_shot_1.png"></value>	
+        </resource>
+        <resource id="62" type="binary" name="IMG_HELP_ITEM_2">	
+            <value file="help_shot_2.png"></value>	
+        </resource>
+        <resource id="64" type="binary" name="IMG_HELP_ITEM_4">	
+            <value file="help_shot_4.png"></value>	
+        </resource>
+        <resource id="65" type="binary" name="IMG_HELP_ITEM_5">	
+            <value file="help_shot_5.png"></value>	
+        </resource>
     </set>
 </resources>
 
