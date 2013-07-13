@@ -13,7 +13,7 @@ public abstract class Screen extends SmartPanel
 
     public static final int EVENT_ENTER_FINISHED = 0x0101;
     public static final int EVENT_EXIT_FINISHED = 0x0102;
-    protected Motion mfx_slide;
+    protected Motion mfx_slide_enter, mfx_slide_exit;
     protected Controller controller;
 
     public Screen() {
@@ -75,7 +75,7 @@ public abstract class Screen extends SmartPanel
     }
 
     public void onMotionFinished(Motion mfx) {
-        if (x != 0) {
+        if (mfx == mfx_slide_exit) {
             notifyExitFinished();
         } else {
             notifyEnterFinished();

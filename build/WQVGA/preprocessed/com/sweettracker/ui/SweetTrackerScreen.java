@@ -21,37 +21,35 @@ public abstract class SweetTrackerScreen extends Screen {
     }
 
     public void exit() {
-        mfx_slide = new MotionLinear(1, MotionLinear.MOFX_LINEAR_PULLBACK);
-        ((MotionLinear) mfx_slide).init(x, y, -UiKitDisplay.getWidth(), y, 10, 5.0f, 0.0f);
-        mfx_slide.setMotionFXListener(this);
-        this.motionFX = mfx_slide;
+        mfx_slide_exit = new MotionLinear(1, MotionLinear.MOFX_LINEAR_PULLBACK);
+        ((MotionLinear) mfx_slide_exit).init(x, y, -UiKitDisplay.getWidth(), y, 10, 5.0f, 0.0f);
+        mfx_slide_exit.setMotionFXListener(this);
+        this.motionFX = mfx_slide_exit;
     }
 
     public void exitToRight() {
-        mfx_slide = new MotionLinear(1, MotionLinear.MOFX_LINEAR_PULLBACK);
-        ((MotionLinear) mfx_slide).init(x, y, UiKitDisplay.getWidth(), y, 10, 5.0f, 0.0f);
-        mfx_slide.setMotionFXListener(this);
-        this.motionFX = mfx_slide;
+        mfx_slide_exit = new MotionLinear(1, MotionLinear.MOFX_LINEAR_PULLBACK);
+        ((MotionLinear) mfx_slide_exit).init(x, y, UiKitDisplay.getWidth(), y, 10, 5.0f, 0.0f);
+        mfx_slide_exit.setMotionFXListener(this);
+        this.motionFX = mfx_slide_exit;
     }
 
     public void enter() {
-        mfx_slide = new MotionLinear(1, MotionLinear.MOFX_LINEAR_PULLBACK);
-        ((MotionLinear) mfx_slide).init(x, y, 0, y, 10, 5.0f, 0.0f);
-        mfx_slide.setMotionFXListener(this);
-        this.motionFX = mfx_slide;
+        mfx_slide_enter = new MotionLinear(1, MotionLinear.MOFX_LINEAR_PULLBACK);
+        ((MotionLinear) mfx_slide_enter).init(x, y, 0, y, 10, 5.0f, 0.0f);
+        mfx_slide_enter.setMotionFXListener(this);
+        this.motionFX = mfx_slide_enter;
     }
 
     public void onEnter() {
-        
     }
 
     public void onExit() {
-        
     }
 
     protected void updateOffsets() {
         topPadding = Resources.getInstance().getThemeImage(GraphicsResources.IMG_BAR_BG).getHeight();
-        bottomPadding = (UiKitDisplay.getHeight() - (topPadding * 2) ) - iHeight;
+        bottomPadding = (UiKitDisplay.getHeight() - (topPadding * 2)) - iHeight;
         if (bottomPadding < 0) {
             bottomPadding = 0;
             setBottomOffset(topPadding);
