@@ -48,7 +48,7 @@ public class SettingsScreen extends SweetTrackerScreen {
         pincode_item.setPinCode(code);
     }
 
-    public void setTargetLevel(float targetLevel) {
+    public void setTargetLevel(double targetLevel) {
         settings.setTargetLevel(targetLevel);
         targetLevelSettingsItem.setTarget("" + targetLevel);
     }
@@ -58,8 +58,8 @@ public class SettingsScreen extends SweetTrackerScreen {
         initComponents();
     }
 
-    private float getConvertedTargetLevel() {
-        float level = settings.getTargetLevel();
+    private double getConvertedTargetLevel() {
+        double level = settings.getTargetLevel();
         if (level != 0.0f) {
             if (settings.getTargetGlucoseUnit() != settings.getGlucoseUnit()) {
                 level = Utils.convertLevel(settings.getTargetGlucoseUnit(), settings.getGlucoseUnit(), level);
@@ -141,7 +141,7 @@ public class SettingsScreen extends SweetTrackerScreen {
         pincode_item.setEventListener(this);
         addComponent(pincode_item);
 
-        targetLevelSettingsItem = new TargetLevelSettingsItem(w, item_titles[4], item_desc[4], font_title, font_desc, font_title_color, font_desc_color, new Float(getConvertedTargetLevel()), this);
+        targetLevelSettingsItem = new TargetLevelSettingsItem(w, item_titles[4], item_desc[4], font_title, font_desc, font_title_color, font_desc_color, new Double(getConvertedTargetLevel()), this);
         targetLevelSettingsItem.setEventListener(this);
         addComponent(targetLevelSettingsItem);
 

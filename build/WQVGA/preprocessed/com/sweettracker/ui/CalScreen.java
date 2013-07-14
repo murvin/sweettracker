@@ -1,8 +1,5 @@
 package com.sweettracker.ui;
 
-//#if ADS
-//# import com.inbloom.ui.components.AdvertComponent;
-//#endif
 import com.sweettracker.SweetTrackerController;
 import com.sweettracker.model.Constants;
 import com.sweettracker.model.Entries;
@@ -45,10 +42,6 @@ public class CalScreen extends SweetTrackerScreen {
     private int day;
     private Image imgHighLight;
 
-    //#if ADS
-//#     private final int ADVERT_H = 40;
-//#     private AdvertComponent ad;
-    //#endif 
     public CalScreen() {
         initResources();
         initComponents();
@@ -68,11 +61,6 @@ public class CalScreen extends SweetTrackerScreen {
     }
 
     private void initComponents() {
-        //#if ADS
-//#         ad = new AdvertComponent(iWidth - (padding * 2), ADVERT_H, InBloomController.myMidlet, null);
-//#         ad.downloadAd();
-//#         addComponent(ad);
-        //#endif
 
         int monthSelectorH = 9 * UiKitDisplay.getHeight() / 100;
 

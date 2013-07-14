@@ -7,7 +7,7 @@ import java.io.IOException;
 public class Settings implements ISerializable {
 
     private int glucose_unit;
-    private float targetLevel;
+    private double targetLevel;
     private int target_glucose_unit;
     private int diabetes_type;
     private int currentLocale;
@@ -29,7 +29,7 @@ public class Settings implements ISerializable {
     public void serialize(DataOutputStream dis) throws IOException {
         dis.writeInt(diabetes_type);
         dis.writeInt(this.glucose_unit);
-        dis.writeFloat(this.targetLevel);
+        dis.writeDouble(this.targetLevel);
         dis.writeInt(currentLocale);
         dis.writeInt(currentTheme);
         dis.writeBoolean(hasAcceptedTerms);
@@ -40,7 +40,7 @@ public class Settings implements ISerializable {
     public void deserialize(DataInputStream dos) throws IOException {
         diabetes_type = dos.readInt();
         glucose_unit = dos.readInt();
-        targetLevel = dos.readFloat();
+        targetLevel = dos.readDouble();
         currentLocale = dos.readInt();
         currentTheme = dos.readInt();
         hasAcceptedTerms = dos.readBoolean();
@@ -52,7 +52,7 @@ public class Settings implements ISerializable {
         return glucose_unit;
     }
 
-    public float getTargetLevel() {
+    public double getTargetLevel() {
         return this.targetLevel;
     }
     
@@ -68,7 +68,7 @@ public class Settings implements ISerializable {
         this.target_glucose_unit = targetGlucoseUnit;
     }
 
-    public void setTargetLevel(float targetLevel) {
+    public void setTargetLevel(double targetLevel) {
         this.targetLevel = targetLevel;
     }
 

@@ -17,7 +17,7 @@ public class LevelEntryItem extends Panel implements ITouchEventListener {
 
     private int vgap, padding;
     private String unit, guide;
-    private float level;
+    private double level;
     private BitmapFont descFont, guideFont;
     private int descColour, guideColour;
     private Image imgLevel, imgUnit, imgGuide, imgBloodIcon;
@@ -25,7 +25,7 @@ public class LevelEntryItem extends Panel implements ITouchEventListener {
     private Panel levelContainer;
     private UikitImageBox imgBoxLevel;
 
-    public LevelEntryItem(int iWidth, int iHeight, float level, String unit, String guide,
+    public LevelEntryItem(int iWidth, int iHeight, double level, String unit, String guide,
             BitmapFont descFont, BitmapFont guideFont,
             int descColour, int guideColour, IComponentEventListener cel) {
         super(iWidth, iHeight);
@@ -93,7 +93,7 @@ public class LevelEntryItem extends Panel implements ITouchEventListener {
         }
     }
 
-    public void setLevel(float level) {
+    public void setLevel(double level) {
         this.level = level;
         updateLevel();
     }

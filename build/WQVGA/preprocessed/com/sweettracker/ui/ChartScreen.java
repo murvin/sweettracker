@@ -85,8 +85,8 @@ public class ChartScreen extends SweetTrackerScreen {
         xAxisLabel = "(" + Resources.getInstance().getText(GlobalResources.TXT_DAYS) + ")";
     }
     
-    private float getConvertedTargetLevel() {
-        float level = settings.getTargetLevel();
+    private double getConvertedTargetLevel() {
+        double level = settings.getTargetLevel();
         if (level != 0.0f) {
             if (settings.getTargetGlucoseUnit() != settings.getGlucoseUnit()) {
                 level = Utils.convertLevel(settings.getTargetGlucoseUnit(), settings.getGlucoseUnit(), level);
@@ -101,14 +101,15 @@ public class ChartScreen extends SweetTrackerScreen {
         int chartHeight = 225;
 
         int monthLength = Utils.getMonthLength(year, mnth);
-        float targetLevel = getConvertedTargetLevel();
+        double targetLevel = getConvertedTargetLevel();
 
-        float[] levels = null;
+        double[] levels = null;
         int[] colourCodes = null;
         int[] days = null;
-        float maxLevel = 0.0f;
-        float minLevel = 0.0f;
-
+        double maxLevel = 0.0f;
+        double minLevel = 0.0f;
+        double offset = settings.getGlucoseUnit() == Constants.UNIT_MMOL ? 0.5f : 10.0f;
+        
         if (entries != null) {
             try {
                 MonthEntryVisitor v = new MonthEntryVisitor(mnth, year);
@@ -117,7 +118,7 @@ public class ChartScreen extends SweetTrackerScreen {
                 int monthEntriesSize = monthEntries.size();
                 if (!monthEntries.isEmpty()) {
                     // Initialize array sizes
-                    levels = new float[monthEntriesSize];
+                    levels = new double[monthEntriesSize];
                     colourCodes = new int[monthEntriesSize];
                     days = new int[monthEntriesSize];
                     
@@ -134,7 +135,7 @@ public class ChartScreen extends SweetTrackerScreen {
                         }
 
                         levels[i] = Utils.convertLevel(glucoseUnit, settings.getGlucoseUnit(), e.getGlucoseLevel());
-                        int levelRange = Utils.getLevelRange(e.getTimeInterval(), e.getGlucoseLevel(), e.getUnits(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem(), settings.getGlucoseUnit()));
+                        int levelRange = e.getLevelRange();
                         colourCodes[i] = (levelRange == Constants.LEVEL_NORMAL
                                 ? this.colours[0] : (levelRange == Constants.LEVEL_HIGH ? this.colours[1] : this.colours[2]));
                         days[i] = e.getDate().getDay();
@@ -144,7 +145,7 @@ public class ChartScreen extends SweetTrackerScreen {
                 ex.printStackTrace();
             }
         }
-        chart = new Chart(chartWidth, chartHeight, levels, colourCodes, days, targetLevel, monthLength, axisColour, textColour, valueFont, xAxisLabel, yAxisLabel, maxLevel, minLevel, Utils.getMonthLength(year, mnth), this);
+        chart = new Chart(chartWidth, chartHeight, levels, colourCodes, days, targetLevel, monthLength, axisColour, textColour, valueFont, xAxisLabel, yAxisLabel, maxLevel, minLevel, Utils.getMonthLength(year, mnth), this, offset);
     }
 
     private void initComponents() {

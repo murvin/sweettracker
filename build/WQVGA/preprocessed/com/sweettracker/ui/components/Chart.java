@@ -17,26 +17,27 @@ import javax.microedition.lcdui.Image;
 public class Chart extends Panel implements IMotionListener, ITouchEventListener {
 
     private int[] colours, days;
-    private float[] levels;
+    private double[] levels;
     private int axisColour, textColour;
-    private float target;
+    private double target;
     private MotionEaseOutExpo mfx_slide;
     private MotionLinear mfxCharts;
     private BitmapFont font;
     private String xAxisLabel, yAxisLabel;
     private Image imgXaxisLabel, imgYaxisLabel;
     private int startingOffset;
-    private float maxLevel, minLevel;
+    private double maxLevel, minLevel;
     private Image maxLevelImg, minLevelImg, midMonthImg, targetIndicator;
     private int maxDays;
     public static final int EXIT_FINISHED = 0x1201;
     public static final int ENTER_FINISHED = 0x1202;
     private final int BAR_WIDTH = 5;
     private final int STEPS = 15;
+    private double offset;
     private ChartBar[] bars;
 
-    public Chart(int iWidth, int iHeight, float[] levels, int[] colours, int[] days, float target, int xAxisLength,
-            int axisColour, int textColour, BitmapFont font, String xAxisLabel, String yAxisLabel, float maxLevel, float minLevel, int maxDays, IComponentEventListener cel) {
+    public Chart(int iWidth, int iHeight, double[] levels, int[] colours, int[] days, double target, int xAxisLength,
+            int axisColour, int textColour, BitmapFont font, String xAxisLabel, String yAxisLabel, double maxLevel, double minLevel, int maxDays, IComponentEventListener cel, double offset) {
         super(iWidth, iHeight);
         this.levels = levels;
         this.colours = colours;
@@ -52,6 +53,7 @@ public class Chart extends Panel implements IMotionListener, ITouchEventListener
         this.maxLevel = maxLevel;
         this.minLevel = minLevel;
         this.maxDays = maxDays;
+        this.offset = offset;
 
         initResources();
     }
@@ -65,11 +67,11 @@ public class Chart extends Panel implements IMotionListener, ITouchEventListener
         imgYaxisLabel = ImageUtil.replaceColor(imgYaxisLabel, this.textColour);
 
         if (target > maxLevel) {
-            maxLevel = target + 0.5f;
+            maxLevel = target + offset;
         }
 
         if (target < minLevel) {
-            minLevel = target - 0.5f;
+            minLevel = target - offset;
         }
 
         if (minLevel != maxLevel) {
@@ -97,7 +99,7 @@ public class Chart extends Panel implements IMotionListener, ITouchEventListener
         if (levels != null) {
             this.bars = new ChartBar[levels.length];
             for (int i = 0; i < levels.length; i++) {
-                float level = levels[i];
+                double level = levels[i];
                 int colour = colours[i];
                 int day = days[i];
 

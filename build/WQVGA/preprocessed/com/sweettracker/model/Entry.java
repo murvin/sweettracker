@@ -9,14 +9,14 @@ public class Entry implements ISerializable {
     private Date date;
     private int timeInterval;
     private int units;
-    private float glucoseLevel;
+    private double glucoseLevel;
     private String note;
     private int levelRange; // normal, critical, high, none
 
     public Entry() {
     }
     
-    public Entry(Date date, int timeInterval, int units, float glocuseLevel, String note) {
+    public Entry(Date date, int timeInterval, int units, double glocuseLevel, String note) {
         setDate(date);
         setTimeInterval(timeInterval);
         setUnits(units);
@@ -80,7 +80,7 @@ public class Entry implements ISerializable {
         date.serialize(dos);
         dos.writeInt(timeInterval);
         dos.writeInt(units);
-        dos.writeFloat(glucoseLevel);
+        dos.writeDouble(glucoseLevel);
         dos.writeUTF(note == null ? "" : note);
         dos.writeInt(this.levelRange);
     }
@@ -90,7 +90,7 @@ public class Entry implements ISerializable {
         this.date.deserialize(dis);
         this.timeInterval = dis.readInt();
         this.units = dis.readInt();
-        this.glucoseLevel = dis.readFloat();
+        this.glucoseLevel = dis.readDouble();
         this.note = dis.readUTF();
         this.levelRange = dis.readInt();
     }
@@ -132,14 +132,14 @@ public class Entry implements ISerializable {
     /**
      * @return the glucoseLevel
      */
-    public float getGlucoseLevel() {
+    public double getGlucoseLevel() {
         return glucoseLevel;
     }
 
     /**
      * @param glucoseLevel the glucoseLevel to set
      */
-    public final void setGlucoseLevel(float glucoseLevel) {
+    public final void setGlucoseLevel(double glucoseLevel) {
         if (glucoseLevel < 0) {
             throw new IllegalArgumentException();
         }

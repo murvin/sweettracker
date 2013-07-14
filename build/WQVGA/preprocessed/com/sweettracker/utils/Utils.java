@@ -268,20 +268,20 @@ public class Utils {
         return s.toString();
     }
 
-    public static float convertLevel(int currentUnit, int targetUnit, float level) {
+    public static double convertLevel(int currentUnit, int targetUnit, double level) {
         if (currentUnit == targetUnit) {
             return level;
         } else {
             if (currentUnit == Constants.UNIT_MG) {
-                level *= 0.0555f;
+                level *= 0.0554994394556615d;
             } else if (currentUnit == Constants.UNIT_MMOL) {
-                level *= 18.0182f;
+                level *= 18.0182d;
             }
-            return level;
+            return Math.floor(level*100+0.5)/100;
         }
     }
 
-    public static float get1DecimalPlace(float value) {
+    public static double get1DecimalPlace(double value) {
         String val = String.valueOf(value);
         int pointIndex = val.indexOf(".");
         if (pointIndex != -1) {
@@ -289,7 +289,7 @@ public class Utils {
                 val = val.substring(0, pointIndex + 2);
             }
         }
-        return Float.valueOf(val).floatValue();
+        return Double.valueOf(val).doubleValue();
     }
 
     public static com.sweettracker.model.Date getNextDate(com.sweettracker.model.Date currDate) {
@@ -350,8 +350,8 @@ public class Utils {
         return new String[]{title, beforeMealRange, afterMealRange};
     }
 
-    public static int getLevelRange(int timeInterval, float glucoseLevel, int units, DiabetesTypeItem item) {
-        float offset = 0.1f;
+    public static int getLevelRange(int timeInterval, double glucoseLevel, int units, DiabetesTypeItem item) {
+        double offset = 0.1f;
         if (units == Constants.UNIT_MG) {
             offset = Utils.convertLevel(Constants.UNIT_MMOL, Constants.UNIT_MG, offset);
         }

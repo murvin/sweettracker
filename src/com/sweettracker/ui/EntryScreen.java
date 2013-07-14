@@ -162,8 +162,8 @@ public class EntryScreen extends SweetTrackerScreen {
         return Utils.getFormattedDate(entry.getDate());
     }
 
-    private float getEntryLevel() {
-        float level = entry.getGlucoseLevel();
+    private double getEntryLevel() {
+        double level = entry.getGlucoseLevel();
         if (level != 0.0f) {
             if (entry.getUnits() != settings.getGlucoseUnit()) {
                 level = Utils.convertLevel(entry.getUnits(), settings.getGlucoseUnit(), level);
@@ -208,14 +208,14 @@ public class EntryScreen extends SweetTrackerScreen {
         entryLevel.shakeIconImage();
     }
 
-    public void setGlucoseLevel(float newLevel) {
+    public void setGlucoseLevel(double newLevel) {
         if (entry.getGlucoseLevel() != newLevel) {
             entry.setGlucoseLevel(newLevel);
             entry.setLevelRange(Utils.getLevelRange(entry.getTimeInterval(), newLevel, settings.getGlucoseUnit(), DiabetesTypeItem.getDefault(settings.getDiabetesTypeItem(), settings.getGlucoseUnit())));
             entry.setUnits(settings.getGlucoseUnit());
 
             // Visual update
-            entryLevel.setLevel(newLevel);
+            entryLevel.setLevel(Utils.get1DecimalPlace(newLevel));
             entryLevel.shakeIconImage();
             setBg();
         }
