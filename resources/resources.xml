@@ -269,88 +269,88 @@
             <value locale="fr-FR">Calendrier</value>	
             <value locale="it-IT">Calendario</value>	
         </resource>
-        <resource id="45" type="string" name="TXT_MENU_GRAPH">		
+       <resource id="45" type="string" name="TXT_MENU_GRAPH">		
             <value locale="en-GB">Graph</value>	
-            <value locale="es-ES">Graph</value>	
-            <value locale="de-DE">Graph</value>	
-            <value locale="fr-FR">Graph</value>	
-            <value locale="it-IT">Graph</value>	
+            <value locale="es-ES">gráfico</value>	
+            <value locale="de-DE">Graphik</value>	
+            <value locale="fr-FR">Graphie</value>	
+            <value locale="it-IT">Graphico</value>	
         </resource>
         <resource id="46" type="string" name="TXT_MENU_INFO">		
             <value locale="en-GB">Info</value>	
             <value locale="es-ES">Info</value>	
             <value locale="de-DE">Info</value>	
-            <value locale="fr-FR">Info</value>	
+            <value locale="fr-FR">Infos</value>	
             <value locale="it-IT">Info</value>	
         </resource>
         <resource id="47" type="string" name="TXT_MENU_HELP">		
             <value locale="en-GB">Help</value>	
-            <value locale="es-ES">Help</value>	
-            <value locale="de-DE">Help</value>	
-            <value locale="fr-FR">Help</value>	
-            <value locale="it-IT">Help</value>	
+            <value locale="es-ES">ayudar</value>	
+            <value locale="de-DE">helfen</value>	
+            <value locale="fr-FR">aide</value>	
+            <value locale="it-IT">aiuto</value>	
         </resource>
         <resource id="48" type="string" name="TXT_LABEL_HOME">		
             <value locale="en-GB">Home</value>	
-            <value locale="es-ES">Home</value>	
-            <value locale="de-DE">Home</value>	
-            <value locale="fr-FR">Home</value>	
+            <value locale="es-ES">Inicio</value>	
+            <value locale="de-DE">Startseit</value>	
+            <value locale="fr-FR">Acceuille</value>	
             <value locale="it-IT">Home</value>	
         </resource>
         <resource id="49" type="string" name="TXT_SETTINGS_LANGUAGE_TITLE">		
             <value locale="en-GB">Language</value>	
-            <value locale="es-ES">Language</value>	
-            <value locale="de-DE">Language</value>	
-            <value locale="fr-FR">Language</value>	
-            <value locale="it-IT">Language</value>	
+            <value locale="es-ES">Idioma</value>	
+            <value locale="de-DE">Sprache</value>	
+            <value locale="fr-FR">Langue</value>	
+            <value locale="it-IT">Lingua</value>	
         </resource>
         <resource id="50" type="string" name="TXT_SETTINGS_UNITS_TITLE">		
             <value locale="en-GB">Units</value>	
-            <value locale="es-ES">Units</value>	
-            <value locale="de-DE">Units</value>	
-            <value locale="fr-FR">Units</value>	
-            <value locale="it-IT">Units</value>	
+            <value locale="es-ES">Unidad</value>	
+            <value locale="de-DE">Einheit</value>	
+            <value locale="fr-FR">Unité</value>	
+            <value locale="it-IT">unità</value>	
         </resource>
         <resource id="51" type="string" name="TXT_SETTINGS_PINCODE_TITLE">		
             <value locale="en-GB">Pin Code</value>	
-            <value locale="es-ES">Pin Code</value>	
-            <value locale="de-DE">Pin Code</value>	
-            <value locale="fr-FR">Pin Code</value>	
-            <value locale="it-IT">Pin Code</value>	
+            <value locale="es-ES">código PIN</value>	
+            <value locale="de-DE">Pin-Code</value>	
+            <value locale="fr-FR">Code Pin</value>	
+            <value locale="it-IT">codice pin</value>	
         </resource>
         <resource id="52" type="string" name="TXT_SETTINGS_TARGET_TITLE">		
             <value locale="en-GB">Target Level</value>	
-            <value locale="es-ES">Target Level</value>	
-            <value locale="de-DE">Target Level</value>	
-            <value locale="fr-FR">Target Level</value>	
-            <value locale="it-IT">Target Level</value>	
+            <value locale="es-ES">Nivel objetivo</value>	
+            <value locale="de-DE">Zielniveau</value>	
+            <value locale="fr-FR">Niveau cible</value>	
+            <value locale="it-IT">Livello di destinazione</value>	
         </resource>
         <resource id="53" type="string" name="TXT_SETTINGS_LANGUAGE_DESC">		
             <value locale="en-GB">Select your preferred language.</value>	
-            <value locale="de-DE">Select your preferred language.</value>	
-            <value locale="fr-FR">Select your preferred language.</value>	
-            <value locale="it-IT">Select your preferred language.</value>	
+            <value locale="de-DE">Wählen Sie Ihre bevorzugte Sprache.</value>	
+            <value locale="fr-FR">Choisissez votre langue préférée.</value>	
+            <value locale="it-IT">Seleziona la tua lingua preferita.</value>	
         </resource>
         <resource id="54" type="string" name="TXT_SETTINGS_UNITS_DESC">		
             <value locale="en-GB">Select your blood sugar level unit for entering values.</value>	
-            <value locale="es-ES">Select your blood sugar level unit for entering values.</value>	
-            <value locale="de-DE">Select your blood sugar level unit for entering values.</value>	
-            <value locale="fr-FR">Select your blood sugar level unit for entering values.</value>	
-            <value locale="it-IT">Select your blood sugar level unit for entering values.</value>	
+            <value locale="es-ES">Seleccione su unidad de nivel de azúcar en la sangre para introducir valores.</value>	
+            <value locale="de-DE">Wählen Sie Ihren Blutzuckerspiegel Gerät zur Eingabe von Werten.</value>	
+            <value locale="fr-FR">Sélectionnez votre unité de niveau de sucre dans le sang pour entrer des valeurs.</value>	
+            <value locale="it-IT">Selezionare l'unità di livello di zucchero nel sangue per l'immissione di valori.</value>	
         </resource>
         <resource id="55" type="string" name="TXT_SETTINGS_PINCODE_DESC">		
             <value locale="en-GB">If you select a PIN you will be prompted to enter it back on start up. Set it back to 0000 to deactivate authentication.</value>	
-            <value locale="es-ES">If you select a PIN you will be prompted to enter it back on start up. Set it back to 0000 to deactivate authentication.</value>	
-            <value locale="de-DE">If you select a PIN you will be prompted to enter it back on start up. Set it back to 0000 to deactivate authentication.</value>	
-            <value locale="fr-FR">If you select a PIN you will be prompted to enter it back on start up. Set it back to 0000 to deactivate authentication.</value>	
-            <value locale="it-IT">If you select a PIN you will be prompted to enter it back on start up. Set it back to 0000 to deactivate authentication.</value>	
+            <value locale="es-ES">Si selecciona un PIN se le pedirá que introduzca de nuevo el arranque. Ajuste de nuevo en 0000 para desactivar la autenticación.</value>	
+            <value locale="de-DE">Wenn Sie eine PIN wählen, werden Sie aufgefordert, es zu betreten wieder starten werden. Setzen Sie ihn zurück auf 0000, um die Authentifizierung zu deaktivieren.</value>	
+            <value locale="fr-FR">Si vous sélectionnez un code PIN, vous serez invité à entrer de nouveau au démarrage. Réglez-le à 0000 pour désactiver l'authentification.</value>	
+            <value locale="it-IT">Se si seleziona un codice PIN ti verrà richiesto di inserire di nuovo in fase di start up. Impostare di nuovo a 0000 per disattivare l'autenticazione.</value>	
         </resource>
         <resource id="56" type="string" name="TXT_SETTINGS_TARGET_DESC">		
             <value locale="en-GB">Set a personal target level you want to acheive to measure your inputs against.</value>	
             <value locale="es-ES">Set a personal target level you want to acheive to measure your inputs against.</value>	
-            <value locale="de-DE">Set a personal target level you want to acheive to measure your inputs against.</value>	
-            <value locale="fr-FR">Set a personal target level you want to acheive to measure your inputs against.</value>	
-            <value locale="it-IT">Set a personal target level you want to acheive to measure your inputs against.</value>	
+            <value locale="de-DE">Stellen Sie eine persönliche Zielniveau Sie acheive Ihre Eingaben gegen messen.</value>	
+            <value locale="fr-FR">Définir un niveau cible personnels que vous voulez atteindre pour mesurer vos entrées contre.</value>	
+            <value locale="it-IT">Impostare un livello obiettivo personale che si desidera acheive per misurare gli ingressi contro.</value>	
         </resource>
         <resource id="57" type="string" name="TXT_DIALOG_EXIT_TITLE">		
             <value locale="en-GB">Exit SweetTracker</value>	
@@ -368,31 +368,31 @@
         </resource>unauthorised
         <resource id="59" type="string" name="TXT_DIALOG_TITLE_UNAUTHORISED">		
             <value locale="en-GB">Unauthorised</value>	
-            <value locale="es-ES">Unauthorised</value>	
-            <value locale="de-DE">Unauthorised</value>	
-            <value locale="fr-FR">Unauthorised</value>	
-            <value locale="it-IT">Unauthorised</value>	
+            <value locale="es-ES">no autorizado</value>	
+            <value locale="de-DE">Eigenmächtige</value>	
+            <value locale="fr-FR">non autorisé</value>	
+            <value locale="it-IT">non autorizzato</value>	
         </resource>
         <resource id="60" type="string" name="TXT_DIALOG_DESC_UNAUTHORISED">		
             <value locale="en-GB">Sorry, this feature is only available in the paid version.</value>	
-            <value locale="es-ES">Sorry, this feature is only available in the paid version.</value>	
-            <value locale="de-DE">Sorry, this feature is only available in the paid version.</value>	
-            <value locale="fr-FR">Sorry, this feature is only available in the paid version.</value>	
-            <value locale="it-IT">Sorry, this feature is only available in the paid version.</value>	
+            <value locale="es-ES">Lo sentimos, esta función sólo está disponible en la versión de pago.</value>	
+            <value locale="de-DE">Leider ist diese Funktion nur in der kostenpflichtigen Version.</value>	
+            <value locale="fr-FR">Désolé, cette option n'est disponible que dans la version payante.</value>	
+            <value locale="it-IT">Spiacenti, questa funzione è disponibile solo nella versione a pagamento.</value>	
         </resource>
         <resource id="61" type="string" name="TXT_DIALOG_PIN_MSG">		
             <value locale="en-GB">Enter a memorable PIN.</value>	
-            <value locale="es-ES">Enter a memorable PIN.</value>	
-            <value locale="de-DE">Enter a memorable PIN.</value>	
-            <value locale="fr-FR">Enter a memorable PIN.</value>	
-            <value locale="it-IT">Enter a memorable PIN.</value>	
+            <value locale="es-ES">Introduzca un PIN memorable.</value>	
+            <value locale="de-DE">Geben Sie einen unvergesslichen PIN.</value>	
+            <value locale="fr-FR">Entrez un code PIN mémorable.</value>	
+            <value locale="it-IT">Inserire un PIN memorabile.</value>	
         </resource>
         <resource id="62" type="string" name="TXT_DIALOG_PIN_TITLE">		
             <value locale="en-GB">Authentication</value>	
-            <value locale="es-ES">Authentication</value>	
-            <value locale="de-DE">Authentication</value>	
-            <value locale="fr-FR">Authentication</value>	
-            <value locale="it-IT">Authentication</value>	
+            <value locale="es-ES">Autenticación</value>	
+            <value locale="de-DE">Beglaubigung</value>	
+            <value locale="fr-FR">Authentification</value>	
+            <value locale="it-IT">Autenticazione</value>	
         </resource>
         <resource id="63" type="string" name="TXT_MAPKEY_TODAY">		
             <value locale="en-GB">Today</value>	
@@ -403,150 +403,150 @@
         </resource>
         <resource id="64" type="string" name="TXT_MAPKEY_CRITICAL">		
             <value locale="en-GB">Critical</value>	
-            <value locale="es-ES">Critical</value>	
-            <value locale="de-DE">Critical</value>	
-            <value locale="fr-FR">Critical</value>	
-            <value locale="it-IT">Critical</value>	
+            <value locale="es-ES">crítico</value>	
+            <value locale="de-DE">kritisch</value>	
+            <value locale="fr-FR">critique</value>	
+            <value locale="it-IT">critico</value>	
         </resource>
         <resource id="65" type="string" name="TXT_MAPKEY_NORMAL">		
             <value locale="en-GB">Normal</value>	
             <value locale="es-ES">Normal</value>	
-            <value locale="de-DE">Normal</value>	
-            <value locale="fr-FR">Normal</value>	
-            <value locale="it-IT">Normal</value>	
+            <value locale="de-DE">Normale</value>	
+            <value locale="fr-FR">Normale</value>	
+            <value locale="it-IT">Normale</value>	
         </resource>
         <resource id="66" type="string" name="TXT_MAPKEY_HIGH">		
             <value locale="en-GB">High</value>	
-            <value locale="es-ES">High</value>	
-            <value locale="de-DE">High</value>	
-            <value locale="fr-FR">High</value>	
-            <value locale="it-IT">High</value>	
+            <value locale="es-ES">elevado</value>	
+            <value locale="de-DE">hoch</value>	
+            <value locale="fr-FR">élevé</value>	
+            <value locale="it-IT">alto</value>	
         </resource>
         <resource id="67" type="string" name="TXT_MENU_ENTRY">		
             <value locale="en-GB">Entry</value>	
-            <value locale="es-ES">Entry</value>	
-            <value locale="de-DE">Entry</value>	
-            <value locale="fr-FR">Entry</value>	
-            <value locale="it-IT">Entry</value>	
+            <value locale="es-ES">apunte</value>	
+            <value locale="de-DE">Vermerk</value>	
+            <value locale="fr-FR">entrée</value>	
+            <value locale="it-IT">annotazione</value>	
         </resource>
         <resource id="68" type="string" name="TXT_LEVEL_LESS_2_HOURS">		
             <value locale="en-GB">&lt; 2 hrs after meal</value>	
-            <value locale="es-ES">&lt; 2 hrs after meal</value>	
-            <value locale="de-DE">&lt; 2 hrs after meal</value>	
-            <value locale="fr-FR">&lt; 2 hrs after meal</value>	
-            <value locale="it-IT">&lt; 2 hrs after meal</value>	
+            <value locale="es-ES">&lt; 2 horas después de la comida</value>	
+            <value locale="de-DE">&lt; 2 Stunden nach der Mahlzeit</value>	
+            <value locale="fr-FR">&lt; 2 heures après le repas</value>	
+            <value locale="it-IT">&lt; 2 ore dopo il pasto</value>	
         </resource>
         <resource id="69" type="string" name="TXT_LEVEL_BEFORE_MEAL">		
             <value locale="en-GB">Before meal</value>	
-            <value locale="es-ES">Before meal</value>	
-            <value locale="de-DE">Before meal</value>	
-            <value locale="fr-FR">Before meal</value>	
-            <value locale="it-IT">Before meal</value>	
+            <value locale="es-ES">Antes de la comida</value>	
+            <value locale="de-DE">Vor dem Essen</value>	
+            <value locale="fr-FR">Avant repas</value>	
+            <value locale="it-IT">prima del pasto</value>	
         </resource>
         <resource id="71" type="string" name="TXT_TAP_TO_EDIT">		
             <value locale="en-GB">Tap item to edit.</value>	
-            <value locale="es-ES">Tap item to edit.</value>	
-            <value locale="de-DE">Tap item to edit.</value>	
-            <value locale="fr-FR">Tap item to edit.</value>	
-            <value locale="it-IT">Tap item to edit.</value>	
+            <value locale="es-ES">Toque elemento que desea editar.</value>	
+            <value locale="de-DE">Tippen Sie Artikel zu bearbeiten.</value>	
+            <value locale="fr-FR">Tapez l'élément pour modifier.</value>	
+            <value locale="it-IT">Toccare la voce da modificare.</value>	
         </resource>
         <resource id="72" type="string" name="TXT_SWIPE_TO_EDIT">		
             <value locale="en-GB">Swipe letf-right to change.</value>	
-            <value locale="es-ES">Swipe letf-right to change.</value>	
-            <value locale="de-DE">Swipe letf-right to change.</value>	
-            <value locale="fr-FR">Swipe letf-right to change.</value>	
-            <value locale="it-IT">Swipe letf-right to change.</value>	
+            <value locale="es-ES">Pase a la izquierda-derecha para cambiar.</value>	
+            <value locale="de-DE">Swipe links-rechts zu ändern.</value>	
+            <value locale="fr-FR">Faites glisser de gauche à droite pour changer.</value>	
+            <value locale="it-IT">Swipe sinistra-destra per cambiare.</value>	
         </resource>
         <resource id="73" type="string" name="TXT_TAP_TO_ADD_NOTE">		
             <value locale="en-GB">Enter an additional note.</value>	
-            <value locale="es-ES">Enter an additional note.</value>	
-            <value locale="de-DE">Enter an additional note.</value>	
-            <value locale="fr-FR">Enter an additional note.</value>	
-            <value locale="it-IT">Enter an additional note.</value>	
+            <value locale="es-ES">Escriba una nota adicional.</value>	
+            <value locale="de-DE">Geben Sie einen weiteren Hinweis.</value>	
+            <value locale="fr-FR">Entrez une note supplémentaire.</value>	
+            <value locale="it-IT">Inserisci una nota aggiuntiva.</value>	
         </resource>
         <resource id="74" type="string" name="TXT_SETTINGS_DIABETES_TYPE_TITLE">		
             <value locale="en-GB">Diabetes Type</value>	
-            <value locale="es-ES">Diabetes Type</value>	
-            <value locale="de-DE">Diabetes Type</value>	
-            <value locale="fr-FR">Diabetes Type</value>	
-            <value locale="it-IT">Diabetes Type</value>	
+            <value locale="es-ES">Diabetes tipo</value>	
+            <value locale="de-DE">Diabetes Typ</value>	
+            <value locale="fr-FR">Type de diabète</value>	
+            <value locale="it-IT">diabete di tipo</value>	
         </resource>
         <resource id="75" type="string" name="TXT_SETTINGS_DIABETES_TYPE_DESC">		
-            <value locale="en-GB">Select one column to indicate if your diabetic or not. The first range in each column is the normal 'Before meals' values. The range below is the 'After meals' values.</value>	
-            <value locale="es-ES">Select one column to indicate if your diabetic or not. The first range in each column is the normal 'Before meals' values. The range below is the 'After meals' values.</value>	
-            <value locale="de-DE">Select one column to indicate if your diabetic or not. The first range in each column is the normal 'Before meals' values. The range below is the 'After meals' values.</value>	
-            <value locale="fr-FR">Select one column to indicate if your diabetic or not. The first range in each column is the normal 'Before meals' values. The range below is the 'After meals' values.</value>	
-            <value locale="it-IT">Select one column to indicate if your diabetic or not. The first range in each column is the normal 'Before meals' values. The range below is the 'After meals' values.</value>	
+            <value locale="en-GB">Select one column to indicate if you are diabetic or not. The first range in each column is the normal 'Before meals' values. The range below is the 'After meals' values.</value>	
+            <value locale="es-ES">Seleccione una columna para indicar si usted es diabético o no. El primer rango de cada columna es la normal "antes de las comidas" valores. El intervalo menor es el "después de las comidas" valores.</value>	
+            <value locale="de-DE">Wählen Sie eine Spalte, um anzuzeigen, wenn Sie Diabetiker sind oder nicht. Der erste Bereich in jeder Spalte ist die normale "Vor dem Essen" Werte. Der Bereich unterhalb der "Nach dem Essen" Werte.</value>	
+            <value locale="fr-FR">Sélectionnez une colonne pour indiquer si vous êtes diabétique ou non. La première gamme dans chaque colonne est la normale 'avant les repas de ses valeurs. La gamme ci-dessous est le 'après les repas de ses valeurs.</value>	
+            <value locale="it-IT">Selezionare una colonna per indicare se si è diabetici o no. La prima gamma di ogni colonna è la normale 'prima dei pasti "valori. Il campo di sotto è il 'dopo i pasti "valori.</value>	
         </resource>
         <resource id="76" type="string" name="TXT_SETTINGS_DIABETES_TYPE_NONE">		
             <value locale="en-GB">None</value>	
-            <value locale="es-ES">None</value>	
-            <value locale="de-DE">None</value>	
-            <value locale="fr-FR">None</value>	
-            <value locale="it-IT">None</value>	
+            <value locale="es-ES">nada</value>	
+            <value locale="de-DE">Keine</value>	
+            <value locale="fr-FR">aucun</value>	
+            <value locale="it-IT">Nessuno</value>	
         </resource>
         <resource id="77" type="string" name="TXT_SETTINGS_DIABETES_TYPE_ONE">		
             <value locale="en-GB">Type 1</value>	
-            <value locale="es-ES">Type 1</value>	
-            <value locale="de-DE">Type 1</value>	
+            <value locale="es-ES">Tipo 1 1</value>	
+            <value locale="de-DE">Typ 1</value>	
             <value locale="fr-FR">Type 1</value>	
-            <value locale="it-IT">Type 1</value>	
+            <value locale="it-IT">Tipo 1 1</value>	
         </resource>
         <resource id="78" type="string" name="TXT_SETTINGS_DIABETES_TYPE_TWO">		
             <value locale="en-GB">Type 2</value>	
-            <value locale="es-ES">Type 2</value>	
-            <value locale="de-DE">Type 2</value>	
+            <value locale="es-ES">Tipo 2</value>	
+            <value locale="de-DE">Typ 2</value>	
             <value locale="fr-FR">Type 2</value>	
-            <value locale="it-IT">Type 2</value>	
+            <value locale="it-IT">Tipo 2</value>	
         </resource>
         <resource id="79" type="string" name="TXT_DIALOG_TARGET_LEVEL_MSG">		
             <value locale="en-GB">Enter your target sugar level.</value>	
-            <value locale="es-ES">Enter your target sugar level.</value>	
-            <value locale="de-DE">Enter your target sugar level.</value>	
-            <value locale="fr-FR">Enter your target sugar level.</value>	
-            <value locale="it-IT">Enter your target sugar level.</value>	
+            <value locale="es-ES">Ingrese su nivel de azúcar blanco.</value>	
+            <value locale="de-DE">Geben Sie Ihre Ziel-Blutzuckerspiegel.</value>	
+            <value locale="fr-FR">Entrez votre taux de sucre ciblé.</value>	
+            <value locale="it-IT">Inserisci il tuo livello di zucchero di destinazione.</value>	
         </resource>
         <resource id="80" type="string" name="TXT_DIALOG_TARGET_LEVEL_TITLE">		
             <value locale="en-GB">Target level</value>	
-            <value locale="es-ES">Target level</value>	
-            <value locale="de-DE">Target level</value>	
-            <value locale="fr-FR">Target level</value>	
-            <value locale="it-IT">Target level</value>	
+            <value locale="es-ES">nivel deseado</value>	
+            <value locale="de-DE">Zielniveau</value>	
+            <value locale="fr-FR">Niveau cible</value>	
+            <value locale="it-IT">livello target</value>	
         </resource>
         <resource id="81" type="string" name="TXT_DIALOG_GLUCOSE_LEVEL_MSG">		
             <value locale="en-GB">Enter your current sugar level.</value>	
-            <value locale="es-ES">Enter your current sugar level.</value>	
-            <value locale="de-DE">Enter your current sugar level.</value>	
-            <value locale="fr-FR">Enter your current sugar level.</value>	
-            <value locale="it-IT">Enter your current sugar level.</value>	
+            <value locale="es-ES">Ingrese su nivel de azúcar en la actual.</value>	
+            <value locale="de-DE">Geben Sie Ihre aktuellen Blutzuckerspiegel.</value>	
+            <value locale="fr-FR">Entrez votre niveau actuel du sucre.</value>	
+            <value locale="it-IT">Inserisci il tuo livello di zucchero nel corrente.</value>	
         </resource>
         <resource id="82" type="string" name="TXT_DIALOG_GLUCOSE_LEVEL_TITLE">		
             <value locale="en-GB">Glucose level</value>	
-            <value locale="es-ES">Glucose level</value>	
-            <value locale="de-DE">Glucose level</value>	
-            <value locale="fr-FR">Glucose level</value>	
-            <value locale="it-IT">Glucose level</value>	
+            <value locale="es-ES">El nivel de glucosa</value>	
+            <value locale="de-DE">Glucose-Ebene</value>	
+            <value locale="fr-FR">Niveau de glucose</value>	
+            <value locale="it-IT">livello di glucosio</value>	
         </resource>
         <resource id="83" type="string" name="TXT_DIALOG_ENTRY_SAVED_TITLE">		
             <value locale="en-GB">Entry Saved</value>	
-            <value locale="es-ES">Entry Saved</value>	
-            <value locale="de-DE">Entry Saved</value>	
-            <value locale="fr-FR">Entry Saved</value>	
-            <value locale="it-IT">Entry Saved</value>	
+            <value locale="es-ES">Entrada Guardado</value>	
+            <value locale="de-DE">Eintrag gespeichert</value>	
+            <value locale="fr-FR">entrée enregistrée</value>	
+            <value locale="it-IT">voce memorizzata</value>	
         </resource>
         <resource id="84" type="string" name="TXT_DIALOG_ENTRY_SAVED_MSG">		
             <value locale="en-GB">Entry successfully saved to your calendar.</value>	
-            <value locale="es-ES">Entry successfully saved to your calendar.</value>	
-            <value locale="de-DE">Entry successfully saved to your calendar.</value>	
-            <value locale="fr-FR">Entry successfully saved to your calendar.</value>	
-            <value locale="it-IT">Entry successfully saved to your calendar.</value>	
+            <value locale="es-ES">Entrada guardado correctamente a tu calendario.</value>	
+            <value locale="de-DE">Eintrag erfolgreich zu Ihrem Kalender gespeichert.</value>	
+            <value locale="fr-FR">Entrée sauvegardé à votre calendrier avec succès .</value>	
+            <value locale="it-IT">Entrata salvato con successo al tuo calendario.</value>	
         </resource>
         <resource id="85" type="string" name="TXT_APP_DESC">	
             <value locale="en-GB">is designed to help you efficiently record and monitor your blood sugar levels. After entering your values you can use the calendar or graphs for data visualisation. It also evaluates your level and assigns it a critical level colour code. Tracking your blood sugar is now easy and effective.</value>	
-            <value locale="es-ES">is designed to help you efficiently record and monitor your blood sugar levels. After entering your values you can use the calendar or graphs for data visualisation. It also evaluates your level and assigns it a critical level colour code. Tracking your blood sugar is now easy and effective.</value>	
-            <value locale="de-DE">is designed to help you efficiently record and monitor your blood sugar levels. After entering your values you can use the calendar or graphs for data visualisation. It also evaluates your level and assigns it a critical level colour code. Tracking your blood sugar is now easy and effective.</value>	
-            <value locale="fr-FR">is designed to help you efficiently record and monitor your blood sugar levels. After entering your values you can use the calendar or graphs for data visualisation. It also evaluates your level and assigns it a critical level colour code. Tracking your blood sugar is now easy and effective.</value>	
-            <value locale="it-IT">is designed to help you efficiently record and monitor your blood sugar levels. After entering your values you can use the calendar or graphs for data visualisation. It also evaluates your level and assigns it a critical level colour code. Tracking your blood sugar is now easy and effective.</value>						
+            <value locale="es-ES">está diseñado para ayudarle a grabar de manera eficiente y controlar sus niveles de azúcar en la sangre. Después de introducir los valores que puede utilizar el calendario o gráficas para la visualización de datos. También evalúa su nivel y le asigna un código de color de nivel crítico. El seguimiento de su azúcar en la sangre ahora es fácil y eficaz.</value>	
+            <value locale="de-DE">wurde entwickelt, um Ihnen helfen, effizient aufzeichnen und überwachen Sie Ihre Blutzuckerwerte. Nach Eingabe Ihrer Werte können Sie den Kalender oder Grafiken zur Visualisierung der Daten. Es wertet auch Ihr Niveau und ordnet sie ein kritisches Niveau Farbcode. Tracking Ihr Blutzucker ist nun einfach und effektiv.</value>	
+            <value locale="fr-FR">est conçu pour vous aider à enregistrer et de surveiller efficacement votre taux de sucre dans le sang. Après avoir entré vos valeurs, vous pouvez utiliser le calendrier ou graphiques pour la visualisation des données. Il évalue également votre niveau et lui attribue un code de couleur critique de niveau. Le suivi de votre glycémie est maintenant facile et efficace.</value>	
+            <value locale="it-IT">è progettato per aiutare a registrare in modo efficiente e monitorare i livelli di zucchero nel sangue. Dopo aver inserito i vostri valori è possibile utilizzare il calendario o grafici per la visualizzazione dei dati. Si valuta anche il tuo livello e assegna un codice colore di livello critico. Monitoraggio di zucchero nel sangue è ora facile ed efficace.</value>						
         </resource>
         <resource id="87" type="string" name="TXT_ABOUT_VERSION">		
             <value locale="en-GB">Version</value>	
@@ -648,17 +648,17 @@
         </resource>
         <resource id="101" type="string" name="TXT_DIALOG_TITLE_UNSUCCESSFUL">		
             <value locale="en-GB">Unsuccessful</value>	
-            <value locale="es-ES">Unsuccessful</value>	
-            <value locale="de-DE">Unsuccessful</value>	
-            <value locale="fr-FR">Unsuccessful</value>	
-            <value locale="it-IT">Unsuccessful</value>	
+            <value locale="es-ES">fracasado</value>	
+            <value locale="de-DE">erfolglos</value>	
+            <value locale="fr-FR">Échec</value>	
+            <value locale="it-IT">fallito</value>	
         </resource>
         <resource id="102" type="string" name="TXT_DIALOG_TEXT_INVALID_INPUT">		
             <value locale="en-GB">Please try again with a valid input.</value>	
-            <value locale="es-ES">Please try again with a valid input.</value>	
-            <value locale="de-DE">Please try again with a valid input.</value>	
-            <value locale="fr-FR">Please try again with a valid input.</value>	
-            <value locale="it-IT">Please try again with a valid input.</value>	
+            <value locale="es-ES">Por favor, inténtelo de nuevo con una entrada válida.</value>	
+            <value locale="de-DE">Bitte versuchen Sie es erneut mit einer gültigen Eingabe.</value>	
+            <value locale="fr-FR">Veuillez essayer de nouveau avec une entrée valide.</value>	
+            <value locale="it-IT">Riprova con un ingresso valido.</value>	
         </resource>
         <resource id="103" type="string" name="TXT_MENU_SETTINGS">		
             <value locale="en-GB">Settings</value>	
@@ -676,66 +676,66 @@
         </resource>
         <resource id="105" type="string" name="TXT_DIALOG_TITLE_SUCCESSFUL">		
             <value locale="en-GB">Successful</value>	
-            <value locale="es-ES">Successful</value>	
-            <value locale="de-DE">Successful</value>	
-            <value locale="fr-FR">Successful</value>	
-            <value locale="it-IT">Successful</value>	
+            <value locale="es-ES">Exitosa.</value>	
+            <value locale="de-DE">Erfolgreich.</value>	
+            <value locale="fr-FR">Succès.</value>	
+            <value locale="it-IT">Successo.</value>	
         </resource>
         <resource id="106" type="string" name="TXT_DIALOG_PIN_MSG_CONFIRM">		
             <value locale="en-GB">Confirm your memorable PIN.</value>	
-            <value locale="es-ES">Confirm your memorable PIN.</value>	
-            <value locale="de-DE">Confirm your memorable PIN.</value>	
-            <value locale="fr-FR">Confirm your memorable PIN.</value>	
-            <value locale="it-IT">Confirm your memorable PIN.</value>	
+            <value locale="es-ES">Confirme su PIN memorable.</value>	
+            <value locale="de-DE">Bestätigen Sie Ihre PIN unvergesslich.</value>	
+            <value locale="fr-FR">Confirmez votre code PIN mémorable.</value>	
+            <value locale="it-IT">Confermare il PIN memorabile.</value>	
         </resource>
         <resource id="107" type="string" name="TXT_LOCK_ON">		
             <value locale="en-GB">PIN locked mode</value>	
-            <value locale="es-ES">PIN locked mode</value>	
-            <value locale="de-DE">PIN locked mode</value>	
-            <value locale="fr-FR">PIN locked mode</value>	
-            <value locale="it-IT">PIN locked mode</value>	
+            <value locale="es-ES">PIN modo de bloqueo</value>	
+            <value locale="de-DE">PIN gesperrt Modus</value>	
+            <value locale="fr-FR">Mode PIN verrouillé</value>	
+            <value locale="it-IT">PIN modalità bloccata</value>	
         </resource>
         <resource id="108" type="string" name="TXT_LOCK_OFF">		
             <value locale="en-GB">No PIN specified</value>	
-            <value locale="es-ES">No PIN specified</value>	
-            <value locale="de-DE">No PIN specified</value>	
-            <value locale="fr-FR">No PIN specified</value>	
-            <value locale="it-IT">No PIN specified</value>	
+            <value locale="es-ES">Sin PIN especificado</value>	
+            <value locale="de-DE">Keine PIN angegeben</value>	
+            <value locale="fr-FR">Aucun PIN spécifié</value>	
+            <value locale="it-IT">No PIN specificato</value>	
         </resource>
         <resource id="109" type="string" name="TXT_THEME_TITLE">		
             <value locale="en-GB">Theme</value>	
-            <value locale="es-ES">Theme</value>	
+            <value locale="es-ES">tema</value>	
             <value locale="de-DE">Theme</value>	
-            <value locale="fr-FR">Theme</value>	
-            <value locale="it-IT">Theme</value>	
+            <value locale="fr-FR">thème</value>	
+            <value locale="it-IT">argomento</value>	
         </resource>
         <resource id="110" type="string" name="TXT_THEME_DESC">		
-            <value locale="en-GB">Select your favourite theme to skin the application.</value>	
-            <value locale="es-ES">Select your favourite theme to skin the application.</value>	
-            <value locale="de-DE">Select your favourite theme to skin the application.</value>	
-            <value locale="fr-FR">Select your favourite theme to skin the application.</value>	
-            <value locale="it-IT">Select your favourite theme to skin the application.</value>	
+            <value locale="en-GB">Select your favourite theme for the application.</value>	
+            <value locale="es-ES">Elige tu tema favorito de la aplicación.</value>	
+            <value locale="de-DE">Wählen Sie Ihre Lieblings-Thema für die Anwendung.</value>	
+            <value locale="fr-FR">Choisissez votre thème favori de l'application.</value>	
+            <value locale="it-IT">Seleziona il tema che preferisci per l'applicazione.</value>	
         </resource>
         <resource id="111" type="string" name="TXT_DAYS">		
             <value locale="en-GB">Days</value>	
-            <value locale="es-ES">Days</value>	
-            <value locale="de-DE">Days</value>	
-            <value locale="fr-FR">Days</value>	
-            <value locale="it-IT">Days</value>	
+            <value locale="es-ES">días</value>	
+            <value locale="de-DE">Tage</value>	
+            <value locale="fr-FR">jours</value>	
+            <value locale="it-IT">giorni</value>	
         </resource>
         <resource id="112" type="string" name="TXT_DELETE">		
             <value locale="en-GB">Delete</value>	
-            <value locale="es-ES">Delete</value>	
-            <value locale="de-DE">Delete</value>	
-            <value locale="fr-FR">Delete</value>	
-            <value locale="it-IT">Delete</value>	
+            <value locale="es-ES">borrar</value>	
+            <value locale="de-DE">löschen</value>	
+            <value locale="fr-FR">supprimer</value>	
+            <value locale="it-IT">Cancella</value>	
         </resource>
         <resource id="113" type="string" name="TXT_ENTRY_DELETED">		
             <value locale="en-GB">Entry was deleted.</value>	
-            <value locale="es-ES">Entry was deleted.</value>	
-            <value locale="de-DE">Entry was deleted.</value>	
-            <value locale="fr-FR">Entry was deleted.</value>	
-            <value locale="it-IT">Entry was deleted.</value>	
+            <value locale="es-ES">La entrada ha sido eliminada.</value>	
+            <value locale="de-DE">Der Eintrag wurde gelöscht.</value>	
+            <value locale="fr-FR">L'entrée a été supprimé.</value>	
+            <value locale="it-IT">Voce è stata cancellata.</value>	
         </resource>
         <resource id="114" type="string" name="TXT_ENTRY_HELP_TITLE_0">		
             <value locale="en-GB">Setting diabetes type</value>	

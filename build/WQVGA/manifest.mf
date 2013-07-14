@@ -1,4 +1,4 @@
-MIDlet-1: SweetTrackerMidlet, ,com.sweettracker.SweetTrackerMidlet
+MIDlet-1: SweetTrackerMidlet,/icon.png,com.sweettracker.SweetTrackerMidlet
 MIDlet-Vendor: Murvin Bhantooa
 MIDlet-Name: SweetTracker
 MIDlet-Version: 1.0
