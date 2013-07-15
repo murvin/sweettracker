@@ -32,7 +32,11 @@ public class MenuItem extends Panel implements ITouchEventListener {
     }
 
     private void initResources() {
+        //#if QVGA
+//#         layout_gap = 3;
+        //#else
         layout_gap = 5;
+        //#endif
         layout_padding = 3;
 
         title_text_colour = Integer.parseInt(Resources.getInstance().getThemeStr(GraphicsResources.TXT_TITLE_TEXT_COLOR));

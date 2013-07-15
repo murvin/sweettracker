@@ -93,7 +93,7 @@ public class LevelEntryItem extends Panel implements ITouchEventListener {
         }
     }
 
-    public void setLevel(float level) {
+    public void setLevel(double level) {
         this.level = level;
         updateLevel();
     }

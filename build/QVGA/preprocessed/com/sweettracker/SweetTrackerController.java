@@ -370,11 +370,11 @@ public class SweetTrackerController extends Controller {
                             if (d.getId() == SettingsScreen.INPUT_PIN) {
                                 ((SettingsScreen) current_screen).setSettingsPinCode(input);
                             } else if (d.getId() == SettingsScreen.INPUT_TARGET) {
-                                ((SettingsScreen) current_screen).setTargetLevel(Float.parseFloat(input));
+                                ((SettingsScreen) current_screen).setTargetLevel(Double.parseDouble(input));
                             }
                         } else if (current_screen instanceof EntryScreen) {
                             if (d.getId() == EntryScreen.INPUT_GLUCOSE_LEVEL) {
-                                ((EntryScreen) current_screen).setGlucoseLevel(Float.parseFloat(input));
+                                ((EntryScreen) current_screen).setGlucoseLevel(Double.parseDouble(input));
                             } else if (d.getId() == EntryScreen.INPUT_GLUCOSE_NOTE) {
                                 ((EntryScreen) current_screen).setNote(input);
                             }

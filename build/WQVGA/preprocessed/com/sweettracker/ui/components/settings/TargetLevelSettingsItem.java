@@ -21,7 +21,7 @@ public class TargetLevelSettingsItem extends SettingsItem {
     }
 
     public void addContent() {
-        btnPinCode = Utils.getButton(((Float) param).toString(), iWidth / 2);
+        btnPinCode = Utils.getButton(((Double) param).toString(), iWidth / 2);
         btnPinCode.setId(BUTTON_ID);
         btnPinCode.setEventListener(this.cel);
 

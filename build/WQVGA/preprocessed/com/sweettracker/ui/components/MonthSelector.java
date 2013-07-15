@@ -49,7 +49,7 @@ public class MonthSelector extends SmartPanel implements IComponentEventListener
 
         BoxLayout l = (BoxLayout) getLayout();
         l.setGap(2 * UiKitDisplay.getHeight() / 100);
-        getStyle(true).setPadding(padding, padding, 0, padding);
+        getStyle(true).setPadding(0, padding, 0, padding);
 
         initComponents();
         setIsScrollable(false);
@@ -140,7 +140,7 @@ public class MonthSelector extends SmartPanel implements IComponentEventListener
             addComponent(pnlDays);
         } else {
 
-            getStyle(true).setPadding(padding, padding, padding, padding);
+            getStyle(true).setPadding(0, padding, padding / 2, padding);
             expandToFitContent();
         }
     }
