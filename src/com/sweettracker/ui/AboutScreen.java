@@ -88,6 +88,6 @@ public class AboutScreen extends SweetTrackerScreen {
         addComponent(new UikitImageBox(0, 0, imgDeveloperNameTitle, titleStyle));
         addComponent(new UikitImageBox(imgDeveloperName));
         updateOffsets();
-        getStyle(true).setPadding(topPadding, 0, bottomPadding, 0);
+        getStyle(true).setPadding(topPadding, 0, bottomPadding + topPadding, 0);
     }
 }

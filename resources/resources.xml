@@ -327,6 +327,7 @@
         </resource>
         <resource id="53" type="string" name="TXT_SETTINGS_LANGUAGE_DESC">		
             <value locale="en-GB">Select your preferred language.</value>	
+            <value locale="es-ES">Seleccione su idioma preferido.</value>
             <value locale="de-DE">Wählen Sie Ihre bevorzugte Sprache.</value>	
             <value locale="fr-FR">Choisissez votre langue préférée.</value>	
             <value locale="it-IT">Seleziona la tua lingua preferita.</value>	
@@ -403,10 +404,10 @@
         </resource>
         <resource id="64" type="string" name="TXT_MAPKEY_CRITICAL">		
             <value locale="en-GB">Critical</value>	
-            <value locale="es-ES">crítico</value>	
-            <value locale="de-DE">kritisch</value>	
-            <value locale="fr-FR">critique</value>	
-            <value locale="it-IT">critico</value>	
+            <value locale="es-ES">Crítico</value>	
+            <value locale="de-DE">Kritisch</value>	
+            <value locale="fr-FR">Critique</value>	
+            <value locale="it-IT">Critico</value>	
         </resource>
         <resource id="65" type="string" name="TXT_MAPKEY_NORMAL">		
             <value locale="en-GB">Normal</value>	
@@ -417,17 +418,17 @@
         </resource>
         <resource id="66" type="string" name="TXT_MAPKEY_HIGH">		
             <value locale="en-GB">High</value>	
-            <value locale="es-ES">elevado</value>	
-            <value locale="de-DE">hoch</value>	
-            <value locale="fr-FR">élevé</value>	
-            <value locale="it-IT">alto</value>	
+            <value locale="es-ES">Elevado</value>	
+            <value locale="de-DE">Hoch</value>	
+            <value locale="fr-FR">Elevé</value>	
+            <value locale="it-IT">Alto</value>	
         </resource>
         <resource id="67" type="string" name="TXT_MENU_ENTRY">		
             <value locale="en-GB">Entry</value>	
-            <value locale="es-ES">apunte</value>	
+            <value locale="es-ES">Apunte</value>	
             <value locale="de-DE">Vermerk</value>	
-            <value locale="fr-FR">entrée</value>	
-            <value locale="it-IT">annotazione</value>	
+            <value locale="fr-FR">Entrée</value>	
+            <value locale="it-IT">Annotazione</value>	
         </resource>
         <resource id="68" type="string" name="TXT_LEVEL_LESS_2_HOURS">		
             <value locale="en-GB">&lt; 2 hrs after meal</value>	
@@ -441,7 +442,7 @@
             <value locale="es-ES">Antes de la comida</value>	
             <value locale="de-DE">Vor dem Essen</value>	
             <value locale="fr-FR">Avant repas</value>	
-            <value locale="it-IT">prima del pasto</value>	
+            <value locale="it-IT">Prima del pasto</value>	
         </resource>
         <resource id="71" type="string" name="TXT_TAP_TO_EDIT">		
             <value locale="en-GB">Tap item to edit.</value>	
@@ -469,7 +470,7 @@
             <value locale="es-ES">Diabetes tipo</value>	
             <value locale="de-DE">Diabetes Typ</value>	
             <value locale="fr-FR">Type de diabète</value>	
-            <value locale="it-IT">diabete di tipo</value>	
+            <value locale="it-IT">Diabete di tipo</value>	
         </resource>
         <resource id="75" type="string" name="TXT_SETTINGS_DIABETES_TYPE_DESC">		
             <value locale="en-GB">Select one column to indicate if you are diabetic or not. The first range in each column is the normal 'Before meals' values. The range below is the 'After meals' values.</value>	
@@ -480,9 +481,9 @@
         </resource>
         <resource id="76" type="string" name="TXT_SETTINGS_DIABETES_TYPE_NONE">		
             <value locale="en-GB">None</value>	
-            <value locale="es-ES">nada</value>	
+            <value locale="es-ES">Nada</value>	
             <value locale="de-DE">Keine</value>	
-            <value locale="fr-FR">aucun</value>	
+            <value locale="fr-FR">Aucun</value>	
             <value locale="it-IT">Nessuno</value>	
         </resource>
         <resource id="77" type="string" name="TXT_SETTINGS_DIABETES_TYPE_ONE">		
@@ -531,8 +532,8 @@
             <value locale="en-GB">Entry Saved</value>	
             <value locale="es-ES">Entrada Guardado</value>	
             <value locale="de-DE">Eintrag gespeichert</value>	
-            <value locale="fr-FR">entrée enregistrée</value>	
-            <value locale="it-IT">voce memorizzata</value>	
+            <value locale="fr-FR">Entrée enregistrée</value>	
+            <value locale="it-IT">Voce memorizzata</value>	
         </resource>
         <resource id="84" type="string" name="TXT_DIALOG_ENTRY_SAVED_MSG">		
             <value locale="en-GB">Entry successfully saved to your calendar.</value>	
@@ -620,17 +621,17 @@
         </resource>
         <resource id="97" type="string" name="TXT_TERMS_DESC_1">		
             <value locale="en-GB">These terms and conditions govern your use of the mobile application SweetTracker. By using this application, you accept these terms and conditions in full. If you disagree with these terms and conditions or any part of these terms and conditions, you must not use SweetTracker.</value>	
-            <value locale="es-ES">Estos términos y condiciones rigen el uso de la SweetTracker. de aplicaciones móviles. Al utilizar esta aplicación, usted acepta estos términos y condiciones en su totalidad. Si no está de acuerdo con estos términos y condiciones o cualquier parte de estos términos y condiciones, usted no debe utilizar InBloom.</value>	
-            <value locale="de-DE">Diese Bedingungen regeln die Nutzung der mobilen Anwendung SweetTracker. Durch die Nutzung dieser Anwendung, akzeptieren Sie diese Bedingungen in vollem Umfang. Wenn Sie mit diesen Bedingungen oder einem Teil dieser Bedingungen und Konditionen nicht einverstanden sind, dürfen Sie nicht verwenden Inbloom.</value>	
-            <value locale="fr-FR">Ces termes et conditions régissent votre utilisation de SweetTracker. application mobile. En utilisant cette application, vous acceptez ces termes et conditions dans leur intégralité. Si vous êtes en désaccord avec ces termes et conditions ou toute partie de ces termes et conditions, vous ne devez pas utiliser Inbloom.</value>	
-            <value locale="it-IT">Questi termini e condizioni regolano l'utilizzo del SweetTracker. applicazione mobile. Utilizzando questa applicazione, l'utente accetta i termini e le condizioni in pieno. Se siete d'accordo con questi termini e condizioni o una parte di questi termini e condizioni, non si deve usare inBloom.</value>	
+            <value locale="es-ES">Estos términos y condiciones rigen el uso de la SweetTracker. de aplicaciones móviles. Al utilizar esta aplicación, usted acepta estos términos y condiciones en su totalidad. Si no está de acuerdo con estos términos y condiciones o cualquier parte de estos términos y condiciones, usted no debe utilizar SweetTracker.</value>	
+            <value locale="de-DE">Diese Bedingungen regeln die Nutzung der mobilen Anwendung SweetTracker. Durch die Nutzung dieser Anwendung, akzeptieren Sie diese Bedingungen in vollem Umfang. Wenn Sie mit diesen Bedingungen oder einem Teil dieser Bedingungen und Konditionen nicht einverstanden sind, dürfen Sie nicht verwenden SweetTracker.</value>	
+            <value locale="fr-FR">Ces termes et conditions régissent votre utilisation de SweetTracker. application mobile. En utilisant cette application, vous acceptez ces termes et conditions dans leur intégralité. Si vous êtes en désaccord avec ces termes et conditions ou toute partie de ces termes et conditions, vous ne devez pas utiliser SweetTracker.</value>	
+            <value locale="it-IT">Questi termini e condizioni regolano l'utilizzo del SweetTracker. applicazione mobile. Utilizzando questa applicazione, l'utente accetta i termini e le condizioni in pieno. Se siete d'accordo con questi termini e condizioni o una parte di questi termini e condizioni, non si deve usare SweetTracker.</value>	
         </resource>
         <resource id="98" type="string" name="TXT_TERMS_DESC_2">		
             <value locale="en-GB">We will not be liable to you in respect of any losses arising out of any event or events beyond our reasonable control. We will not be liable to you in case you are wrongly diagnosed due to lack of precision in the software logic. We will not be liable to you in respect of any loss or corruption of any data, database or software.</value>	
-            <value locale="es-ES">No seremos responsables ante usted con respecto a cualquier pérdida que se derive de cualquier evento o eventos fuera de nuestro control. No seremos responsables ante usted en caso de que está embarazada, debido a la falta de precisión en la lógica de software. No seremos responsables ante usted con respecto a cualquier pérdida o corrupción de datos, base de datos o software.</value>	
-            <value locale="de-DE">Wir sind nicht haftbar zu machen für Schäden, die aus einer oder mehreren Ereignissen außerhalb unserer Kontrolle liegen. Wir sind nicht haftbar zu machen, falls Sie schwanger sind aufgrund mangelnder Präzision in der Software-Logik sind. Wir sind nicht haftbar zu machen in Bezug auf einen Verlust oder die Beschädigung von Daten, Datenbanken oder Software.</value>	
-            <value locale="fr-FR">Nous ne serons pas responsables envers vous pour toute perte découlant d'un événement ou d'événements indépendants de notre contrôle raisonnable. Nous ne serons pas responsables envers vous au cas où vous êtes enceinte à cause du manque de précision dans la logique du logiciel. Nous ne serons pas responsables envers vous pour toute perte ou corruption des données, des bases de données ou de logiciels.</value>	
-            <value locale="it-IT">Noi non saremo responsabili nei Vostri confronti di eventuali perdite derivanti da qualsiasi evento o eventi al di fuori del nostro ragionevole controllo. Non saremo responsabili nei vostri confronti in caso di gravidanza a causa della mancanza di precisione nella logica del software. Non saremo responsabili nei vostri confronti per qualsiasi perdita o corruzione di, database di dati o software.</value>	
+            <value locale="es-ES">No seremos responsables ante usted con respecto a cualquier pérdida que se derive de cualquier evento o eventos fuera de nuestro control. No seremos responsables ante usted con respecto a cualquier pérdida o corrupción de datos, base de datos o software.</value>	
+            <value locale="de-DE">Wir sind nicht haftbar zu machen für Schäden, die aus einer oder mehreren Ereignissen außerhalb unserer Kontrolle liegen. Wir sind nicht haftbar zu machen in Bezug auf einen Verlust oder die Beschädigung von Daten, Datenbanken oder Software.</value>	
+            <value locale="fr-FR">Nous ne serons pas responsables envers vous pour toute perte découlant d'un événement ou d'événements indépendants de notre contrôle raisonnable. Nous ne serons pas responsables envers vous pour toute perte ou corruption des données, des bases de données ou de logiciels.</value>	
+            <value locale="it-IT">Noi non saremo responsabili nei Vostri confronti di eventuali perdite derivanti da qualsiasi evento o eventi al di fuori del nostro ragionevole controllo. Non saremo responsabili nei vostri confronti per qualsiasi perdita o corruzione di, database di dati o software.</value>	
         </resource>
         <resource id="99" type="string" name="TXT_TERMS_DESC_3">		
             <value locale="en-GB">We do not warrant the completeness or accuracy of the information produced by this application; nor do we commit to ensuring that the application remains logical and reliable. To the maximum extent permitted by applicable law we exclude all representations, warranties and conditions relating to the use of this application (including, without limitation, any warranties implied by law of satisfactory quality, fitness for purpose and/or the use of reasonable care and skill).</value>	
@@ -791,7 +792,7 @@
             <value locale="es-ES">Para crear una entrada en el calendario, seleccione el menú de calendario desde la pantalla de menú. El calendario se abre en una vista mensual por el día actual se muestra en color azul. También se muestran todos los registros anteriores para el mes. Al tocar en un día de calendario le lleva a la pantalla de entrada donde se puede establecer el valor de glucosa y cualquier nota adicional.</value>	
             <value locale="de-DE">Um einen Eintrag in Ihrem Kalender wählen Sie das Menü Kalender aus dem Menü-Bildschirm. Der Kalender wird in einer Monatsübersicht mit den aktuellen Tag als blau dargestellt. Alle bisherigen Einträge für den Monat werden auch gezeigt. Tippen auf einem Kalender Tag führt Sie zur Eingabemaske, wo Sie die Glukose-Wert und keine zusätzlichen beachten können.</value>	
             <value locale="fr-FR">Pour faire une entrée dans votre calendrier sélectionner le menu du calendrier à partir de l'écran de menu. Le calendrier s'ouvre dans une vue mensuelle, le jour courant montré que le bleu. Toutes les entrées précédentes pour le mois sont également représentées. En tapant sur la journée d'un calendrier vous emmène à l'écran de saisie où vous pouvez définir la valeur de la glycémie et une note complémentaire.</value>	
-            <value locale="it-IT"Per creare una voce nel calendario selezionare il menu calendario dalla schermata del menu. Il calendario si apre in una vista mensile con il giorno corrente evidenziato in blu. Sono indicate anche tutte le voci precedenti per il mese. Toccando il giorno di un calendario vi porta alla schermata di inserimento in cui è possibile impostare il valore di glucosio e di eventuali note aggiuntive>.</value>	
+            <value locale="it-IT">Per creare una voce nel calendario selezionare il menu calendario dalla schermata del menu. Il calendario si apre in una vista mensile con il giorno corrente evidenziato in blu. Sono indicate anche tutte le voci precedenti per il mese. Toccando il giorno di un calendario vi porta alla schermata di inserimento in cui è possibile impostare il valore di glucosio e di eventuali note aggiuntive>.</value>	
         </resource>
         <resource id="122" type="string" name="TXT_ENTRY_HELP_DESC_2">		
             <value locale="en-GB">After you have made any entry you can select the charts menu from the menu screen to visualise your monthly entries on a bar chart. The chart for a month contains all entries made and your specified target is shown as a grey horizontal line. This is so that you can measure your levels against it.</value>	
