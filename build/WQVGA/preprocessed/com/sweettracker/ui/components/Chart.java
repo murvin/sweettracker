@@ -106,7 +106,7 @@ public class Chart extends Panel implements IMotionListener, ITouchEventListener
                 int height = (int) (level * (iHeight - (startingOffset * 2)) / maxLevel);
                 int xCoor = (int) (day * (iWidth - (startingOffset * 2)) / maxDays) + (startingOffset / 2);
                 xCoor += (BAR_WIDTH + 1) / 2;
-                ChartBar bar = new ChartBar(BAR_WIDTH, height, axisColour, colour, STEPS);
+                ChartBar bar = new ChartBar(BAR_WIDTH, height, colour, STEPS);
                 bar.x = xCoor;
                 bar.y = iHeight - height - startingOffset;
                 addComponent(bar);

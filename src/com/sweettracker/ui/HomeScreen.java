@@ -58,7 +58,7 @@ public class HomeScreen extends SweetTrackerScreen {
             Resources.getInstance().getText(GlobalResources.TXT_MENU_CAL),
             Resources.getInstance().getText(GlobalResources.TXT_MENU_GRAPH),
             Resources.getInstance().getText(GlobalResources.TXT_MENU_SETTINGS),
-            Resources.getInstance().getText(GlobalResources.TXT_MENU_INFO),
+            Resources.getInstance().getText(GlobalResources.TXT_COMMON_ABOUT),
             Resources.getInstance().getText(GlobalResources.TXT_MENU_HELP)
         };
 

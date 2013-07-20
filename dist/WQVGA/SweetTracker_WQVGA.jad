@@ -1,8 +1,8 @@
 MIDlet-1: SweetTrackerMidlet,/icon.png,com.sweettracker.SweetTrackerMidlet
-MIDlet-Jar-Size: 332545
+MIDlet-Jar-Size: 332434
 MIDlet-Jar-URL: SweetTracker_WQVGA.jar
 MIDlet-Name: SweetTracker
 MIDlet-Vendor: Murvin Bhantooa
-MIDlet-Version: 1.0
+MIDlet-Version: 1.1
 MicroEdition-Configuration: CLDC-1.1
 MicroEdition-Profile: MIDP-2.0

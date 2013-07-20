@@ -276,19 +276,12 @@
             <value locale="fr-FR">Graphie</value>	
             <value locale="it-IT">Graphico</value>	
         </resource>
-        <resource id="46" type="string" name="TXT_MENU_INFO">		
-            <value locale="en-GB">Info</value>	
-            <value locale="es-ES">Info</value>	
-            <value locale="de-DE">Info</value>	
-            <value locale="fr-FR">Infos</value>	
-            <value locale="it-IT">Info</value>	
-        </resource>
         <resource id="47" type="string" name="TXT_MENU_HELP">		
             <value locale="en-GB">Help</value>	
-            <value locale="es-ES">ayudar</value>	
-            <value locale="de-DE">helfen</value>	
-            <value locale="fr-FR">aide</value>	
-            <value locale="it-IT">aiuto</value>	
+            <value locale="es-ES">Ayudar</value>	
+            <value locale="de-DE">Helfen</value>	
+            <value locale="fr-FR">Aide</value>	
+            <value locale="it-IT">Aiuto</value>	
         </resource>
         <resource id="48" type="string" name="TXT_LABEL_HOME">		
             <value locale="en-GB">Home</value>	
@@ -309,14 +302,14 @@
             <value locale="es-ES">Unidad</value>	
             <value locale="de-DE">Einheit</value>	
             <value locale="fr-FR">Unité</value>	
-            <value locale="it-IT">unità</value>	
+            <value locale="it-IT">Unità</value>	
         </resource>
         <resource id="51" type="string" name="TXT_SETTINGS_PINCODE_TITLE">		
             <value locale="en-GB">Pin Code</value>	
-            <value locale="es-ES">código PIN</value>	
+            <value locale="es-ES">Código PIN</value>	
             <value locale="de-DE">Pin-Code</value>	
             <value locale="fr-FR">Code Pin</value>	
-            <value locale="it-IT">codice pin</value>	
+            <value locale="it-IT">Codice pin</value>	
         </resource>
         <resource id="52" type="string" name="TXT_SETTINGS_TARGET_TITLE">		
             <value locale="en-GB">Target Level</value>	
@@ -369,10 +362,10 @@
         </resource>unauthorised
         <resource id="59" type="string" name="TXT_DIALOG_TITLE_UNAUTHORISED">		
             <value locale="en-GB">Unauthorised</value>	
-            <value locale="es-ES">no autorizado</value>	
+            <value locale="es-ES">No autorizado</value>	
             <value locale="de-DE">Eigenmächtige</value>	
-            <value locale="fr-FR">non autorisé</value>	
-            <value locale="it-IT">non autorizzato</value>	
+            <value locale="fr-FR">Non autorisé</value>	
+            <value locale="it-IT">Non autorizzato</value>	
         </resource>
         <resource id="60" type="string" name="TXT_DIALOG_DESC_UNAUTHORISED">		
             <value locale="en-GB">Sorry, this feature is only available in the paid version.</value>	
@@ -384,7 +377,7 @@
         <resource id="61" type="string" name="TXT_DIALOG_PIN_MSG">		
             <value locale="en-GB">Enter a memorable PIN.</value>	
             <value locale="es-ES">Introduzca un PIN memorable.</value>	
-            <value locale="de-DE">Geben Sie einen unvergesslichen PIN.</value>	
+            <value locale="de-DE">Geben Sie eine PIN.</value>	
             <value locale="fr-FR">Entrez un code PIN mémorable.</value>	
             <value locale="it-IT">Inserire un PIN memorabile.</value>	
         </resource>
@@ -503,30 +496,30 @@
         <resource id="79" type="string" name="TXT_DIALOG_TARGET_LEVEL_MSG">		
             <value locale="en-GB">Enter your target sugar level.</value>	
             <value locale="es-ES">Ingrese su nivel de azúcar blanco.</value>	
-            <value locale="de-DE">Geben Sie Ihre Ziel-Blutzuckerspiegel.</value>	
-            <value locale="fr-FR">Entrez votre taux de sucre ciblé.</value>	
-            <value locale="it-IT">Inserisci il tuo livello di zucchero di destinazione.</value>	
+            <value locale="de-DE">Ziel Blutzuckerspiegel.</value>	
+            <value locale="fr-FR">Entrez votre taux de sucre cible.</value>	
+            <value locale="it-IT">Livello di zucchero nel target.</value>	
         </resource>
         <resource id="80" type="string" name="TXT_DIALOG_TARGET_LEVEL_TITLE">		
             <value locale="en-GB">Target level</value>	
-            <value locale="es-ES">nivel deseado</value>	
+            <value locale="es-ES">Nivel deseado</value>	
             <value locale="de-DE">Zielniveau</value>	
             <value locale="fr-FR">Niveau cible</value>	
-            <value locale="it-IT">livello target</value>	
+            <value locale="it-IT">Livello target</value>	
         </resource>
         <resource id="81" type="string" name="TXT_DIALOG_GLUCOSE_LEVEL_MSG">		
             <value locale="en-GB">Enter your current sugar level.</value>	
-            <value locale="es-ES">Ingrese su nivel de azúcar en la actual.</value>	
-            <value locale="de-DE">Geben Sie Ihre aktuellen Blutzuckerspiegel.</value>	
-            <value locale="fr-FR">Entrez votre niveau actuel du sucre.</value>	
-            <value locale="it-IT">Inserisci il tuo livello di zucchero nel corrente.</value>	
+            <value locale="es-ES">Ingrese su nivel de azúcar.</value>	
+            <value locale="de-DE">Geben Sie Ihren Blutzuckerspiegel.</value>	
+            <value locale="fr-FR">Entrer le taux de sucre.</value>	
+            <value locale="it-IT">Inserire il livello di zuccheri.</value>	
         </resource>
         <resource id="82" type="string" name="TXT_DIALOG_GLUCOSE_LEVEL_TITLE">		
             <value locale="en-GB">Glucose level</value>	
             <value locale="es-ES">El nivel de glucosa</value>	
             <value locale="de-DE">Glucose-Ebene</value>	
             <value locale="fr-FR">Niveau de glucose</value>	
-            <value locale="it-IT">livello di glucosio</value>	
+            <value locale="it-IT">Livello di glucosio</value>	
         </resource>
         <resource id="83" type="string" name="TXT_DIALOG_ENTRY_SAVED_TITLE">		
             <value locale="en-GB">Entry Saved</value>	
@@ -566,7 +559,7 @@
         <resource id="89" type="string" name="TXT_COMMON_ABOUT">		
             <value locale="en-GB">About</value>	
             <value locale="es-ES">Sobre</value>	
-            <value locale="de-DE">über</value>	
+            <value locale="de-DE">Uber</value>	
             <value locale="fr-FR">À propos</value>	
             <value locale="it-IT">À propos</value>	
         </resource>
@@ -649,10 +642,10 @@
         </resource>
         <resource id="101" type="string" name="TXT_DIALOG_TITLE_UNSUCCESSFUL">		
             <value locale="en-GB">Unsuccessful</value>	
-            <value locale="es-ES">fracasado</value>	
-            <value locale="de-DE">erfolglos</value>	
+            <value locale="es-ES">Fracasado</value>	
+            <value locale="de-DE">Erfolglos</value>	
             <value locale="fr-FR">Échec</value>	
-            <value locale="it-IT">fallito</value>	
+            <value locale="it-IT">Fallito</value>	
         </resource>
         <resource id="102" type="string" name="TXT_DIALOG_TEXT_INVALID_INPUT">		
             <value locale="en-GB">Please try again with a valid input.</value>	
@@ -685,8 +678,8 @@
         <resource id="106" type="string" name="TXT_DIALOG_PIN_MSG_CONFIRM">		
             <value locale="en-GB">Confirm your memorable PIN.</value>	
             <value locale="es-ES">Confirme su PIN memorable.</value>	
-            <value locale="de-DE">Bestätigen Sie Ihre PIN unvergesslich.</value>	
-            <value locale="fr-FR">Confirmez votre code PIN mémorable.</value>	
+            <value locale="de-DE">Bestätigen Sie Ihre PIN.</value>	
+            <value locale="fr-FR">Confirmez votre code PIN.</value>	
             <value locale="it-IT">Confermare il PIN memorabile.</value>	
         </resource>
         <resource id="107" type="string" name="TXT_LOCK_ON">		
@@ -705,10 +698,10 @@
         </resource>
         <resource id="109" type="string" name="TXT_THEME_TITLE">		
             <value locale="en-GB">Theme</value>	
-            <value locale="es-ES">tema</value>	
+            <value locale="es-ES">Tema</value>	
             <value locale="de-DE">Theme</value>	
-            <value locale="fr-FR">thème</value>	
-            <value locale="it-IT">argomento</value>	
+            <value locale="fr-FR">Thème</value>	
+            <value locale="it-IT">Argomento</value>	
         </resource>
         <resource id="110" type="string" name="TXT_THEME_DESC">		
             <value locale="en-GB">Select your favourite theme for the application.</value>	
@@ -719,16 +712,16 @@
         </resource>
         <resource id="111" type="string" name="TXT_DAYS">		
             <value locale="en-GB">Days</value>	
-            <value locale="es-ES">días</value>	
+            <value locale="es-ES">Días</value>	
             <value locale="de-DE">Tage</value>	
-            <value locale="fr-FR">jours</value>	
-            <value locale="it-IT">giorni</value>	
+            <value locale="fr-FR">Jours</value>	
+            <value locale="it-IT">Giorni</value>	
         </resource>
         <resource id="112" type="string" name="TXT_DELETE">		
             <value locale="en-GB">Delete</value>	
-            <value locale="es-ES">borrar</value>	
-            <value locale="de-DE">löschen</value>	
-            <value locale="fr-FR">supprimer</value>	
+            <value locale="es-ES">Borrar</value>	
+            <value locale="de-DE">Löschen</value>	
+            <value locale="fr-FR">Supprimer</value>	
             <value locale="it-IT">Cancella</value>	
         </resource>
         <resource id="113" type="string" name="TXT_ENTRY_DELETED">		
@@ -761,17 +754,17 @@
         </resource>
         <resource id="117" type="string" name="TXT_ENTRY_HELP_TITLE_3">		
             <value locale="en-GB">Colour coding</value>	
-            <value locale="es-ES">código de colores</value>	
+            <value locale="es-ES">Código de colores</value>	
             <value locale="de-DE">Farbcodierung</value>	
             <value locale="fr-FR">Code couleur</value>	
-            <value locale="it-IT">codificazione del colore</value>	
+            <value locale="it-IT">Codificazione del colore</value>	
         </resource>
         <resource id="118" type="string" name="TXT_ENTRY_HELP_TITLE_4">		
             <value locale="en-GB">Change theme</value>	
             <value locale="es-ES">Cambiar el tema</value>	
-            <value locale="de-DE">ändern Thema</value>	
-            <value locale="fr-FR">changer le thème</value>	
-            <value locale="it-IT">cambiare tema</value>	
+            <value locale="de-DE">Andern Thema</value>	
+            <value locale="fr-FR">Changer le thème</value>	
+            <value locale="it-IT">Cambiare tema</value>	
         </resource>
         <resource id="119" type="string" name="TXT_ENTRY_HELP_TITLE_5">		
             <value locale="en-GB">Setting a PIN lock</value>	
