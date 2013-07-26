@@ -45,7 +45,6 @@ public final class GlobalResources {
     public static final int TXT_SUN = 41;
     public static final int TXT_MENU_CAL = 43;
     public static final int TXT_MENU_GRAPH = 45;
-    public static final int TXT_MENU_INFO = 46;
     public static final int TXT_MENU_HELP = 47;
     public static final int TXT_LABEL_HOME = 48;
     public static final int TXT_SETTINGS_LANGUAGE_TITLE = 49;
