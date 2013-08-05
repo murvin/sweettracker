@@ -51,7 +51,9 @@ public class SweetTrackerController extends Controller {
     public static final int SCREEN_CHART = 0x018;
     public static final int SCREEN_HELP = 0x019;
     // MENU CONSTANTS 
-    public static final int MENU_EXIT = 0x101;
+    //#if !ASHA_501
+//#     public static final int MENU_EXIT = 0x101;
+    //#endif
     public static final int MENU_BACK = 0x102;
     public static final int MENU_ABOUT = 0x103;
     public static final int MENU_OK = 0x108;
@@ -129,7 +131,9 @@ public class SweetTrackerController extends Controller {
     public void enter(Screen screen) {
         if (screen instanceof HomeScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_LABEL_HOME));
-            menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_EXIT), MENU_EXIT);
+            //#if !ASHA_501
+//#             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_EXIT), MENU_EXIT);
+            //#endif
             menuBar.removeSoftKey(true);
         } else if (screen instanceof SettingsScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_MENU_SETTINGS));
@@ -296,8 +300,10 @@ public class SweetTrackerController extends Controller {
                 } else {
                     navigateScreen(SCREEN_HOME, false, null);
                 }
-            } else if (eventId == MENU_EXIT) {
-                confirmExit();
+                //#if !ASHA_501
+//#             } else if (eventId == MENU_EXIT) {
+//#                 confirmExit();
+            //#endif
             } else if (eventId == MENU_SAVE) {
                 if (current_screen instanceof SettingsScreen) {
                     boolean hasLocaleChanged = ((SettingsScreen) current_screen).hasLocaleChanged();
