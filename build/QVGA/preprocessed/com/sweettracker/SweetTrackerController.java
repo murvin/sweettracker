@@ -133,6 +133,8 @@ public class SweetTrackerController extends Controller {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_LABEL_HOME));
             //#if !ASHA_501
 //#             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_EXIT), MENU_EXIT);
+            //#else
+            menuBar.removeSoftKey(false);
             //#endif
             menuBar.removeSoftKey(true);
         } else if (screen instanceof SettingsScreen) {
