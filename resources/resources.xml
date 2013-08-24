@@ -815,6 +815,13 @@
             <value locale="fr-FR">Vous pouvez conserver la confidentialité de vos données en verrouillant l'application avec un code PIN. Définir un code PIN dans l'écran Paramètres veillera à ce que vous êtes de nouveau invité à entrer chaque fois que l'application démarre. Pour annuler veuillez remettre le code PIN à 0000. Notez que cette fonctionnalité n'est disponible que dans la version complète de cette application.</value>	
             <value locale="it-IT">È possibile preservare la privacy dei vostri voci bloccando l'applicazione con un codice PIN. Impostazione di un codice PIN nella schermata Impostazioni farà in modo che si ottiene viene richiesto di immetterla nuovamente ogni volta l'applicazione si avvia. Per cancellare basta impostare il PIN 0000. Si noti che questa funzione è disponibile solo nella versione completa di questa applicazione.</value>	
         </resource>
+        <resource id="126" type="string" name="TXT_ABOUT_APPLICATION_NAME">		
+            <value locale="en-GB">Name</value>	
+            <value locale="es-ES">Nombre</value>	
+            <value locale="de-DE">Name</value>	
+            <value locale="fr-FR">Nom</value>	
+            <value locale="it-IT">Nome</value>	
+        </resource>
     </set>
 </resources>
 

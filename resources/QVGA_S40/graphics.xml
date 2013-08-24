@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<!DOCTYPE resources SYSTEM "resources.dtd">
+<resources version="1.0">  
+    <set basename="GraphicsResources">							
+        <resource id="1" type="binary" name="IMG_BG_PANEL">	
+            <value file="bgPanel.png"></value>	
+        </resource>
+        <resource id="2" type="binary" name="IMG_SPLASH_BG">	
+            <value file="splash_bg.png"></value>
+            <value locale="themeFemale" file="/FEMALE/splash_bg.png"></value>	
+        </resource>
+        <resource id="3" type="binary" name="IMG_SPLASH_GRAPH">	
+            <value file="splash_graph.png"></value>	
+        </resource>
+        <resource id="5" type="binary" name="IMG_MENU_CAL">	
+            <value file="menu_icon_cal.png"></value>	
+        </resource>
+        <resource id="6" type="binary" name="IMG_MENU_GRAPH">	
+            <value file="menu_icon_graph.png"></value>	
+        </resource>
+        <resource id="7" type="binary" name="IMG_MENU_HELP">	
+            <value file="menu_icon_help.png"></value>	
+        </resource>
+        <resource id="8" type="binary" name="IMG_MENU_INFO">	
+            <value file="menu_icon_info.png"></value>	
+        </resource>
+        <resource id="9" type="binary" name="IMG_MENU_SETTINGS">	
+            <value file="menu_icon_settings.png"></value>	
+        </resource>
+        <resource id="10" type="binary" name="IMG_SPLASH_GRID">	
+            <value file="splash_grid.png"></value>	
+        </resource>
+        <resource id="11" type="string" name="TXT_TITLE_TEXT_COLOR">		
+            <value>2500134</value>	
+        </resource>
+        <resource id="12" type="binary" name="FONT_THEME_SMALL">	
+            <value file="droid_r_11.png"></value>	
+        </resource>        
+        <resource id="13" type="binary" name="FONT_THEME_MEDIUM">	
+            <value file="roboto_regular_16.png"></value>	
+        </resource> 
+        <resource id="14" type="binary" name="FONT_THEME_LARGE">	
+            <value file="roboto_regular_18.png"></value>	
+        </resource>   
+        <resource id="16" type="string" name="TXT_TITLE_LIGHT_TEXT_COLOR">		
+            <value>16777215</value>	
+        </resource>
+        <resource id="17" type="binary" name="IMG_BAR_BG">	
+            <value file="bar_tile.png"></value>	
+            <value locale="themeFemale" file="/FEMALE/bar_tile.png"></value>
+        </resource>
+        <resource id="18" type="binary" name="IMG_HIGH_BG">	
+            <value file="highlight.png"></value>
+            <value locale="themeFemale" file="/FEMALE/highlight.png"></value>	
+        </resource>
+        <resource id="19" type="binary" name="IMG_SPLASH_APPNAME">	
+            <value file="splash_app_name.png"></value>	
+        </resource>
+        <resource id="20" type="string" name="TXT_DESC_TEXT_COLOR">		
+            <value>5921370</value>	
+        </resource>
+        <resource id="21" type="string" name="TXT_DESC_LIGHT_TEXT_COLOR">		
+            <value>12632256</value>	
+        </resource>
+        <resource id="22" type="binary" name="IMG_SPLASH_DEVNAME">	
+            <value file="splash_dev_name.png"></value>	
+        </resource>
+        <resource id="23" type="binary" name="IMG_FLAG_EN">	
+            <value file="flagEn.png"></value>	
+        </resource>   
+        <resource id="24" type="binary" name="IMG_FLAG_FR">	
+            <value file="flagFr.png"></value>	
+        </resource>   
+        <resource id="25" type="binary" name="IMG_FLAG_IT">	
+            <value file="flagIt.png"></value>	
+        </resource>   
+        <resource id="26" type="binary" name="IMG_FLAG_DE">	
+            <value file="flagDe.png"></value>	
+        </resource>   
+        <resource id="27" type="binary" name="IMG_FLAG_ES">	
+            <value file="flagEs.png"></value>	
+        </resource>  
+        <resource id="28" type="binary" name="IMG_INDICATOR">	
+            <value file="indicator.png"></value>	
+        </resource>  
+        <resource id="29" type="binary" name="IMG_UNITS_MG">	
+            <value file="units_mg.png"></value>	
+        </resource>  
+        <resource id="30" type="binary" name="IMG_UNITS_MMOL">	
+            <value file="units_mmol.png"></value>	
+        </resource> 
+        <resource id="31" type="binary" name="IMG_MENUBAR_TILE">	
+            <value file="menu_bar_tile.png"></value>	
+            <value locale="themeFemale" file="/FEMALE/menu_bar_tile.png"></value>
+        </resource> 
+        <resource id="32" type="string" name="TXT_LIGHTBOX_COLOR">		
+            <value>0</value>	
+        </resource>
+        <resource id="33" type="binary" name="IMG_BUTTON_PATCH">	
+            <value file="btn_patch.png"></value>	
+        </resource>
+        <resource id="34" type="binary" name="IMG_BUTTON_PATCH_HIGH">	
+            <value file="btn_patch_high.png"></value>	
+        </resource>
+        <resource id="35" type="binary" name="IMG_ICON_SMALL">	
+            <value file="icon_small.png"></value>	
+        </resource>
+        <resource id="36" type="string" name="TXT_BUTTON_TEXT_COLOR">		
+            <value>0</value>	
+        </resource>
+        <resource id="37" type="binary" name="LEFT_ARROW">	
+            <value file="leftArrow.png"></value>
+             <value locale="themeFemale" file="/FEMALE/leftArrow.png"></value>	
+        </resource>
+        <resource id="38" type="binary" name="RIGHT_ARROW">	
+            <value file="rightArrow.png"></value>
+            <value locale="themeFemale" file="/FEMALE/rightArrow.png"></value>	
+        </resource>    
+        <resource id="39" type="string" name="TXT_CAL_HEADER_TEXT_COLOR">		
+            <value>0</value>	
+        </resource>
+        <resource id="40" type="string" name="TXT_CAL_BORDER_COLOR">		
+            <value>11184810</value>	
+        </resource>
+        <resource id="41" type="string" name="TXT_MAPKEY_NORMAL_COLOR">		
+            <value>10079232</value>	
+        </resource>
+        <resource id="42" type="string" name="TXT_MAPKEY_TODAY_COLOR">		
+            <value>10601215</value>	
+        </resource>
+        <resource id="43" type="string" name="TXT_MAPKEY_CRITICAL_COLOR">		
+            <value>16729156</value>	
+        </resource>
+        <resource id="44" type="string" name="TXT_MAPKEY_HIGH_COLOR">		
+            <value>16759603</value>	
+        </resource>
+        <resource id="45" type="string" name="TXT_MAPKEY_TEXT_COLOR">		
+            <value>5921370</value>	
+        </resource>
+        <resource id="46" type="binary" name="IMG_HIGHLIGHT_PATCH">	
+            <value file="highlightPatch.png"></value>	
+        </resource> 
+        <resource id="47" type="binary" name="IMG_CAL_ICON">	
+            <value file="calendar_icon.png"></value>	
+        </resource>
+        <resource id="48" type="binary" name="IMG_TIME_ICON">	
+            <value file="time_icon.png"></value>	
+        </resource>
+        <resource id="49" type="binary" name="IMG_PEN_ICON">	
+            <value file="pen_icon.png"></value>	
+        </resource>
+        <resource id="50" type="string" name="TXT_LINE_SEPERATOR_COLOR">		
+            <value>4737096</value>	
+        </resource>
+        <resource id="51" type="binary" name="IMG_DROP_ICON">	
+            <value file="drop.png"></value>	
+        </resource>
+        <resource id="52" type="binary" name="IMG_ABOUT_ICON">	
+            <value file="about_logo.png"></value>	
+        </resource>
+        <resource id="53" type="binary" name="IMG_CHECKBOX_ON">	
+            <value file="chkboxOn.png"></value>	
+        </resource>   
+        <resource id="54" type="binary" name="IMG_CHECKBOX_OFF">	
+            <value file="chkboxOff.png"></value>	
+        </resource>  
+        <resource id="55" type="binary" name="IMG_LOCK_ON">	
+            <value file="lock_on.png"></value>	
+        </resource>
+        <resource id="56" type="binary" name="IMG_LOCK_OFF">	
+            <value file="lock_off.png"></value>	
+        </resource>
+        <resource id="57" type="binary" name="IMG_MALE">	
+            <value file="male.png"></value>	
+        </resource>
+        <resource id="58" type="binary" name="IMG_FEMALE">	
+            <value file="female.png"></value>	
+        </resource>
+        <resource id="60" type="binary" name="IMG_HELP_ITEM_0">	
+            <value file="help_shot_0.png"></value>	
+        </resource>
+        <resource id="61" type="binary" name="IMG_HELP_ITEM_1">	
+            <value file="help_shot_1.png"></value>	
+        </resource>
+        <resource id="62" type="binary" name="IMG_HELP_ITEM_2">	
+            <value file="help_shot_2.png"></value>	
+        </resource>
+        <resource id="64" type="binary" name="IMG_HELP_ITEM_4">	
+            <value file="help_shot_4.png"></value>	
+        </resource>
+        <resource id="65" type="binary" name="IMG_HELP_ITEM_5">	
+            <value file="help_shot_5.png"></value>	
+        </resource>
+    </set>
+</resources>
+
