@@ -20,6 +20,8 @@ import javax.microedition.lcdui.Image;
 
 public class Utils {
 
+    public static int LSK = -6;
+    public static int RSK = -7;
     public static final int ENTRY_LOCALES = 0X009;
     public static final int ENTRY_THEMES = 0x010;
     public static final String FONT_CHARS = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡£©«®°´»¿ÀÁÂÃÄÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝßàáâãäçèéêëìíîïñòóôõöùúûüýÿ™€";
@@ -277,7 +279,7 @@ public class Utils {
             } else if (currentUnit == Constants.UNIT_MMOL) {
                 level *= 18.0182d;
             }
-            return Math.floor(level*100+0.5)/100;
+            return Math.floor(level * 100 + 0.5) / 100;
         }
     }
 

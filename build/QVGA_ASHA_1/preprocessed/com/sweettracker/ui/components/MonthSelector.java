@@ -13,6 +13,7 @@ import com.uikit.coreElements.Panel;
 import com.uikit.coreElements.BitmapFont;
 
 import com.uikit.layout.BoxLayout;
+import com.uikit.painters.PatchPainter;
 import com.uikit.styles.TextStyle;
 
 import javax.microedition.lcdui.Font;
@@ -41,6 +42,7 @@ public class MonthSelector extends SmartPanel implements IComponentEventListener
     private Panel pnlDays;
     private boolean hasDays;
     private int fontColour;
+    private PatchPainter onFocusPainter;
 
     public MonthSelector(int width, int height, boolean hasDays) {
         super(width, height);
@@ -89,6 +91,9 @@ public class MonthSelector extends SmartPanel implements IComponentEventListener
         imgRightArrow = Resources.getInstance().getThemeImage(GraphicsResources.RIGHT_ARROW);
 
         padding = 6 * UiKitDisplay.getWidth() / 100;
+        int pBorder = 10;
+        Image imgPatch = Resources.getInstance().getThemeImage(GraphicsResources.IMG_HIGHLIGHT_PATCH);
+        onFocusPainter = new PatchPainter(imgPatch, pBorder, pBorder, pBorder, pBorder);
     }
 
     private void initComponents() {
@@ -97,7 +102,7 @@ public class MonthSelector extends SmartPanel implements IComponentEventListener
         pnlNavigation.setLayout(new BoxLayout(UikitConstant.HORIZONTAL, 0));
         addComponent(pnlNavigation);
 
-        leftArrow = new MonthSelectorArrow(imgLeftArrow);
+        leftArrow = new MonthSelectorArrow(imgLeftArrow, onFocusPainter);
         leftArrow.setEventListener(this);
         TextStyle txtSyle = new TextStyle();
         txtSyle.setAlign(UikitConstant.HCENTER);
@@ -112,7 +117,7 @@ public class MonthSelector extends SmartPanel implements IComponentEventListener
 
         txtMonth = new UikitTextBox(iWidth - (padding * 2) - (leftArrow.getWidth() * 2), "", txtSyle);
 
-        rightArrow = new MonthSelectorArrow(imgRightArrow);
+        rightArrow = new MonthSelectorArrow(imgRightArrow, onFocusPainter);
         rightArrow.setEventListener(this);
 
         pnlNavigation.addComponent(leftArrow);

@@ -7,11 +7,14 @@ import com.uikit.painters.PatchPainter;
 import com.uikit.coreElements.Component;
 import com.uikit.coreElements.IFocusable;
 import com.uikit.coreElements.ITouchEventListener;
+import com.uikit.coreElements.IUikitInputHandler;
+import com.uikit.coreElements.UiKitDisplay;
+import javax.microedition.lcdui.Canvas;
 
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
 
-public class CalDay extends Component implements IFocusable, ITouchEventListener {
+public class CalDay extends Component implements IFocusable, ITouchEventListener, IUikitInputHandler {
 
     private boolean isOnFocus;
     private int fillColour;
@@ -65,6 +68,23 @@ public class CalDay extends Component implements IFocusable, ITouchEventListener
         if (cel != null) {
             cel.onComponentEvent(this, Integer.parseInt(day), day, -1);
         }
+    }
+
+    public boolean onKeyPressed(int iKeyCode) {
+        int key = UiKitDisplay.getGameAction(iKeyCode);
+        if (key == Canvas.FIRE) {
+            updateListener();
+            return true;
+        }
+        return false;
+    }
+
+    public boolean onKeyReleased(int iKeyCode) {
+        return false;
+    }
+
+    public boolean onKeyRepeated(int iKeyCode) {
+        return false;
     }
 
     public void setHasTopBorder(boolean hasTopBorder) {

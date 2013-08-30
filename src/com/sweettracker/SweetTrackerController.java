@@ -28,6 +28,9 @@ import com.uikit.mvc.patterns.Screen;
 import com.uikit.styles.TextStyle;
 import com.uikit.utils.UikitConstant;
 import java.io.IOException;
+import javax.microedition.lcdui.Command;
+import javax.microedition.lcdui.CommandListener;
+import javax.microedition.lcdui.Displayable;
 import javax.microedition.lcdui.Font;
 import javax.microedition.lcdui.Image;
 import javax.microedition.lcdui.TextField;
@@ -126,6 +129,23 @@ public class SweetTrackerController extends Controller {
         menuBar.y = canvas.getHeight() - menuBar.getHeight();
         menuBar.x = -canvas.getWidth();
         view.getLayer(LAYER_NAVIGATION).addComponent(this.menuBar);
+        
+        //#if ASHA_501
+        Command backCommand = new Command("Back", Command.BACK, 1);
+        UiKitDisplay.getLcduiDisplayable().addCommand(backCommand);
+        UiKitDisplay.getLcduiDisplayable().setCommandListener(new CommandListener() {
+
+            public void commandAction(Command c, Displayable d) {
+                if (c.getCommandType() == Command.BACK) {
+                    if (SweetTrackerController.this.current_screen_id == SweetTrackerController.SCREEN_HOME) {
+                        SweetTrackerController.this.confirmExit();
+                    }else{
+                        SweetTrackerController.this.onComponentEvent(SweetTrackerController.this.menuBar, MENU_BACK, null, -1);
+                    }
+                }
+            }
+        });
+        //#endif 
     }
 
     public void enter(Screen screen) {
@@ -139,23 +159,31 @@ public class SweetTrackerController extends Controller {
             menuBar.removeSoftKey(true);
         } else if (screen instanceof SettingsScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_MENU_SETTINGS));
-            menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            //#if !ASHA_501
+//#             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            //#endif
             menuBar.setLsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_SAVE), MENU_SAVE);
         } else if (screen instanceof CalScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_MENU_CAL));
-            menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            //#if !ASHA_501
+//#             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            //#endif
             menuBar.removeSoftKey(true);
         } else if (screen instanceof EntryScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_MENU_ENTRY));
             if(((EntryScreen) current_screen).isExistingEntry()){
                 menuBar.setLsk(Resources.getInstance().getText(GlobalResources.TXT_DELETE), MENU_DELETE);
             }else{
-                menuBar.setLsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+                //#if !ASHA_501
+//#                 menuBar.setLsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+                //#endif 
             }
             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_SAVE), MENU_SAVE);
         } else if (screen instanceof AboutScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_COMMON_ABOUT));
-            menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            //#if !ASHA_501
+//#             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            //#endif
             menuBar.removeSoftKey(true);
         } else if (screen instanceof TermsAndConditionsScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_TERMS));
@@ -167,11 +195,15 @@ public class SweetTrackerController extends Controller {
             menuBar.removeSoftKey(true);
         } else if (screen instanceof ChartScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_MENU_GRAPH));
-            menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            //#if !ASHA_501
+//#             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            //#endif
             menuBar.removeSoftKey(true);
         } else if (screen instanceof HelpScreen) {
             topBar.setLabel(Resources.getInstance().getText(GlobalResources.TXT_COMMON_HELP));
-            menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            //#if !ASHA_501
+//#             menuBar.setRsk(Resources.getInstance().getText(GlobalResources.TXT_COMMON_BACK), MENU_BACK);
+            //#endif
             menuBar.removeSoftKey(true);
         }
         screen.enter();
@@ -261,13 +293,13 @@ public class SweetTrackerController extends Controller {
             settings = (Settings) Database.getInstance().retrieveISerializable(Database.SETTINGS);
             if (settings.hasAcceptedTerms()) {
                 //#if FULL_VERSION
-//#                 if (settings.hasDefaultCode()) {
-//#                     navigateScreen(SweetTrackerController.SCREEN_HOME, true, null);
-//#                 } else {
-//#                     showConfirmPinCodeDialog();
-//#                 }
-                //#else
+                if (settings.hasDefaultCode()) {
                     navigateScreen(SweetTrackerController.SCREEN_HOME, true, null);
+                } else {
+                    showConfirmPinCodeDialog();
+                }
+                //#else
+//#                     navigateScreen(SweetTrackerController.SCREEN_HOME, true, null);
                 //#endif
             } else {
                 navigateScreen(SweetTrackerController.SCREEN_LOCALE, false, null);
@@ -299,6 +331,8 @@ public class SweetTrackerController extends Controller {
             if (eventId == MENU_BACK) {
                 if (previous_screen_id == SCREEN_CAL) {
                     navigateScreen(SCREEN_CAL, false, null);
+                } else if (current_screen_id == SCREEN_TERMS || current_screen_id == SCREEN_LOCALE){
+                    this.midlet.notifyDestroyed();
                 } else {
                     navigateScreen(SCREEN_HOME, false, null);
                 }
@@ -544,17 +578,17 @@ public class SweetTrackerController extends Controller {
 
     public void showPinCodeDialog() {
         //#if FULL_VERSION
-//#         showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_TITLE), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_MSG), SettingsScreen.INPUT_PIN, TextField.DECIMAL, null);
+        showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_TITLE), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_PIN_MSG), SettingsScreen.INPUT_PIN, TextField.DECIMAL, null);
         //#else
-        showAlertDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TITLE_UNAUTHORISED), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_DESC_UNAUTHORISED));
+//#         showAlertDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TITLE_UNAUTHORISED), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_DESC_UNAUTHORISED));
         //#endif 
     }
 
     public void showTargetLevelDialog() {
         //#if FULL_VERSION
-//#         showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TARGET_LEVEL_TITLE), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TARGET_LEVEL_MSG), SettingsScreen.INPUT_TARGET, TextField.DECIMAL, null);
+        showInputDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TARGET_LEVEL_TITLE), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TARGET_LEVEL_MSG), SettingsScreen.INPUT_TARGET, TextField.DECIMAL, null);
         //#else
-        showAlertDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TITLE_UNAUTHORISED), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_DESC_UNAUTHORISED));
+//#         showAlertDialog(Resources.getInstance().getText(GlobalResources.TXT_DIALOG_TITLE_UNAUTHORISED), Resources.getInstance().getText(GlobalResources.TXT_DIALOG_DESC_UNAUTHORISED));
         //#endif 
     }
 
